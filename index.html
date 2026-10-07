@@ -7,7 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>❤️</title>
+    <title>تولد ملینا ❤️</title>
+
 
     <style>
 
@@ -15,35 +16,156 @@
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
+
             background: #ffe6f0;
+
             text-align: center;
+
             font-family: sans-serif;
+
+            overflow-x: hidden;
         }
+
 
         /* =========================
            صفحه شمارش معکوس
         ========================= */
 
         #countdownScreen {
+
             position: fixed;
+
             inset: 0;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
-            background: #ffe6f0;
+            background:
+                radial-gradient(
+                    circle at center,
+                    #fff5f8 0%,
+                    #ffe6f0 60%,
+                    #ffd6e5 100%
+                );
 
             z-index: 9999;
         }
 
+
         #countdown {
+
             direction: rtl;
-            font-size: 45px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            width: 100%;
+
+            padding: 20px;
+        }
+
+
+        /* هر بخش */
+
+        .count-item {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        /* باکس عدد */
+
+        .count-box {
+
+            width: 75px;
+
+            height: 90px;
+
+            background:
+                rgba(255, 255, 255, 0.75);
+
+            border-radius: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            box-shadow:
+                0 10px 30px
+                rgba(233, 30, 99, 0.15);
+
+            backdrop-filter: blur(10px);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.8);
+
+            animation:
+                glow 2s ease-in-out infinite;
+        }
+
+
+        .count-box span {
+
+            font-size: 35px;
+
             font-weight: bold;
+
             color: #e91e63;
+        }
+
+
+        /* اسم زیر هر عدد */
+
+        .count-item small {
+
+            color: #ad1457;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* انیمیشن باکس */
+
+        @keyframes glow {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-5px);
+
+            }
+
         }
 
 
@@ -52,43 +174,61 @@
         ========================= */
 
         #mainContent {
+
             display: none;
         }
 
+
         h1 {
+
             color: #e91e63;
+
             font-size: 35px;
         }
 
+
         h2 {
+
             color: #ad1457;
         }
 
+
         p {
+
             color: #444;
+
             font-size: 18px;
+
             line-height: 1.8;
         }
 
+
         .card {
+
             background: white;
 
             width: 85%;
+
             max-width: 500px;
 
             margin: 50px auto;
+
             padding: 30px;
 
             border-radius: 25px;
 
             box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.15);
+                0 10px 30px
+                rgba(0, 0, 0, 0.15);
         }
 
 
-        /* قلب‌های شناور */
+        /* =========================
+           قلب‌های شناور
+        ========================= */
 
         .heart {
+
             position: fixed;
 
             bottom: -50px;
@@ -97,24 +237,35 @@
 
             animation:
                 float 5s linear infinite;
+
+            pointer-events: none;
         }
+
 
         @keyframes float {
 
             0% {
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
+
                 opacity: 1;
             }
 
             100% {
-                transform: translateY(-100vh);
+
+                transform:
+                    translateY(-100vh);
+
                 opacity: 0;
             }
 
         }
 
 
-        /* قلب‌های ریخته‌شونده */
+        /* =========================
+           قلب‌های ریختنی
+        ========================= */
 
         .falling-heart {
 
@@ -132,9 +283,11 @@
             pointer-events: none;
         }
 
+
         @keyframes fall {
 
             0% {
+
                 transform:
                     translateY(0)
                     rotate(0deg);
@@ -143,6 +296,7 @@
             }
 
             100% {
+
                 transform:
                     translateY(110vh)
                     rotate(360deg);
@@ -153,7 +307,9 @@
         }
 
 
-        /* دکمه */
+        /* =========================
+           دکمه
+        ========================= */
 
         button {
 
@@ -172,26 +328,78 @@
             cursor: pointer;
 
             margin-top: 20px;
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
         }
+
 
         button:active {
 
-            transform: scale(0.95);
-
+            transform:
+                scale(0.95);
         }
 
 
-        /* ویس */
+        button:hover {
+
+            box-shadow:
+                0 8px 20px
+                rgba(233, 30, 99, 0.3);
+        }
+
+
+        /* =========================
+           ویس
+        ========================= */
 
         #audioBox {
 
             margin-top: 25px;
-
         }
+
 
         audio {
 
             width: 100%;
+        }
+
+
+        /* =========================
+           موبایل
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            #countdown {
+
+                gap: 6px;
+
+                padding: 10px;
+            }
+
+
+            .count-box {
+
+                width: 65px;
+
+                height: 80px;
+
+                border-radius: 17px;
+            }
+
+
+            .count-box span {
+
+                font-size: 30px;
+            }
+
+
+            .count-item small {
+
+                font-size: 12px;
+            }
 
         }
 
@@ -209,8 +417,81 @@
 
     <div id="countdownScreen">
 
+
         <div id="countdown">
-            ۰۰:۰۰:۰۰:۰۰
+
+
+            <div class="count-item">
+
+                <div class="count-box">
+
+                    <span id="days">
+                        ۰۰
+                    </span>
+
+                </div>
+
+                <small>
+                    روز
+                </small>
+
+            </div>
+
+
+
+            <div class="count-item">
+
+                <div class="count-box">
+
+                    <span id="hours">
+                        ۰۰
+                    </span>
+
+                </div>
+
+                <small>
+                    ساعت
+                </small>
+
+            </div>
+
+
+
+            <div class="count-item">
+
+                <div class="count-box">
+
+                    <span id="minutes">
+                        ۰۰
+                    </span>
+
+                </div>
+
+                <small>
+                    دقیقه
+                </small>
+
+            </div>
+
+
+
+            <div class="count-item">
+
+                <div class="count-box">
+
+                    <span id="seconds">
+                        ۰۰
+                    </span>
+
+                </div>
+
+                <small>
+                    ثانیه
+                </small>
+
+            </div>
+
+
         </div>
 
     </div>
@@ -226,10 +507,22 @@
 
         <!-- قلب‌های اولیه -->
 
-        <div class="heart">❤️</div>
-        <div class="heart">💗</div>
-        <div class="heart">💕</div>
-        <div class="heart">💖</div>
+        <div class="heart">
+            ❤️
+        </div>
+
+        <div class="heart">
+            💗
+        </div>
+
+        <div class="heart">
+            💕
+        </div>
+
+        <div class="heart">
+            💖
+        </div>
+
 
 
         <div class="card">
@@ -248,9 +541,11 @@
             <p>
 
                 امروز فقط یک روز معمولی نیست؛
+
                 <br>
 
-                روزیه که بهترین آدم زندگیم به دنیا اومد. ❤️
+                روزیه که بهترین آدم زندگیم
+                به دنیا اومد. ❤️
 
             </p>
 
@@ -260,20 +555,23 @@
 
             <div id="audioBox">
 
+
                 <p>
                     اینم چیزی که برای تو گذاشتم ❤️🎧
                 </p>
+
 
                 <audio
                     controls
                     src="melina_015318048.mp3">
                 </audio>
 
+
             </div>
 
 
 
-            <!-- دکمه -->
+            <!-- دکمه قلب‌ها -->
 
             <button onclick="surprise()">
 
@@ -291,21 +589,49 @@
     <script>
 
 
-        /* =================================
-           تاریخ تولد
-           
+        /* =========================
+           تاریخ تولد ملینا
+
            ۲۹ مهر ۱۴۰۵
            ساعت ۰۰:۰۰
-        ================================= */
+        ========================= */
+
 
         const targetDate =
-            new Date("2026-10-21T00:00:00+03:30").getTime();
+            new Date(
+                "2026-10-21T00:00:00+03:30"
+            ).getTime();
 
 
 
-        /* =================================
+        /* =========================
+           تبدیل عدد به فارسی
+        ========================= */
+
+        function persian(number) {
+
+            return String(number)
+
+                .padStart(2, "0")
+
+                .replace(
+                    /\d/g,
+
+                    function (digit) {
+
+                        return
+                            "۰۱۲۳۴۵۶۷۸۹"[digit];
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================
            شمارش معکوس
-        ================================= */
+        ========================= */
 
         function updateCountdown() {
 
@@ -319,18 +645,22 @@
 
 
 
-            /* اگر زمان تمام شده باشد */
+            /* زمان تمام شده */
 
             if (distance <= 0) {
 
 
                 document
-                    .getElementById("countdownScreen")
+                    .getElementById(
+                        "countdownScreen"
+                    )
                     .style.display = "none";
 
 
                 document
-                    .getElementById("mainContent")
+                    .getElementById(
+                        "mainContent"
+                    )
                     .style.display = "block";
 
 
@@ -340,7 +670,7 @@
 
 
 
-            /* محاسبه زمان */
+            /* روز */
 
             const days =
                 Math.floor(
@@ -349,72 +679,73 @@
                 );
 
 
+
+            /* ساعت */
+
             const hours =
                 Math.floor(
-                    (distance %
-                    (1000 * 60 * 60 * 24)) /
+                    (
+                        distance %
+                        (1000 * 60 * 60 * 24)
+                    )
+                    /
                     (1000 * 60 * 60)
                 );
 
 
+
+            /* دقیقه */
+
             const minutes =
                 Math.floor(
-                    (distance %
-                    (1000 * 60 * 60)) /
+                    (
+                        distance %
+                        (1000 * 60 * 60)
+                    )
+                    /
                     (1000 * 60)
                 );
 
 
+
+            /* ثانیه */
+
             const seconds =
                 Math.floor(
-                    (distance %
-                    (1000 * 60)) /
+                    (
+                        distance %
+                        (1000 * 60)
+                    )
+                    /
                     1000
                 );
 
 
 
-            /* ساخت عدد دو رقمی */
-
-            function twoDigit(number) {
-
-                return String(number)
-                    .padStart(2, "0");
-
-            }
-
-
-
             /* نمایش */
 
-            const result =
-
-                twoDigit(days) +
-                ":" +
-                twoDigit(hours) +
-                ":" +
-                twoDigit(minutes) +
-                ":" +
-                twoDigit(seconds);
-
-
-
-            /* تبدیل اعداد انگلیسی به فارسی */
-
-            const persianNumber =
-                result.replace(
-                    /\d/g,
-                    function (digit) {
-
-                        return "۰۱۲۳۴۵۶۷۸۹"[digit];
-
-                    }
-                );
+            document
+                .getElementById("days")
+                .innerText =
+                persian(days);
 
 
             document
-                .getElementById("countdown")
-                .innerText = persianNumber;
+                .getElementById("hours")
+                .innerText =
+                persian(hours);
+
+
+            document
+                .getElementById("minutes")
+                .innerText =
+                persian(minutes);
+
+
+            document
+                .getElementById("seconds")
+                .innerText =
+                persian(seconds);
 
         }
 
@@ -425,19 +756,19 @@
         updateCountdown();
 
 
-        /* هر یک ثانیه آپدیت */
 
-        const countdownInterval =
-            setInterval(
-                updateCountdown,
-                1000
-            );
+        /* آپدیت هر ثانیه */
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
 
 
 
-        /* =================================
-           سورپرایز قلب‌ها
-        ================================= */
+        /* =========================
+           ریختن قلب‌ها
+        ========================= */
 
         function surprise() {
 
@@ -450,10 +781,13 @@
 
 
                 let heart =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
 
 
-                heart.innerText = "❤️";
+                heart.innerText =
+                    "❤️";
 
 
                 heart.className =
@@ -461,19 +795,29 @@
 
 
                 heart.style.left =
-                    Math.random() * 100 + "vw";
+                    Math.random() * 100 +
+                    "vw";
 
 
                 heart.style.fontSize =
-                    (20 + Math.random() * 25) + "px";
+                    (
+                        20 +
+                        Math.random() * 25
+                    ) +
+                    "px";
 
 
                 heart.style.animationDuration =
-                    (3 + Math.random() * 3) + "s";
+                    (
+                        3 +
+                        Math.random() * 3
+                    ) +
+                    "s";
 
 
                 heart.style.animationDelay =
-                    Math.random() * 2 + "s";
+                    Math.random() * 2 +
+                    "s";
 
 
                 document
@@ -500,4 +844,4 @@
 
 </body>
 
-    </html>
+                    </html>
