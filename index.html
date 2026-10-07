@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>تولد ملینا ❤️</title>
+<title>برای ملینا ❤️</title>
 
 <style>
 
@@ -23,7 +23,7 @@ body {
 
 
 /* =========================
-   صفحه شمارش
+   شمارش معکوس
 ========================= */
 
 #countdownScreen {
@@ -38,15 +38,31 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: #ffe6f0;
+    background:
+        radial-gradient(circle at center, #fff5f9, #ffe0ec);
 
     z-index: 9999;
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+
+#countdownScreen.hide {
+
+    opacity: 0;
+
+    transform: scale(1.5);
+
+    pointer-events: none;
 }
 
 
 #countdown {
 
     display: flex;
+
     direction: rtl;
 
     justify-content: center;
@@ -55,8 +71,6 @@ body {
     gap: 10px;
 }
 
-
-/* هر قسمت */
 
 .count-item {
 
@@ -70,8 +84,6 @@ body {
 }
 
 
-/* باکس عدد */
-
 .count-box {
 
     width: 75px;
@@ -82,13 +94,12 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: white;
+    background: rgba(255,255,255,0.9);
 
     border-radius: 20px;
 
     box-shadow:
-        0 10px 30px
-        rgba(233, 30, 99, 0.15);
+        0 10px 35px rgba(233,30,99,0.18);
 
     animation:
         floating 2s ease-in-out infinite;
@@ -105,8 +116,6 @@ body {
 }
 
 
-/* اسم زیر عدد */
-
 .count-item small {
 
     color: #ad1457;
@@ -117,8 +126,6 @@ body {
 }
 
 
-/* انیمیشن */
-
 @keyframes floating {
 
     0%, 100% {
@@ -126,52 +133,126 @@ body {
     }
 
     50% {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
     }
 
 }
 
 
 /* =========================
-   محتوای تولد
+   صفحه اصلی
 ========================= */
 
 #mainContent {
+
     display: none;
+
+    min-height: 100vh;
+
+    padding-top: 30px;
+
+    animation:
+        pageAppear 2s ease forwards;
+}
+
+
+@keyframes pageAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
 }
 
 
 .card {
 
-    background: white;
+    position: relative;
 
-    width: 85%;
+    background: rgba(255,255,255,0.96);
+
+    width: 88%;
+
     max-width: 500px;
 
-    margin: 50px auto;
+    margin: 40px auto;
 
-    padding: 30px;
+    padding: 35px 25px;
 
-    border-radius: 25px;
+    border-radius: 30px;
 
     box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, 0.15);
+        0 15px 50px rgba(0,0,0,0.15);
+
+    overflow: hidden;
+}
+
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: #ffd1e1;
+
+    border-radius: 50%;
+
+    top: -100px;
+    left: -80px;
+
+    opacity: 0.5;
 }
 
 
 h1 {
+
     color: #e91e63;
+
     font-size: 35px;
+
+    margin-bottom: 15px;
+
+    animation:
+        titleAppear 2s ease 1s both;
+}
+
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 
 h2 {
+
     color: #ad1457;
+
+    animation:
+        titleAppear 2s ease 1.5s both;
 }
 
 
 p {
+
     color: #444;
 
     font-size: 18px;
@@ -181,7 +262,76 @@ p {
 
 
 /* =========================
-   قلب‌ها
+   ویس
+========================= */
+
+#audioBox {
+
+    margin-top: 25px;
+
+    animation:
+        titleAppear 2s ease 2s both;
+}
+
+
+audio {
+
+    width: 100%;
+}
+
+
+/* =========================
+   دکمه
+========================= */
+
+button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e91e63,
+            #ff4f91
+        );
+
+    color: white;
+
+    border: none;
+
+    padding: 16px 28px;
+
+    border-radius: 35px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(233,30,99,0.3);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+button:active {
+
+    transform: scale(0.92);
+
+}
+
+
+button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =========================
+   قلب‌های شناور
 ========================= */
 
 .heart {
@@ -193,41 +343,59 @@ p {
     font-size: 25px;
 
     animation:
-        floatHeart 5s linear infinite;
+        floatHeart 6s linear infinite;
 
     pointer-events: none;
+
+    z-index: 1;
 }
 
 
 @keyframes floatHeart {
 
     0% {
-        transform: translateY(0);
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    15% {
         opacity: 1;
     }
 
     100% {
-        transform: translateY(-100vh);
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
         opacity: 0;
+
     }
 
 }
 
 
-/* قلب‌های سورپرایز */
+/* =========================
+   بارش قلب
+========================= */
 
 .falling-heart {
 
     position: fixed;
 
-    top: -50px;
+    top: -60px;
 
     font-size: 30px;
 
     animation:
         fallHeart 4s linear forwards;
 
-    z-index: 999;
+    z-index: 9999;
 
     pointer-events: none;
 }
@@ -236,64 +404,113 @@ p {
 @keyframes fallHeart {
 
     0% {
+
         transform:
             translateY(0)
-            rotate(0deg);
+            rotate(0deg)
+            scale(0.5);
+
+        opacity: 0;
+
+    }
+
+    10% {
 
         opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(20deg)
+            scale(1);
+
     }
 
     100% {
+
         transform:
-            translateY(110vh)
-            rotate(360deg);
+            translateY(115vh)
+            rotate(360deg)
+            scale(1.2);
 
         opacity: 0;
+
     }
 
 }
 
 
 /* =========================
-   دکمه
+   قلب هنگام لمس صفحه
 ========================= */
 
-button {
+.tap-heart {
 
-    background: #e91e63;
+    position: fixed;
 
-    color: white;
+    font-size: 25px;
 
-    border: none;
+    pointer-events: none;
 
-    padding: 15px 25px;
+    z-index: 10000;
 
-    border-radius: 30px;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    margin-top: 20px;
+    animation:
+        tapHeart 1s ease-out forwards;
 }
 
 
-button:active {
-    transform: scale(0.95);
+@keyframes tapHeart {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.3);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.5);
+
+        opacity: 0;
+
+    }
+
 }
 
 
 /* =========================
-   ویس
+   متن کوچک پایین
 ========================= */
 
-#audioBox {
+.love-note {
+
     margin-top: 25px;
+
+    color: #c2185b;
+
+    font-size: 15px;
+
+    opacity: 0;
+
+    animation:
+        fadeIn 2s ease 3s forwards;
 }
 
 
-audio {
-    width: 100%;
+@keyframes fadeIn {
+
+    to {
+        opacity: 1;
+    }
+
 }
 
 
@@ -304,20 +521,35 @@ audio {
 @media (max-width: 400px) {
 
     #countdown {
-        gap: 6px;
+
+        gap: 5px;
+
     }
 
     .count-box {
+
         width: 65px;
+
         height: 80px;
+
     }
 
     .count-box span {
-        font-size: 29px;
+
+        font-size: 28px;
+
     }
 
     .count-item small {
-        font-size: 12px;
+
+        font-size: 11px;
+
+    }
+
+    h1 {
+
+        font-size: 30px;
+
     }
 
 }
@@ -331,13 +563,12 @@ audio {
 
 
 <!-- =========================
-     شمارش معکوس
+     صفحه شمارش
 ========================= -->
 
 <div id="countdownScreen">
 
     <div id="countdown">
-
 
         <div class="count-item">
 
@@ -382,7 +613,6 @@ audio {
 
         </div>
 
-
     </div>
 
 </div>
@@ -390,7 +620,7 @@ audio {
 
 
 <!-- =========================
-     محتوای تولد
+     صفحه تولد
 ========================= -->
 
 <div id="mainContent">
@@ -404,14 +634,13 @@ audio {
 
     <div class="card">
 
-
         <h1>
             تولدت مبارک ملینا ❤️
         </h1>
 
 
         <h2>
-            تو قشنگ ترین اتفاق زندگی منی
+            تو قشنگ‌ترین اتفاق زندگی منی
         </h2>
 
 
@@ -448,6 +677,14 @@ audio {
         </button>
 
 
+        <div class="love-note">
+
+            بعضی آدما فقط وارد زندگی آدم نمی‌شن...
+            <br>
+            تبدیل می‌شن به قشنگ‌ترین قسمتِ زندگی. ❤️
+
+        </div>
+
     </div>
 
 </div>
@@ -458,8 +695,8 @@ audio {
 
 
 /* =========================
+   تاریخ تولد
    ۲۹ مهر ۱۴۰۵
-   ساعت ۰۰:۰۰
 ========================= */
 
 const targetDate =
@@ -467,6 +704,8 @@ const targetDate =
         "2026-10-21T00:00:00+03:30"
     ).getTime();
 
+
+let birthdayOpened = false;
 
 
 /* =========================
@@ -483,25 +722,14 @@ function updateCountdown() {
         targetDate - now;
 
 
-    /* وقتی زمان تمام شد */
-
     if (distance <= 0) {
 
-        document
-            .getElementById("countdownScreen")
-            .style.display = "none";
-
-
-        document
-            .getElementById("mainContent")
-            .style.display = "block";
-
+        openBirthday();
 
         return;
+
     }
 
-
-    /* محاسبه زمان */
 
     const days =
         Math.floor(
@@ -540,8 +768,6 @@ function updateCountdown() {
         );
 
 
-    /* نمایش اعداد */
-
     document.getElementById("days").textContent =
         String(days).padStart(2, "0");
 
@@ -560,80 +786,267 @@ function updateCountdown() {
 }
 
 
-/* اجرای اولیه */
+/* =========================
+   باز شدن سورپرایز
+========================= */
 
-updateCountdown();
+function openBirthday() {
+
+    if (birthdayOpened)
+        return;
 
 
-/* آپدیت هر ثانیه */
+    birthdayOpened = true;
 
-setInterval(
-    updateCountdown,
-    1000
-);
 
+    const screen =
+        document.getElementById(
+            "countdownScreen"
+        );
+
+
+    screen.classList.add("hide");
+
+
+    setTimeout(function() {
+
+        screen.style.display = "none";
+
+
+        document.getElementById(
+            "mainContent"
+        ).style.display = "block";
+
+
+        massiveHearts();
+
+    }, 1300);
+
+}
 
 
 /* =========================
-   قلب‌های سورپرایز
+   بارش بزرگ قلب‌ها
+========================= */
+
+function massiveHearts() {
+
+    for (
+        let i = 0;
+        i < 100;
+        i++
+    ) {
+
+        setTimeout(function() {
+
+            const heart =
+                document.createElement("div");
+
+
+            const hearts = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖",
+                "💓",
+                "💘"
+            ];
+
+
+            heart.textContent =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+
+            heart.className =
+                "falling-heart";
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.fontSize =
+                (
+                    20 +
+                    Math.random() * 30
+                ) + "px";
+
+
+            heart.style.animationDuration =
+                (
+                    3 +
+                    Math.random() * 3
+                ) + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(function() {
+
+                heart.remove();
+
+            }, 7000);
+
+
+        }, i * 35);
+
+    }
+
+}
+
+
+/* =========================
+   سورپرایز دکمه
 ========================= */
 
 function surprise() {
 
     for (
         let i = 0;
-        i < 60;
+        i < 80;
         i++
     ) {
+
+        setTimeout(function() {
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.textContent = "❤️";
+
+
+            heart.className =
+                "falling-heart";
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.fontSize =
+                (
+                    20 +
+                    Math.random() * 30
+                ) + "px";
+
+
+            heart.style.animationDuration =
+                (
+                    3 +
+                    Math.random() * 3
+                ) + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(function() {
+
+                heart.remove();
+
+            }, 7000);
+
+
+        }, i * 25);
+
+    }
+
+}
+
+
+/* =========================
+   قلب با لمس صفحه
+========================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (!birthdayOpened)
+            return;
+
+
+        if (
+            event.target.tagName === "BUTTON" ||
+            event.target.tagName === "AUDIO"
+        )
+            return;
+
 
         const heart =
             document.createElement("div");
 
 
-        heart.textContent = "❤️";
+        heart.textContent =
+            "❤️";
 
 
         heart.className =
-            "falling-heart";
+            "tap-heart";
 
 
         heart.style.left =
-            Math.random() * 100 + "vw";
+            event.clientX + "px";
 
 
-        heart.style.fontSize =
+        heart.style.top =
+            event.clientY + "px";
+
+
+        heart.style.setProperty(
+            "--x",
             (
-                20 +
-                Math.random() * 25
-            ) + "px";
-
-
-        heart.style.animationDuration =
-            (
-                3 +
-                Math.random() * 3
-            ) + "s";
-
-
-        heart.style.animationDelay =
-            Math.random() * 2 + "s";
-
-
-        document.body.appendChild(heart);
-
-
-        setTimeout(
-            function() {
-
-                heart.remove();
-
-            },
-            7000
+                Math.random() * 100 - 50
+            ) + "px"
         );
 
-    }
 
-}
+        heart.style.setProperty(
+            "--y",
+            (
+                -80 -
+                Math.random() * 80
+            ) + "px"
+        );
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, 1000);
+
+    }
+);
+
+
+/* =========================
+   اجرای اولیه
+========================= */
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
 
 </script>
 
