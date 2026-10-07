@@ -3,38 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>تولد ملینا ❤️</title>
 
 <style>
+
+/* =========================
+   تنظیمات پایه
+========================= */
 
 *{
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
     margin:0;
     padding:0;
 }
 
 body{
     font-family:Tahoma,Arial,sans-serif;
+
     background:
-        radial-gradient(circle at 50% 20%,#fff5fa,#ffdbea 45%,#ffc7dc);
+        radial-gradient(
+            circle at 50% 15%,
+            #fff8fb 0%,
+            #ffe3ef 45%,
+            #ffc9dd 100%
+        );
+
     color:#5b1733;
+
     overflow-x:hidden;
 }
+
 
 /* =========================
    شمارش معکوس
 ========================= */
 
 #countdownScreen{
+
     min-height:100vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
+
     padding:20px;
+
     position:relative;
     z-index:10;
 
@@ -45,28 +65,44 @@ body{
 }
 
 .countdown-wrap{
-    animation:countdownAppear 1.2s ease;
+
+    animation:
+        countdownAppear 1.2s ease;
 }
 
 .countdown-title{
+
     font-size:25px;
+
     margin-bottom:25px;
+
     color:#8e1748;
 }
 
 .countdown-boxes{
+
     display:flex;
+
     direction:ltr;
+
     justify-content:center;
+
     gap:10px;
+
     flex-wrap:wrap;
 }
 
 .count-box{
+
     width:78px;
+
     min-height:88px;
-    background:rgba(255,255,255,.88);
+
+    background:
+        rgba(255,255,255,.90);
+
     border-radius:18px;
+
     padding:12px 5px;
 
     box-shadow:
@@ -75,14 +111,20 @@ body{
 }
 
 .count-number{
+
     font-size:27px;
+
     font-weight:bold;
+
     color:#d51d65;
 }
 
 .count-label{
+
     margin-top:7px;
+
     font-size:12px;
+
     color:#8b4963;
 }
 
@@ -92,25 +134,35 @@ body{
 ========================= */
 
 #cinematicFlash{
+
     position:fixed;
+
     inset:0;
+
     background:white;
+
     z-index:20000;
+
     opacity:0;
+
     pointer-events:none;
 }
 
 #cinematicFlash.active{
-    animation:cinematicFlash .9s ease forwards;
+
+    animation:
+        cinematicFlash .9s ease forwards;
 }
 
 
 /* =========================
-   صفحه تاریک
+   تاریکی سینمایی
 ========================= */
 
 #cinematicDark{
+
     position:fixed;
+
     inset:0;
 
     background:
@@ -122,12 +174,16 @@ body{
         );
 
     z-index:19999;
+
     opacity:0;
+
     pointer-events:none;
 }
 
 #cinematicDark.active{
-    animation:darkCinema 2.2s ease forwards;
+
+    animation:
+        darkCinema 2.2s ease forwards;
 }
 
 
@@ -136,29 +192,40 @@ body{
 ========================= */
 
 #cinematicMessage{
+
     position:fixed;
+
     inset:0;
+
     z-index:20001;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     text-align:center;
+
     pointer-events:none;
 
     opacity:0;
+
     padding:25px;
 }
 
 .cinematic-inner{
+
     transform:scale(.65);
+
     opacity:0;
 }
 
 .cinematic-main{
+
     color:white;
+
     font-size:42px;
+
     font-weight:bold;
 
     text-shadow:
@@ -168,13 +235,18 @@ body{
 }
 
 .cinematic-sub{
+
     color:#ffd5e7;
+
     font-size:20px;
+
     margin-top:18px;
 }
 
 #cinematicMessage.show{
-    animation:cinematicMessage 2.7s ease forwards;
+
+    animation:
+        cinematicMessage 2.7s ease forwards;
 }
 
 
@@ -183,24 +255,39 @@ body{
 ========================= */
 
 #mainContent{
+
     display:none;
-    padding:35px 15px 60px;
+
+    padding:
+        35px
+        15px
+        60px;
+
     position:relative;
+
     z-index:2;
 }
 
 #mainContent.reveal{
-    animation:mainReveal 1.7s ease forwards;
+
+    animation:
+        mainReveal 1.7s ease forwards;
 }
 
 .card{
+
     width:min(720px,100%);
+
     margin:auto;
 
-    background:rgba(255,255,255,.90);
+    background:
+        rgba(255,255,255,.92);
 
     border-radius:28px;
-    padding:30px 18px;
+
+    padding:
+        30px
+        18px;
 
     text-align:center;
 
@@ -212,104 +299,292 @@ body{
 }
 
 h1{
+
     font-size:31px;
+
     color:#d31660;
-    margin:0 0 12px;
-    animation:titleIn 1.3s ease;
+
+    margin:
+        0
+        0
+        12px;
+
+    animation:
+        titleIn 1.3s ease;
 }
 
 h2{
+
     font-size:20px;
+
     color:#8f2450;
-    margin:0 0 15px;
-    animation:titleIn 1.7s ease;
+
+    margin:
+        0
+        0
+        15px;
+
+    animation:
+        titleIn 1.7s ease;
 }
 
 .message{
+
     font-size:16px;
+
     line-height:2;
+
     margin-bottom:22px;
-    animation:titleIn 2s ease;
+
+    animation:
+        titleIn 2s ease;
 }
 
 .section-title{
-    margin:35px 0 18px;
+
+    margin:
+        35px
+        0
+        18px;
+
     font-size:21px;
+
     color:#b31557;
 }
 
 
-/* =========================
-   ویترین سه‌بعدی
-========================= */
+/* =================================================
+   ویترین عکس‌ها
+   نسخه پایدار برای موبایل
+================================================= */
 
 .showcase{
+
     width:100%;
+
     height:330px;
 
     position:relative;
-    perspective:1200px;
 
-    margin:10px auto 25px;
+    margin:
+        10px
+        auto
+        25px;
 
     overflow:hidden;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,240,247,.35),
+            rgba(255,220,235,.25)
+        );
 }
+
+
+/* ظرف عکس‌ها */
 
 .carousel{
-    position:absolute;
+
+    position:relative;
 
     width:100%;
+
     height:100%;
-
-    left:0;
-    top:0;
-
-    transform-style:preserve-3d;
 }
 
+
+/* هر عکس */
+
 .photo{
+
     position:absolute;
 
     width:190px;
+
     height:245px;
 
     left:50%;
+
     top:50%;
 
-    transform-style:preserve-3d;
+    transform:
+        translate(-50%,-50%)
+        scale(.72);
 
     border-radius:22px;
+
     overflow:hidden;
 
     background:white;
 
     box-shadow:
-        0 15px 35px rgba(80,10,40,.25);
+        0 15px 35px
+        rgba(80,10,40,.25);
+
+    opacity:0;
+
+    z-index:1;
 
     transition:
-        transform 1s cubic-bezier(.2,.8,.2,1),
-        opacity 1s ease,
-        filter 1s ease;
+        transform .8s cubic-bezier(.2,.8,.2,1),
+        opacity .8s ease,
+        filter .8s ease;
 
-    will-change:transform,opacity;
+    pointer-events:none;
 }
 
-.photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
 
-.photo.center{
-    z-index:100;
+/* عکس وسط */
+
+.photo.active{
+
+    opacity:1;
+
+    z-index:10;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
     filter:none;
 }
 
+
+/* عکس قبلی */
+
+.photo.previous{
+
+    opacity:.48;
+
+    z-index:5;
+
+    transform:
+        translate(
+            calc(-50% - 135px),
+            -50%
+        )
+        scale(.78)
+        rotateY(12deg);
+
+    filter:
+        brightness(.82)
+        blur(.3px);
+}
+
+
+/* عکس بعدی */
+
+.photo.next{
+
+    opacity:.48;
+
+    z-index:5;
+
+    transform:
+        translate(
+            calc(-50% + 135px),
+            -50%
+        )
+        scale(.78)
+        rotateY(-12deg);
+
+    filter:
+        brightness(.82)
+        blur(.3px);
+}
+
+
+/* عکس‌های دورتر */
+
+.photo.hidden-left{
+
+    opacity:0;
+
+    transform:
+        translate(
+            calc(-50% - 260px),
+            -50%
+        )
+        scale(.55);
+}
+
+.photo.hidden-right{
+
+    opacity:0;
+
+    transform:
+        translate(
+            calc(-50% + 260px),
+            -50%
+        )
+        scale(.55);
+}
+
+
+.photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* نقطه‌های زیر ویترین */
+
+.carousel-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-top:-10px;
+
+    position:relative;
+
+    z-index:20;
+}
+
+.carousel-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#e7a2bb;
+
+    transition:.3s;
+}
+
+.carousel-dot.active{
+
+    width:22px;
+
+    border-radius:10px;
+
+    background:#d51d65;
+}
+
+
 .showcase-hint{
+
     font-size:12px;
+
     color:#9c647b;
-    margin-top:-5px;
+
+    margin-top:12px;
 }
 
 
@@ -318,53 +593,74 @@ h2{
 ========================= */
 
 .chat-gallery{
+
     display:flex;
+
     gap:14px;
 
     overflow-x:auto;
 
-    padding:12px 4px 20px;
+    padding:
+        12px
+        4px
+        20px;
 
     scroll-snap-type:x mandatory;
+
     direction:ltr;
 }
 
 .chat-gallery::-webkit-scrollbar{
+
     height:5px;
 }
 
 .chat-gallery::-webkit-scrollbar-thumb{
+
     background:#e77da7;
+
     border-radius:20px;
 }
 
 .chat-photo{
-    flex:0 0 175px;
+
+    flex:
+        0 0
+        175px;
+
     height:250px;
 
     border-radius:20px;
+
     overflow:hidden;
 
     background:#fff;
 
     box-shadow:
-        0 10px 25px rgba(80,10,40,.16);
+        0 10px 25px
+        rgba(80,10,40,.16);
 
     scroll-snap-align:center;
 
     transform:rotate(-1deg);
 
-    transition:transform .4s ease;
+    transition:
+        transform .4s ease;
 }
 
 .chat-photo:nth-child(even){
+
     transform:rotate(1deg);
 }
 
 .chat-photo img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
+
     display:block;
 }
 
@@ -374,32 +670,12 @@ h2{
 ========================= */
 
 .audio-area{
+
     margin-top:30px;
 }
 
-.love-title{
-    font-size:25px;
-    font-weight:bold;
-    color:#d3135d;
-    margin-bottom:15px;
-    animation:loveAppear .8s ease;
-}
-
-#audioBox{
-    display:none;
-}
-
-#audioBox.show{
-    display:block;
-    animation:surpriseAppear 1s ease;
-}
-
-audio{
-    width:100%;
-    max-width:520px;
-}
-
 #surpriseButton{
+
     border:0;
 
     background:
@@ -411,7 +687,9 @@ audio{
 
     color:white;
 
-    padding:15px 24px;
+    padding:
+        15px
+        24px;
 
     border-radius:50px;
 
@@ -420,41 +698,91 @@ audio{
     cursor:pointer;
 
     box-shadow:
-        0 10px 25px rgba(190,20,85,.25);
+        0 10px 25px
+        rgba(190,20,85,.25);
 
     transition:.25s;
 }
 
 #surpriseButton:active{
+
     transform:scale(.94);
 }
 
+#audioBox{
+
+    display:none;
+}
+
+#audioBox.show{
+
+    display:block;
+
+    animation:
+        surpriseAppear 1s ease;
+}
+
+.love-title{
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    color:#d3135d;
+
+    margin-bottom:15px;
+}
+
+audio{
+
+    width:100%;
+
+    max-width:520px;
+}
+
 .love-note{
+
     margin-top:28px;
+
     font-size:15px;
+
     line-height:2;
+
     color:#74435a;
 }
 
 
 /* =========================
-   قلب‌ها
+   قلب‌های در حال سقوط
 ========================= */
 
 .falling-heart{
+
     position:fixed;
+
     top:-40px;
 
     pointer-events:none;
+
     z-index:9999;
 
-    animation:fallHeart linear forwards;
+    animation:
+        fallHeart
+        linear
+        forwards;
 }
 
+
+/* =========================
+   انفجار قلب
+========================= */
+
 .burst-heart{
+
     position:fixed;
 
     left:50%;
+
     top:50%;
 
     pointer-events:none;
@@ -464,10 +792,19 @@ audio{
     font-size:24px;
 
     animation:
-        heartBurst 1.8s ease-out forwards;
+        heartBurst
+        1.8s
+        ease-out
+        forwards;
 }
 
+
+/* =========================
+   قلب با لمس
+========================= */
+
 .tap-heart{
+
     position:fixed;
 
     pointer-events:none;
@@ -475,7 +812,10 @@ audio{
     z-index:9999;
 
     animation:
-        tapHeart 1s ease forwards;
+        tapHeart
+        1s
+        ease
+        forwards;
 }
 
 
@@ -494,77 +834,87 @@ audio{
         opacity:1;
         transform:scale(1);
     }
-
 }
+
 
 @keyframes mainReveal{
 
     from{
         opacity:0;
-        transform:translateY(35px) scale(.92);
+
+        transform:
+            translateY(35px)
+            scale(.92);
+
         filter:blur(8px);
     }
 
     to{
         opacity:1;
-        transform:translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
+
         filter:blur(0);
     }
-
 }
+
 
 @keyframes titleIn{
 
     from{
         opacity:0;
-        transform:translateY(25px);
+
+        transform:
+            translateY(25px);
     }
 
     to{
         opacity:1;
-        transform:translateY(0);
-    }
 
+        transform:
+            translateY(0);
+    }
 }
 
-@keyframes loveAppear{
-
-    from{
-        opacity:0;
-        transform:scale(.7);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-
-}
 
 @keyframes surpriseAppear{
 
     from{
         opacity:0;
-        transform:scale(.55) translateY(30px);
+
+        transform:
+            scale(.55)
+            translateY(30px);
     }
 
     70%{
-        transform:scale(1.06);
+
+        transform:
+            scale(1.06)
+            translateY(0);
     }
 
     to{
-        opacity:1;
-        transform:scale(1);
-    }
 
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
 }
+
 
 @keyframes fallHeart{
 
     0%{
+
         transform:
             translateY(-50px)
             rotate(0deg);
+
         opacity:0;
     }
 
@@ -573,35 +923,42 @@ audio{
     }
 
     100%{
+
         transform:
             translateY(110vh)
             rotate(360deg);
+
         opacity:0;
     }
-
 }
+
 
 @keyframes tapHeart{
 
     0%{
+
         transform:
             translate(-50%,-50%)
             scale(.5);
+
         opacity:1;
     }
 
     100%{
+
         transform:
             translate(-50%,-150px)
             scale(1.5);
+
         opacity:0;
     }
-
 }
+
 
 @keyframes heartBurst{
 
     0%{
+
         transform:
             translate(-50%,-50%)
             translate(0,0)
@@ -612,6 +969,7 @@ audio{
     }
 
     100%{
+
         transform:
             translate(-50%,-50%)
             translate(var(--x),var(--y))
@@ -620,8 +978,8 @@ audio{
 
         opacity:0;
     }
-
 }
+
 
 @keyframes cinematicFlash{
 
@@ -636,8 +994,8 @@ audio{
     100%{
         opacity:0;
     }
-
 }
+
 
 @keyframes darkCinema{
 
@@ -656,8 +1014,8 @@ audio{
     100%{
         opacity:0;
     }
-
 }
+
 
 @keyframes cinematicMessage{
 
@@ -676,32 +1034,40 @@ audio{
     100%{
         opacity:0;
     }
-
 }
+
 
 @keyframes cinematicTextIn{
 
     0%{
+
         opacity:0;
+
         transform:
             scale(.65)
             translateY(25px);
+
         filter:blur(10px);
     }
 
     60%{
+
         opacity:1;
+
         transform:
             scale(1.05)
             translateY(0);
+
         filter:blur(0);
     }
 
     100%{
-        opacity:1;
-        transform:scale(1);
-    }
 
+        opacity:1;
+
+        transform:
+            scale(1);
+    }
 }
 
 
@@ -712,44 +1078,77 @@ audio{
 @media(max-width:500px){
 
     .count-box{
+
         width:70px;
+
         min-height:82px;
     }
 
     .count-number{
+
         font-size:24px;
     }
 
     h1{
+
         font-size:27px;
     }
 
     h2{
+
         font-size:18px;
     }
 
     .showcase{
-        height:290px;
+
+        height:300px;
     }
 
     .photo{
+
         width:165px;
+
         height:220px;
     }
 
+    .photo.previous{
+
+        transform:
+            translate(
+                calc(-50% - 105px),
+                -50%
+            )
+            scale(.70)
+            rotateY(12deg);
+    }
+
+    .photo.next{
+
+        transform:
+            translate(
+                calc(-50% + 105px),
+                -50%
+            )
+            scale(.70)
+            rotateY(-12deg);
+    }
+
     .chat-photo{
+
         flex-basis:155px;
+
         height:225px;
     }
 
     .cinematic-main{
+
         font-size:31px;
     }
 
     .cinematic-sub{
+
         font-size:16px;
     }
-
 }
 
 </style>
@@ -774,23 +1173,66 @@ audio{
         <div class="countdown-boxes">
 
             <div class="count-box">
-                <div class="count-number" id="days">00</div>
-                <div class="count-label">روز</div>
+
+                <div
+                    class="count-number"
+                    id="days"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    روز
+                </div>
+
             </div>
 
-            <div class="count-box">
-                <div class="count-number" id="hours">00</div>
-                <div class="count-label">ساعت</div>
-            </div>
 
             <div class="count-box">
-                <div class="count-number" id="minutes">00</div>
-                <div class="count-label">دقیقه</div>
+
+                <div
+                    class="count-number"
+                    id="hours"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    ساعت
+                </div>
+
             </div>
 
+
             <div class="count-box">
-                <div class="count-number" id="seconds">00</div>
-                <div class="count-label">ثانیه</div>
+
+                <div
+                    class="count-number"
+                    id="minutes"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    دقیقه
+                </div>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <div
+                    class="count-number"
+                    id="seconds"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    ثانیه
+                </div>
+
             </div>
 
         </div>
@@ -800,17 +1242,14 @@ audio{
 </section>
 
 
-<!-- فلش -->
+<!-- =========================
+     لایه‌های سینمایی
+========================= -->
 
 <div id="cinematicFlash"></div>
 
-
-<!-- صفحه تاریک -->
-
 <div id="cinematicDark"></div>
 
-
-<!-- پیام سینمایی -->
 
 <div id="cinematicMessage">
 
@@ -857,8 +1296,8 @@ audio{
 
 
         <!-- =========================
-             ویترین
-        ========================== -->
+             ویترین عکس‌ها
+        ========================= -->
 
         <div class="section-title">
 
@@ -869,73 +1308,109 @@ audio{
 
         <div class="showcase">
 
-            <div class="carousel" id="carousel">
+            <div
+                class="carousel"
+                id="carousel"
+            >
 
 
                 <div class="photo">
+
                     <img
                         src="IMG_20250612_000548_702.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="IMG_20250612_000734_748.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="IMG_20251003_133832_283.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="IMG_20251202_222739_103.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="IMG_20251202_222744_662.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="IMG_20251206_005726_582.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="IMG_20251206_010103_231.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="تصویر_۲۰۲۵۰۳۲۲-۲۰۳۷۵۵.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
                 <div class="photo">
+
                     <img
                         src="تصویر_۲۰۲۵۰۳۳۰-۱۵۳۶۴۳.jpg"
-                        alt="ملینا">
+                        alt="ملینا"
+                    >
+
                 </div>
 
 
             </div>
+
+
+            <div
+                class="carousel-dots"
+                id="carouselDots"
+            ></div>
 
         </div>
 
@@ -948,8 +1423,8 @@ audio{
 
 
         <!-- =========================
-             چت‌ها
-        ========================== -->
+             گالری چت
+        ========================= -->
 
         <div class="section-title">
 
@@ -962,58 +1437,82 @@ audio{
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_تلگرام.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_اینستاگرام.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_تلگرام.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۰۷۱۷۱۷-۲۱۳۲۴۲.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
             <div class="chat-photo">
+
                 <img
                     src="تصویر_۲۰۲۵۱۲۱۷-۱۵۳۶۴۲_ChatGPT.jpg"
-                    alt="خاطره">
+                    alt="خاطره"
+                >
+
             </div>
 
 
@@ -1021,8 +1520,8 @@ audio{
 
 
         <!-- =========================
-             موزیک
-        ========================== -->
+             موزیک و سورپرایز
+        ========================= -->
 
         <div class="audio-area">
 
@@ -1046,8 +1545,8 @@ audio{
                 <audio
                     id="loveAudio"
                     controls
-                    src="4_5965547555092699255.mp3">
-                </audio>
+                    src="4_5965547555092699255.mp3"
+                ></audio>
 
             </div>
 
@@ -1068,50 +1567,59 @@ audio{
 </section>
 
 
-
 <script>
 
-
-/* =========================
-   عناصر
-========================= */
+/* =================================================
+   عناصر اصلی
+================================================= */
 
 const countdownScreen =
-    document.getElementById("countdownScreen");
+    document.getElementById(
+        "countdownScreen"
+    );
 
 const mainContent =
-    document.getElementById("mainContent");
+    document.getElementById(
+        "mainContent"
+    );
 
 const cinematicFlash =
-    document.getElementById("cinematicFlash");
+    document.getElementById(
+        "cinematicFlash"
+    );
 
 const cinematicDark =
-    document.getElementById("cinematicDark");
+    document.getElementById(
+        "cinematicDark"
+    );
 
 const cinematicMessage =
-    document.getElementById("cinematicMessage");
+    document.getElementById(
+        "cinematicMessage"
+    );
 
 const cinematicInner =
-    document.querySelector(".cinematic-inner");
+    document.querySelector(
+        ".cinematic-inner"
+    );
 
 
-/* =========================
+/* =================================================
    تاریخ تولد
-========================= */
+================================================= */
 
 const realBirthday =
     new Date(
         "2026-10-21T00:00:00+03:30"
     ).getTime();
 
-
 let targetDate =
     realBirthday;
 
 
-/* =========================
+/* =================================================
    حالت تست
-========================= */
+================================================= */
 
 const testMode =
     new URLSearchParams(
@@ -1122,92 +1630,116 @@ const testMode =
 if(testMode){
 
     targetDate =
-        new Date().getTime() + 5000;
+        new Date().getTime()
+        + 5000;
 
 }
 
 
-/* =========================
+/* =================================================
    بارش قلب
-========================= */
+================================================= */
 
 function massiveHearts(){
 
-    for(let i=0;i<100;i++){
+    for(
+        let i = 0;
+        i < 100;
+        i++
+    ){
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            const heart =
-                document.createElement("div");
+                const heart =
+                    document.createElement(
+                        "div"
+                    );
 
-            heart.className =
-                "falling-heart";
 
-            heart.textContent =
-                [
-                    "❤️",
-                    "💗",
-                    "💖",
-                    "💕",
-                    "💘"
-                ][
-                    Math.floor(
-                        Math.random()*5
+                heart.className =
+                    "falling-heart";
+
+
+                heart.textContent =
+                    [
+                        "❤️",
+                        "💗",
+                        "💖",
+                        "💕",
+                        "💘"
+                    ][
+                        Math.floor(
+                            Math.random()*5
+                        )
+                    ];
+
+
+                heart.style.left =
+                    Math.random()*100
+                    + "vw";
+
+
+                heart.style.fontSize =
+                    (
+                        15 +
+                        Math.random()*22
                     )
-                ];
+                    + "px";
 
 
-            heart.style.left =
-                Math.random()*100 + "vw";
+                heart.style.animationDuration =
+                    (
+                        3 +
+                        Math.random()*4
+                    )
+                    + "s";
 
 
-            heart.style.fontSize =
-                (
-                    15 +
-                    Math.random()*22
-                ) + "px";
+                document.body.appendChild(
+                    heart
+                );
 
 
-            heart.style.animationDuration =
-                (
-                    3 +
-                    Math.random()*4
-                ) + "s";
+                setTimeout(
+                    () => {
+
+                        heart.remove();
+
+                    },
+                    8000
+                );
 
 
-            document.body.appendChild(
-                heart
-            );
-
-
-            setTimeout(() => {
-
-                heart.remove();
-
-            },8000);
-
-
-        },i*35);
+            },
+            i * 35
+        );
 
     }
 
 }
 
 
-/* =========================
-   انفجار قلب‌ها
-========================= */
+/* =================================================
+   انفجار قلب
+================================================= */
 
 function heartExplosion(){
 
-    const hearts =
+    const total =
         55;
 
 
-    for(let i=0;i<hearts;i++){
+    for(
+        let i=0;
+        i<total;
+        i++
+    ){
 
         const heart =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
         heart.className =
@@ -1230,8 +1762,8 @@ function heartExplosion(){
 
 
         const angle =
-            Math.random() *
-            Math.PI * 2;
+            Math.random()
+            * Math.PI * 2;
 
 
         const distance =
@@ -1241,31 +1773,34 @@ function heartExplosion(){
 
         heart.style.setProperty(
             "--x",
-            Math.cos(angle) *
-            distance +
-            "px"
+            Math.cos(angle)
+            * distance
+            + "px"
         );
 
 
         heart.style.setProperty(
             "--y",
-            Math.sin(angle) *
-            distance +
-            "px"
+            Math.sin(angle)
+            * distance
+            + "px"
         );
 
 
         heart.style.setProperty(
             "--r",
             (
-                Math.random()*720-360
-            ) + "deg"
+                Math.random()*720
+                - 360
+            )
+            + "deg"
         );
 
 
         heart.style.animationDelay =
-            Math.random()*.35 +
-            "s";
+            Math.random()
+            * .35
+            + "s";
 
 
         document.body.appendChild(
@@ -1273,33 +1808,91 @@ function heartExplosion(){
         );
 
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            heart.remove();
+                heart.remove();
 
-        },2500);
+            },
+            2500
+        );
 
     }
 
 }
 
 
-/* =========================
-   ویترین سه‌بعدی
-========================= */
+/* =================================================
+   ویترین عکس‌ها
+================================================= */
 
 const photos =
-    document.querySelectorAll(".photo");
+    document.querySelectorAll(
+        ".photo"
+    );
 
-let currentPhoto = 0;
+const dotsContainer =
+    document.getElementById(
+        "carouselDots"
+    );
 
-let carouselStarted = false;
+let currentPhoto =
+    0;
+
+let carouselStarted =
+    false;
 
 
-/*
-   این تابع عمداً از همان اول
-   عکس‌ها را رندر می‌کند.
-*/
+/* =================================================
+   ساخت نقطه‌ها
+================================================= */
+
+function createDots(){
+
+    if(!dotsContainer){
+        return;
+    }
+
+
+    dotsContainer.innerHTML =
+        "";
+
+
+    photos.forEach(
+        (photo,index) => {
+
+            const dot =
+                document.createElement(
+                    "div"
+                );
+
+
+            dot.className =
+                "carousel-dot";
+
+
+            if(index === 0){
+
+                dot.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            dotsContainer.appendChild(
+                dot
+            );
+
+        }
+    );
+
+}
+
+
+/* =================================================
+   رندر ویترین
+================================================= */
 
 function renderCarousel(){
 
@@ -1315,89 +1908,100 @@ function renderCarousel(){
     photos.forEach(
         (photo,index) => {
 
-            let offset =
-                index -
-                currentPhoto;
+            /*
+               همه کلاس‌های قبلی
+               پاک می‌شوند.
+            */
 
-
-            if(offset > total/2){
-                offset -= total;
-            }
-
-
-            if(offset < -total/2){
-                offset += total;
-            }
-
-
-            const abs =
-                Math.abs(offset);
+            photo.classList.remove(
+                "active",
+                "previous",
+                "next",
+                "hidden-left",
+                "hidden-right"
+            );
 
 
             /*
-               فاصله افقی کمتر شده تا
-               روی موبایل عکس‌ها بهتر
-               دیده شوند.
+               عکس فعلی
             */
 
-            const x =
-                offset * 125;
-
-
-            const z =
-                -abs * 75;
-
-
-            const rotateY =
-                offset * -20;
-
-
-            const scale =
-                offset === 0
-                ? 1
-                : Math.max(
-                    .72,
-                    1 - abs*.07
-                );
-
-
-            const opacity =
-                abs > 3
-                ? 0
-                : Math.max(
-                    .28,
-                    1 - abs*.20
-                );
-
-
-            photo.style.transform =
-                `
-                translate(-50%,-50%)
-                translateX(${x}px)
-                translateZ(${z}px)
-                rotateY(${rotateY}deg)
-                scale(${scale})
-                `;
-
-
-            photo.style.opacity =
-                opacity;
-
-
-            photo.style.zIndex =
-                100 - abs;
-
-
-            if(offset === 0){
+            if(
+                index === currentPhoto
+            ){
 
                 photo.classList.add(
-                    "center"
+                    "active"
+                );
+
+                return;
+
+            }
+
+
+            /*
+               عکس قبلی
+            */
+
+            const previousIndex =
+                (
+                    currentPhoto - 1 + total
+                ) % total;
+
+
+            if(
+                index === previousIndex
+            ){
+
+                photo.classList.add(
+                    "previous"
+                );
+
+                return;
+
+            }
+
+
+            /*
+               عکس بعدی
+            */
+
+            const nextIndex =
+                (
+                    currentPhoto + 1
+                ) % total;
+
+
+            if(
+                index === nextIndex
+            ){
+
+                photo.classList.add(
+                    "next"
+                );
+
+                return;
+
+            }
+
+
+            /*
+               بقیه عکس‌ها مخفی
+            */
+
+            if(
+                index <
+                currentPhoto
+            ){
+
+                photo.classList.add(
+                    "hidden-left"
                 );
 
             }else{
 
-                photo.classList.remove(
-                    "center"
+                photo.classList.add(
+                    "hidden-right"
                 );
 
             }
@@ -1405,59 +2009,140 @@ function renderCarousel(){
         }
     );
 
+
+    /*
+       آپدیت نقطه‌ها
+    */
+
+    const dots =
+        document.querySelectorAll(
+            ".carousel-dot"
+        );
+
+
+    dots.forEach(
+        (dot,index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === currentPhoto
+            );
+
+        }
+    );
+
 }
 
 
-/*
-   شروع ویترین فقط یک بار
-*/
-
-let carouselStarted = false;
+/* =================================================
+   شروع ویترین
+================================================= */
 
 function startCarousel(){
+
+    /*
+       جلوگیری از شروع چندباره
+    */
 
     if(carouselStarted){
         return;
     }
 
-    carouselStarted = true;
 
-    // نمایش فوری عکس‌ها
+    carouselStarted =
+        true;
+
+
+    /*
+       ساخت نقطه‌ها
+    */
+
+    createDots();
+
+
+    /*
+       نمایش فوری عکس اول
+    */
+
     renderCarousel();
 
-    // یک بار دیگر بعد از رندر صفحه
-    requestAnimationFrame(() => {
-        renderCarousel();
-    });
 
-    // چرخش خودکار
-    setInterval(() => {
+    /*
+       دوباره بعد از رندر صفحه
+       تا موبایل هم حتماً بگیرد
+    */
 
-        currentPhoto++;
+    requestAnimationFrame(
+        () => {
 
-        if(currentPhoto >= photos.length){
-            currentPhoto = 0;
+            renderCarousel();
+
         }
-
-        renderCarousel();
-
-    },3500);
-    }
+    );
 
 
-/* =========================
+    /*
+       یک رندر اضافه
+       برای اطمینان بیشتر
+    */
+
+    setTimeout(
+        () => {
+
+            renderCarousel();
+
+        },
+        150
+    );
+
+
+    /*
+       چرخش خودکار
+    */
+
+    setInterval(
+        () => {
+
+            currentPhoto++;
+
+
+            if(
+                currentPhoto >=
+                photos.length
+            ){
+
+                currentPhoto =
+                    0;
+
+            }
+
+
+            renderCarousel();
+
+        },
+        3500
+    );
+
+}
+
+
+/* =================================================
    ورود سینمایی
-========================= */
+================================================= */
+
+let cinematicStarted =
+    false;
+
 
 function cinematicOpening(){
 
-    /*
-       جلوگیری از اجرای دوباره
-    */
-
-    if(mainContent.style.display === "block"){
+    if(cinematicStarted){
         return;
     }
+
+
+    cinematicStarted =
+        true;
 
 
     /*
@@ -1467,15 +2152,17 @@ function cinematicOpening(){
     countdownScreen.style.opacity =
         "0";
 
+
     countdownScreen.style.transform =
         "scale(1.25)";
+
 
     countdownScreen.style.filter =
         "blur(10px)";
 
 
     /*
-       فلش
+       فلش سفید
     */
 
     cinematicFlash.classList.add(
@@ -1487,109 +2174,120 @@ function cinematicOpening(){
        تاریکی
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        cinematicDark.classList.add(
-            "active"
-        );
+            cinematicDark.classList.add(
+                "active"
+            );
 
-    },180);
+        },
+        180
+    );
 
 
     /*
        انفجار قلب
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        heartExplosion();
+            heartExplosion();
 
-    },300);
+        },
+        300
+    );
 
 
     /*
-       پیام
+       متن سینمایی
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        cinematicMessage.classList.add(
-            "show"
-        );
+            cinematicMessage.classList.add(
+                "show"
+            );
 
-        cinematicInner.style.animation =
-            "cinematicTextIn 2.2s ease forwards";
 
-    },500);
+            cinematicInner.style.animation =
+                "cinematicTextIn 2.2s ease forwards";
+
+        },
+        500
+    );
 
 
     /*
        نمایش سایت
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        countdownScreen.style.display =
-            "none";
-
-
-        /*
-           اول سایت را نمایش می‌دهیم
-        */
-
-        mainContent.style.display =
-            "block";
+            countdownScreen.style.display =
+                "none";
 
 
-        /*
-           بلافاصله عکس‌ها
-           رندر می‌شوند
-        */
-
-        startCarousel();
+            mainContent.style.display =
+                "block";
 
 
-        /*
-           سپس انیمیشن ورود
-        */
+            /*
+               ویترین را بلافاصله
+               روشن می‌کنیم
+            */
 
-        mainContent.classList.add(
-            "reveal"
-        );
-
-
-        /*
-           بارش قلب
-        */
-
-        massiveHearts();
+            startCarousel();
 
 
-    },2300);
+            /*
+               ورود نرم
+            */
+
+            mainContent.classList.add(
+                "reveal"
+            );
+
+
+            /*
+               بارش قلب
+            */
+
+            massiveHearts();
+
+        },
+        2300
+    );
 
 
     /*
-       پاک شدن لایه سینمایی
+       پاک کردن لایه سینمایی
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        cinematicDark.classList.remove(
-            "active"
-        );
+            cinematicDark.classList.remove(
+                "active"
+            );
 
-        cinematicMessage.classList.remove(
-            "show"
-        );
+            cinematicMessage.classList.remove(
+                "show"
+            );
 
-    },3300);
+        },
+        3300
+    );
 
 }
 
 
-/* =========================
+/* =================================================
    شمارش معکوس
-========================= */
+================================================= */
 
 function updateCountdown(){
 
@@ -1601,29 +2299,39 @@ function updateCountdown(){
         targetDate - now;
 
 
+    /*
+       زمان تمام شده
+    */
+
     if(distance <= 0){
 
         document.getElementById(
             "days"
-        ).textContent = "00";
+        ).textContent =
+            "00";
 
 
         document.getElementById(
             "hours"
-        ).textContent = "00";
+        ).textContent =
+            "00";
 
 
         document.getElementById(
             "minutes"
-        ).textContent = "00";
+        ).textContent =
+            "00";
 
 
         document.getElementById(
             "seconds"
-        ).textContent = "00";
+        ).textContent =
+            "00";
 
 
-        clearInterval(timer);
+        clearInterval(
+            timer
+        );
 
 
         cinematicOpening();
@@ -1637,7 +2345,12 @@ function updateCountdown(){
     const days =
         Math.floor(
             distance /
-            (1000*60*60*24)
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
         );
 
 
@@ -1645,9 +2358,19 @@ function updateCountdown(){
         Math.floor(
             (
                 distance %
-                (1000*60*60*24)
-            ) /
-            (1000*60*60)
+                (
+                    1000 *
+                    60 *
+                    60 *
+                    24
+                )
+            )
+            /
+            (
+                1000 *
+                60 *
+                60
+            )
         );
 
 
@@ -1655,9 +2378,17 @@ function updateCountdown(){
         Math.floor(
             (
                 distance %
-                (1000*60*60)
-            ) /
-            (1000*60)
+                (
+                    1000 *
+                    60 *
+                    60
+                )
+            )
+            /
+            (
+                1000 *
+                60
+            )
         );
 
 
@@ -1665,8 +2396,12 @@ function updateCountdown(){
         Math.floor(
             (
                 distance %
-                (1000*60)
-            ) /
+                (
+                    1000 *
+                    60
+                )
+            )
+            /
             1000
         );
 
@@ -1674,25 +2409,29 @@ function updateCountdown(){
     document.getElementById(
         "days"
     ).textContent =
-        String(days).padStart(2,"0");
+        String(days)
+        .padStart(2,"0");
 
 
     document.getElementById(
         "hours"
     ).textContent =
-        String(hours).padStart(2,"0");
+        String(hours)
+        .padStart(2,"0");
 
 
     document.getElementById(
         "minutes"
     ).textContent =
-        String(minutes).padStart(2,"0");
+        String(minutes)
+        .padStart(2,"0");
 
 
     document.getElementById(
         "seconds"
     ).textContent =
-        String(seconds).padStart(2,"0");
+        String(seconds)
+        .padStart(2,"0");
 
 }
 
@@ -1707,21 +2446,19 @@ const timer =
 updateCountdown();
 
 
-/* =========================
-   سورپرایز موزیک
-========================= */
+/* =================================================
+   دکمه سورپرایز
+================================================= */
 
 const surpriseButton =
     document.getElementById(
         "surpriseButton"
     );
 
-
 const audioBox =
     document.getElementById(
         "audioBox"
     );
-
 
 const loveAudio =
     document.getElementById(
@@ -1733,29 +2470,47 @@ surpriseButton.addEventListener(
     "click",
     () => {
 
+        /*
+           نمایش موزیک
+        */
+
         audioBox.classList.add(
             "show"
         );
 
 
+        /*
+           مخفی شدن دکمه
+        */
+
         surpriseButton.style.display =
             "none";
 
 
+        /*
+           بارش قلب
+        */
+
         massiveHearts();
 
 
-        loveAudio.play().catch(
-            () => {}
-        );
+        /*
+           تلاش برای پخش
+        */
+
+        loveAudio
+            .play()
+            .catch(
+                () => {}
+            );
 
     }
 );
 
 
-/* =========================
+/* =================================================
    قلب با لمس صفحه
-========================= */
+================================================= */
 
 document.addEventListener(
     "click",
@@ -1764,7 +2519,15 @@ document.addEventListener(
         if(
             event.target.closest(
                 "#surpriseButton"
-            ) ||
+            )
+        ){
+
+            return;
+
+        }
+
+
+        if(
             event.target.closest(
                 "audio"
             )
@@ -1800,11 +2563,13 @@ document.addEventListener(
 
 
         heart.style.left =
-            event.clientX + "px";
+            event.clientX
+            + "px";
 
 
         heart.style.top =
-            event.clientY + "px";
+            event.clientY
+            + "px";
 
 
         heart.style.fontSize =
@@ -1816,11 +2581,14 @@ document.addEventListener(
         );
 
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            heart.remove();
+                heart.remove();
 
-        },1000);
+            },
+            1000
+        );
 
     }
 );
