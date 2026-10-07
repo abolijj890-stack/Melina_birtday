@@ -1412,6 +1412,8 @@ function renderCarousel(){
    شروع ویترین فقط یک بار
 */
 
+let carouselStarted = false;
+
 function startCarousel(){
 
     if(carouselStarted){
@@ -1420,53 +1422,27 @@ function startCarousel(){
 
     carouselStarted = true;
 
-
-    /*
-       خیلی مهم:
-       بلافاصله عکس‌ها را رندر می‌کنیم.
-    */
-
+    // نمایش فوری عکس‌ها
     renderCarousel();
 
-
-    /*
-       یک فریم بعد دوباره رندر
-       می‌کنیم تا موبایل حتماً
-       موقعیت را بگیرد.
-    */
-
+    // یک بار دیگر بعد از رندر صفحه
     requestAnimationFrame(() => {
-
         renderCarousel();
-
     });
 
-
-    /*
-       چرخش خودکار
-    */
-
+    // چرخش خودکار
     setInterval(() => {
 
         currentPhoto++;
 
-
-        if(
-            currentPhoto >=
-            photos.length
-        ){
-
+        if(currentPhoto >= photos.length){
             currentPhoto = 0;
-
         }
-
 
         renderCarousel();
 
-
     },3500);
-
-}
+    }
 
 
 /* =========================
