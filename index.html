@@ -7,14 +7,52 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>تولد ملینا ❤️</title>
+    <title>❤️</title>
 
     <style>
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
             background: #ffe6f0;
             text-align: center;
             font-family: sans-serif;
+        }
+
+        /* =========================
+           صفحه شمارش معکوس
+        ========================= */
+
+        #countdownScreen {
+            position: fixed;
+            inset: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #ffe6f0;
+
+            z-index: 9999;
+        }
+
+        #countdown {
+            direction: rtl;
+            font-size: 45px;
+            font-weight: bold;
+            color: #e91e63;
+        }
+
+
+        /* =========================
+           محتوای اصلی
+        ========================= */
+
+        #mainContent {
+            display: none;
         }
 
         h1 {
@@ -34,19 +72,31 @@
 
         .card {
             background: white;
+
             width: 85%;
             max-width: 500px;
+
             margin: 50px auto;
             padding: 30px;
+
             border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.15);
         }
+
+
+        /* قلب‌های شناور */
 
         .heart {
             position: fixed;
+
             bottom: -50px;
+
             font-size: 25px;
-            animation: float 5s linear infinite;
+
+            animation:
+                float 5s linear infinite;
         }
 
         @keyframes float {
@@ -63,118 +113,383 @@
 
         }
 
+
+        /* قلب‌های ریخته‌شونده */
+
         .falling-heart {
+
             position: fixed;
+
             top: -50px;
+
             font-size: 30px;
-            animation: fall 4s linear forwards;
+
+            animation:
+                fall 4s linear forwards;
+
             z-index: 999;
+
             pointer-events: none;
         }
 
         @keyframes fall {
 
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
                 opacity: 1;
             }
 
             100% {
-                transform: translateY(110vh) rotate(360deg);
+                transform:
+                    translateY(110vh)
+                    rotate(360deg);
+
                 opacity: 0;
             }
 
         }
 
+
+        /* دکمه */
+
         button {
+
             background: #e91e63;
+
             color: white;
+
             border: none;
+
             padding: 15px 25px;
+
             border-radius: 30px;
+
             font-size: 18px;
+
             cursor: pointer;
+
             margin-top: 20px;
         }
 
         button:active {
+
             transform: scale(0.95);
+
         }
 
+
+        /* ویس */
+
         #audioBox {
-            display: none;
+
             margin-top: 25px;
+
+        }
+
+        audio {
+
+            width: 100%;
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
-    <div class="heart">❤️</div>
-    <div class="heart">💗</div>
-    <div class="heart">💕</div>
-    <div class="heart">💖</div>
 
-    <div class="card">
+    <!-- =========================
+         شمارش معکوس
+    ========================= -->
 
-        <h1>تولدت مبارک ملینا ❤️</h1>
+    <div id="countdownScreen">
 
-        <h2>تو قشنگ ترین اتفاق زندگی منی</h2>
+        <div id="countdown">
+            ۰۰:۰۰:۰۰:۰۰
+        </div>
 
-        <p>
-            امروز فقط یک روز معمولی نیست؛
-            روزیه که بهترین آدم زندگیم به دنیا اومد.
-        </p>
+    </div>
 
-        <button onclick="surprise()">
-           کلیک کن یه سورپرایز برات دارم ❤️
-        </button>
 
-        <div id="audioBox">
 
-            <p>عاشقتم بچه</p>
+    <!-- =========================
+         محتوای اصلی
+    ========================= -->
 
-            <audio controls src="melina_015318048.mp3"></audio>
+    <div id="mainContent">
+
+
+        <!-- قلب‌های اولیه -->
+
+        <div class="heart">❤️</div>
+        <div class="heart">💗</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+
+
+        <div class="card">
+
+
+            <h1>
+                تولدت مبارک ملینا ❤️
+            </h1>
+
+
+            <h2>
+                تو قشنگ ترین اتفاق زندگی منی
+            </h2>
+
+
+            <p>
+
+                امروز فقط یک روز معمولی نیست؛
+                <br>
+
+                روزیه که بهترین آدم زندگیم به دنیا اومد. ❤️
+
+            </p>
+
+
+
+            <!-- ویس -->
+
+            <div id="audioBox">
+
+                <p>
+                    اینم چیزی که برای تو گذاشتم ❤️🎧
+                </p>
+
+                <audio
+                    controls
+                    src="melina_015318048.mp3">
+                </audio>
+
+            </div>
+
+
+
+            <!-- دکمه -->
+
+            <button onclick="surprise()">
+
+                یه سورپرایز برات دارم ❤️
+
+            </button>
+
 
         </div>
 
     </div>
 
 
+
     <script>
+
+
+        /* =================================
+           تاریخ تولد
+           
+           ۲۹ مهر ۱۴۰۵
+           ساعت ۰۰:۰۰
+        ================================= */
+
+        const targetDate =
+            new Date("2026-10-21T00:00:00+03:30").getTime();
+
+
+
+        /* =================================
+           شمارش معکوس
+        ================================= */
+
+        function updateCountdown() {
+
+
+            const now =
+                new Date().getTime();
+
+
+            const distance =
+                targetDate - now;
+
+
+
+            /* اگر زمان تمام شده باشد */
+
+            if (distance <= 0) {
+
+
+                document
+                    .getElementById("countdownScreen")
+                    .style.display = "none";
+
+
+                document
+                    .getElementById("mainContent")
+                    .style.display = "block";
+
+
+                return;
+
+            }
+
+
+
+            /* محاسبه زمان */
+
+            const days =
+                Math.floor(
+                    distance /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            const hours =
+                Math.floor(
+                    (distance %
+                    (1000 * 60 * 60 * 24)) /
+                    (1000 * 60 * 60)
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (distance %
+                    (1000 * 60 * 60)) /
+                    (1000 * 60)
+                );
+
+
+            const seconds =
+                Math.floor(
+                    (distance %
+                    (1000 * 60)) /
+                    1000
+                );
+
+
+
+            /* ساخت عدد دو رقمی */
+
+            function twoDigit(number) {
+
+                return String(number)
+                    .padStart(2, "0");
+
+            }
+
+
+
+            /* نمایش */
+
+            const result =
+
+                twoDigit(days) +
+                ":" +
+                twoDigit(hours) +
+                ":" +
+                twoDigit(minutes) +
+                ":" +
+                twoDigit(seconds);
+
+
+
+            /* تبدیل اعداد انگلیسی به فارسی */
+
+            const persianNumber =
+                result.replace(
+                    /\d/g,
+                    function (digit) {
+
+                        return "۰۱۲۳۴۵۶۷۸۹"[digit];
+
+                    }
+                );
+
+
+            document
+                .getElementById("countdown")
+                .innerText = persianNumber;
+
+        }
+
+
+
+        /* اجرای اولیه */
+
+        updateCountdown();
+
+
+        /* هر یک ثانیه آپدیت */
+
+        const countdownInterval =
+            setInterval(
+                updateCountdown,
+                1000
+            );
+
+
+
+        /* =================================
+           سورپرایز قلب‌ها
+        ================================= */
 
         function surprise() {
 
-            // نمایش ویس
-            document.getElementById("audioBox").style.display = "block";
 
-            // ریختن قلب‌ها
-            for (let i = 0; i < 60; i++) {
+            for (
+                let i = 0;
+                i < 60;
+                i++
+            ) {
 
-                let heart = document.createElement("div");
+
+                let heart =
+                    document.createElement("div");
+
 
                 heart.innerText = "❤️";
 
-                heart.className = "falling-heart";
 
-                heart.style.left = Math.random() * 100 + "vw";
+                heart.className =
+                    "falling-heart";
+
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
 
                 heart.style.fontSize =
                     (20 + Math.random() * 25) + "px";
 
+
                 heart.style.animationDuration =
                     (3 + Math.random() * 3) + "s";
+
 
                 heart.style.animationDelay =
                     Math.random() * 2 + "s";
 
-                document.body.appendChild(heart);
 
-                setTimeout(function() {
-                    heart.remove();
-                }, 7000);
+                document
+                    .body
+                    .appendChild(heart);
+
+
+
+                setTimeout(
+                    function () {
+
+                        heart.remove();
+
+                    },
+                    7000
+                );
 
             }
 
@@ -182,6 +497,7 @@
 
     </script>
 
+
 </body>
 
-</html>
+    </html>
