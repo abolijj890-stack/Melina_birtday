@@ -114,7 +114,10 @@ h2{
     color:#b31557;
 }
 
-/* ویترین سه بعدی */
+/* =========================
+   ویترین سه بعدی عکس‌ها
+========================= */
+
 .showcase{
     width:100%;
     height:330px;
@@ -168,7 +171,10 @@ h2{
     margin-top:-5px;
 }
 
-/* گالری چت */
+/* =========================
+   گالری چت
+========================= */
+
 .chat-gallery{
     display:flex;
     gap:14px;
@@ -207,7 +213,12 @@ h2{
     width:100%;
     height:100%;
     object-fit:cover;
+    display:block;
 }
+
+/* =========================
+   موزیک و سورپرایز
+========================= */
 
 .audio-area{
     margin-top:30px;
@@ -258,6 +269,10 @@ audio{
     color:#74435a;
 }
 
+/* =========================
+   قلب‌ها
+========================= */
+
 .falling-heart{
     position:fixed;
     top:-40px;
@@ -272,6 +287,10 @@ audio{
     z-index:9999;
     animation:tapHeart 1s ease forwards;
 }
+
+/* =========================
+   انیمیشن‌ها
+========================= */
 
 @keyframes countdownAppear{
     from{
@@ -394,7 +413,10 @@ audio{
 
 <body>
 
-<!-- شمارش معکوس -->
+<!-- =========================
+     شمارش معکوس
+========================= -->
+
 <section id="countdownScreen">
 
     <div class="countdown-wrap">
@@ -432,7 +454,10 @@ audio{
 </section>
 
 
-<!-- محتوای اصلی -->
+<!-- =========================
+     محتوای اصلی
+========================= -->
+
 <section id="mainContent">
 
     <div class="card">
@@ -451,7 +476,10 @@ audio{
         </div>
 
 
-        <!-- ویترین عکس -->
+        <!-- =========================
+             ویترین عکس
+        ========================== -->
+
         <div class="section-title">
             یه گوشه از قشنگی‌های تو ❤️
         </div>
@@ -489,11 +517,11 @@ audio{
                 </div>
 
                 <div class="photo">
-                    <img src="تصویر_۲۰۲۵۰۳۲۲-۲۰۳۷۵۵.jpg">
+                    <img src="Screenshot_۲۰۲۵۰۳۲۲-۲۰۳۷۵۵.jpg">
                 </div>
 
                 <div class="photo">
-                    <img src="تصویر_۲۰۲۵۰۳۳۰-۱۵۳۶۴۳.jpg">
+                    <img src="Screenshot_۲۰۲۵۰۳۳۰-۱۵۳۶۴۳.jpg">
                 </div>
 
             </div>
@@ -505,7 +533,10 @@ audio{
         </div>
 
 
-        <!-- گالری چت -->
+        <!-- =========================
+             گالری چت
+        ========================== -->
+
         <div class="section-title">
             چندتا از خاطره‌هامون 💬❤️
         </div>
@@ -513,41 +544,44 @@ audio{
         <div class="chat-gallery">
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_تلگرام.jpg">
+                <img src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg">
             </div>
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_اینستاگرام.jpg">
+                <img src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg">
             </div>
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_تلگرام.jpg">
+                <img src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg">
             </div>
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg">
+                <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg">
             </div>
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg">
+                <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg">
             </div>
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۰۷۱۷۱۷-۲۱۳۲۴۲.jpg">
+                <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg">
             </div>
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg">
+                <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg">
             </div>
 
             <div class="chat-photo">
-                <img src="تصویر_۲۰۲۵۱۲۱۷-۱۵۳۶۴۲_ChatGPT.jpg">
+                <img src="Screenshot_۲۰۲۵۱۲۱۷-۱۵۳۶۴۲_ChatGPT.jpg">
             </div>
 
         </div>
 
 
-        <!-- آهنگ -->
+        <!-- =========================
+             موزیک
+        ========================== -->
+
         <div class="audio-area">
 
             <button id="surpriseButton">
@@ -560,9 +594,10 @@ audio{
                     عاشقتم بچه ❤️
                 </div>
 
-                <audio id="loveAudio"
-                       controls
-                       src="4_5965547555092699255.mp3">
+                <audio
+                    id="loveAudio"
+                    controls
+                    src="4_5965547555092699255.mp3">
                 </audio>
 
             </div>
@@ -598,7 +633,9 @@ const realBirthday =
 let targetDate = realBirthday;
 
 
-/* حالت تست با ?test=1 */
+/* =========================
+   حالت تست با ?test=1
+========================= */
 
 const testMode =
     new URLSearchParams(
@@ -606,8 +643,10 @@ const testMode =
     ).get("test") === "1";
 
 if(testMode){
+
     targetDate =
         new Date().getTime() + 5000;
+
 }
 
 
@@ -620,9 +659,12 @@ function openBirthday(){
     countdownScreen.style.transition =
         "opacity 1s ease, transform 1s ease";
 
-    countdownScreen.style.opacity = "0";
+    countdownScreen.style.opacity =
+        "0";
+
     countdownScreen.style.transform =
         "scale(1.15)";
+
 
     setTimeout(() => {
 
@@ -637,6 +679,7 @@ function openBirthday(){
         startCarousel();
 
     },1000);
+
 }
 
 
@@ -652,19 +695,20 @@ function updateCountdown(){
     const distance =
         targetDate - now;
 
+
     if(distance <= 0){
 
-        document.getElementById("days").textContent =
-            "00";
+        document.getElementById("days")
+            .textContent = "00";
 
-        document.getElementById("hours").textContent =
-            "00";
+        document.getElementById("hours")
+            .textContent = "00";
 
-        document.getElementById("minutes").textContent =
-            "00";
+        document.getElementById("minutes")
+            .textContent = "00";
 
-        document.getElementById("seconds").textContent =
-            "00";
+        document.getElementById("seconds")
+            .textContent = "00";
 
         clearInterval(timer);
 
@@ -672,6 +716,7 @@ function updateCountdown(){
 
         return;
     }
+
 
     const days =
         Math.floor(
@@ -700,17 +745,23 @@ function updateCountdown(){
             1000
         );
 
-    document.getElementById("days").textContent =
+
+    document.getElementById("days")
+        .textContent =
         String(days).padStart(2,"0");
 
-    document.getElementById("hours").textContent =
+    document.getElementById("hours")
+        .textContent =
         String(hours).padStart(2,"0");
 
-    document.getElementById("minutes").textContent =
+    document.getElementById("minutes")
+        .textContent =
         String(minutes).padStart(2,"0");
 
-    document.getElementById("seconds").textContent =
+    document.getElementById("seconds")
+        .textContent =
         String(seconds).padStart(2,"0");
+
 }
 
 
@@ -752,16 +803,22 @@ function massiveHearts(){
             heart.style.animationDuration =
                 (3 + Math.random()*4) + "s";
 
+
             document.body.appendChild(
                 heart
             );
 
+
             setTimeout(() => {
+
                 heart.remove();
+
             },8000);
 
         },i*35);
+
     }
+
 }
 
 
@@ -774,45 +831,56 @@ const photos =
 
 let currentPhoto = 0;
 
+
 function renderCarousel(){
 
     const total =
         photos.length;
+
 
     photos.forEach((photo,index) => {
 
         let offset =
             index - currentPhoto;
 
+
         if(offset > total/2){
+
             offset -= total;
+
         }
 
+
         if(offset < -total/2){
+
             offset += total;
+
         }
+
 
         const abs =
             Math.abs(offset);
 
-        let x =
+
+        const x =
             offset * 135;
 
-        let z =
+        const z =
             -abs * 80;
 
-        let rotateY =
+        const rotateY =
             offset * -22;
 
-        let scale =
+        const scale =
             offset === 0
             ? 1
             : Math.max(.72,1-abs*.08);
 
-        let opacity =
+        const opacity =
             abs > 3
             ? 0
             : Math.max(.25,1-abs*.22);
+
 
         photo.style.transform =
             `translate(-50%,-50%)
@@ -821,19 +889,27 @@ function renderCarousel(){
              rotateY(${rotateY}deg)
              scale(${scale})`;
 
+
         photo.style.opacity =
             opacity;
+
 
         photo.style.zIndex =
             100 - abs;
 
+
         if(offset === 0){
+
             photo.classList.add("center");
+
         }else{
+
             photo.classList.remove("center");
+
         }
 
     });
+
 }
 
 
@@ -841,17 +917,23 @@ function startCarousel(){
 
     renderCarousel();
 
+
     setInterval(() => {
 
         currentPhoto++;
 
+
         if(currentPhoto >= photos.length){
+
             currentPhoto = 0;
+
         }
+
 
         renderCarousel();
 
     },3500);
+
 }
 
 
@@ -874,6 +956,7 @@ const loveAudio =
         "loveAudio"
     );
 
+
 surpriseButton.addEventListener(
     "click",
     () => {
@@ -882,10 +965,13 @@ surpriseButton.addEventListener(
             "show"
         );
 
+
         surpriseButton.style.display =
             "none";
 
+
         massiveHearts();
+
 
         loveAudio.play().catch(() => {});
 
@@ -909,40 +995,55 @@ document.addEventListener(
                 "audio"
             )
         ){
+
             return;
+
         }
+
 
         if(
             mainContent.style.display !==
             "block"
         ){
+
             return;
+
         }
+
 
         const heart =
             document.createElement("div");
 
+
         heart.className =
             "tap-heart";
+
 
         heart.textContent =
             "❤️";
 
+
         heart.style.left =
             event.clientX + "px";
+
 
         heart.style.top =
             event.clientY + "px";
 
+
         heart.style.fontSize =
             "28px";
+
 
         document.body.appendChild(
             heart
         );
 
+
         setTimeout(() => {
+
             heart.remove();
+
         },1000);
 
     }
@@ -951,4 +1052,4 @@ document.addEventListener(
 </script>
 
 </body>
-           </html>
+                    </html>
