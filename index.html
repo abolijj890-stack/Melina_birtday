@@ -22,9 +22,7 @@ body {
 }
 
 
-/* =========================
-   شمارش معکوس
-========================= */
+/* ===== صفحه شمارش ===== */
 
 #countdownScreen {
 
@@ -39,7 +37,7 @@ body {
     align-items: center;
 
     background:
-        radial-gradient(circle at center, #fff5f9, #ffe0ec);
+        radial-gradient(circle, #fff5f9, #ffe0ec);
 
     z-index: 9999;
 
@@ -94,15 +92,14 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: rgba(255,255,255,0.9);
+    background: white;
 
     border-radius: 20px;
 
     box-shadow:
         0 10px 35px rgba(233,30,99,0.18);
 
-    animation:
-        floating 2s ease-in-out infinite;
+    animation: floating 2s ease-in-out infinite;
 }
 
 
@@ -139,9 +136,7 @@ body {
 }
 
 
-/* =========================
-   صفحه اصلی
-========================= */
+/* ===== صفحه تولد ===== */
 
 #mainContent {
 
@@ -151,8 +146,7 @@ body {
 
     padding-top: 30px;
 
-    animation:
-        pageAppear 2s ease forwards;
+    animation: pageAppear 2s ease forwards;
 }
 
 
@@ -178,7 +172,6 @@ body {
     background: rgba(255,255,255,0.96);
 
     width: 88%;
-
     max-width: 500px;
 
     margin: 40px auto;
@@ -194,26 +187,6 @@ body {
 }
 
 
-.card::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    background: #ffd1e1;
-
-    border-radius: 50%;
-
-    top: -100px;
-    left: -80px;
-
-    opacity: 0.5;
-}
-
-
 h1 {
 
     color: #e91e63;
@@ -222,8 +195,25 @@ h1 {
 
     margin-bottom: 15px;
 
-    animation:
-        titleAppear 2s ease 1s both;
+    animation: titleAppear 2s ease 1s both;
+}
+
+
+h2 {
+
+    color: #ad1457;
+
+    animation: titleAppear 2s ease 1.5s both;
+}
+
+
+p {
+
+    color: #444;
+
+    font-size: 18px;
+
+    line-height: 1.8;
 }
 
 
@@ -242,28 +232,7 @@ h1 {
 }
 
 
-h2 {
-
-    color: #ad1457;
-
-    animation:
-        titleAppear 2s ease 1.5s both;
-}
-
-
-p {
-
-    color: #444;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================
-   ویس
-========================= */
+/* ===== ویس ===== */
 
 #audioBox {
 
@@ -275,14 +244,11 @@ p {
 
 
 audio {
-
     width: 100%;
 }
 
 
-/* =========================
-   دکمه
-========================= */
+/* ===== دکمه ===== */
 
 button {
 
@@ -309,30 +275,15 @@ button {
 
     box-shadow:
         0 8px 25px rgba(233,30,99,0.3);
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
 }
 
 
 button:active {
-
     transform: scale(0.92);
-
 }
 
 
-button:hover {
-
-    transform: scale(1.05);
-
-}
-
-
-/* =========================
-   قلب‌های شناور
-========================= */
+/* ===== قلب‌ها ===== */
 
 .heart {
 
@@ -346,21 +297,17 @@ button:hover {
         floatHeart 6s linear infinite;
 
     pointer-events: none;
-
-    z-index: 1;
 }
 
 
 @keyframes floatHeart {
 
     0% {
-
         transform:
             translateY(0)
             rotate(0deg);
 
         opacity: 0;
-
     }
 
     15% {
@@ -368,21 +315,17 @@ button:hover {
     }
 
     100% {
-
         transform:
             translateY(-110vh)
             rotate(360deg);
 
         opacity: 0;
-
     }
 
 }
 
 
-/* =========================
-   بارش قلب
-========================= */
+/* ===== بارش قلب ===== */
 
 .falling-heart {
 
@@ -404,44 +347,31 @@ button:hover {
 @keyframes fallHeart {
 
     0% {
-
         transform:
             translateY(0)
             rotate(0deg)
             scale(0.5);
 
         opacity: 0;
-
     }
 
     10% {
-
         opacity: 1;
-
-        transform:
-            translateY(0)
-            rotate(20deg)
-            scale(1);
-
     }
 
     100% {
-
         transform:
             translateY(115vh)
             rotate(360deg)
             scale(1.2);
 
         opacity: 0;
-
     }
 
 }
 
 
-/* =========================
-   قلب هنگام لمس صفحه
-========================= */
+/* ===== قلب لمس صفحه ===== */
 
 .tap-heart {
 
@@ -461,17 +391,14 @@ button:hover {
 @keyframes tapHeart {
 
     0% {
-
         transform:
             translate(-50%, -50%)
             scale(0.3);
 
         opacity: 1;
-
     }
 
     100% {
-
         transform:
             translate(
                 calc(-50% + var(--x)),
@@ -480,15 +407,12 @@ button:hover {
             scale(1.5);
 
         opacity: 0;
-
     }
 
 }
 
 
-/* =========================
-   متن کوچک پایین
-========================= */
+/* ===== متن پایین ===== */
 
 .love-note {
 
@@ -514,42 +438,29 @@ button:hover {
 }
 
 
-/* =========================
-   موبایل
-========================= */
+/* ===== موبایل ===== */
 
 @media (max-width: 400px) {
 
     #countdown {
-
         gap: 5px;
-
     }
 
     .count-box {
-
         width: 65px;
-
         height: 80px;
-
     }
 
     .count-box span {
-
         font-size: 28px;
-
     }
 
     .count-item small {
-
         font-size: 11px;
-
     }
 
     h1 {
-
         font-size: 30px;
-
     }
 
 }
@@ -562,9 +473,7 @@ button:hover {
 <body>
 
 
-<!-- =========================
-     صفحه شمارش
-========================= -->
+<!-- ===== شمارش ===== -->
 
 <div id="countdownScreen">
 
@@ -618,19 +527,14 @@ button:hover {
 </div>
 
 
-
-<!-- =========================
-     صفحه تولد
-========================= -->
+<!-- ===== محتوای تولد ===== -->
 
 <div id="mainContent">
-
 
     <div class="heart">❤️</div>
     <div class="heart">💗</div>
     <div class="heart">💕</div>
     <div class="heart">💖</div>
-
 
     <div class="card">
 
@@ -638,11 +542,9 @@ button:hover {
             تولدت مبارک ملینا ❤️
         </h1>
 
-
         <h2>
             تو قشنگ‌ترین اتفاق زندگی منی
         </h2>
-
 
         <p>
 
@@ -671,9 +573,7 @@ button:hover {
 
 
         <button onclick="surprise()">
-
             یه سورپرایز برات دارم ❤️
-
         </button>
 
 
@@ -681,6 +581,7 @@ button:hover {
 
             بعضی آدما فقط وارد زندگی آدم نمی‌شن...
             <br>
+
             تبدیل می‌شن به قشنگ‌ترین قسمتِ زندگی. ❤️
 
         </div>
@@ -690,27 +591,61 @@ button:hover {
 </div>
 
 
-
 <script>
 
-
-/* =========================
-   تاریخ تولد
+/* =================================
+   تاریخ اصلی تولد
    ۲۹ مهر ۱۴۰۵
-========================= */
+================================= */
 
-const targetDate =
+const realBirthday =
     new Date(
         "2026-10-21T00:00:00+03:30"
     ).getTime();
 
 
+/* =================================
+   حالت تست
+
+   فقط وقتی ?test=1 باشد
+================================= */
+
+const testMode =
+    new URLSearchParams(
+        window.location.search
+    ).get("test") === "1";
+
+
+let targetDate;
+
+
+if (testMode) {
+
+    /*
+       تست ۵ ثانیه‌ای
+    */
+
+    targetDate =
+        new Date().getTime() + 5000;
+
+} else {
+
+    /*
+       حالت واقعی
+    */
+
+    targetDate =
+        realBirthday;
+
+}
+
+
 let birthdayOpened = false;
 
 
-/* =========================
+/* =================================
    شمارش معکوس
-========================= */
+================================= */
 
 function updateCountdown() {
 
@@ -768,27 +703,35 @@ function updateCountdown() {
         );
 
 
-    document.getElementById("days").textContent =
-        String(days).padStart(2, "0");
+    document.getElementById("days")
+        .textContent =
+        String(days)
+        .padStart(2, "0");
 
 
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
+    document.getElementById("hours")
+        .textContent =
+        String(hours)
+        .padStart(2, "0");
 
 
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
+    document.getElementById("minutes")
+        .textContent =
+        String(minutes)
+        .padStart(2, "0");
 
 
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
+    document.getElementById("seconds")
+        .textContent =
+        String(seconds)
+        .padStart(2, "0");
 
 }
 
 
-/* =========================
-   باز شدن سورپرایز
-========================= */
+/* =================================
+   باز شدن صفحه تولد
+================================= */
 
 function openBirthday() {
 
@@ -825,9 +768,9 @@ function openBirthday() {
 }
 
 
-/* =========================
-   بارش بزرگ قلب‌ها
-========================= */
+/* =================================
+   بارش بزرگ قلب
+================================= */
 
 function massiveHearts() {
 
@@ -840,7 +783,9 @@ function massiveHearts() {
         setTimeout(function() {
 
             const heart =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
             const hearts = [
@@ -867,7 +812,8 @@ function massiveHearts() {
 
 
             heart.style.left =
-                Math.random() * 100 + "vw";
+                Math.random() * 100 +
+                "vw";
 
 
             heart.style.fontSize =
@@ -903,9 +849,9 @@ function massiveHearts() {
 }
 
 
-/* =========================
-   سورپرایز دکمه
-========================= */
+/* =================================
+   دکمه سورپرایز
+================================= */
 
 function surprise() {
 
@@ -918,10 +864,13 @@ function surprise() {
         setTimeout(function() {
 
             const heart =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
 
-            heart.textContent = "❤️";
+            heart.textContent =
+                "❤️";
 
 
             heart.className =
@@ -929,7 +878,8 @@ function surprise() {
 
 
             heart.style.left =
-                Math.random() * 100 + "vw";
+                Math.random() * 100 +
+                "vw";
 
 
             heart.style.fontSize =
@@ -965,9 +915,9 @@ function surprise() {
 }
 
 
-/* =========================
+/* =================================
    قلب با لمس صفحه
-========================= */
+================================= */
 
 document.addEventListener(
     "click",
@@ -985,7 +935,9 @@ document.addEventListener(
 
 
         const heart =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
         heart.textContent =
@@ -1036,9 +988,9 @@ document.addEventListener(
 );
 
 
-/* =========================
-   اجرای اولیه
-========================= */
+/* =================================
+   شروع
+================================= */
 
 updateCountdown();
 
@@ -1049,7 +1001,6 @@ setInterval(
 );
 
 </script>
-
 
 </body>
 
