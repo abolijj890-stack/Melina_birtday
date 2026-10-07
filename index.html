@@ -2,42 +2,65 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>برای ملینا ❤️</title>
 
+
 <style>
+
+/* =========================
+   تنظیمات اصلی
+========================= */
 
 * {
     box-sizing: border-box;
 }
 
 body {
+
     margin: 0;
+
     background: #ffe6f0;
+
     font-family: sans-serif;
+
     text-align: center;
+
     overflow-x: hidden;
 }
 
 
-/* ===== صفحه شمارش ===== */
+/* =========================
+   صفحه شمارش معکوس
+========================= */
 
 #countdownScreen {
 
     position: fixed;
+
     inset: 0;
 
     width: 100%;
+
     height: 100vh;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     background:
-        radial-gradient(circle, #fff5f9, #ffe0ec);
+        radial-gradient(
+            circle,
+            #fff5f9,
+            #ffe0ec
+        );
 
     z-index: 9999;
 
@@ -64,6 +87,7 @@ body {
     direction: rtl;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 10px;
@@ -85,11 +109,13 @@ body {
 .count-box {
 
     width: 75px;
+
     height: 90px;
 
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     background: white;
@@ -97,9 +123,11 @@ body {
     border-radius: 20px;
 
     box-shadow:
-        0 10px 35px rgba(233,30,99,0.18);
+        0 10px 35px
+        rgba(233, 30, 99, 0.18);
 
-    animation: floating 2s ease-in-out infinite;
+    animation:
+        floating 2s ease-in-out infinite;
 }
 
 
@@ -126,17 +154,25 @@ body {
 @keyframes floating {
 
     0%, 100% {
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
     50% {
-        transform: translateY(-6px);
+
+        transform:
+            translateY(-6px);
+
     }
 
 }
 
 
-/* ===== صفحه تولد ===== */
+/* =========================
+   صفحه تولد
+========================= */
 
 #mainContent {
 
@@ -146,32 +182,47 @@ body {
 
     padding-top: 30px;
 
-    animation: pageAppear 2s ease forwards;
+    animation:
+        pageAppear 2s ease forwards;
 }
 
 
 @keyframes pageAppear {
 
     0% {
+
         opacity: 0;
-        transform: scale(0.8);
+
+        transform:
+            scale(0.8);
+
     }
 
     100% {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
 
 }
 
 
+/* =========================
+   کارت
+========================= */
+
 .card {
 
     position: relative;
 
-    background: rgba(255,255,255,0.96);
+    background:
+        rgba(255,255,255,0.96);
 
     width: 88%;
+
     max-width: 500px;
 
     margin: 40px auto;
@@ -181,11 +232,16 @@ body {
     border-radius: 30px;
 
     box-shadow:
-        0 15px 50px rgba(0,0,0,0.15);
+        0 15px 50px
+        rgba(0,0,0,0.15);
 
     overflow: hidden;
 }
 
+
+/* =========================
+   عنوان
+========================= */
 
 h1 {
 
@@ -195,7 +251,8 @@ h1 {
 
     margin-bottom: 15px;
 
-    animation: titleAppear 2s ease 1s both;
+    animation:
+        titleAppear 2s ease 1s both;
 }
 
 
@@ -203,7 +260,8 @@ h2 {
 
     color: #ad1457;
 
-    animation: titleAppear 2s ease 1.5s both;
+    animation:
+        titleAppear 2s ease 1.5s both;
 }
 
 
@@ -220,35 +278,116 @@ p {
 @keyframes titleAppear {
 
     from {
+
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+            translateY(30px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
 }
 
 
-/* ===== ویس ===== */
+/* =========================
+   بخش سورپرایز ویس
+========================= */
 
 #audioBox {
 
     margin-top: 25px;
 
-    animation:
-        titleAppear 2s ease 2s both;
+    display: none;
+
 }
 
 
+/* وقتی سورپرایز فعال شد */
+
+#audioBox.show {
+
+    display: block;
+
+    animation:
+        surpriseAppear 1.2s ease forwards;
+}
+
+
+@keyframes surpriseAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.5)
+            translateY(30px);
+
+    }
+
+    60% {
+
+        transform:
+            scale(1.08)
+            translateY(-5px);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   نوشته عاشقتم بچه
+========================= */
+
+.love-title {
+
+    color: #e91e63;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 3px 12px
+        rgba(233,30,99,0.2);
+}
+
+
+/* =========================
+   ویس
+========================= */
+
 audio {
+
     width: 100%;
 }
 
 
-/* ===== دکمه ===== */
+/* =========================
+   دکمه
+========================= */
 
 button {
 
@@ -274,16 +413,33 @@ button {
     margin-top: 20px;
 
     box-shadow:
-        0 8px 25px rgba(233,30,99,0.3);
+        0 8px 25px
+        rgba(233,30,99,0.3);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
 
 button:active {
-    transform: scale(0.92);
+
+    transform:
+        scale(0.92);
+
 }
 
 
-/* ===== قلب‌ها ===== */
+button:hover {
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================
+   قلب‌های شناور
+========================= */
 
 .heart {
 
@@ -303,29 +459,37 @@ button:active {
 @keyframes floatHeart {
 
     0% {
+
         transform:
             translateY(0)
             rotate(0deg);
 
         opacity: 0;
+
     }
 
     15% {
+
         opacity: 1;
+
     }
 
     100% {
+
         transform:
             translateY(-110vh)
             rotate(360deg);
 
         opacity: 0;
+
     }
 
 }
 
 
-/* ===== بارش قلب ===== */
+/* =========================
+   بارش قلب
+========================= */
 
 .falling-heart {
 
@@ -347,31 +511,39 @@ button:active {
 @keyframes fallHeart {
 
     0% {
+
         transform:
             translateY(0)
             rotate(0deg)
             scale(0.5);
 
         opacity: 0;
+
     }
 
     10% {
+
         opacity: 1;
+
     }
 
     100% {
+
         transform:
             translateY(115vh)
             rotate(360deg)
             scale(1.2);
 
         opacity: 0;
+
     }
 
 }
 
 
-/* ===== قلب لمس صفحه ===== */
+/* =========================
+   قلب هنگام لمس
+========================= */
 
 .tap-heart {
 
@@ -391,14 +563,17 @@ button:active {
 @keyframes tapHeart {
 
     0% {
+
         transform:
             translate(-50%, -50%)
             scale(0.3);
 
         opacity: 1;
+
     }
 
     100% {
+
         transform:
             translate(
                 calc(-50% + var(--x)),
@@ -407,12 +582,15 @@ button:active {
             scale(1.5);
 
         opacity: 0;
+
     }
 
 }
 
 
-/* ===== متن پایین ===== */
+/* =========================
+   متن پایین
+========================= */
 
 .love-note {
 
@@ -432,35 +610,56 @@ button:active {
 @keyframes fadeIn {
 
     to {
+
         opacity: 1;
+
     }
 
 }
 
 
-/* ===== موبایل ===== */
+/* =========================
+   موبایل
+========================= */
 
 @media (max-width: 400px) {
 
     #countdown {
+
         gap: 5px;
+
     }
 
     .count-box {
+
         width: 65px;
+
         height: 80px;
+
     }
 
     .count-box span {
+
         font-size: 28px;
+
     }
 
     .count-item small {
+
         font-size: 11px;
+
     }
 
     h1 {
+
         font-size: 30px;
+
+    }
+
+    .love-title {
+
+        font-size: 26px;
+
     }
 
 }
@@ -473,19 +672,28 @@ button:active {
 <body>
 
 
-<!-- ===== شمارش ===== -->
+<!-- =========================
+     شمارش معکوس
+========================= -->
 
 <div id="countdownScreen">
 
     <div id="countdown">
 
+
         <div class="count-item">
 
             <div class="count-box">
-                <span id="days">00</span>
+
+                <span id="days">
+                    00
+                </span>
+
             </div>
 
-            <small>روز</small>
+            <small>
+                روز
+            </small>
 
         </div>
 
@@ -493,10 +701,16 @@ button:active {
         <div class="count-item">
 
             <div class="count-box">
-                <span id="hours">00</span>
+
+                <span id="hours">
+                    00
+                </span>
+
             </div>
 
-            <small>ساعت</small>
+            <small>
+                ساعت
+            </small>
 
         </div>
 
@@ -504,10 +718,16 @@ button:active {
         <div class="count-item">
 
             <div class="count-box">
-                <span id="minutes">00</span>
+
+                <span id="minutes">
+                    00
+                </span>
+
             </div>
 
-            <small>دقیقه</small>
+            <small>
+                دقیقه
+            </small>
 
         </div>
 
@@ -515,10 +735,16 @@ button:active {
         <div class="count-item">
 
             <div class="count-box">
-                <span id="seconds">00</span>
+
+                <span id="seconds">
+                    00
+                </span>
+
             </div>
 
-            <small>ثانیه</small>
+            <small>
+                ثانیه
+            </small>
 
         </div>
 
@@ -527,24 +753,46 @@ button:active {
 </div>
 
 
-<!-- ===== محتوای تولد ===== -->
+
+<!-- =========================
+     صفحه تولد
+========================= -->
 
 <div id="mainContent">
 
-    <div class="heart">❤️</div>
-    <div class="heart">💗</div>
-    <div class="heart">💕</div>
-    <div class="heart">💖</div>
+
+    <!-- قلب‌های دائمی -->
+
+    <div class="heart">
+        ❤️
+    </div>
+
+    <div class="heart">
+        💗
+    </div>
+
+    <div class="heart">
+        💕
+    </div>
+
+    <div class="heart">
+        💖
+    </div>
+
+
 
     <div class="card">
+
 
         <h1>
             تولدت مبارک ملینا ❤️
         </h1>
 
+
         <h2>
             تو قشنگ‌ترین اتفاق زندگی منی
         </h2>
+
 
         <p>
 
@@ -558,40 +806,66 @@ button:active {
         </p>
 
 
+
+        <!-- =========================
+             دکمه سورپرایز
+        ========================= -->
+
+        <button
+            id="surpriseButton"
+            onclick="surprise()">
+
+            کلیک کن یه سورپرایز برات دارم ❤️
+
+        </button>
+
+
+
+        <!-- =========================
+             ویس مخفی
+        ========================= -->
+
         <div id="audioBox">
 
-            <p>
-                اینم چیزی که برای تو گذاشتم ❤️🎧
-            </p>
+
+            <div class="love-title">
+
+                عاشقتم بچه ❤️
+
+            </div>
+
 
             <audio
+                id="loveAudio"
                 controls
                 src="melina_015318048.mp3">
+
             </audio>
+
 
         </div>
 
-
-        <button onclick="surprise()">
-            یه سورپرایز برات دارم ❤️
-        </button>
 
 
         <div class="love-note">
 
             بعضی آدما فقط وارد زندگی آدم نمی‌شن...
+
             <br>
 
             تبدیل می‌شن به قشنگ‌ترین قسمتِ زندگی. ❤️
 
         </div>
 
+
     </div>
 
 </div>
 
 
+
 <script>
+
 
 /* =================================
    تاریخ اصلی تولد
@@ -604,10 +878,11 @@ const realBirthday =
     ).getTime();
 
 
+
 /* =================================
    حالت تست
 
-   فقط وقتی ?test=1 باشد
+   ?test=1
 ================================= */
 
 const testMode =
@@ -621,18 +896,10 @@ let targetDate;
 
 if (testMode) {
 
-    /*
-       تست ۵ ثانیه‌ای
-    */
-
     targetDate =
         new Date().getTime() + 5000;
 
 } else {
-
-    /*
-       حالت واقعی
-    */
 
     targetDate =
         realBirthday;
@@ -643,11 +910,13 @@ if (testMode) {
 let birthdayOpened = false;
 
 
+
 /* =================================
    شمارش معکوس
 ================================= */
 
 function updateCountdown() {
+
 
     const now =
         new Date().getTime();
@@ -703,30 +972,35 @@ function updateCountdown() {
         );
 
 
-    document.getElementById("days")
-        .textContent =
+    document.getElementById(
+        "days"
+    ).textContent =
         String(days)
         .padStart(2, "0");
 
 
-    document.getElementById("hours")
-        .textContent =
+    document.getElementById(
+        "hours"
+    ).textContent =
         String(hours)
         .padStart(2, "0");
 
 
-    document.getElementById("minutes")
-        .textContent =
+    document.getElementById(
+        "minutes"
+    ).textContent =
         String(minutes)
         .padStart(2, "0");
 
 
-    document.getElementById("seconds")
-        .textContent =
+    document.getElementById(
+        "seconds"
+    ).textContent =
         String(seconds)
         .padStart(2, "0");
 
 }
+
 
 
 /* =================================
@@ -734,6 +1008,7 @@ function updateCountdown() {
 ================================= */
 
 function openBirthday() {
+
 
     if (birthdayOpened)
         return;
@@ -753,19 +1028,24 @@ function openBirthday() {
 
     setTimeout(function() {
 
-        screen.style.display = "none";
+
+        screen.style.display =
+            "none";
 
 
         document.getElementById(
             "mainContent"
-        ).style.display = "block";
+        ).style.display =
+            "block";
 
 
         massiveHearts();
 
+
     }, 1300);
 
 }
+
 
 
 /* =================================
@@ -774,13 +1054,16 @@ function openBirthday() {
 
 function massiveHearts() {
 
+
     for (
         let i = 0;
         i < 100;
         i++
     ) {
 
+
         setTimeout(function() {
+
 
             const heart =
                 document.createElement(
@@ -789,12 +1072,14 @@ function massiveHearts() {
 
 
             const hearts = [
+
                 "❤️",
                 "💗",
                 "💕",
                 "💖",
                 "💓",
                 "💘"
+
             ];
 
 
@@ -849,11 +1134,51 @@ function massiveHearts() {
 }
 
 
+
 /* =================================
    دکمه سورپرایز
 ================================= */
 
 function surprise() {
+
+
+    const audioBox =
+        document.getElementById(
+            "audioBox"
+        );
+
+
+    const button =
+        document.getElementById(
+            "surpriseButton"
+        );
+
+
+    const audio =
+        document.getElementById(
+            "loveAudio"
+        );
+
+
+    /*
+       ویس ظاهر شود
+    */
+
+    audioBox.classList.add("show");
+
+
+    /*
+       دکمه مخفی شود
+       تا سورپرایز دوباره زده نشود
+    */
+
+    button.style.display =
+        "none";
+
+
+    /*
+       بارش قلب
+    */
 
     for (
         let i = 0;
@@ -861,7 +1186,9 @@ function surprise() {
         i++
     ) {
 
+
         setTimeout(function() {
+
 
             const heart =
                 document.createElement(
@@ -912,7 +1239,28 @@ function surprise() {
 
     }
 
+
+    /*
+       تلاش برای پخش ویس
+
+       اگر مرورگر اجازه ندهد،
+       کنترل ویس همچنان ظاهر می‌شود.
+    */
+
+    setTimeout(function() {
+
+        audio.play().catch(
+            function() {
+                // اگر مرورگر پخش خودکار را بست،
+                // کاربر می‌تواند Play را بزند.
+            }
+        );
+
+    }, 500);
+
+
 }
+
 
 
 /* =================================
@@ -923,15 +1271,22 @@ document.addEventListener(
     "click",
     function(event) {
 
+
         if (!birthdayOpened)
             return;
 
 
         if (
-            event.target.tagName === "BUTTON" ||
-            event.target.tagName === "AUDIO"
-        )
+            event.target.tagName ===
+                "BUTTON" ||
+
+            event.target.tagName ===
+                "AUDIO"
+        ) {
+
             return;
+
+        }
 
 
         const heart =
@@ -959,7 +1314,8 @@ document.addEventListener(
         heart.style.setProperty(
             "--x",
             (
-                Math.random() * 100 - 50
+                Math.random() * 100 -
+                50
             ) + "px"
         );
 
@@ -988,8 +1344,9 @@ document.addEventListener(
 );
 
 
+
 /* =================================
-   شروع
+   شروع شمارش
 ================================= */
 
 updateCountdown();
@@ -1001,6 +1358,7 @@ setInterval(
 );
 
 </script>
+
 
 </body>
 
