@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 
 <head>
 
@@ -9,25 +9,18 @@
 
     <title>تولد ملینا ❤️</title>
 
-
     <style>
 
         * {
             box-sizing: border-box;
         }
 
-
         body {
-
             margin: 0;
-
             background: #ffe6f0;
-
-            text-align: center;
-
             font-family: sans-serif;
-
             overflow-x: hidden;
+            text-align: center;
         }
 
 
@@ -41,6 +34,9 @@
 
             inset: 0;
 
+            width: 100%;
+            height: 100vh;
+
             display: flex;
 
             justify-content: center;
@@ -49,7 +45,7 @@
 
             background:
                 radial-gradient(
-                    circle at center,
+                    circle,
                     #fff5f8 0%,
                     #ffe6f0 60%,
                     #ffd6e5 100%
@@ -61,9 +57,9 @@
 
         #countdown {
 
-            direction: rtl;
-
             display: flex;
+
+            direction: rtl;
 
             justify-content: center;
 
@@ -71,13 +67,15 @@
 
             gap: 10px;
 
-            width: 100%;
+            padding: 15px;
 
-            padding: 20px;
+            width: 100%;
         }
 
 
-        /* هر بخش */
+        /* =========================
+           هر قسمت شمارش
+        ========================= */
 
         .count-item {
 
@@ -91,7 +89,9 @@
         }
 
 
-        /* باکس عدد */
+        /* =========================
+           باکس عدد
+        ========================= */
 
         .count-box {
 
@@ -99,16 +99,20 @@
 
             height: 90px;
 
-            background:
-                rgba(255, 255, 255, 0.75);
-
-            border-radius: 20px;
-
             display: flex;
 
             justify-content: center;
 
             align-items: center;
+
+            background:
+                rgba(255, 255, 255, 0.8);
+
+            border-radius: 20px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.9);
 
             box-shadow:
                 0 10px 30px
@@ -116,26 +120,26 @@
 
             backdrop-filter: blur(10px);
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.8);
-
             animation:
-                glow 2s ease-in-out infinite;
+                floating 2s ease-in-out infinite;
         }
 
 
         .count-box span {
 
-            font-size: 35px;
+            display: block;
+
+            font-size: 34px;
 
             font-weight: bold;
 
             color: #e91e63;
+
+            direction: ltr;
         }
 
 
-        /* اسم زیر هر عدد */
+        /* نوشته زیر باکس */
 
         .count-item small {
 
@@ -147,23 +151,19 @@
         }
 
 
-        /* انیمیشن باکس */
+        /* =========================
+           انیمیشن تایمر
+        ========================= */
 
-        @keyframes glow {
+        @keyframes floating {
 
             0%,
             100% {
-
-                transform:
-                    translateY(0);
-
+                transform: translateY(0);
             }
 
             50% {
-
-                transform:
-                    translateY(-5px);
-
+                transform: translateY(-5px);
             }
 
         }
@@ -176,6 +176,26 @@
         #mainContent {
 
             display: none;
+        }
+
+
+        .card {
+
+            background: white;
+
+            width: 85%;
+
+            max-width: 500px;
+
+            margin: 50px auto;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.15);
         }
 
 
@@ -203,26 +223,6 @@
         }
 
 
-        .card {
-
-            background: white;
-
-            width: 85%;
-
-            max-width: 500px;
-
-            margin: 50px auto;
-
-            padding: 30px;
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(0, 0, 0, 0.15);
-        }
-
-
         /* =========================
            قلب‌های شناور
         ========================= */
@@ -236,13 +236,13 @@
             font-size: 25px;
 
             animation:
-                float 5s linear infinite;
+                floatHeart 5s linear infinite;
 
             pointer-events: none;
         }
 
 
-        @keyframes float {
+        @keyframes floatHeart {
 
             0% {
 
@@ -264,7 +264,7 @@
 
 
         /* =========================
-           قلب‌های ریختنی
+           قلب‌های سورپرایز
         ========================= */
 
         .falling-heart {
@@ -276,7 +276,7 @@
             font-size: 30px;
 
             animation:
-                fall 4s linear forwards;
+                fallHeart 4s linear forwards;
 
             z-index: 999;
 
@@ -284,7 +284,7 @@
         }
 
 
-        @keyframes fall {
+        @keyframes fallHeart {
 
             0% {
 
@@ -329,16 +329,13 @@
 
             margin-top: 20px;
 
-            transition:
-                transform 0.2s,
-                box-shadow 0.2s;
+            transition: 0.2s;
         }
 
 
         button:active {
 
-            transform:
-                scale(0.95);
+            transform: scale(0.95);
         }
 
 
@@ -376,7 +373,7 @@
 
                 gap: 6px;
 
-                padding: 10px;
+                padding: 8px;
             }
 
 
@@ -392,7 +389,7 @@
 
             .count-box span {
 
-                font-size: 30px;
+                font-size: 29px;
             }
 
 
@@ -425,69 +422,50 @@
 
                 <div class="count-box">
 
-                    <span id="days">
-                        ۰۰
-                    </span>
+                    <span id="days">۰۰</span>
 
                 </div>
 
-                <small>
-                    روز
-                </small>
+                <small>روز</small>
 
             </div>
-
 
 
             <div class="count-item">
 
                 <div class="count-box">
 
-                    <span id="hours">
-                        ۰۰
-                    </span>
+                    <span id="hours">۰۰</span>
 
                 </div>
 
-                <small>
-                    ساعت
-                </small>
+                <small>ساعت</small>
 
             </div>
-
 
 
             <div class="count-item">
 
                 <div class="count-box">
 
-                    <span id="minutes">
-                        ۰۰
-                    </span>
+                    <span id="minutes">۰۰</span>
 
                 </div>
 
-                <small>
-                    دقیقه
-                </small>
+                <small>دقیقه</small>
 
             </div>
-
 
 
             <div class="count-item">
 
                 <div class="count-box">
 
-                    <span id="seconds">
-                        ۰۰
-                    </span>
+                    <span id="seconds">۰۰</span>
 
                 </div>
 
-                <small>
-                    ثانیه
-                </small>
+                <small>ثانیه</small>
 
             </div>
 
@@ -499,30 +477,19 @@
 
 
     <!-- =========================
-         محتوای اصلی
+         صفحه تولد
     ========================= -->
 
     <div id="mainContent">
 
 
-        <!-- قلب‌های اولیه -->
+        <div class="heart">❤️</div>
 
-        <div class="heart">
-            ❤️
-        </div>
+        <div class="heart">💗</div>
 
-        <div class="heart">
-            💗
-        </div>
+        <div class="heart">💕</div>
 
-        <div class="heart">
-            💕
-        </div>
-
-        <div class="heart">
-            💖
-        </div>
-
+        <div class="heart">💖</div>
 
 
         <div class="card">
@@ -550,28 +517,19 @@
             </p>
 
 
-
-            <!-- ویس -->
-
             <div id="audioBox">
-
 
                 <p>
                     اینم چیزی که برای تو گذاشتم ❤️🎧
                 </p>
-
 
                 <audio
                     controls
                     src="melina_015318048.mp3">
                 </audio>
 
-
             </div>
 
-
-
-            <!-- دکمه قلب‌ها -->
 
             <button onclick="surprise()">
 
@@ -590,12 +548,9 @@
 
 
         /* =========================
-           تاریخ تولد ملینا
-
-           ۲۹ مهر ۱۴۰۵
+           تاریخ ۲۹ مهر ۱۴۰۵
            ساعت ۰۰:۰۰
         ========================= */
-
 
         const targetDate =
             new Date(
@@ -605,22 +560,18 @@
 
 
         /* =========================
-           تبدیل عدد به فارسی
+           تبدیل اعداد به فارسی
         ========================= */
 
         function persian(number) {
 
             return String(number)
-
                 .padStart(2, "0")
-
                 .replace(
                     /\d/g,
+                    function(digit) {
 
-                    function (digit) {
-
-                        return
-                            "۰۱۲۳۴۵۶۷۸۹"[digit];
+                        return "۰۱۲۳۴۵۶۷۸۹"[digit];
 
                     }
                 );
@@ -630,11 +581,10 @@
 
 
         /* =========================
-           شمارش معکوس
+           بروزرسانی شمارش
         ========================= */
 
         function updateCountdown() {
-
 
             const now =
                 new Date().getTime();
@@ -645,10 +595,9 @@
 
 
 
-            /* زمان تمام شده */
+            /* وقتی شمارش تمام شد */
 
             if (distance <= 0) {
-
 
                 document
                     .getElementById(
@@ -665,12 +614,11 @@
 
 
                 return;
-
             }
 
 
 
-            /* روز */
+            /* محاسبه روز */
 
             const days =
                 Math.floor(
@@ -680,7 +628,7 @@
 
 
 
-            /* ساعت */
+            /* محاسبه ساعت */
 
             const hours =
                 Math.floor(
@@ -694,7 +642,7 @@
 
 
 
-            /* دقیقه */
+            /* محاسبه دقیقه */
 
             const minutes =
                 Math.floor(
@@ -708,7 +656,7 @@
 
 
 
-            /* ثانیه */
+            /* محاسبه ثانیه */
 
             const seconds =
                 Math.floor(
@@ -722,39 +670,38 @@
 
 
 
-            /* نمایش */
+            /* قرار دادن اعداد */
 
             document
                 .getElementById("days")
-                .innerText =
+                .textContent =
                 persian(days);
 
 
             document
                 .getElementById("hours")
-                .innerText =
+                .textContent =
                 persian(hours);
 
 
             document
                 .getElementById("minutes")
-                .innerText =
+                .textContent =
                 persian(minutes);
 
 
             document
                 .getElementById("seconds")
-                .innerText =
+                .textContent =
                 persian(seconds);
 
         }
 
 
 
-        /* اجرای اولیه */
+        /* اجرای فوری */
 
         updateCountdown();
-
 
 
         /* آپدیت هر ثانیه */
@@ -767,11 +714,10 @@
 
 
         /* =========================
-           ریختن قلب‌ها
+           سورپرایز قلب‌ها
         ========================= */
 
         function surprise() {
-
 
             for (
                 let i = 0;
@@ -779,15 +725,11 @@
                 i++
             ) {
 
-
-                let heart =
-                    document.createElement(
-                        "div"
-                    );
+                const heart =
+                    document.createElement("div");
 
 
-                heart.innerText =
-                    "❤️";
+                heart.textContent = "❤️";
 
 
                 heart.className =
@@ -825,9 +767,8 @@
                     .appendChild(heart);
 
 
-
                 setTimeout(
-                    function () {
+                    function() {
 
                         heart.remove();
 
@@ -844,4 +785,4 @@
 
 </body>
 
-                    </html>
+                                           </html>
