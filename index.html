@@ -58,9 +58,11 @@ body{
         transform 1s ease;
 }
 
+
 .countdown-wrap{
     animation:appear 1s ease;
 }
+
 
 .countdown-title{
 
@@ -72,6 +74,7 @@ body{
 
     font-weight:bold;
 }
+
 
 .countdown-boxes{
 
@@ -85,6 +88,7 @@ body{
 
     flex-wrap:wrap;
 }
+
 
 .count-box{
 
@@ -102,6 +106,7 @@ body{
         0 8px 25px rgba(120,20,60,.15);
 }
 
+
 .count-number{
 
     font-size:26px;
@@ -110,6 +115,7 @@ body{
 
     color:#d71961;
 }
+
 
 .count-label{
 
@@ -133,6 +139,7 @@ body{
         35px 15px 60px;
 }
 
+
 .card{
 
     width:min(720px,100%);
@@ -152,11 +159,13 @@ body{
         0 15px 50px rgba(100,20,50,.15);
 }
 
+
 #mainContent.reveal{
 
     animation:
         mainReveal 1.2s ease;
 }
+
 
 h1{
 
@@ -168,6 +177,7 @@ h1{
     font-size:30px;
 }
 
+
 h2{
 
     margin:
@@ -177,6 +187,7 @@ h2{
 
     font-size:19px;
 }
+
 
 .message{
 
@@ -189,7 +200,7 @@ h2{
 
 
 /* =========================
-   PHOTO SHOWCASE
+   SECTION TITLE
 ========================= */
 
 .section-title{
@@ -205,10 +216,9 @@ h2{
 }
 
 
-/*
-   مهم:
-   فقط یک عکس واقعی داریم.
-*/
+/* =========================
+   PHOTO SHOWCASE
+========================= */
 
 .photo-showcase{
 
@@ -234,6 +244,7 @@ h2{
         0 12px 35px rgba(120,20,60,.15);
 }
 
+
 #mainPhoto{
 
     width:100%;
@@ -257,12 +268,14 @@ h2{
         transform .65s ease;
 }
 
+
 #mainPhoto.changing{
 
     opacity:0;
 
     transform:scale(.94);
 }
+
 
 .photo-number{
 
@@ -293,6 +306,7 @@ h2{
     margin-top:13px;
 }
 
+
 .photo-dot{
 
     width:8px;
@@ -305,6 +319,7 @@ h2{
 
     transition:.3s ease;
 }
+
 
 .photo-dot.active{
 
@@ -332,7 +347,15 @@ h2{
 
     padding:
         10px 3px 18px;
+
+    scrollbar-width:none;
 }
+
+
+.chat-gallery::-webkit-scrollbar{
+    display:none;
+}
+
 
 .chat-photo{
 
@@ -350,6 +373,7 @@ h2{
     box-shadow:
         0 8px 25px rgba(80,10,40,.15);
 }
+
 
 .chat-photo img{
 
@@ -371,6 +395,7 @@ h2{
 
     margin-top:30px;
 }
+
 
 #surpriseButton{
 
@@ -398,10 +423,12 @@ h2{
         0 10px 25px rgba(190,20,85,.25);
 }
 
+
 #audioBox{
 
     display:none;
 }
+
 
 #audioBox.show{
 
@@ -410,6 +437,7 @@ h2{
     animation:
         surprise .9s ease;
 }
+
 
 .love-title{
 
@@ -422,12 +450,14 @@ h2{
     margin-bottom:15px;
 }
 
+
 audio{
 
     width:100%;
 
     max-width:520px;
 }
+
 
 .love-note{
 
@@ -475,50 +505,66 @@ audio{
         opacity:1;
         transform:scale(1);
     }
+
 }
+
 
 @keyframes mainReveal{
 
     from{
+
         opacity:0;
+
         transform:
             translateY(35px)
             scale(.94);
     }
 
     to{
+
         opacity:1;
+
         transform:
             translateY(0)
             scale(1);
     }
+
 }
+
 
 @keyframes surprise{
 
     from{
+
         opacity:0;
+
         transform:
             scale(.65)
             translateY(25px);
     }
 
     70%{
+
         transform:
             scale(1.05);
     }
 
     to{
+
         opacity:1;
+
         transform:
             scale(1)
             translateY(0);
     }
+
 }
+
 
 @keyframes fall{
 
     0%{
+
         transform:
             translateY(-50px)
             rotate(0deg);
@@ -531,12 +577,14 @@ audio{
     }
 
     100%{
+
         transform:
             translateY(110vh)
             rotate(360deg);
 
         opacity:0;
     }
+
 }
 
 
@@ -547,27 +595,22 @@ audio{
 @media(max-width:500px){
 
     .count-box{
-
         width:69px;
     }
 
     .count-number{
-
         font-size:24px;
     }
 
     h1{
-
         font-size:27px;
     }
 
     h2{
-
         font-size:18px;
     }
 
     #mainPhoto{
-
         height:350px;
     }
 
@@ -577,6 +620,7 @@ audio{
 
         height:225px;
     }
+
 }
 
 </style>
@@ -666,6 +710,7 @@ audio{
 </section>
 
 
+
 <!-- =========================
      MAIN CONTENT
 ========================= -->
@@ -693,8 +738,9 @@ audio{
 </div>
 
 
+
 <!-- =========================
-     PHOTO
+     PHOTO SHOWCASE
 ========================= -->
 
 <div class="section-title">
@@ -714,19 +760,20 @@ audio{
     <div
         class="photo-number"
         id="photoNumber">
+
         ۱ از ۹ ❤️
+
     </div>
 
 </div>
 
 
-<div
-    id="photoDots">
-</div>
+<div id="photoDots"></div>
+
 
 
 <!-- =========================
-     CHAT
+     MEMORIES
 ========================= -->
 
 <div class="section-title">
@@ -742,7 +789,7 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_تلگرام.jpg"
+            src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg"
             alt="خاطره">
 
     </div>
@@ -751,7 +798,7 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_اینستاگرام.jpg"
+            src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg"
             alt="خاطره">
 
     </div>
@@ -760,7 +807,7 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_تلگرام.jpg"
+            src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg"
             alt="خاطره">
 
     </div>
@@ -769,7 +816,7 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg"
+            src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg"
             alt="خاطره">
 
     </div>
@@ -778,7 +825,7 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg"
+            src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg"
             alt="خاطره">
 
     </div>
@@ -787,7 +834,7 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۰۷۱۷۱۷-۲۱۳۲۴۲.jpg"
+            src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg"
             alt="خاطره">
 
     </div>
@@ -796,7 +843,7 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg"
+            src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg"
             alt="خاطره">
 
     </div>
@@ -805,13 +852,14 @@ audio{
     <div class="chat-photo">
 
         <img
-            src="تصویر_۲۰۲۵۱۲۱۷-۱۵۳۶۴۲_ChatGPT.jpg"
+            src="Screenshot_۲۰۲۵۱۲۱۷-۱۵۳۶۴۲_ChatGPT.jpg"
             alt="خاطره">
 
     </div>
 
 
 </div>
+
 
 
 <!-- =========================
@@ -862,7 +910,9 @@ audio{
 </section>
 
 
+
 <script>
+
 
 /* =========================
    ELEMENTS
@@ -873,14 +923,16 @@ const countdownScreen =
         "countdownScreen"
     );
 
+
 const mainContent =
     document.getElementById(
         "mainContent"
     );
 
 
+
 /* =========================
-   DATE
+   BIRTHDAY DATE
 ========================= */
 
 const realBirthday =
@@ -891,6 +943,7 @@ const realBirthday =
 
 let targetDate =
     realBirthday;
+
 
 
 /* =========================
@@ -909,6 +962,7 @@ if(testMode){
         Date.now() + 5000;
 
 }
+
 
 
 /* =========================
@@ -1015,6 +1069,7 @@ const countdownTimer =
     );
 
 
+
 /* =========================
    OPEN BIRTHDAY
 ========================= */
@@ -1059,8 +1114,9 @@ function openBirthday(){
 }
 
 
+
 /* =========================
-   PHOTOS
+   9 PHOTOS
 ========================= */
 
 const photoList = [
@@ -1079,9 +1135,9 @@ const photoList = [
 
     "IMG_20251206_010103_231.jpg",
 
-    "تصویر_۲۰۲۵۰۳۲۲-۲۰۳۷۵۵.jpg",
+    "Screenshot_۲۰۲۵۰۳۲۲-۲۰۳۷۵۵.jpg",
 
-    "تصویر_۲۰۲۵۰۳۳۰-۱۵۳۶۴۳.jpg"
+    "Screenshot_۲۰۲۵۰۳۳۰-۱۵۳۶۴۳.jpg"
 
 ];
 
@@ -1107,8 +1163,9 @@ const photoDots =
     );
 
 
+
 /* =========================
-   DOTS
+   PHOTO DOTS
 ========================= */
 
 function createPhotoDots(){
@@ -1147,6 +1204,7 @@ function createPhotoDots(){
     );
 
 }
+
 
 
 /* =========================
@@ -1201,10 +1259,6 @@ function showPhoto(index){
             };
 
 
-        /*
-           اگر تصویر از قبل cache شده باشد
-        */
-
         setTimeout(() => {
 
             mainPhoto.classList.remove(
@@ -1217,6 +1271,7 @@ function showPhoto(index){
     },500);
 
 }
+
 
 
 /* =========================
@@ -1252,24 +1307,28 @@ function startPhotoShowcase(){
             photoIndex
         );
 
+
     },3500);
 
 }
 
 
+
 /* =========================
-   HEARTS
+   FALLING HEARTS
 ========================= */
 
 function createHearts(){
 
     const hearts = [
+
         "❤️",
         "💕",
         "💗",
         "💖",
         "💘",
         "💝"
+
     ];
 
 
@@ -1332,11 +1391,13 @@ function createHearts(){
 
             },8000);
 
+
         },i*40);
 
     }
 
 }
+
 
 
 /* =========================
@@ -1383,7 +1444,9 @@ surpriseButton.addEventListener(
     }
 );
 
+
 </script>
 
 </body>
-   </html>
+
+    </html>
