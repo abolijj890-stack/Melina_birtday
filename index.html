@@ -136,7 +136,7 @@ body::before{
 
     pointer-events:none;
 
-    overflow:visible;
+    overflow:hidden;
 }
 
 
@@ -1716,6 +1716,8 @@ body::before{
         white-space:normal;
 
         width:85vw;
+
+        max-width:85vw;
     }
 
     .letter-paper{
@@ -1761,22 +1763,16 @@ body::before{
 <body>
 
 
-<!-- STARS -->
-
 <div
     class="stars"
     id="stars"
 ></div>
 
 
-<!-- EFFECTS -->
-
 <div
     id="effectsLayer"
 ></div>
 
-
-<!-- COUNTDOWN -->
 
 <div
     id="countdownOverlay"
@@ -1864,16 +1860,12 @@ body::before{
 </div>
 
 
-<!-- MAIN -->
-
 <main id="mainContent">
 
 <div class="container">
 
 <div class="main-card">
 
-
-<!-- TITLE -->
 
 <div class="title">
 
@@ -1898,8 +1890,6 @@ body::before{
 </div>
 
 
-<!-- MAIN PHOTO -->
-
 <div class="photo-showcase">
 
 <img
@@ -1923,8 +1913,6 @@ body::before{
 
 </p>
 
-
-<!-- MEMORIES -->
 
 <div class="memories-title">
 
@@ -2032,8 +2020,6 @@ body::before{
 </p>
 
 
-<!-- SURPRISE -->
-
 <div class="surprise-wrap">
 
 <button id="surpriseBtn">
@@ -2045,8 +2031,6 @@ body::before{
 
 </div>
 
-
-<!-- VOICE -->
 
 <div
     class="voice-box"
@@ -2094,8 +2078,6 @@ body::before{
 </div>
 
 
-<!-- SECRET LETTER BUTTON -->
-
 <div
     class="letter-wrap"
     id="letterWrap"
@@ -2109,8 +2091,6 @@ body::before{
 
 </div>
 
-
-<!-- FINAL NOTE -->
 
 <div class="final-note">
 
@@ -2133,8 +2113,6 @@ body::before{
 
 </main>
 
-
-<!-- LETTER -->
 
 <div
     class="letter-overlay"
@@ -2662,10 +2640,6 @@ loveVoice.addEventListener(
 );
 
 
-/* اگر خواستی بدون تمام کردن ویس
-   نامه را ببینی، بعد از 12 ثانیه
-   هم ظاهر می‌شود */
-
 setTimeout(() => {
 
     if(
@@ -2937,13 +2911,9 @@ function createBalloon(){
         color;
 
 
-    balloon.style.left =
-        (
-            4 +
-            Math.random() * 92
-        ) +
-        "vw";
-
+    /* =========================
+       SIZE
+    ========================= */
 
     const size =
         golden
@@ -2960,6 +2930,47 @@ function createBalloon(){
         size * 1.28 + "px";
 
 
+    /* =========================
+       FIXED SAFE HORIZONTAL POSITION
+    ========================= */
+
+    const screenWidth =
+        document.documentElement.clientWidth;
+
+
+    const margin = 8;
+
+
+    const minX =
+        margin;
+
+
+    const maxX =
+        Math.max(
+            minX,
+            screenWidth -
+            size -
+            margin
+        );
+
+
+    const randomX =
+        minX +
+        Math.random() *
+        (
+            maxX -
+            minX
+        );
+
+
+    balloon.style.left =
+        randomX + "px";
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
     balloon.style.animationDuration =
         golden
             ? "14s"
@@ -2968,6 +2979,10 @@ function createBalloon(){
                 Math.random() * 5
             ) + "s";
 
+
+    /* =========================
+       GOLDEN BALLOON
+    ========================= */
 
     if(golden){
 
@@ -2979,6 +2994,10 @@ function createBalloon(){
 
     }
 
+
+    /* =========================
+       CLICK
+    ========================= */
 
     balloon.addEventListener(
         "click",
@@ -2998,6 +3017,10 @@ function createBalloon(){
     );
 
 
+    /* =========================
+       AUTO REMOVE
+    ========================= */
+
     setTimeout(() => {
 
         if(
@@ -3012,6 +3035,10 @@ function createBalloon(){
 
 }
 
+
+/* =========================
+   START BALLOONS
+========================= */
 
 function startBalloons(){
 
@@ -3371,4 +3398,4 @@ function showFinalLoveMessage(){
 
 </body>
 
-   </html>
+    </html>
