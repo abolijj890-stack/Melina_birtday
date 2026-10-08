@@ -5,14 +5,15 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>تولد ملینا ❤️</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     box-sizing:border-box;
@@ -134,24 +135,24 @@ body::before{
 
 
 /* =========================
-   EFFECTS LAYER
+   EFFECTS
 ========================= */
 
 #effectsLayer{
 
-    position:fixed !important;
+    position:fixed;
 
-    inset:0 !important;
+    inset:0;
 
-    width:100vw !important;
+    width:100vw;
 
-    height:100vh !important;
+    height:100vh;
 
-    z-index:2147483646 !important;
+    z-index:2147483646;
 
-    pointer-events:none !important;
+    pointer-events:none;
 
-    overflow:visible !important;
+    overflow:visible;
 
 }
 
@@ -179,7 +180,6 @@ body::before{
     padding:20px;
 
     background:
-
         radial-gradient(
             circle at center,
             #40142f,
@@ -236,7 +236,10 @@ body::before{
 
 .countdown-box h1{
 
-    margin:0 0 10px;
+    margin:
+        0
+        0
+        10px;
 
     font-size:
         clamp(
@@ -251,9 +254,14 @@ body::before{
 
 .countdown-box p{
 
-    margin:0 0 25px;
+    margin:
+        0
+        0
+        25px;
 
     color:#ddd;
+
+    line-height:2;
 
 }
 
@@ -270,7 +278,9 @@ body::before{
 
 .time-box{
 
-    padding:12px 5px;
+    padding:
+        12px
+        5px;
 
     border-radius:15px;
 
@@ -304,6 +314,19 @@ body::before{
     font-size:12px;
 
     color:#bbb;
+
+}
+
+.countdown-heart{
+
+    margin-top:25px;
+
+    font-size:35px;
+
+    animation:
+        heartBeat
+        1.2s
+        infinite;
 
 }
 
@@ -449,7 +472,7 @@ body::before{
 
 
 /* =========================
-   MAIN PHOTO
+   PHOTO
 ========================= */
 
 .photo-showcase{
@@ -676,7 +699,7 @@ body::before{
 
 
 /* =========================
-   SURPRISE BUTTON
+   SURPRISE
 ========================= */
 
 .surprise-wrap{
@@ -684,12 +707,14 @@ body::before{
     text-align:center;
 
     margin:
-        35px
+        40px
         0;
 
 }
 
 #surpriseBtn{
+
+    position:relative;
 
     border:none;
 
@@ -698,8 +723,8 @@ body::before{
     cursor:pointer;
 
     padding:
-        16px
-        25px;
+        17px
+        28px;
 
     border-radius:50px;
 
@@ -726,7 +751,39 @@ body::before{
         );
 
     transition:
-        transform .2s ease;
+        transform .2s ease,
+        box-shadow .3s ease;
+
+    animation:
+        surprisePulse
+        2s
+        infinite;
+
+}
+
+#surpriseBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-4px;
+
+    border-radius:60px;
+
+    border:
+        2px solid
+        rgba(
+            255,
+            140,
+            200,
+            .4
+        );
+
+    animation:
+        buttonRing
+        2s
+        infinite;
 
 }
 
@@ -734,6 +791,33 @@ body::before{
 
     transform:
         scale(.94);
+
+}
+
+@keyframes surprisePulse{
+
+    0%,
+    100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+    }
+
+}
+
+@keyframes buttonRing{
+
+    0%{
+        opacity:.8;
+        transform:scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.15);
+    }
 
 }
 
@@ -748,7 +832,9 @@ body::before{
 
     text-align:center;
 
-    padding:25px;
+    padding:
+        28px
+        20px;
 
     margin:
         20px
@@ -757,21 +843,75 @@ body::before{
     border-radius:25px;
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            .06
+        linear-gradient(
+            145deg,
+            rgba(
+                255,
+                70,
+                150,
+                .12
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                .04
+            )
         );
 
     border:
         1px solid
         rgba(
             255,
+            130,
+            190,
+            .25
+        );
+
+    box-shadow:
+        0 0 40px
+        rgba(
             255,
-            255,
+            50,
+            150,
             .12
         );
+
+    animation:
+        voiceAppear
+        .8s
+        ease;
+
+}
+
+@keyframes voiceAppear{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(30px)
+            scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+.voice-icon{
+
+    font-size:45px;
+
+    margin-bottom:8px;
+
+    animation:
+        heartBeat
+        1.2s
+        infinite;
 
 }
 
@@ -779,13 +919,17 @@ body::before{
 
     color:#ff9bc4;
 
-    margin-top:0;
+    margin:
+        0
+        10px;
 
 }
 
 .voice-box p{
 
     color:#ccc;
+
+    line-height:2;
 
 }
 
@@ -825,7 +969,7 @@ body::before{
 
     position:fixed;
 
-    bottom:-100px;
+    bottom:-120px;
 
     width:55px;
 
@@ -1225,7 +1369,7 @@ body::before{
             40,
             5,
             25,
-            .9
+            .94
         );
 
     border:
@@ -1245,6 +1389,29 @@ body::before{
             140,
             .35
         );
+
+    animation:
+        finalAppear
+        1s
+        ease;
+
+}
+
+@keyframes finalAppear{
+
+    from{
+        opacity:0;
+        transform:
+            scale(.8)
+            translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1)
+            translateY(0);
+    }
 
 }
 
@@ -1283,19 +1450,6 @@ body::before{
         heartBeat
         1s
         infinite;
-
-}
-
-@keyframes heartBeat{
-
-    0%,
-    100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.2);
-    }
 
 }
 
@@ -1350,6 +1504,24 @@ body::before{
 
 
 /* =========================
+   HEART BEAT
+========================= */
+
+@keyframes heartBeat{
+
+    0%,
+    100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -1386,6 +1558,10 @@ body::before{
             9px
             14px;
 
+        white-space:normal;
+
+        width:85vw;
+
     }
 
 }
@@ -1420,9 +1596,7 @@ body::before{
 <body>
 
 
-<!-- =========================
-     STARS
-========================= -->
+<!-- STARS -->
 
 <div
     class="stars"
@@ -1430,26 +1604,20 @@ body::before{
 ></div>
 
 
-<!-- =========================
-     EFFECTS
-========================= -->
+<!-- EFFECTS -->
 
 <div
     id="effectsLayer"
 ></div>
 
 
-<!-- =========================
-     COUNTDOWN
-========================= -->
+<!-- COUNTDOWN -->
 
 <div
     id="countdownOverlay"
 >
 
-    <div
-        class="countdown-box"
-    >
+    <div class="countdown-box">
 
         <h1>
             تا روز قشنگت فقط ❤️
@@ -1457,56 +1625,67 @@ body::before{
 
         <p>
             یه اتفاق قشنگ داره نزدیک میشه...
+            <br>
+            برای کسی که دنیای منه.
         </p>
 
-        <div
-            class="timer"
-        >
+        <div class="timer">
 
             <div class="time-box">
+
                 <strong id="days">
                     00
                 </strong>
+
                 <span>
                     روز
                 </span>
+
             </div>
 
+
             <div class="time-box">
+
                 <strong id="hours">
                     00
                 </strong>
+
                 <span>
                     ساعت
                 </span>
+
             </div>
 
+
             <div class="time-box">
+
                 <strong id="minutes">
                     00
                 </strong>
+
                 <span>
                     دقیقه
                 </span>
+
             </div>
 
+
             <div class="time-box">
+
                 <strong id="seconds">
                     00
                 </strong>
+
                 <span>
                     ثانیه
                 </span>
+
             </div>
 
         </div>
 
-        <div
-            style="
-                margin-top:25px;
-                font-size:35px;
-            "
-        >
+
+        <div class="countdown-heart">
             ❤️
         </div>
 
@@ -1515,28 +1694,18 @@ body::before{
 </div>
 
 
-<!-- =========================
-     MAIN
-========================= -->
+<!-- MAIN -->
 
-<main
-    id="mainContent"
->
+<main id="mainContent">
 
-<div
-    class="container"
->
+<div class="container">
 
-<div
-    class="main-card"
->
+<div class="main-card">
 
 
 <!-- TITLE -->
 
-<div
-    class="title"
->
+<div class="title">
 
 <h1>
     تولدت مبارک ملینا ❤️
@@ -1547,9 +1716,13 @@ body::before{
 </h2>
 
 <p>
+
     امروز فقط یک روز معمولی نیست؛
+
     <br>
+
     روزیه که بهترین آدم زندگیم به دنیا اومد. ❤️
+
 </p>
 
 </div>
@@ -1557,9 +1730,7 @@ body::before{
 
 <!-- MAIN PHOTO -->
 
-<div
-    class="photo-showcase"
->
+<div class="photo-showcase">
 
 <img
     id="mainPhoto"
@@ -1570,10 +1741,6 @@ body::before{
 </div>
 
 
-<!
-
-
-
 <p
     style="
         text-align:center;
@@ -1581,78 +1748,106 @@ body::before{
         font-size:13px;
     "
 >
-    برای دیدن خاطره‌های بعدی بکش ❤️
+
+    عکس‌ها خودشون آروم عوض می‌شن ❤️
+
 </p>
 
 
-
-    <!-- =========================
-     MEMORIES
-========================= -->
+<!-- MEMORIES -->
 
 <div class="memories-title">
+
     یه عالمه خاطره قشنگ... ❤️
+
 </div>
+
 
 <div class="memories">
 
+
     <div class="memory">
+
         <img
             src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg"
             alt=""
         >
+
     </div>
 
+
     <div class="memory">
+
         <img
             src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg"
             alt=""
         >
+
     </div>
 
+
     <div class="memory">
+
         <img
             src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg"
             alt=""
         >
+
     </div>
 
+
     <div class="memory">
+
         <img
             src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg"
             alt=""
         >
+
     </div>
 
+
     <div class="memory">
+
         <img
             src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg"
             alt=""
         >
+
     </div>
 
+
     <div class="memory">
+
         <img
             src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg"
             alt=""
         >
+
     </div>
 
+
     <div class="memory">
+
         <img
             src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg"
             alt=""
         >
+
     </div>
 
+
     <div class="memory">
+
         <img
             src="eye_love.jpg"
             alt="چشم‌های ما ❤️"
         >
+
     </div>
 
+
 </div>
+
 
 <p
     style="
@@ -1661,21 +1856,20 @@ body::before{
         font-size:13px;
     "
 >
+
     برای دیدن خاطره‌های بعدی بکش ❤️
+
 </p>
 
 
 <!-- SURPRISE -->
 
-<div
-    class="surprise-wrap"
->
+<div class="surprise-wrap">
 
-<button
-    id="surpriseBtn"
->
+<button id="surpriseBtn">
 
-کلیک کن یه سورپرایز برات دارم ❤️
+    🎁
+    کلیک کن یه سورپرایز برات دارم ❤️
 
 </button>
 
@@ -1689,42 +1883,56 @@ body::before{
     id="voiceBox"
 >
 
-<h2>
-    عاشقتم بچه ❤️
-</h2>
+    <div class="voice-icon">
+        🎙️❤️
+    </div>
 
-<p>
-    این یکی فقط برای توئه...
-</p>
+    <h2>
+        این یکی فقط برای توئه...
+    </h2>
 
-<audio
-    controls
-    preload="metadata"
->
+    <p>
 
-<source
-    src="4_5965547555092699255.mp3"
-    type="audio/mpeg"
->
+        قبل از اینکه گوش بدی،
+        <br>
+        فقط یه چیزو بدون...
+        <br>
+        هر کلمه‌ش از ته قلبمه. ❤️
 
-مرورگرت از پخش صدا پشتیبانی نمی‌کنه.
+    </p>
 
-</audio>
+
+    <audio
+        id="loveVoice"
+        controls
+        preload="metadata"
+    >
+
+        <source
+            src="4_5965547555092699255.mp3"
+            type="audio/mpeg"
+        >
+
+        مرورگرت از پخش صدا پشتیبانی نمی‌کنه.
+
+    </audio>
 
 </div>
 
 
 <!-- FINAL NOTE -->
 
-<div
-    class="final-note"
->
+<div class="final-note">
 
-بعضی آدما فقط وارد زندگی آدم نمی‌شن...
-<br>
-تبدیل می‌شن به قشنگ‌ترین قسمتِ زندگی. ❤️
-<br><br>
-♾️❤️
+    بعضی آدما فقط وارد زندگی آدم نمی‌شن...
+
+    <br>
+
+    تبدیل می‌شن به قشنگ‌ترین قسمتِ زندگی. ❤️
+
+    <br><br>
+
+    ♾️❤️
 
 </div>
 
@@ -1744,9 +1952,8 @@ body::before{
 ========================= */
 
 const stars =
-    document.getElementById(
-        "stars"
-    );
+    document.getElementById("stars");
+
 
 for(
     let i = 0;
@@ -1755,28 +1962,21 @@ for(
 ){
 
     const star =
-        document.createElement(
-            "span"
-        );
+        document.createElement("span");
 
     star.className =
         "star";
 
     star.style.left =
-        Math.random() * 100 +
-        "%";
+        Math.random() * 100 + "%";
 
     star.style.top =
-        Math.random() * 100 +
-        "%";
+        Math.random() * 100 + "%";
 
     star.style.animationDelay =
-        Math.random() * 2 +
-        "s";
+        Math.random() * 2 + "s";
 
-    stars.appendChild(
-        star
-    );
+    stars.appendChild(star);
 
 }
 
@@ -1785,16 +1985,30 @@ for(
    COUNTDOWN
 ========================= */
 
+/*
+   تولد ملینا:
+   ۲۹ مهر ۱۴۰۵
+   برابر با ۲۱ اکتبر ۲۰۲۶
+*/
+
 const birthdayDate =
     new Date(
         "2026-10-21T00:00:00+03:30"
     );
 
 
+/*
+   برای تست:
+   سایت را با ?test=1 باز کن.
+   مثال:
+   Melina.html?test=1
+*/
+
 const params =
     new URLSearchParams(
         location.search
     );
+
 
 const testMode =
     params.get("test") === "1";
@@ -1809,6 +2023,7 @@ const countdownOverlay =
         "countdownOverlay"
     );
 
+
 const mainContent =
     document.getElementById(
         "mainContent"
@@ -1821,27 +2036,33 @@ let birthdayStarted =
 
 function startBirthday(){
 
-    if(
-        birthdayStarted
-    ){
+    if(birthdayStarted){
+
         return;
+
     }
+
 
     birthdayStarted =
         true;
 
+
     countdownOverlay.style.opacity =
         "0";
+
 
     setTimeout(() => {
 
         countdownOverlay.style.display =
             "none";
 
+
         mainContent.style.display =
             "block";
 
+
         startBalloons();
+
 
     },1000);
 
@@ -1868,9 +2089,7 @@ function updateCountdown(){
     }
 
 
-    if(
-        distance <= 0
-    ){
+    if(distance <= 0){
 
         startBirthday();
 
@@ -1890,6 +2109,7 @@ function updateCountdown(){
             )
         );
 
+
     const hours =
         Math.floor(
             (
@@ -1908,6 +2128,7 @@ function updateCountdown(){
             )
         );
 
+
     const minutes =
         Math.floor(
             (
@@ -1924,6 +2145,7 @@ function updateCountdown(){
             )
         );
 
+
     const seconds =
         Math.floor(
             (
@@ -1937,30 +2159,26 @@ function updateCountdown(){
         );
 
 
-    document.getElementById(
-        "days"
-    ).textContent =
+    document.getElementById("days")
+        .textContent =
         String(days)
         .padStart(2,"0");
 
 
-    document.getElementById(
-        "hours"
-    ).textContent =
+    document.getElementById("hours")
+        .textContent =
         String(hours)
         .padStart(2,"0");
 
 
-    document.getElementById(
-        "minutes"
-    ).textContent =
+    document.getElementById("minutes")
+        .textContent =
         String(minutes)
         .padStart(2,"0");
 
 
-    document.getElementById(
-        "seconds"
-    ).textContent =
+    document.getElementById("seconds")
+        .textContent =
         String(seconds)
         .padStart(2,"0");
 
@@ -1969,6 +2187,7 @@ function updateCountdown(){
 
 updateCountdown();
 
+
 setInterval(
     updateCountdown,
     1000
@@ -1976,7 +2195,7 @@ setInterval(
 
 
 /* =========================
-   MAIN PHOTO SLIDESHOW
+   PHOTO SLIDESHOW
 ========================= */
 
 const photoList = [
@@ -2002,8 +2221,7 @@ const photoList = [
 ];
 
 
-let currentPhoto =
-    0;
+let currentPhoto = 0;
 
 
 const mainPhoto =
@@ -2029,9 +2247,7 @@ setInterval(() => {
     setTimeout(() => {
 
         mainPhoto.src =
-            photoList[
-                currentPhoto
-            ];
+            photoList[currentPhoto];
 
         mainPhoto.style.opacity =
             "1";
@@ -2051,9 +2267,16 @@ const surpriseBtn =
         "surpriseBtn"
     );
 
+
 const voiceBox =
     document.getElementById(
         "voiceBox"
+    );
+
+
+const loveVoice =
+    document.getElementById(
+        "loveVoice"
     );
 
 
@@ -2061,18 +2284,32 @@ surpriseBtn.addEventListener(
     "click",
     () => {
 
-        voiceBox.style.display =
-            "block";
-
         surpriseBtn.style.display =
             "none";
 
-        createHearts(35);
 
-        voiceBox.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
+        voiceBox.style.display =
+            "block";
+
+
+        createHearts(70);
+
+
+        setTimeout(() => {
+
+            voiceBox.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        },100);
+
+
+        /*
+           پخش خودکار ممکن است توسط
+           مرورگر گوشی مسدود شود.
+           پس کنترل صدا را نمایش می‌دهیم.
+        */
 
     }
 );
@@ -2082,9 +2319,7 @@ surpriseBtn.addEventListener(
    HEARTS
 ========================= */
 
-function createHearts(
-    count
-){
+function createHearts(count){
 
     for(
         let i = 0;
@@ -2095,29 +2330,38 @@ function createHearts(
         setTimeout(() => {
 
             const heart =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
+
 
             heart.className =
                 "heart";
 
+
+            const heartTypes = [
+
+                "❤️",
+                "💕",
+                "💖",
+                "💗",
+                "💘",
+                "💝"
+
+            ];
+
+
             heart.textContent =
-                [
-                    "❤️",
-                    "💕",
-                    "💖",
-                    "💗",
-                    "💘"
-                ][
+                heartTypes[
                     Math.floor(
-                        Math.random() * 5
+                        Math.random() *
+                        heartTypes.length
                     )
                 ];
+
 
             heart.style.left =
                 Math.random() * 100 +
                 "vw";
+
 
             heart.style.fontSize =
                 (
@@ -2126,6 +2370,7 @@ function createHearts(
                 ) +
                 "px";
 
+
             heart.style.animationDuration =
                 (
                     3 +
@@ -2133,9 +2378,11 @@ function createHearts(
                 ) +
                 "s";
 
+
             document.body.appendChild(
                 heart
             );
+
 
             setTimeout(() => {
 
@@ -2143,8 +2390,8 @@ function createHearts(
 
             },6500);
 
-        },
-        i * 50);
+
+        },i * 45);
 
     }
 
@@ -2158,19 +2405,12 @@ function createHearts(
 const balloonColors = [
 
     "#ff4d6d",
-
     "#ff8fab",
-
     "#ffb703",
-
     "#4cc9f0",
-
     "#7209b7",
-
     "#06d6a0",
-
     "#f72585",
-
     "#4361ee"
 
 ];
@@ -2205,11 +2445,10 @@ const balloonWords = [
 ];
 
 
-let balloonCreated =
-    0;
+let balloonCreated = 0;
 
-let balloonInterval =
-    null;
+
+let balloonInterval = null;
 
 
 function createBalloon(){
@@ -2226,13 +2465,12 @@ function createBalloon(){
     const index =
         balloonCreated;
 
+
     balloonCreated++;
 
 
     const balloon =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     balloon.className =
@@ -2254,6 +2492,7 @@ function createBalloon(){
 
     balloon.style.background =
         color;
+
 
     balloon.style.color =
         color;
@@ -2277,6 +2516,7 @@ function createBalloon(){
     balloon.style.width =
         size + "px";
 
+
     balloon.style.height =
         size * 1.28 + "px";
 
@@ -2287,8 +2527,7 @@ function createBalloon(){
             : (
                 10 +
                 Math.random() * 5
-            ) +
-            "s";
+            ) + "s";
 
 
     if(golden){
@@ -2315,22 +2554,6 @@ function createBalloon(){
     );
 
 
-    balloon.addEventListener(
-        "touchstart",
-        () => {
-
-            popBalloon(
-                balloon,
-                index
-            );
-
-        },
-        {
-            passive:true
-        }
-    );
-
-
     document.body.appendChild(
         balloon
     );
@@ -2351,11 +2574,13 @@ function createBalloon(){
 }
 
 
+/* =========================
+   START BALLOONS
+========================= */
+
 function startBalloons(){
 
-    if(
-        balloonInterval
-    ){
+    if(balloonInterval){
 
         return;
 
@@ -2384,6 +2609,7 @@ function startBalloons(){
 
                 }
 
+
                 createBalloon();
 
             },
@@ -2392,6 +2618,10 @@ function startBalloons(){
 
 }
 
+
+/* =========================
+   POP BALLOON
+========================= */
 
 function popBalloon(
     balloon,
@@ -2435,9 +2665,7 @@ function popBalloon(
     /* TEXT */
 
     const text =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     text.className =
@@ -2465,14 +2693,13 @@ function popBalloon(
 
     for(
         let i = 0;
-        i < 22;
+        i < 30;
         i++
     ){
 
         const particle =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
+
 
         particle.className =
             "balloon-particle";
@@ -2480,6 +2707,7 @@ function popBalloon(
 
         particle.style.left =
             centerX + "px";
+
 
         particle.style.top =
             centerY + "px";
@@ -2497,7 +2725,7 @@ function popBalloon(
 
         const distance =
             50 +
-            Math.random() * 130;
+            Math.random() * 150;
 
 
         particle.style.setProperty(
@@ -2533,9 +2761,7 @@ function popBalloon(
     /* EXPLOSION */
 
     const boom =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     boom.textContent =
@@ -2545,23 +2771,30 @@ function popBalloon(
     boom.style.position =
         "fixed";
 
+
     boom.style.left =
         centerX + "px";
+
 
     boom.style.top =
         centerY + "px";
 
+
     boom.style.transform =
         "translate(-50%,-50%) scale(1.5)";
+
 
     boom.style.fontSize =
         "35px";
 
+
     boom.style.zIndex =
         "2147483647";
 
+
     boom.style.pointerEvents =
         "none";
+
 
     effectsLayer.appendChild(
         boom
@@ -2580,9 +2813,7 @@ function popBalloon(
 
     /* FINAL */
 
-    if(
-        index === 11
-    ){
+    if(index === 11){
 
         setTimeout(
             showFinalLoveMessage,
@@ -2607,9 +2838,7 @@ function showFinalLoveMessage(){
 
 
     const final =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     final.className =
@@ -2658,9 +2887,7 @@ function showFinalLoveMessage(){
             </div>
 
 
-            <div
-                class="final-love-heart"
-            >
+            <div class="final-love-heart">
 
                 ❤️
 
@@ -2676,13 +2903,14 @@ function showFinalLoveMessage(){
     );
 
 
-    createHearts(100);
+    createHearts(120);
 
 
     setTimeout(() => {
 
         final.style.transition =
             "opacity 1.5s ease";
+
 
         final.style.opacity =
             "0";
@@ -2703,6 +2931,7 @@ function showFinalLoveMessage(){
     },7000);
 
 }
+
 
 </script>
 
