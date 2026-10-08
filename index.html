@@ -11,10 +11,6 @@
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-
 *{
     box-sizing:border-box;
 }
@@ -46,13 +42,7 @@ body{
         sans-serif;
 
     overflow-x:hidden;
-
 }
-
-
-/* =========================
-   BACKGROUND
-========================= */
 
 body::before{
 
@@ -77,7 +67,6 @@ body::before{
         );
 
     z-index:-2;
-
 }
 
 
@@ -94,7 +83,6 @@ body::before{
     pointer-events:none;
 
     z-index:-1;
-
 }
 
 .star{
@@ -102,7 +90,6 @@ body::before{
     position:absolute;
 
     width:2px;
-
     height:2px;
 
     background:#fff;
@@ -116,7 +103,6 @@ body::before{
         2s
         infinite
         alternate;
-
 }
 
 @keyframes twinkle{
@@ -130,7 +116,6 @@ body::before{
         opacity:1;
         transform:scale(1.4);
     }
-
 }
 
 
@@ -145,7 +130,6 @@ body::before{
     inset:0;
 
     width:100vw;
-
     height:100vh;
 
     z-index:2147483646;
@@ -153,7 +137,6 @@ body::before{
     pointer-events:none;
 
     overflow:visible;
-
 }
 
 
@@ -172,7 +155,6 @@ body::before{
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
@@ -189,7 +171,6 @@ body::before{
 
     transition:
         opacity 1s ease;
-
 }
 
 .countdown-box{
@@ -231,7 +212,6 @@ body::before{
             150,
             .18
         );
-
 }
 
 .countdown-box h1{
@@ -249,7 +229,6 @@ body::before{
         );
 
     color:#ff9bc4;
-
 }
 
 .countdown-box p{
@@ -262,7 +241,6 @@ body::before{
     color:#ddd;
 
     line-height:2;
-
 }
 
 .timer{
@@ -273,7 +251,6 @@ body::before{
         repeat(4,1fr);
 
     gap:8px;
-
 }
 
 .time-box{
@@ -291,7 +268,6 @@ body::before{
             255,
             .08
         );
-
 }
 
 .time-box strong{
@@ -306,7 +282,6 @@ body::before{
         );
 
     color:#fff;
-
 }
 
 .time-box span{
@@ -314,7 +289,6 @@ body::before{
     font-size:12px;
 
     color:#bbb;
-
 }
 
 .countdown-heart{
@@ -327,7 +301,6 @@ body::before{
         heartBeat
         1.2s
         infinite;
-
 }
 
 
@@ -345,7 +318,6 @@ body::before{
         40px
         15px
         70px;
-
 }
 
 .container{
@@ -356,7 +328,6 @@ body::before{
     );
 
     margin:auto;
-
 }
 
 .main-card{
@@ -398,7 +369,6 @@ body::before{
             0,
             .45
         );
-
 }
 
 
@@ -411,7 +381,6 @@ body::before{
     text-align:center;
 
     margin-bottom:30px;
-
 }
 
 .title h1{
@@ -435,7 +404,6 @@ body::before{
             170,
             .7
         );
-
 }
 
 .title h2{
@@ -452,7 +420,6 @@ body::before{
         );
 
     color:#fff;
-
 }
 
 .title p{
@@ -467,7 +434,6 @@ body::before{
             4vw,
             18px
         );
-
 }
 
 
@@ -519,13 +485,11 @@ body::before{
             0,
             .6
         );
-
 }
 
 .photo-showcase img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -535,7 +499,6 @@ body::before{
     transition:
         opacity .8s ease,
         transform 1s ease;
-
 }
 
 .photo-showcase::after{
@@ -568,7 +531,6 @@ body::before{
         infinite;
 
     pointer-events:none;
-
 }
 
 @keyframes shine{
@@ -584,7 +546,6 @@ body::before{
     100%{
         transform:translateX(120%);
     }
-
 }
 
 
@@ -604,7 +565,6 @@ body::before{
         35px
         0
         15px;
-
 }
 
 .memories{
@@ -625,13 +585,11 @@ body::before{
 
     -webkit-overflow-scrolling:
         touch;
-
 }
 
 .memories::-webkit-scrollbar{
 
     height:5px;
-
 }
 
 .memories::-webkit-scrollbar-thumb{
@@ -645,7 +603,6 @@ body::before{
         );
 
     border-radius:20px;
-
 }
 
 .memory{
@@ -680,13 +637,11 @@ body::before{
             0,
             .4
         );
-
 }
 
 .memory img{
 
     width:100%;
-
     height:100%;
 
     object-fit:contain;
@@ -694,7 +649,6 @@ body::before{
     display:block;
 
     background:#000;
-
 }
 
 
@@ -709,7 +663,6 @@ body::before{
     margin:
         40px
         0;
-
 }
 
 #surpriseBtn{
@@ -758,7 +711,6 @@ body::before{
         surprisePulse
         2s
         infinite;
-
 }
 
 #surpriseBtn::before{
@@ -784,14 +736,12 @@ body::before{
         buttonRing
         2s
         infinite;
-
 }
 
 #surpriseBtn:active{
 
     transform:
         scale(.94);
-
 }
 
 @keyframes surprisePulse{
@@ -804,7 +754,6 @@ body::before{
     50%{
         transform:scale(1.04);
     }
-
 }
 
 @keyframes buttonRing{
@@ -818,7 +767,6 @@ body::before{
         opacity:0;
         transform:scale(1.15);
     }
-
 }
 
 
@@ -881,7 +829,6 @@ body::before{
         voiceAppear
         .8s
         ease;
-
 }
 
 @keyframes voiceAppear{
@@ -899,7 +846,6 @@ body::before{
             translateY(0)
             scale(1);
     }
-
 }
 
 .voice-icon{
@@ -912,7 +858,6 @@ body::before{
         heartBeat
         1.2s
         infinite;
-
 }
 
 .voice-box h2{
@@ -922,7 +867,6 @@ body::before{
     margin:
         0
         10px;
-
 }
 
 .voice-box p{
@@ -930,7 +874,6 @@ body::before{
     color:#ccc;
 
     line-height:2;
-
 }
 
 .voice-box audio{
@@ -938,7 +881,253 @@ body::before{
     width:100%;
 
     max-width:500px;
+}
 
+
+/* =========================
+   SECRET LETTER
+========================= */
+
+.letter-wrap{
+
+    display:none;
+
+    text-align:center;
+
+    margin:
+        30px
+        auto
+        10px;
+
+    animation:
+        letterAppear
+        1s
+        ease;
+}
+
+#letterBtn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:
+        15px
+        25px;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d214f,
+            #c91873
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(
+            255,
+            40,
+            140,
+            .25
+        );
+}
+
+@keyframes letterAppear{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   LETTER MODAL
+========================= */
+
+.letter-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:2147483647;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px;
+
+    background:
+        rgba(
+            3,
+            0,
+            5,
+            .88
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    opacity:0;
+
+    transition:
+        opacity .8s ease;
+}
+
+.letter-paper{
+
+    width:min(
+        92vw,
+        650px
+    );
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    padding:
+        35px
+        24px;
+
+    border-radius:28px;
+
+    text-align:right;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2b0d20,
+            #160812
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            150,
+            200,
+            .35
+        );
+
+    box-shadow:
+        0 0 80px
+        rgba(
+            255,
+            30,
+            140,
+            .35
+        );
+
+    transform:
+        scale(.75)
+        translateY(40px);
+
+    transition:
+        transform .8s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
+}
+
+.letter-overlay.show{
+
+    opacity:1;
+}
+
+.letter-overlay.show
+.letter-paper{
+
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+.letter-paper h2{
+
+    text-align:center;
+
+    color:#ffabc9;
+
+    font-size:25px;
+
+    margin-top:0;
+
+    margin-bottom:25px;
+}
+
+.letter-paper p{
+
+    color:#eee;
+
+    line-height:2.3;
+
+    font-size:16px;
+
+    margin:
+        0
+        0
+        17px;
+}
+
+.letter-close{
+
+    display:block;
+
+    margin:
+        25px
+        auto
+        0;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:
+        12px
+        25px;
+
+    border-radius:30px;
+
+    color:#fff;
+
+    background:
+        rgba(
+            255,
+            80,
+            150,
+            .25
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            150,
+            200,
+            .35
+        );
 }
 
 
@@ -957,7 +1146,6 @@ body::before{
     line-height:2;
 
     font-size:17px;
-
 }
 
 
@@ -1011,7 +1199,6 @@ body::before{
         12s
         linear
         forwards;
-
 }
 
 .balloon::after{
@@ -1028,7 +1215,6 @@ body::before{
         translateX(-50%);
 
     width:0;
-
     height:0;
 
     border-left:
@@ -1039,7 +1225,6 @@ body::before{
 
     border-top:
         12px solid currentColor;
-
 }
 
 .balloon::before{
@@ -1063,7 +1248,6 @@ body::before{
             255,
             .45
         );
-
 }
 
 @keyframes balloonRise{
@@ -1073,7 +1257,6 @@ body::before{
         transform:
             translateY(0)
             rotate(-3deg);
-
     }
 
     50%{
@@ -1081,7 +1264,6 @@ body::before{
         transform:
             translateY(-50vh)
             rotate(4deg);
-
     }
 
     to{
@@ -1089,9 +1271,7 @@ body::before{
         transform:
             translateY(-115vh)
             rotate(-3deg);
-
     }
-
 }
 
 
@@ -1195,7 +1375,6 @@ body::before{
             1
         )
         forwards;
-
 }
 
 @keyframes balloonLoveAppear{
@@ -1210,7 +1389,6 @@ body::before{
                 -50%
             )
             scale(.6);
-
     }
 
     12%{
@@ -1223,7 +1401,6 @@ body::before{
                 -50%
             )
             scale(1);
-
     }
 
     70%{
@@ -1238,7 +1415,6 @@ body::before{
                 )
             )
             scale(1.05);
-
     }
 
     100%{
@@ -1251,9 +1427,7 @@ body::before{
                 -90vh
             )
             scale(.85);
-
     }
-
 }
 
 
@@ -1266,7 +1440,6 @@ body::before{
     position:fixed;
 
     width:8px;
-
     height:8px;
 
     border-radius:50%;
@@ -1280,7 +1453,6 @@ body::before{
         900ms
         ease-out
         forwards;
-
 }
 
 @keyframes particleFly{
@@ -1295,7 +1467,6 @@ body::before{
                 0
             )
             scale(1);
-
     }
 
     to{
@@ -1308,9 +1479,7 @@ body::before{
                 var(--y)
             )
             scale(.1);
-
     }
-
 }
 
 
@@ -1339,14 +1508,13 @@ body::before{
             5,
             0,
             5,
-            .82
+            .86
         );
 
     backdrop-filter:
         blur(12px);
 
     opacity:1;
-
 }
 
 .final-love-inner{
@@ -1394,7 +1562,6 @@ body::before{
         finalAppear
         1s
         ease;
-
 }
 
 @keyframes finalAppear{
@@ -1412,7 +1579,6 @@ body::before{
             scale(1)
             translateY(0);
     }
-
 }
 
 .final-love-small{
@@ -1422,7 +1588,6 @@ body::before{
     font-size:17px;
 
     margin-bottom:15px;
-
 }
 
 .final-love-title{
@@ -1437,7 +1602,6 @@ body::before{
     line-height:2;
 
     font-weight:bold;
-
 }
 
 .final-love-heart{
@@ -1450,7 +1614,6 @@ body::before{
         heartBeat
         1s
         infinite;
-
 }
 
 
@@ -1473,7 +1636,6 @@ body::before{
         4s
         linear
         forwards;
-
 }
 
 @keyframes heartFloat{
@@ -1486,7 +1648,6 @@ body::before{
             translateY(0)
             scale(.7)
             rotate(0deg);
-
     }
 
     to{
@@ -1497,9 +1658,7 @@ body::before{
             translateY(-110vh)
             scale(1.3)
             rotate(20deg);
-
     }
-
 }
 
 
@@ -1517,7 +1676,6 @@ body::before{
     50%{
         transform:scale(1.2);
     }
-
 }
 
 
@@ -1533,13 +1691,11 @@ body::before{
             25px
             10px
             60px;
-
     }
 
     .main-card{
 
         border-radius:25px;
-
     }
 
     .memory{
@@ -1547,7 +1703,6 @@ body::before{
         flex-basis:165px;
 
         height:225px;
-
     }
 
     .balloon-love-text{
@@ -1561,9 +1716,21 @@ body::before{
         white-space:normal;
 
         width:85vw;
-
     }
 
+    .letter-paper{
+
+        padding:
+            28px
+            18px;
+    }
+
+    .letter-paper p{
+
+        font-size:15px;
+
+        line-height:2.2;
+    }
 }
 
 
@@ -1583,9 +1750,7 @@ body::before{
 
         transition-duration:
             .01ms !important;
-
     }
-
 }
 
 </style>
@@ -1624,10 +1789,15 @@ body::before{
         </h1>
 
         <p>
+
             یه اتفاق قشنگ داره نزدیک میشه...
+
             <br>
+
             برای کسی که دنیای منه.
+
         </p>
+
 
         <div class="timer">
 
@@ -1894,9 +2064,13 @@ body::before{
     <p>
 
         قبل از اینکه گوش بدی،
+
         <br>
+
         فقط یه چیزو بدون...
+
         <br>
+
         هر کلمه‌ش از ته قلبمه. ❤️
 
     </p>
@@ -1916,6 +2090,22 @@ body::before{
         مرورگرت از پخش صدا پشتیبانی نمی‌کنه.
 
     </audio>
+
+</div>
+
+
+<!-- SECRET LETTER BUTTON -->
+
+<div
+    class="letter-wrap"
+    id="letterWrap"
+>
+
+    <button id="letterBtn">
+
+        💌 یه نامه هم برات دارم...
+
+    </button>
 
 </div>
 
@@ -1942,6 +2132,155 @@ body::before{
 </div>
 
 </main>
+
+
+<!-- LETTER -->
+
+<div
+    class="letter-overlay"
+    id="letterOverlay"
+>
+
+    <div class="letter-paper">
+
+        <h2>
+            برای تو، ملینا... ❤️
+        </h2>
+
+
+        <p>
+
+            نمی‌دونم از کجا شروع کنم،
+
+            <br>
+
+            چون بعضی آدم‌ها رو نمی‌شه با چندتا جمله توصیف کرد...
+
+        </p>
+
+
+        <p>
+
+            تو برای من فقط یه آدمی که دوستش دارم نیستی؛
+
+            <br>
+
+            تو شدی بخشی از روزهام، فکرهام، لبخندام و حتی آرزوهام.
+
+        </p>
+
+
+        <p>
+
+            شاید نتونم همیشه با کلمات درست نشونت بدم،
+
+            <br>
+
+            ولی بودنت برای من یه اتفاق معمولی نیست.
+
+            <br>
+
+            از بین این همه آدم، زندگی منو به تو رسوند...
+
+            <br>
+
+            و من بابت همین، همیشه خوشحالم. ❤️
+
+        </p>
+
+
+        <p>
+
+            امروز روز تولد توئه،
+
+            <br>
+
+            اما راستش منم یه هدیه گرفتم؛
+
+            <br>
+
+            هدیه‌ای که اسمش «داشتن تو»ئه.
+
+        </p>
+
+
+        <p>
+
+            امیدوارم هر سال که این صفحه رو باز می‌کنی،
+
+            <br>
+
+            یه لبخند روی صورتت بشینه و یادت بیاد
+
+            <br>
+
+            یه نفر یه جایی از این دنیا هست
+
+            <br>
+
+            که با تمام قلبش دوستت داره.
+
+        </p>
+
+
+        <p
+            style="
+                text-align:center;
+                color:#ffabc9;
+                font-weight:bold;
+            "
+        >
+
+            تولدت مبارک قشنگ‌ترین اتفاق زندگی من. 🎂❤️
+
+        </p>
+
+
+        <p>
+
+            و اگه یه روز ازم بپرسی:
+
+            <br>
+
+            «اگه می‌تونستی یه چیز توی زندگیت رو دوباره انتخاب کنی، چی رو انتخاب می‌کردی؟»
+
+        </p>
+
+
+        <p
+            style="
+                text-align:center;
+                font-size:21px;
+                color:#ff9bc4;
+                font-weight:bold;
+            "
+        >
+
+            جوابم خیلی ساده‌ست:
+
+            <br><br>
+
+            باز هم تو.
+
+            <br>
+
+            همیشه تو. ❤️
+
+        </p>
+
+
+        <button
+            class="letter-close"
+            id="letterClose"
+        >
+
+            ❤️ بستن نامه
+
+        </button>
+
+    </div>
+
+</div>
 
 
 <script>
@@ -1977,7 +2316,6 @@ for(
         Math.random() * 2 + "s";
 
     stars.appendChild(star);
-
 }
 
 
@@ -1985,24 +2323,11 @@ for(
    COUNTDOWN
 ========================= */
 
-/*
-   تولد ملینا:
-   ۲۹ مهر ۱۴۰۵
-   برابر با ۲۱ اکتبر ۲۰۲۶
-*/
-
 const birthdayDate =
     new Date(
         "2026-10-21T00:00:00+03:30"
     );
 
-
-/*
-   برای تست:
-   سایت را با ?test=1 باز کن.
-   مثال:
-   Melina.html?test=1
-*/
 
 const params =
     new URLSearchParams(
@@ -2042,7 +2367,6 @@ function startBirthday(){
 
     }
 
-
     birthdayStarted =
         true;
 
@@ -2056,13 +2380,10 @@ function startBirthday(){
         countdownOverlay.style.display =
             "none";
 
-
         mainContent.style.display =
             "block";
 
-
         startBalloons();
-
 
     },1000);
 
@@ -2280,6 +2601,12 @@ const loveVoice =
     );
 
 
+const letterWrap =
+    document.getElementById(
+        "letterWrap"
+    );
+
+
 surpriseBtn.addEventListener(
     "click",
     () => {
@@ -2304,12 +2631,125 @@ surpriseBtn.addEventListener(
 
         },100);
 
+    }
+);
 
-        /*
-           پخش خودکار ممکن است توسط
-           مرورگر گوشی مسدود شود.
-           پس کنترل صدا را نمایش می‌دهیم.
-        */
+
+/* =========================
+   SHOW LETTER
+========================= */
+
+loveVoice.addEventListener(
+    "ended",
+    () => {
+
+        letterWrap.style.display =
+            "block";
+
+
+        setTimeout(() => {
+
+            letterWrap.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        },300);
+
+        createHearts(35);
+
+    }
+);
+
+
+/* اگر خواستی بدون تمام کردن ویس
+   نامه را ببینی، بعد از 12 ثانیه
+   هم ظاهر می‌شود */
+
+setTimeout(() => {
+
+    if(
+        voiceBox.style.display ===
+        "block"
+    ){
+
+        letterWrap.style.display =
+            "block";
+
+    }
+
+},12000);
+
+
+/* =========================
+   LETTER OPEN
+========================= */
+
+const letterBtn =
+    document.getElementById(
+        "letterBtn"
+    );
+
+
+const letterOverlay =
+    document.getElementById(
+        "letterOverlay"
+    );
+
+
+const letterClose =
+    document.getElementById(
+        "letterClose"
+    );
+
+
+letterBtn.addEventListener(
+    "click",
+    () => {
+
+        letterOverlay.style.display =
+            "flex";
+
+
+        requestAnimationFrame(() => {
+
+            letterOverlay.classList.add(
+                "show"
+            );
+
+        });
+
+
+        createHearts(60);
+
+    }
+);
+
+
+/* =========================
+   LETTER CLOSE
+========================= */
+
+letterClose.addEventListener(
+    "click",
+    () => {
+
+        letterOverlay.classList.remove(
+            "show"
+        );
+
+
+        setTimeout(() => {
+
+            letterOverlay.style.display =
+                "none";
+
+
+            startBalloons();
+
+            createHearts(100);
+
+        },800);
 
     }
 );
@@ -2390,8 +2830,7 @@ function createHearts(count){
 
             },6500);
 
-
-        },i * 45);
+        },i * 35);
 
     }
 
@@ -2574,10 +3013,6 @@ function createBalloon(){
 }
 
 
-/* =========================
-   START BALLOONS
-========================= */
-
 function startBalloons(){
 
     if(balloonInterval){
@@ -2662,8 +3097,6 @@ function popBalloon(
         );
 
 
-    /* TEXT */
-
     const text =
         document.createElement("div");
 
@@ -2688,8 +3121,6 @@ function popBalloon(
         text
     );
 
-
-    /* PARTICLES */
 
     for(
         let i = 0;
@@ -2758,8 +3189,6 @@ function popBalloon(
     }
 
 
-    /* EXPLOSION */
-
     const boom =
         document.createElement("div");
 
@@ -2810,8 +3239,6 @@ function popBalloon(
 
     balloon.remove();
 
-
-    /* FINAL */
 
     if(index === 11){
 
@@ -2868,7 +3295,7 @@ function showFinalLoveMessage(){
 
                 تو قشنگ‌ترین قسمتِ زندگی منی.
 
-                <br>
+                <br><br>
 
                 <span
                     style="
@@ -2876,11 +3303,19 @@ function showFinalLoveMessage(){
                     "
                 >
 
-                    دوستت دارم...
+                    اگه قرار بود دوباره زندگی کنم،
 
                     <br>
 
-                    بیشتر از چیزی که بشه با کلمه گفت. ❤️
+                    باز هم دلم می‌خواست تو رو پیدا کنم.
+
+                    <br><br>
+
+                    باز هم تو.
+
+                    <br>
+
+                    همیشه تو. ❤️
 
                 </span>
 
@@ -2903,7 +3338,7 @@ function showFinalLoveMessage(){
     );
 
 
-    createHearts(120);
+    createHearts(160);
 
 
     setTimeout(() => {
@@ -2928,13 +3363,12 @@ function showFinalLoveMessage(){
 
         },1600);
 
-    },7000);
+    },9000);
 
 }
-
 
 </script>
 
 </body>
 
-    </html>
+   </html>
