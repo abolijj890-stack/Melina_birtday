@@ -1,799 +1,1398 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#090711">
-<meta name="description" content="آرشیو آنلاین عکس‌ها، صداها و خاطرات">
-<title>خاطرات ملینا ✨</title><style>
-:root{
-  --bg:#080711;
-  --panel:rgba(255,255,255,.055);
-  --line:rgba(255,255,255,.12);
-  --text:#f8f2ff;
-  --muted:#b9afc8;
-  --pink:#ff9dcc;
-  --purple:#b7a0ff;
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10091f">
+<title>آرشیو خاطرات ما ❤️</title>
+
+<style>
+:root {
+  --bg: #10091f;
+  --card: rgba(255,255,255,.075);
+  --border: rgba(255,255,255,.13);
+  --pink: #ff83c8;
+  --purple: #b69aff;
+  --text: #fff5ff;
+  --muted: #c8b9d8;
+  --green: #9fffc8;
+  --red: #ff9eae;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  margin:0;color:var(--text);font-family:Tahoma,Arial,sans-serif;
-  line-height:1.9;
-  background:radial-gradient(ellipse at 50% -10%,#29143d,#100b1b 42%,var(--bg) 78%);
-  min-height:100vh;overflow-x:hidden
+
+* {
+  box-sizing: border-box;
 }
-button,input,textarea,select{font:inherit}
-button,a{color:inherit}
-a{text-decoration:none}
-button{cursor:pointer}
-#stars{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
-.star{
-  position:absolute;width:2px;height:2px;border-radius:50%;
-  background:white;opacity:.4;animation:twinkle 3s ease-in-out infinite alternate
+
+html {
+  scroll-behavior: smooth;
 }
-@keyframes twinkle{to{opacity:1;transform:scale(1.7)}}
-.topbar{
-  position:sticky;top:0;z-index:20;background:#090711e8;
-  backdrop-filter:blur(18px);border-bottom:1px solid #ffffff10
+
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at top, #382052 0%, transparent 45%),
+    radial-gradient(ellipse at bottom, #24143b 0%, transparent 50%),
+    var(--bg);
+  line-height: 1.9;
 }
-.nav{
-  width:min(1080px,100%);margin:auto;padding:10px 15px;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap
+
+button, input, textarea, select {
+  font: inherit;
 }
-.brand{font-weight:bold;color:var(--pink)}
-.navlinks{display:flex;gap:6px;overflow-x:auto;max-width:100%}
-.navlinks a{
-  font-size:12px;color:var(--muted);padding:7px 10px;border-radius:30px;white-space:nowrap
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
 }
-.navlinks a:hover{background:#ffffff10;color:white}
-.wrap{width:min(1000px,100%);margin:auto;padding:0 16px}
-.hero{
-  min-height:62vh;display:grid;place-items:center;text-align:center;padding:55px 0 35px
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.hero-inner{max-width:760px}
-.eyebrow{
-  display:inline-block;border:1px solid #ffffff18;background:#ffffff08;
-  border-radius:40px;padding:5px 14px;color:#d7c6ff;font-size:12px
+
+button {
+  cursor: pointer;
 }
-.hero h1{font-size:clamp(32px,8vw,65px);line-height:1.5;margin:18px 0}
-.gradient{
-  background:linear-gradient(100deg,#fff,#ffadd5,#bdaaff);
-  -webkit-background-clip:text;background-clip:text;color:transparent
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 20%, #fff 50%, transparent 100%),
+    radial-gradient(2px 2px at 60% 70%, #ffb8e1 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 80%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 90% 60%, #d7c2ff 50%, transparent 100%);
+  background-size: 190px 190px, 250px 250px, 300px 300px,
+                   220px 220px, 270px 270px;
+  opacity: .6;
 }
-.hero p{color:var(--muted);max-width:600px;margin:auto}
-.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:24px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  padding:10px 17px;border:1px solid #ffffff1c;border-radius:35px;
-  background:#ffffff08;color:white
+
+header {
+  padding: 18px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(16,9,31,.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
 }
-.btn-primary{background:linear-gradient(120deg,#bd6ce9,#e85b9c);border:0;color:white}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.section{padding:32px 0 24px}
-.section-head{text-align:center;margin-bottom:22px}
-.kicker{color:var(--purple);font-size:12px}
-.section h2{font-size:clamp(23px,5vw,34px);margin:4px 0;color:white}
-.section-head p{margin:0 auto;color:var(--muted);font-size:13px;max-width:600px}
-.card{
-  background:var(--panel);border:1px solid var(--line);
-  border-radius:24px;backdrop-filter:blur(14px)
+
+nav {
+  max-width: 1050px;
+  margin: auto;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.feature-card{overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.feature-image{min-height:300px;background:#100b18;cursor:zoom-in}
-.feature-image img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block}
-.feature-copy{padding:28px;display:flex;flex-direction:column;justify-content:center}
-.feature-copy h3{color:var(--pink);margin:0 0 8px}
-.feature-copy p{color:#d4cbdc}
-.memory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.memory-card{
-  min-width:0;aspect-ratio:3/4;border-radius:16px;overflow:hidden;
-  background:#120d1b;border:1px solid var(--line);position:relative;cursor:zoom-in;
-  padding:0
+
+nav a {
+  padding: 5px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  border-radius: 20px;
+  transition: .2s;
 }
-.memory-card img{width:100%;height:100%;object-fit:contain;display:block;background:#050408}
-.memory-caption{
-  position:absolute;inset:auto 0 0;padding:24px 9px 8px;
-  background:linear-gradient(transparent,#08050df0);font-size:11px
+
+nav a:hover {
+  color: white;
+  background: rgba(255,131,200,.15);
 }
-.voice-card{padding:25px;text-align:center;max-width:700px;margin:auto}
-.voice-card h3{color:var(--pink)}
-.voice-card p{color:var(--muted)}
-audio,video{width:100%;max-width:500px;margin-top:10px}
-.timeline{max-width:720px;margin:auto;position:relative}
-.timeline:before{
-  content:"";position:absolute;right:10px;top:10px;bottom:10px;
-  width:1px;background:linear-gradient(var(--pink),#9a7cff22)
+
+main {
+  width: min(100% - 26px, 900px);
+  margin: auto;
 }
-.timeline-item{position:relative;padding:0 35px 20px 0}
-.timeline-dot{position:absolute;right:3px;top:9px;width:15px;height:15px;border-radius:50%;background:#d69bff}
-.timeline-box{padding:15px;border:1px solid var(--line);border-radius:17px;background:#ffffff06}
-.timeline-box h3{font-size:15px;margin:0 0 4px;color:#ffc0df}
-.timeline-box p{margin:0;color:var(--muted);font-size:13px}
-.letter-card{max-width:760px;margin:auto;padding:20px;text-align:center}
-.envelope{
-  width:100%;max-width:360px;padding:20px;border:1px solid #d99bff45;
-  border-radius:20px;background:linear-gradient(135deg,#29143c,#160d24)
+
+section {
+  padding: 30px 0;
+  scroll-margin-top: 85px;
 }
-.letter-text{
-  display:none;text-align:right;max-width:620px;margin:20px auto 0;
-  padding:20px;border-radius:18px;background:#08071175
+
+.hero {
+  text-align: center;
+  padding-top: 55px;
+  padding-bottom: 40px;
 }
-.letter-text.open{display:block}
-.letter-text p{color:#e7dfea;line-height:2.2}
-.surprise-card{text-align:center;padding:25px}
-.surprise-card p{color:var(--muted)}
-#surpriseResult{display:none;color:#ffc0df;font-size:22px;margin-top:18px}
-.small-note{font-size:12px;color:var(--muted)}
-.form-card{padding:clamp(16px,4vw,28px)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:flex;flex-direction:column;gap:6px;min-width:0}
-.field.full{grid-column:1/-1}
-.field label{font-size:13px;color:#e7dfea}
-.field input,.field textarea,.field select{
-  width:100%;min-width:0;padding:12px;border:1px solid #ffffff20;
-  border-radius:12px;color:white;background:#100b1b;outline:none
+
+.hero h1 {
+  font-size: clamp(27px, 7vw, 43px);
+  line-height: 1.6;
+  margin: 12px 0;
+  background: linear-gradient(90deg, #ffb8df, #c4a8ff, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.field input:focus,.field textarea:focus,.field select:focus{border-color:#d49eff}
-.field textarea{resize:vertical;min-height:115px}
-.field input[type=file]{font-size:12px}
-#formStatus{
-  display:none;margin-top:15px;padding:12px;border-radius:12px;
-  background:#ffffff0b;font-size:13px;overflow-wrap:anywhere
+
+.hero p {
+  color: var(--muted);
 }
-#formStatus.show{display:block}
-#formStatus.error{color:#ffb4c4;border:1px solid #ff779933}
-#formStatus.success{color:#b7ffd0;border:1px solid #80ffad33}
-#memoriesList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.saved-memory{padding:16px;min-width:0;overflow:hidden}
-.saved-memory h3{margin:0;color:var(--pink);font-size:17px;overflow-wrap:anywhere}
-.saved-memory .memory-content{white-space:pre-wrap;overflow-wrap:anywhere;color:#e4dbea;font-size:14px}
-.saved-memory img,.saved-memory video{
-  width:100%;max-height:350px;object-fit:contain;border-radius:12px;background:#050408
+
+.hero-heart {
+  font-size: 48px;
+  animation: heartbeat 1.8s infinite;
 }
-.saved-memory audio{width:100%}
-.memory-meta{font-size:11px;color:var(--muted);margin:6px 0 12px}
-.empty-state{
-  grid-column:1/-1;text-align:center;padding:25px;color:var(--muted);
-  border:1px dashed #ffffff22;border-radius:18px;overflow-wrap:anywhere
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
 }
-.loading{text-align:center;color:var(--muted);padding:20px}
-.lightbox{
-  position:fixed;inset:0;z-index:100;display:none;align-items:center;
-  justify-content:center;padding:16px;background:#05030bed
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 23px;
+  padding: 20px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 35px rgba(0,0,0,.12);
 }
-.lightbox.show{display:flex}
-.lightbox img{max-width:100%;max-height:80vh;object-fit:contain}
-.lightbox button{
-  position:absolute;top:15px;left:15px;width:43px;height:43px;
-  border-radius:50%;border:1px solid #ffffff35;background:#ffffff12;color:white;font-size:23px
+
+h2 {
+  font-size: 23px;
+  color: #ffd1eb;
+  margin-top: 0;
 }
-footer{text-align:center;color:#91879e;font-size:12px;padding:40px 10px}
-@media(max-width:700px){
-  .nav{align-items:flex-start;flex-direction:column;gap:5px}
-  .navlinks{width:100%}
-  .hero{min-height:55vh;padding:40px 0}
-  .feature-card{grid-template-columns:1fr}
-  .feature-image,.feature-image img{min-height:260px;max-height:55vh}
-  .memory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-  .form-grid{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  #memoriesList{grid-template-columns:1fr}
+
+h3 {
+  color: #f7c7ff;
 }
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
+
+p {
+  overflow-wrap: anywhere;
 }
-</style></head><body>
-<div id="stars" aria-hidden="true"></div><header class="topbar">
-  <nav class="nav">
-    <a class="brand" href="#home">✦ Melina Memories</a>
-    <div class="navlinks">
-      <a href="#featured">یادگاری</a>
-      <a href="#gallery">گالری</a>
-      <a href="#voice">صدا</a>
-      <a href="#timeline">خاطرات</a>
-      <a href="#archive">آرشیو آنلاین</a>
-      <a href="#letter">نامه</a>
-    </div>
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.btn {
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 13px;
+  padding: 10px 15px;
+  color: white;
+  background: linear-gradient(135deg, #8c5cc8, #d65d9e);
+  display: inline-block;
+  text-align: center;
+  transition: transform .2s, opacity .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background: rgba(255,255,255,.08);
+}
+
+.btn.pink {
+  background: linear-gradient(135deg, #e45ca8, #9d68e7);
+}
+
+.btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+img {
+  max-width: 100%;
+}
+
+.featured-image {
+  display: block;
+  width: 100%;
+  max-height: 510px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: .2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.015);
+}
+
+audio, video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 12px;
+  color: white;
+  background: rgba(13,7,25,.8);
+  border: 1px solid var(--border);
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--pink);
+}
+
+select option {
+  background: #211433;
+  color: white;
+}
+
+textarea {
+  min-height: 115px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-top: 13px;
+  color: #f2dffb;
+  font-size: 13px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.memory-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.memory-card {
+  padding: 17px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.055);
+  border: 1px solid var(--border);
+  overflow-wrap: anywhere;
+  scroll-margin-top: 90px;
+}
+
+.memory-card:target {
+  border-color: var(--pink);
+}
+
+.memory-card h3 {
+  margin: 0 0 5px;
+}
+
+.memory-meta {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 7px 0;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 2px 9px;
+  background: rgba(191,145,255,.14);
+  border: 1px solid var(--border);
+}
+
+.memory-content {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.memory-media {
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+  margin-top: 10px;
+  border-radius: 14px;
+  background: rgba(0,0,0,.2);
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.result-line {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 25px 10px;
+}
+
+.timeline-item {
+  border-right: 2px solid #bd83f1;
+  padding: 0 15px 20px 0;
+  margin-right: 7px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item strong {
+  color: #ffc5e6;
+}
+
+.letter {
+  display: none;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,131,200,.08);
+  border: 1px solid rgba(255,131,200,.2);
+  white-space: pre-wrap;
+}
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(0,0,0,.92);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+#lightbox img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+#lightboxClose {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-size: 30px;
+  background: none;
+  color: white;
+  border: 0;
+}
+
+#randomResult {
+  display: none;
+  margin-top: 15px;
+  border: 1px solid rgba(255,131,200,.3);
+  background: rgba(255,131,200,.07);
+  padding: 15px;
+  border-radius: 16px;
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.status.error {
+  color: var(--red);
+}
+
+.status.success {
+  color: var(--green);
+}
+
+footer {
+  text-align: center;
+  padding: 30px 12px 45px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 520px) {
+  .form-grid, .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img {
+    height: 155px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  nav a {
+    padding: 4px 7px;
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<header>
+  <nav>
+    <a href="#home">خانه</a>
+    <a href="#featured">عکس ما</a>
+    <a href="#gallery">گالری</a>
+    <a href="#voice">صدا</a>
+    <a href="#timeline">قصهٔ ما</a>
+    <a href="#timeMachine">ماشین زمان</a>
+    <a href="#archive">ثبت خاطره</a>
+    <a href="#letter">نامه</a>
   </nav>
-</header><main>
-<div class="wrap"><section class="hero" id="home">
-  <div class="hero-inner">
-    <span class="eyebrow">✧ یک گوشه‌ی کوچک از خاطرات ✧</span>
-    <h1><span class="gradient">برای ملینا</span><br>و روزهای به‌یادموندنی ❤️</h1>
-    <p>بعضی لحظه‌ها فقط یک عکس یا چند ثانیه صدا نیستند؛ تکه‌هایی از زندگی‌اند که ارزش نگه‌داشتن دارند. اینجا، گوشه‌ای برای مرور همان یادگاری‌هاست.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#gallery">دیدن خاطره‌ها ✨</a>
-      <a class="btn" href="#archive">ثبت خاطره جدید 📝</a>
-    </div>
-    <div style="font-size:42px;margin-top:20px">✦ 💜 ✦</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-heart">❤️</div>
+  <h1>آرشیو خاطرات ما</h1>
+  <p>بعضی لحظه‌ها می‌گذرن، اما ارزششون هیچ‌وقت کم نمی‌شه.</p>
+  <p class="muted">اینجا گوشه‌ای از خاطرات، صداها و لحظه‌های ماست.</p>
+  <a class="btn pink" href="#timeMachine">برگردیم به خاطراتمون ✨</a>
+</section>
+
+<section id="featured">
+  <div class="card">
+    <h2>یک قاب از خاطرات ❤️</h2>
+    <img
+      class="featured-image zoomable"
+      src="IMG_20250612_000548_702.jpg"
+      alt="یکی از خاطرات ما"
+      loading="lazy"
+    >
+    <p class="muted">هر عکس می‌تونه دروازه‌ای به یک روز فراموش‌نشدنی باشه.</p>
   </div>
-</section><section class="section" id="featured">
-  <div class="section-head">
-    <span class="kicker">01 / یک یادگاری</span>
-    <h2>یک قاب، هزار تا حس</h2>
-    <p>عکسی برای شروع مرور این آرشیو کوچک.</p>
-  </div>
-  <div class="card feature-card">
-    <div class="feature-image zoomable" data-src="IMG_20250612_000548_702.jpg" data-caption="یک قاب از خاطرات">
-      <img src="IMG_20250612_000548_702.jpg" alt="عکس یادگاری" fetchpriority="high">
-    </div>
-    <div class="feature-copy">
-      <span class="kicker">A LITTLE MEMORY</span>
-      <h3>خاطره‌ها، همین‌قدر ساده و قشنگ‌اند.</h3>
-      <p>گاهی یک عکس، یک صدا یا یک لحظه‌ی معمولی کافی است تا چیزی باارزش را به یادمان بیاورد.</p>
-      <a class="btn" href="#gallery">رفتن به گالری ←</a>
-    </div>
-  </div>
-</section><section class="section" id="gallery">
-  <div class="section-head">
-    <span class="kicker">02 / قاب‌های کوچک</span>
+</section>
+
+<section id="gallery">
+  <div class="card">
     <h2>گالری خاطرات 📸</h2>
-    <p>روی عکس‌ها بزن تا بزرگ‌تر ببینی.</p>
+    <p class="muted">روی هر عکس بزن تا بزرگ‌تر ببینیش.</p>
+
+    <div class="gallery">
+      <img class="zoomable" src="IMG_20250612_000548_702.jpg" alt="خاطره ۱" loading="lazy">
+      <img class="zoomable" src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg" alt="خاطره ۲" loading="lazy">
+      <img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg" alt="خاطره ۳" loading="lazy">
+      <img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg" alt="خاطره ۴" loading="lazy">
+      <img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg" alt="خاطره ۵" loading="lazy">
+      <img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg" alt="خاطره ۶" loading="lazy">
+      <img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg" alt="خاطره ۷" loading="lazy">
+      <img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg" alt="خاطره ۸" loading="lazy">
+      <img class="zoomable" src="eye_love.jpg" alt="چشم‌ها" loading="lazy">
+    </div>
   </div>
-  <div class="memory-grid">
-    <button class="memory-card zoomable" data-src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg" data-caption="یک خاطره‌ی قدیمی">
-      <img src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg" alt="خاطره اول" loading="lazy">
-      <span class="memory-caption">یک خاطره‌ی قدیمی ✨</span>
-    </button>
-    <button class="memory-card zoomable" data-src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg" data-caption="یک قاب از روزها">
-      <img src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg" alt="خاطره دوم" loading="lazy">
-      <span class="memory-caption">یک قاب از روزها 💜</span>
-    </button>
-    <button class="memory-card zoomable" data-src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg" data-caption="یک لحظه‌ی ماندنی">
-      <img src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg" alt="خاطره سوم" loading="lazy">
-      <span class="memory-caption">یک لحظه‌ی ماندنی 🌙</span>
-    </button>
-    <button class="memory-card zoomable" data-src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg" data-caption="از آرشیو خاطرات">
-      <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg" alt="خاطره چهارم" loading="lazy">
-      <span class="memory-caption">از آرشیو خاطرات 🕊️</span>
-    </button>
-    <button class="memory-card zoomable" data-src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg" data-caption="یک یادگاری دیگر">
-      <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg" alt="خاطره پنجم" loading="lazy">
-      <span class="memory-caption">یک یادگاری دیگر 💫</span>
-    </button>
-    <button class="memory-card zoomable" data-src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg" data-caption="یک روز از آن روزها">
-      <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg" alt="خاطره ششم" loading="lazy">
-      <span class="memory-caption">از آن روزها 🌷</span>
-    </button>
-    <button class="memory-card zoomable" data-src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg" data-caption="یک قاب دیگر">
-      <img src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg" alt="خاطره هفتم" loading="lazy">
-      <span class="memory-caption">یک قاب دیگر ✨</span>
-    </button>
-    <button class="memory-card zoomable" data-src="eye_love.jpg" data-caption="چشم‌ها ❤️">
-      <img src="eye_love.jpg" alt="چشم‌ها" loading="lazy">
-      <span class="memory-caption">چشم‌ها ❤️</span>
-    </button>
-  </div>
-</section><section class="section" id="voice">
-  <div class="section-head">
-    <span class="kicker">03 / یک یادگاری صوتی</span>
-    <h2>صدا هم خاطره می‌سازد 🎧</h2>
-    <p>فایل صوتی نسخه‌ی قبلی سایت حفظ شده است.</p>
-  </div>
-  <div class="card voice-card">
-    <div style="font-size:38px">🎙️💜</div>
-    <h3>یک صدا برای شنیدن دوباره</h3>
-    <p>هر وقت خواستی، می‌توانی از همین‌جا پخشش کنی.</p>
+</section>
+
+<section id="voice">
+  <div class="card">
+    <h2>اتاق صدا 🎧</h2>
+    <p>بعضی خاطره‌ها رو نمی‌شه فقط خوند؛ باید شنید.</p>
     <audio controls preload="metadata">
       <source src="4_5965547555092699255.mp3" type="audio/mpeg">
-      مرورگر شما از پخش این فایل پشتیبانی نمی‌کند.
+      مرورگرت از پخش این فایل پشتیبانی نمی‌کنه.
     </audio>
+    <p class="muted">ویس خاطره‌انگیز ما</p>
   </div>
-</section><section class="section" id="timeline">
-  <div class="section-head">
-    <span class="kicker">04 / ورق‌زدن زمان</span>
-    <h2>چند ایستگاه از خاطرات 🕰️</h2>
+</section>
+
+<section id="timeline">
+  <div class="card">
+    <h2>قصهٔ ما 🕰️</h2>
+
+    <div class="timeline-item">
+      <strong>شروع خاطرات</strong>
+      <p class="muted">روزی که داستان ما شروع شد و لحظه‌های تازه شکل گرفتن.</p>
+    </div>
+
+    <div class="timeline-item">
+      <strong>روزهای پر از پیام</strong>
+      <p class="muted">پیام‌ها، شوخی‌ها، حرف‌های طولانی و خاطرات کوچیک.</p>
+    </div>
+
+    <div class="timeline-item">
+      <strong>لحظه‌های ماندگار</strong>
+      <p class="muted">روزهایی که حتی گذشت زمان هم نتونسته از ارزششون کم کنه.</p>
+    </div>
+
+    <p class="small">خاطراتی که در آرشیو ثبت می‌کنی، در بخش ماشین زمان هم نمایش داده می‌شن.</p>
   </div>
-  <div class="timeline">
-    <div class="timeline-item"><span class="timeline-dot"></span><div class="timeline-box"><h3>🌱 شروع یک آشنایی</h3><p>بعضی داستان‌ها از یک اتفاق معمولی شروع می‌شوند.</p></div></div>
-    <div class="timeline-item"><span class="timeline-dot"></span><div class="timeline-box"><h3>📷 قاب‌هایی برای نگه‌داشتن</h3><p>عکس‌ها و یادگاری‌هایی که از روزهای گذشته باقی مانده‌اند.</p></div></div>
-    <div class="timeline-item"><span class="timeline-dot"></span><div class="timeline-box"><h3>🎂 یادگاری روز تولد</h3><p>صفحه‌ی تولد هنوز اینجاست؛ برای نگه‌داشتن یادگاری آن روز.</p></div></div>
+</section>
+
+<section id="timeMachine">
+  <div class="card">
+    <h2>ماشین زمان خاطرات ⏳</h2>
+    <p class="muted">
+      یک تاریخ انتخاب کن، خاطره‌ای رو جست‌وجو کن یا بذار سایت یکی از خاطرات رو برات انتخاب کنه.
+    </p>
+
+    <label for="searchMemory">جست‌وجو در عنوان و متن خاطرات</label>
+    <input
+      id="searchMemory"
+      type="search"
+      placeholder="مثلاً یک جمله یا اسم خاطره..."
+      autocomplete="off"
+    >
+
+    <div class="filters">
+      <div>
+        <label for="filterYear">سال</label>
+        <select id="filterYear">
+          <option value="">همهٔ سال‌ها</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="filterMonth">ماه میلادی</label>
+        <select id="filterMonth">
+          <option value="">همهٔ ماه‌ها</option>
+          <option value="01">ژانویه</option>
+          <option value="02">فوریه</option>
+          <option value="03">مارس</option>
+          <option value="04">آوریل</option>
+          <option value="05">مه</option>
+          <option value="06">ژوئن</option>
+          <option value="07">ژوئیه</option>
+          <option value="08">اوت</option>
+          <option value="09">سپتامبر</option>
+          <option value="10">اکتبر</option>
+          <option value="11">نوامبر</option>
+          <option value="12">دسامبر</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="filterType">نوع خاطره</label>
+        <select id="filterType">
+          <option value="">همهٔ خاطرات</option>
+          <option value="text">نوشته‌ها</option>
+          <option value="image">عکس‌ها</option>
+          <option value="audio">ویس‌ها</option>
+          <option value="video">ویدئوها</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="filterCreator">ثبت‌کننده</label>
+        <select id="filterCreator">
+          <option value="">همه</option>
+          <option value="Abolfazl">ابوالفضل</option>
+          <option value="Melina">ملینا</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="sortOrder">ترتیب نمایش</label>
+        <select id="sortOrder">
+          <option value="newest">جدیدترین اول</option>
+          <option value="oldest">قدیمی‌ترین اول</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="btn" id="randomMemoryBtn" type="button">🎲 یه خاطره انتخاب کن</button>
+      <button class="btn secondary" id="resetFiltersBtn" type="button">پاک‌کردن فیلترها</button>
+      <button class="btn secondary" id="reloadMemoriesBtn" type="button">🔄 بارگذاری دوباره</button>
+    </div>
+
+    <div id="randomResult"></div>
+
+    <div class="result-line" id="resultCount">در انتظار بارگذاری خاطرات...</div>
+    <div class="memory-list" id="memoriesList">
+      <div class="empty">در حال بارگذاری خاطرات... 💜</div>
+    </div>
+
+    <div class="status" id="loadStatus" aria-live="polite"></div>
   </div>
-</section><section class="section" id="archive">
-  <div class="section-head">
-    <span class="kicker">05 / آرشیو آنلاین</span>
-    <h2>خاطره‌ی جدید ثبت کن ☁️</h2>
-    <p>خاطره‌ها پس از ذخیره‌شدن در Supabase در این بخش نمایش داده می‌شوند.</p>
-  </div>
-  <div class="card form-card">
+</section>
+
+<section id="archive">
+  <div class="card">
+    <h2>ثبت یک خاطرهٔ تازه ✍️</h2>
+    <p class="muted">
+      هرچیزی که دوست داری در آرشیو بمونه، اینجا ثبت کن.
+    </p>
+
     <form id="memoryForm">
+      <label for="memoryTitle">عنوان خاطره</label>
+      <input
+        id="memoryTitle"
+        type="text"
+        maxlength="150"
+        placeholder="مثلاً یک روز خاص..."
+        required
+      >
+
       <div class="form-grid">
-        <div class="field">
-          <label for="memoryTitle">عنوان خاطره *</label>
-          <input id="memoryTitle" name="title" type="text" maxlength="120" required placeholder="مثلاً یک روز قشنگ">
-        </div>
-        <div class="field">
+        <div>
           <label for="memoryDate">تاریخ خاطره</label>
-          <input id="memoryDate" name="date" type="date">
+          <input id="memoryDate" type="date">
         </div>
-        <div class="field">
-          <label for="createdBy">ثبت‌کننده *</label>
-          <select id="createdBy" name="created_by" required>
+
+        <div>
+          <label for="createdBy">ثبت‌کننده</label>
+          <select id="createdBy">
             <option value="Abolfazl">ابوالفضل</option>
             <option value="Melina">ملینا</option>
           </select>
-          <small>این انتخاب فقط نام ثبت‌کننده را مشخص می‌کند و هویت او را تأیید نمی‌کند.</small>
-        </div>
-        <div class="field">
-          <label for="mediaType">نوع خاطره *</label>
-          <select id="mediaType" name="media_type" required>
-            <option value="text">متن</option>
-            <option value="image">عکس</option>
-            <option value="audio">صدا</option>
-            <option value="video">ویدئو</option>
-          </select>
-        </div>
-        <div class="field full">
-          <label for="memoryContent">توضیحات خاطره</label>
-          <textarea id="memoryContent" name="content" maxlength="5000" placeholder="هر چیزی که دوست داری از این خاطره به یادگار بماند..."></textarea>
-        </div>
-        <div class="field full" id="fileField" hidden>
-          <label for="memoryFile">انتخاب فایل *</label>
-          <input id="memoryFile" name="file" type="file" accept="image/*,audio/*,video/*">
-          <small>حداکثر حجم فایل: ۲۵ مگابایت. محدودیت‌های پروژه‌ی Supabase نیز باید رعایت شوند.</small>
-        </div>
-        <div class="field full">
-          <button class="btn btn-primary" id="saveMemoryBtn" type="submit">ذخیره‌ی خاطره در آرشیو ☁️</button>
         </div>
       </div>
-      <div id="formStatus" role="status" aria-live="polite"></div>
+
+      <label for="mediaType">نوع خاطره</label>
+      <select id="mediaType">
+        <option value="text">نوشته</option>
+        <option value="image">عکس</option>
+        <option value="audio">ویس یا صدا</option>
+        <option value="video">ویدئو</option>
+      </select>
+
+      <label for="memoryContent">متن خاطره</label>
+      <textarea
+        id="memoryContent"
+        maxlength="20000"
+        placeholder="چی شد؟ چه حسی داشتی؟ چه چیزی رو می‌خوای برای همیشه یادت بمونه؟"
+      ></textarea>
+
+      <label for="memoryFile">فایل خاطره (اختیاری)</label>
+      <input
+        id="memoryFile"
+        type="file"
+        accept="image/*,audio/*,video/*"
+      >
+      <p class="small">حداکثر حجم فایل: ۲۵ مگابایت</p>
+
+      <button class="btn pink" id="saveMemoryBtn" type="submit">
+        ❤️ ذخیره در آرشیو
+      </button>
+
+      <div id="formStatus" class="status" aria-live="polite"></div>
     </form>
   </div>
-</section><section class="section" id="savedMemories">
-  <div class="section-head">
-    <span class="kicker">06 / خاطره‌های ثبت‌شده</span>
-    <h2>قاب‌هایی که اینجا می‌مانند 💜</h2>
-    <p>این بخش اطلاعات را از جدول آنلاین خاطرات دریافت می‌کند.</p>
-  </div>
-  <div id="memoriesList"><div class="empty-state">در حال دریافت خاطره‌ها...</div></div>
-  <div style="text-align:center;margin-top:18px">
-    <button class="btn" id="reloadMemoriesBtn" type="button">بارگذاری دوباره ↻</button>
-  </div>
-</section><section class="section" id="letter">
-  <div class="section-head"><span class="kicker">07 / چند خط نوشته</span><h2>یک نامه‌ی کوچک 💌</h2></div>
-  <div class="card letter-card">
-    <button class="envelope" id="letterToggle" type="button" aria-expanded="false" aria-controls="letterText">
-      <span style="font-size:38px">💌</span><br>
-      <strong>یک نامه برای ملینا</strong><br>
-      <span class="small-note">برای باز کردن لمس کن</span>
-    </button>
-    <div class="letter-text" id="letterText">
-      <p>ملینا،</p>
-      <p>بعضی خاطره‌ها با گذشت زمان از بین نمی‌روند؛ فقط آرام‌تر می‌شوند و در گوشه‌ای از ذهنمان جا می‌گیرند. این صفحه هم برای نگه‌داشتن چند قاب، چند صدا و بخشی از روزهایی ساخته شده که ارزش به‌یادآوردن داشته‌اند.</p>
-      <p>امیدوارم روزهای پیش رو برایت پر از آرامش، لبخند، اتفاق‌های خوب و فرصت‌هایی باشد که به آرزوهایت نزدیک‌ترت کنند.</p>
-      <p>تولدت مبارک، ملینا. امیدوارم سال تازه‌ی زندگی‌ات با خبرهای خوب و دل آرام همراه باشد. 🎂💜</p>
-      <p style="text-align:center;color:var(--pink)">با آرزوی بهترین‌ها برای تو ✨</p>
+</section>
+
+<section id="letter">
+  <div class="card">
+    <h2>نامه‌ای برای یک روز دیگر 💌</h2>
+    <p class="muted">گاهی خوبه حرف‌هایی رو نگه داریم تا بعداً دوباره بخونیمشون.</p>
+
+    <button class="btn" id="letterToggle" type="button">بازکردن نامه ❤️</button>
+
+    <div class="letter" id="letterContent" style="margin-top:15px">
+بعضی خاطره‌ها فقط اتفاق‌هایی در گذشته نیستن؛
+یه تکه از روزهای ما هستن که همیشه ارزش به‌یادآوردن دارن.
+
+شاید زمان بگذره و خیلی چیزها عوض بشن،
+اما این لحظه‌ها بخشی از داستان زندگی ما بودن.
+
+این آرشیو رو ساختیم تا بتونیم هر وقت خواستیم،
+به خاطراتمون سر بزنیم و دوباره مرورشون کنیم. ❤️
     </div>
   </div>
-</section><section class="section" id="surprise">
-  <div class="section-head"><span class="kicker">08 / یک سورپرایز کوچک</span><h2>آخرش هم یک ستاره برای تو ✨</h2></div>
-  <div class="card surprise-card">
-    <div style="font-size:38px">🎁</div><p>آماده‌ای؟</p>
-    <button class="btn btn-primary" id="surpriseBtn" type="button">باز کردن سورپرایز 💫</button>
-    <div id="surpriseResult" aria-live="polite"></div>
-  </div>
-</section></div>
-</main><footer>
-  <div style="font-size:22px">✦ 💜 ✦</div>
-  <div>یک آرشیو کوچک از عکس‌ها، صداها و یادگاری‌ها</div>
-  <div>ساخته‌شده با حوصله، از گوشی و با کلی ریزه‌کاری ✨</div>
-</footer><div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="نمایش عکس بزرگ">
+</section>
+
+</main>
+
+<footer>
+  <p>ساخته‌شده برای نگه‌داشتن خاطراتی که ارزش مرورکردن دارن ❤️</p>
+  <p>هر خاطره، یک تکه از زمان.</p>
+</footer>
+
+<div id="lightbox" role="dialog" aria-label="نمایش تصویر بزرگ">
   <button id="lightboxClose" type="button" aria-label="بستن">×</button>
-  <img id="lightboxImage" src="" alt="عکس بزرگ‌شده">
-</div><script>
-(() => {
-  "use strict";
+  <img id="lightboxImage" src="" alt="تصویر بزرگ‌شده">
+</div>
 
-  const SUPABASE_URL = "https://iojkhxsfreudphjkzame.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_pkcG9Jkce4HxKQMN9WDe1w_5PPKUWKd";
-  const BUCKET = "memories";
-  const MAX_FILE_SIZE = 25 * 1024 * 1024;
+<script>
+"use strict";
 
-  const $ = id => document.getElementById(id);
+/* تنظیمات اتصال موجود */
+const SUPABASE_URL = "https://iojkhxsfreudphjkzame.supabase.co";
+const SUPABASE_KEY = "sb_publishable_pkcG9Jkce4HxKQMN9WDe1w_5PPKUWKd";
+const BUCKET = "memories";
+const MAX_FILE_SIZE = 25 * 1024 * 1024;
 
-  // ستاره‌های پس‌زمینه
-  const stars = $("stars");
-  for (let i = 0; i < 85; i++) {
-    const star = document.createElement("span");
-    star.className = "star";
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.animationDelay = Math.random() * 3 + "s";
-    stars.appendChild(star);
+const $ = id => document.getElementById(id);
+
+let allMemories = [];
+let filteredMemories = [];
+let activeRandomId = null;
+
+const typeNames = {
+  text: "نوشته",
+  image: "عکس",
+  audio: "ویس",
+  video: "ویدئو"
+};
+
+const monthNames = [
+  "", "ژانویه", "فوریه", "مارس", "آوریل",
+  "مه", "ژوئن", "ژوئیه", "اوت",
+  "سپتامبر", "اکتبر", "نوامبر", "دسامبر"
+];
+
+function setStatus(element, message, type = "") {
+  element.textContent = message;
+  element.className = "status" + (type ? " " + type : "");
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function safeDate(value) {
+  if (!value) return null;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function dateValue(memory) {
+  return memory.memory_date || memory.created_at || "";
+}
+
+function formatDate(value) {
+  if (!value) return "بدون تاریخ";
+
+  const date = safeDate(value);
+  if (!date) return value;
+
+  try {
+    return new Intl.DateTimeFormat("fa-IR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    }).format(date);
+  } catch {
+    return value;
+  }
+}
+
+function creatorName(value) {
+  if (value === "Melina") return "ملینا";
+  if (value === "Abolfazl") return "ابوالفضل";
+  return value || "نامشخص";
+}
+
+async function api(path, options = {}) {
+  const headers = new Headers(options.headers || {});
+  headers.set("apikey", SUPABASE_KEY);
+
+  if (options.body && !(options.body instanceof FormData)) {
+    headers.set("Content-Type", "application/json");
   }
 
-  function showStatus(message, type = "") {
-    const status = $("formStatus");
-    status.textContent = message;
-    status.className = "show " + type;
-  }
-
-  function clearStatus() {
-    const status = $("formStatus");
-    status.textContent = "";
-    status.className = "";
-  }
-
-  async function api(path, options = {}) {
-    const headers = new Headers(options.headers || {});
-    headers.set("apikey", SUPABASE_KEY);
+  if (!headers.has("Authorization")) {
     headers.set("Authorization", "Bearer " + SUPABASE_KEY);
-
-    const response = await fetch(SUPABASE_URL + path, {
-      ...options,
-      headers
-    });
-
-    if (!response.ok) {
-      const body = await response.text().catch(() => "");
-      throw new Error(
-        "خطای سرور (" + response.status + ")" +
-        (body ? ": " + body.slice(0, 400) : "")
-      );
-    }
-
-    if (response.status === 204) return null;
-    return response.json();
   }
 
-  function updateFileField() {
-    const type = $("mediaType").value;
-    const needsFile = type !== "text";
-    $("fileField").hidden = !needsFile;
-    $("memoryFile").required = needsFile;
+  const response = await fetch(SUPABASE_URL + path, {
+    ...options,
+    headers
+  });
 
-    const acceptTypes = {
-      image: "image/*",
-      audio: "audio/*",
-      video: "video/*"
-    };
-    $("memoryFile").accept = acceptTypes[type] || "";
-    $("memoryFile").value = "";
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(message || "خطا در ارتباط با سرور");
   }
 
-  $("mediaType").addEventListener("change", updateFileField);
-  updateFileField();
+  if (response.status === 204) return null;
 
-  function makeFilePath(file) {
-    const cleanName = file.name
-      .normalize("NFKD")
-      .replace(/[^\w.\-]+/g, "_")
-      .slice(-100) || "memory_file";
+  const text = await response.text();
+  return text ? JSON.parse(text) : null;
+}
 
-    const randomPart = window.crypto && crypto.randomUUID
-      ? crypto.randomUUID()
-      : Math.random().toString(36).slice(2);
+async function uploadFile(file) {
+  const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+  const path =
+    Date.now() + "_" +
+    Math.random().toString(36).slice(2, 9) +
+    "_" + safeName;
 
-    return Date.now() + "_" + randomPart + "_" + cleanName;
-  }
-
-  async function uploadFile(file) {
-    const path = makeFilePath(file);
-    const encodedPath = path.split("/").map(encodeURIComponent).join("/");
-
-    const response = await fetch(
-      SUPABASE_URL + "/storage/v1/object/" + BUCKET + "/" + encodedPath,
-      {
-        method: "POST",
-        headers: {
-          "apikey": SUPABASE_KEY,
-          "Authorization": "Bearer " + SUPABASE_KEY,
-          "Content-Type": file.type || "application/octet-stream",
-          "x-upsert": "false"
-        },
-        body: file
-      }
-    );
-
-    if (!response.ok) {
-      const message = await response.text().catch(() => "");
-      throw new Error(
-        "آپلود فایل ناموفق بود (" + response.status + "). " +
-        message.slice(0, 300)
-      );
-    }
-
-    return path;
-  }
-
-  // برای فایل خصوصی، آدرس امضاشده‌ی یک‌ساعته دریافت می‌کنیم.
-  async function getFileUrl(path) {
-    if (!path) return "";
-
-    const encodedPath = path.split("/")
-      .map(encodeURIComponent)
-      .join("/");
-
-    const result = await api(
-      "/storage/v1/object/sign/" + BUCKET + "/" + encodedPath,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ expiresIn: 3600 })
-      }
-    );
-
-    if (!result || !result.signedURL) {
-      throw new Error("Supabase آدرس امضاشده‌ی فایل را برنگرداند.");
-    }
-
-    const signedURL = result.signedURL;
-
-    if (/^https?:\/\//i.test(signedURL)) return signedURL;
-
-    if (signedURL.startsWith("/storage/v1/")) {
-      return SUPABASE_URL + signedURL;
-    }
-
-    return SUPABASE_URL + "/storage/v1" +
-      (signedURL.startsWith("/") ? "" : "/") +
-      signedURL;
-  }
-
-  async function insertMemory(record) {
-    return api("/rest/v1/memories", {
+  const response = await fetch(
+    SUPABASE_URL + "/storage/v1/object/" +
+    BUCKET + "/" +
+    path.split("/").map(encodeURIComponent).join("/"),
+    {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Prefer": "return=representation"
+        "apikey": SUPABASE_KEY,
+        "Authorization": "Bearer " + SUPABASE_KEY,
+        "Content-Type": file.type || "application/octet-stream",
+        "x-upsert": "false"
+      },
+      body: file
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("بارگذاری فایل انجام نشد: " + await response.text());
+  }
+
+  return path;
+}
+
+async function getFileUrl(path) {
+  if (!path) return "";
+
+  const response = await api(
+    "/storage/v1/object/sign/" +
+    BUCKET + "/" +
+    path.split("/").map(encodeURIComponent).join("/"),
+    {
+      method: "POST",
+      body: JSON.stringify({ expiresIn: 3600 })
+    }
+  );
+
+  if (!response || !response.signedURL) {
+    throw new Error("لینک فایل ساخته نشد.");
+  }
+
+  if (response.signedURL.startsWith("http")) {
+    return response.signedURL;
+  }
+
+  return SUPABASE_URL + "/storage/v1" + response.signedURL;
+}
+
+/* دریافت همهٔ خاطرات در دسته‌های ۱۰۰۰تایی */
+async function fetchAllMemories() {
+  const pageSize = 1000;
+  let offset = 0;
+  let result = [];
+
+  while (true) {
+    const query =
+      "/rest/v1/memories" +
+      "?select=id,title,content,media_type,file_path,created_by,memory_date,created_at" +
+      "&order=created_at.desc" +
+      "&limit=" + pageSize +
+      "&offset=" + offset;
+
+    const batch = await api(query);
+
+    if (!Array.isArray(batch)) {
+      throw new Error("پاسخ سرور برای خاطرات معتبر نیست.");
+    }
+
+    result = result.concat(batch);
+
+    if (batch.length < pageSize) break;
+
+    offset += pageSize;
+  }
+
+  return result;
+}
+
+function updateYearOptions() {
+  const select = $("filterYear");
+  const current = select.value;
+
+  const years = [...new Set(
+    allMemories.map(memory => {
+      const value = dateValue(memory);
+      return value ? value.slice(0, 4) : "";
+    }).filter(year => /^\d{4}$/.test(year))
+  )].sort((a, b) => b.localeCompare(a));
+
+  select.innerHTML =
+    '<option value="">همهٔ سال‌ها</option>' +
+    years.map(year =>
+      '<option value="' + escapeHTML(year) + '">' +
+      escapeHTML(year) + '</option>'
+    ).join("");
+
+  if (years.includes(current)) {
+    select.value = current;
+  }
+}
+
+function getFilteredMemories() {
+  const search = $("searchMemory").value.trim().toLocaleLowerCase();
+  const year = $("filterYear").value;
+  const month = $("filterMonth").value;
+  const type = $("filterType").value;
+  const creator = $("filterCreator").value;
+  const sort = $("sortOrder").value;
+
+  const list = allMemories.filter(memory => {
+    const title = String(memory.title || "").toLocaleLowerCase();
+    const content = String(memory.content || "").toLocaleLowerCase();
+    const combined = title + " " + content;
+
+    if (search && !combined.includes(search)) return false;
+
+    const date = dateValue(memory);
+
+    if (year && (!date || date.slice(0, 4) !== year)) {
+      return false;
+    }
+
+    if (month && (!date || date.slice(5, 7) !== month)) {
+      return false;
+    }
+
+    if (type && memory.media_type !== type) return false;
+    if (creator && memory.created_by !== creator) return false;
+
+    return true;
+  });
+
+  list.sort((a, b) => {
+    const da = dateValue(a) || "";
+    const db = dateValue(b) || "";
+
+    if (sort === "oldest") return da.localeCompare(db);
+    return db.localeCompare(da);
+  });
+
+  return list;
+}
+
+function mediaHTML(memory, url) {
+  if (!url) return "";
+
+  if (memory.media_type === "image") {
+    return '<img class="memory-media zoomable" src="' +
+      escapeHTML(url) +
+      '" alt="تصویر خاطره" loading="lazy">';
+  }
+
+  if (memory.media_type === "audio") {
+    return '<audio controls preload="none" src="' +
+      escapeHTML(url) +
+      '">مرورگر شما از پخش صدا پشتیبانی نمی‌کند.</audio>';
+  }
+
+  if (memory.media_type === "video") {
+    return '<video controls preload="none" src="' +
+      escapeHTML(url) +
+      '">مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.</video>';
+  }
+
+  return "";
+}
+
+async function createMemoryCard(memory) {
+  const article = document.createElement("article");
+  article.className = "memory-card";
+  article.id = "memory-" + memory.id;
+  article.dataset.memoryId = memory.id;
+
+  const title = escapeHTML(memory.title || "خاطرهٔ بدون عنوان");
+  const content = escapeHTML(memory.content || "");
+  const type = typeNames[memory.media_type] || "خاطره";
+  const date = escapeHTML(formatDate(dateValue(memory)));
+  const creator = escapeHTML(creatorName(memory.created_by));
+
+  article.innerHTML =
+    '<h3>' + title + '</h3>' +
+    '<div class="memory-meta">' +
+      '<span class="badge">' + escapeHTML(type) + '</span>' +
+      '<span>📅 ' + date + '</span>' +
+      '<span>✍️ ' + creator + '</span>' +
+    '</div>' +
+    (content ? '<div class="memory-content">' + content + '</div>' : '') +
+    '<div class="media-slot"></div>';
+
+  if (memory.file_path) {
+    const slot = article.querySelector(".media-slot");
+
+    try {
+      const url = await getFileUrl(memory.file_path);
+      slot.innerHTML = mediaHTML(memory, url);
+      attachZoomEvents(slot);
+    } catch (error) {
+      slot.innerHTML =
+        '<p class="small">نمایش فایل ممکن نیست. ممکن است دسترسی فایل محدود شده باشد.</p>';
+      console.error(error);
+    }
+  }
+
+  return article;
+}
+
+async function renderMemories() {
+  const container = $("memoriesList");
+  const count = $("resultCount");
+
+  filteredMemories = getFilteredMemories();
+  count.textContent =
+    filteredMemories.length + " خاطره از " +
+    allMemories.length + " خاطرهٔ دریافت‌شده";
+
+  container.replaceChildren();
+
+  if (filteredMemories.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = allMemories.length
+      ? "خاطره‌ای با این مشخصات پیدا نشد. فیلترها رو تغییر بده. 💜"
+      : "هنوز خاطره‌ای ثبت نشده یا خاطرات بارگذاری نشده‌اند.";
+    container.appendChild(empty);
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+
+  for (const memory of filteredMemories) {
+    const card = await createMemoryCard(memory);
+    fragment.appendChild(card);
+  }
+
+  container.appendChild(fragment);
+
+  if (activeRandomId) {
+    const target = document.querySelector(
+      '[data-memory-id="' + CSS.escape(activeRandomId) + '"]'
+    );
+
+    if (target) {
+      target.style.borderColor = "var(--pink)";
+    }
+  }
+}
+
+async function loadMemories() {
+  const status = $("loadStatus");
+  const container = $("memoriesList");
+
+  container.innerHTML = '<div class="empty">در حال دریافت خاطرات... 💜</div>';
+  setStatus(status, "در حال اتصال به آرشیو...");
+
+  try {
+    allMemories = await fetchAllMemories();
+    updateYearOptions();
+    await renderMemories();
+
+    setStatus(
+      status,
+      "خاطرات با موفقیت بارگذاری شدند. ❤️",
+      "success"
+    );
+  } catch (error) {
+    console.error(error);
+
+    container.innerHTML =
+      '<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';
+
+    setStatus(
+      status,
+      "خطا در بارگذاری: " + error.message,
+      "error"
+    );
+  }
+}
+
+/* فیلترها */
+let renderTimer;
+
+function scheduleRender() {
+  clearTimeout(renderTimer);
+  renderTimer = setTimeout(() => {
+    activeRandomId = null;
+    $("randomResult").style.display = "none";
+    renderMemories();
+  }, 150);
+}
+
+[
+  "searchMemory",
+  "filterYear",
+  "filterMonth",
+  "filterType",
+  "filterCreator",
+  "sortOrder"
+].forEach(id => {
+  $(id).addEventListener(
+    id === "searchMemory" ? "input" : "change",
+    scheduleRender
+  );
+});
+
+$("resetFiltersBtn").addEventListener("click", () => {
+  $("searchMemory").value = "";
+  $("filterYear").value = "";
+  $("filterMonth").value = "";
+  $("filterType").value = "";
+  $("filterCreator").value = "";
+  $("sortOrder").value = "newest";
+
+  activeRandomId = null;
+  $("randomResult").style.display = "none";
+
+  renderMemories();
+});
+
+$("reloadMemoriesBtn").addEventListener("click", loadMemories);
+
+/* خاطرهٔ تصادفی */
+$("randomMemoryBtn").addEventListener("click", async () => {
+  const resultBox = $("randomResult");
+  const list = getFilteredMemories();
+
+  if (!list.length) {
+    resultBox.style.display = "block";
+    resultBox.textContent = "خاطره‌ای برای انتخاب وجود نداره. اول خاطره‌ای ثبت کن یا فیلترها رو تغییر بده. 💜";
+    return;
+  }
+
+  const memory = list[Math.floor(Math.random() * list.length)];
+
+  activeRandomId = memory.id;
+  await renderMemories();
+
+  resultBox.style.display = "block";
+  resultBox.replaceChildren();
+
+  const heading = document.createElement("strong");
+  heading.textContent = "✨ خاطرهٔ انتخاب‌شده";
+
+  const title = document.createElement("p");
+  title.textContent = memory.title || "خاطرهٔ بدون عنوان";
+
+  const date = document.createElement("p");
+  date.className = "small";
+  date.textContent = formatDate(dateValue(memory));
+
+  const button = document.createElement("button");
+  button.className = "btn";
+  button.type = "button";
+  button.textContent = "رفتن به این خاطره";
+
+  button.addEventListener("click", () => {
+    const target = document.querySelector(
+      '[data-memory-id="' + CSS.escape(memory.id) + '"]'
+    );
+
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      target.style.borderColor = "var(--pink)";
+    }
+  });
+
+  resultBox.append(heading, title, date, button);
+
+  resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+
+/* ثبت خاطره */
+$("memoryDate").value = new Date().toISOString().slice(0, 10);
+
+$("mediaType").addEventListener("change", () => {
+  const file = $("memoryFile");
+  const type = $("mediaType").value;
+
+  if (type === "text") {
+    file.value = "";
+    file.accept = "image/*,audio/*,video/*";
+  } else if (type === "image") {
+    file.accept = "image/*";
+  } else if (type === "audio") {
+    file.accept = "audio/*";
+  } else if (type === "video") {
+    file.accept = "video/*";
+  }
+});
+
+$("memoryForm").addEventListener("submit", async event => {
+  event.preventDefault();
+
+  const button = $("saveMemoryBtn");
+  const status = $("formStatus");
+
+  const title = $("memoryTitle").value.trim();
+  const content = $("memoryContent").value.trim();
+  const memoryDate = $("memoryDate").value || null;
+  const createdBy = $("createdBy").value;
+  const mediaType = $("mediaType").value;
+  const file = $("memoryFile").files[0];
+
+  if (!title) {
+    setStatus(status, "اول عنوان خاطره رو وارد کن.", "error");
+    return;
+  }
+
+  if (file && file.size > MAX_FILE_SIZE) {
+    setStatus(status, "حجم فایل باید کمتر از ۲۵ مگابایت باشه.", "error");
+    return;
+  }
+
+  if (file && file.type && !file.type.startsWith(mediaType + "/")) {
+    setStatus(status, "نوع فایل با نوع خاطره هماهنگ نیست.", "error");
+    return;
+  }
+
+  if (mediaType === "text" && file) {
+    setStatus(status, "برای خاطرهٔ متنی، نوع خاطره رو به عکس، ویس یا ویدئو تغییر بده.", "error");
+    return;
+  }
+
+  if (mediaType !== "text" && !file && !content) {
+    setStatus(status, "متن خاطره رو بنویس یا یک فایل انتخاب کن.", "error");
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "در حال ذخیره...";
+
+  let uploadedPath = null;
+
+  try {
+    if (file) {
+      setStatus(status, "در حال بارگذاری فایل...");
+
+      uploadedPath = await uploadFile(file);
+    }
+
+    setStatus(status, "در حال ثبت خاطره...");
+
+    const record = {
+      title,
+      content,
+      media_type: mediaType,
+      file_path: uploadedPath,
+      created_by: createdBy,
+      memory_date: memoryDate
+    };
+
+    await api("/rest/v1/memories", {
+      method: "POST",
+      headers: {
+        "Prefer": "return=minimal"
       },
       body: JSON.stringify(record)
     });
-  }
 
-  $("memoryForm").addEventListener("submit", async event => {
-    event.preventDefault();
-    clearStatus();
+    setStatus(status, "خاطره با موفقیت ذخیره شد! ❤️", "success");
 
-    const title = $("memoryTitle").value.trim();
-    const content = $("memoryContent").value.trim();
-    const mediaType = $("mediaType").value;
-    const createdBy = $("createdBy").value;
-    const date = $("memoryDate").value || new Date().toISOString().slice(0, 10);
-    const file = $("memoryFile").files[0];
+    $("memoryTitle").value = "";
+    $("memoryContent").value = "";
+    $("memoryFile").value = "";
+    $("memoryDate").value = new Date().toISOString().slice(0, 10);
+    $("mediaType").value = "text";
+    $("memoryFile").accept = "image/*,audio/*,video/*";
 
-    if (!title) {
-      showStatus("لطفاً عنوان خاطره را وارد کن.", "error");
-      return;
-    }
+    $("searchMemory").value = "";
+    $("filterYear").value = "";
+    $("filterMonth").value = "";
+    $("filterType").value = "";
+    $("filterCreator").value = "";
 
-    if (!["text", "image", "audio", "video"].includes(mediaType)) {
-      showStatus("نوع خاطره معتبر نیست.", "error");
-      return;
-    }
+    activeRandomId = null;
 
-    if (!["Abolfazl", "Melina"].includes(createdBy)) {
-      showStatus("ثبت‌کننده معتبر نیست.", "error");
-      return;
-    }
+    await loadMemories();
 
-    if (mediaType !== "text" && !file) {
-      showStatus("برای این نوع خاطره باید یک فایل انتخاب کنی.", "error");
-      return;
-    }
+    $("timeMachine").scrollIntoView({ behavior: "smooth" });
 
-    if (file && file.size > MAX_FILE_SIZE) {
-      showStatus("حجم فایل بیشتر از ۲۵ مگابایت است. فایل کوچک‌تری انتخاب کن.", "error");
-      return;
-    }
+  } catch (error) {
+    console.error(error);
 
-    if (file && mediaType === "image" && !file.type.startsWith("image/")) {
-      showStatus("لطفاً یک فایل عکس انتخاب کن.", "error");
-      return;
-    }
-
-    if (file && mediaType === "audio" && !file.type.startsWith("audio/")) {
-      showStatus("لطفاً یک فایل صوتی انتخاب کن.", "error");
-      return;
-    }
-
-    if (file && mediaType === "video" && !file.type.startsWith("video/")) {
-      showStatus("لطفاً یک فایل ویدئویی انتخاب کن.", "error");
-      return;
-    }
-
-    const saveButton = $("saveMemoryBtn");
-    saveButton.disabled = true;
-
-    try {
-      let filePath = null;
-
-      if (file) {
-        showStatus("در حال آپلود فایل به فضای ذخیره‌سازی...");
-        filePath = await uploadFile(file);
-      }
-
-      showStatus("در حال ثبت اطلاعات خاطره...");
-
-      await insertMemory({
-        title,
-        content,
-        media_type: mediaType,
-        file_path: filePath,
-        created_by: createdBy,
-        memory_date: date
-      });
-
-      showStatus("خاطره با موفقیت ثبت شد! 💜", "success");
-      $("memoryForm").reset();
-      updateFileField();
-
-      await loadMemories();
-
-    } catch (error) {
-      console.error(error);
-      showStatus(
-        "ذخیره انجام نشد. اتصال و مجوزهای Supabase، نام جدول و Bucket را بررسی کن. جزئیات: " +
-        error.message,
-        "error"
-      );
-    } finally {
-      saveButton.disabled = false;
-    }
-  });
-
-  function createElement(tag, className, text) {
-    const element = document.createElement(tag);
-    if (className) element.className = className;
-    if (text !== undefined) element.textContent = text;
-    return element;
-  }
-
-  async function loadMemories() {
-    const list = $("memoriesList");
-    list.replaceChildren(
-      createElement("div", "empty-state", "در حال دریافت خاطره‌ها...")
+    setStatus(
+      status,
+      "ذخیره انجام نشد: " + error.message,
+      "error"
     );
-
-    try {
-      const rows = await api(
-        "/rest/v1/memories?select=id,title,content,media_type,file_path,created_by,memory_date,created_at&order=created_at.desc&limit=100"
-      );
-
-      list.replaceChildren();
-
-      if (!Array.isArray(rows) || rows.length === 0) {
-        list.appendChild(
-          createElement("div", "empty-state", "هنوز خاطره‌ای ثبت نشده؛ اولین خاطره را اضافه کن. ✨")
-        );
-        return;
-      }
-
-      for (const row of rows) {
-        const card = createElement("article", "card saved-memory");
-
-        card.append(
-          createElement("h3", "", row.title || "بدون عنوان"),
-          createElement(
-            "div",
-            "memory-meta",
-            "ثبت‌کننده: " +
-            (row.created_by === "Melina" ? "ملینا" : "ابوالفضل") +
-            " | تاریخ: " + (row.memory_date || "نامشخص")
-          )
-        );
-
-        if (row.content) {
-          card.appendChild(createElement("div", "memory-content", row.content));
-        }
-
-        if (row.file_path) {
-          try {
-            const url = await getFileUrl(row.file_path);
-
-            if (row.media_type === "image") {
-              const img = document.createElement("img");
-              img.src = url;
-              img.alt = row.title || "عکس خاطره";
-              img.loading = "lazy";
-              img.style.cursor = "zoom-in";
-              img.addEventListener("click", () => openLightbox(url));
-              img.addEventListener("error", () => {
-                img.replaceWith(createElement(
-                  "p",
-                  "small-note",
-                  "عکس نمایش داده نشد. مجوز Storage یا آدرس فایل را بررسی کن."
-                ));
-              }, { once: true });
-              card.appendChild(img);
-
-            } else if (row.media_type === "audio") {
-              const audio = document.createElement("audio");
-              audio.controls = true;
-              audio.preload = "metadata";
-              audio.src = url;
-              card.appendChild(audio);
-
-            } else if (row.media_type === "video") {
-              const video = document.createElement("video");
-              video.controls = true;
-              video.preload = "metadata";
-              video.src = url;
-              card.appendChild(video);
-            }
-
-          } catch (fileError) {
-            console.error("خطا در ساخت آدرس فایل:", fileError);
-            card.appendChild(createElement(
-              "p",
-              "small-note",
-              "دریافت فایل ناموفق بود. جزئیات خطا در Console مرورگر ثبت شده است."
-            ));
-          }
-        }
-
-        list.appendChild(card);
-      }
-
-    } catch (error) {
-      console.error(error);
-      list.replaceChildren(
-        createElement(
-          "div",
-          "empty-state",
-          "دریافت خاطره‌ها ناموفق بود. اتصال اینترنت، کلید عمومی و مجوز SELECT جدول را بررسی کن. جزئیات: " +
-          error.message
-        )
-      );
-    }
+  } finally {
+    button.disabled = false;
+    button.textContent = "❤️ ذخیره در آرشیو";
   }
+});
 
-  $("reloadMemoriesBtn").addEventListener("click", loadMemories);
+/* بزرگ‌نمایی تصاویر */
+function openLightbox(src, alt) {
+  $("lightboxImage").src = src;
+  $("lightboxImage").alt = alt || "تصویر خاطره";
+  $("lightbox").style.display = "flex";
+}
 
-  const lightbox = $("lightbox");
-  const lightboxImage = $("lightboxImage");
+function closeLightbox() {
+  $("lightbox").style.display = "none";
+  $("lightboxImage").src = "";
+}
 
-  function openLightbox(src) {
-    lightboxImage.src = src;
-    lightbox.classList.add("show");
-    document.body.style.overflow = "hidden";
-  }
+function attachZoomEvents(root = document) {
+  root.querySelectorAll(".zoomable").forEach(img => {
+    if (img.dataset.zoomReady) return;
+    img.dataset.zoomReady = "true";
 
-  function closeLightbox() {
-    lightbox.classList.remove("show");
-    lightboxImage.src = "";
-    document.body.style.overflow = "";
-  }
-
-  document.querySelectorAll(".zoomable").forEach(item => {
-    item.addEventListener("click", () => {
-      const src = item.dataset.src || item.querySelector("img")?.src;
-      if (src) openLightbox(src);
+    img.addEventListener("click", () => {
+      openLightbox(img.src, img.alt);
     });
   });
+}
 
-  $("lightboxClose").addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", event => {
-    if (event.target === lightbox) closeLightbox();
-  });
+$("lightboxClose").addEventListener("click", closeLightbox);
 
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeLightbox();
-  });
+$("lightbox").addEventListener("click", event => {
+  if (event.target === $("lightbox")) closeLightbox();
+});
 
-  $("letterToggle").addEventListener("click", () => {
-    const text = $("letterText");
-    const opened = text.classList.toggle("open");
-    $("letterToggle").setAttribute("aria-expanded", String(opened));
-    $("letterToggle").lastElementChild.textContent =
-      opened ? "برای بستن دوباره لمس کن" : "برای باز کردن لمس کن";
-  });
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeLightbox();
+});
 
-  const messages = [
-    "امیدوارم روزهات پر از اتفاق‌های خوب باشن 💜",
-    "برای آرزوهات بجنگ؛ آینده هنوز پر از امکان‌های قشنگه ✨",
-    "گاهی یک خاطره‌ی کوچک می‌تونه لبخند بزرگی بسازه 🌙",
-    "تولدت مبارک، ملینا؛ برات آرامش و خوشحالی آرزو می‌کنم 🎂",
-    "یک ستاره‌ی کوچیک برای روزهای روشن‌ترت ⭐"
-  ];
+attachZoomEvents();
 
-  $("surpriseBtn").addEventListener("click", () => {
-    const result = $("surpriseResult");
-    result.textContent = messages[Math.floor(Math.random() * messages.length)];
-    result.style.display = "block";
-  });
+/* باز و بسته کردن نامه */
+$("letterToggle").addEventListener("click", () => {
+  const letter = $("letterContent");
+  const isOpen = letter.style.display === "block";
 
-  loadMemories();
-})();
-</script></body>
+  letter.style.display = isOpen ? "none" : "block";
+  $("letterToggle").textContent = isOpen
+    ? "بازکردن نامه ❤️"
+    : "بستن نامه 💌";
+});
+
+/* شروع */
+loadMemories();
+</script>
+
+</body>
 </html>
