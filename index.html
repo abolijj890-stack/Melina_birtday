@@ -19,13 +19,9 @@
   --red: #ff9eae;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -51,9 +47,7 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
-}
+button { cursor: pointer; }
 
 .stars {
   position: fixed;
@@ -129,9 +123,7 @@ section {
   color: transparent;
 }
 
-.hero p {
-  color: var(--muted);
-}
+.hero p { color: var(--muted); }
 
 .hero-heart {
   font-size: 48px;
@@ -159,13 +151,9 @@ h2 {
   margin-top: 0;
 }
 
-h3 {
-  color: #f7c7ff;
-}
+h3 { color: #f7c7ff; }
 
-p {
-  overflow-wrap: anywhere;
-}
+p { overflow-wrap: anywhere; }
 
 .muted {
   color: var(--muted);
@@ -188,13 +176,9 @@ p {
   transition: transform .2s, opacity .2s;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-}
+.btn:hover { transform: translateY(-2px); }
 
-.btn.secondary {
-  background: rgba(255,255,255,.08);
-}
+.btn.secondary { background: rgba(255,255,255,.08); }
 
 .btn.pink {
   background: linear-gradient(135deg, #e45ca8, #9d68e7);
@@ -205,9 +189,7 @@ p {
   cursor: not-allowed;
 }
 
-img {
-  max-width: 100%;
-}
+img { max-width: 100%; }
 
 .featured-image {
   display: block;
@@ -234,15 +216,7 @@ img {
   transition: .2s;
 }
 
-.gallery img:hover {
-  transform: scale(1.015);
-}
-
-audio, video {
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 12px;
-}
+.gallery img:hover { transform: scale(1.015); }
 
 input, textarea, select {
   width: 100%;
@@ -297,13 +271,7 @@ label {
   scroll-margin-top: 90px;
 }
 
-.memory-card:target {
-  border-color: var(--pink);
-}
-
-.memory-card h3 {
-  margin: 0 0 5px;
-}
+.memory-card h3 { margin: 0 0 5px; }
 
 .memory-meta {
   font-size: 12px;
@@ -368,13 +336,9 @@ label {
   margin-right: 7px;
 }
 
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
+.timeline-item:last-child { padding-bottom: 0; }
 
-.timeline-item strong {
-  color: #ffc5e6;
-}
+.timeline-item strong { color: #ffc5e6; }
 
 .letter {
   display: none;
@@ -428,12 +392,13 @@ label {
   overflow-wrap: anywhere;
 }
 
-.status.error {
-  color: var(--red);
-}
+.status.error { color: var(--red); }
+.status.success { color: var(--green); }
 
-.status.success {
-  color: var(--green);
+audio, video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 12px;
 }
 
 footer {
@@ -444,22 +409,10 @@ footer {
 }
 
 @media (max-width: 520px) {
-  .form-grid, .filters {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery img {
-    height: 155px;
-  }
-
-  .card {
-    padding: 15px;
-  }
-
-  nav a {
-    padding: 4px 7px;
-    font-size: 11px;
-  }
+  .form-grid, .filters { grid-template-columns: 1fr; }
+  .gallery img { height: 155px; }
+  .card { padding: 15px; }
+  nav a { padding: 4px 7px; font-size: 11px; }
 }
 </style>
 </head>
@@ -468,16 +421,16 @@ footer {
 <div class="stars"></div>
 
 <header>
-  <nav>
-    <a href="#home">خانه</a>
-    <a href="#featured">عکس ما</a>
-    <a href="#gallery">گالری</a>
-    <a href="#voice">صدا</a>
-    <a href="#timeline">قصهٔ ما</a>
-    <a href="#timeMachine">ماشین زمان</a>
-    <a href="#archive">ثبت خاطره</a>
-    <a href="#letter">نامه</a>
-  </nav>
+<nav>
+  <a href="#home">خانه</a>
+  <a href="#featured">عکس ما</a>
+  <a href="#gallery">گالری</a>
+  <a href="#voice">صدا</a>
+  <a href="#timeline">قصهٔ ما</a>
+  <a href="#timeMachine">ماشین زمان</a>
+  <a href="#archive">ثبت خاطره</a>
+  <a href="#letter">نامه</a>
+</nav>
 </header>
 
 <main>
@@ -553,24 +506,17 @@ footer {
       <p class="muted">روزهایی که حتی گذشت زمان هم نتونسته از ارزششون کم کنه.</p>
     </div>
 
-    <p class="small">خاطراتی که در آرشیو ثبت می‌کنی، در بخش ماشین زمان هم نمایش داده می‌شن.</p>
+    <p class="small">خاطرات ثبت‌شده در آرشیو، در ماشین زمان هم نمایش داده می‌شن.</p>
   </div>
 </section>
 
 <section id="timeMachine">
   <div class="card">
     <h2>ماشین زمان خاطرات ⏳</h2>
-    <p class="muted">
-      یک تاریخ انتخاب کن، خاطره‌ای رو جست‌وجو کن یا بذار سایت یکی از خاطرات رو برات انتخاب کنه.
-    </p>
+    <p class="muted">تاریخ انتخاب کن، خاطره جست‌وجو کن یا یک خاطرهٔ تصادفی ببین.</p>
 
     <label for="searchMemory">جست‌وجو در عنوان و متن خاطرات</label>
-    <input
-      id="searchMemory"
-      type="search"
-      placeholder="مثلاً یک جمله یا اسم خاطره..."
-      autocomplete="off"
-    >
+    <input id="searchMemory" type="search" placeholder="مثلاً یک جمله یا اسم خاطره..." autocomplete="off">
 
     <div class="filters">
       <div>
@@ -635,8 +581,8 @@ footer {
     </div>
 
     <div id="randomResult"></div>
-
     <div class="result-line" id="resultCount">در انتظار بارگذاری خاطرات...</div>
+
     <div class="memory-list" id="memoriesList">
       <div class="empty">در حال بارگذاری خاطرات... 💜</div>
     </div>
@@ -648,19 +594,11 @@ footer {
 <section id="archive">
   <div class="card">
     <h2>ثبت یک خاطرهٔ تازه ✍️</h2>
-    <p class="muted">
-      هرچیزی که دوست داری در آرشیو بمونه، اینجا ثبت کن.
-    </p>
+    <p class="muted">هرچیزی که دوست داری در آرشیو بمونه، اینجا ثبت کن.</p>
 
     <form id="memoryForm">
       <label for="memoryTitle">عنوان خاطره</label>
-      <input
-        id="memoryTitle"
-        type="text"
-        maxlength="150"
-        placeholder="مثلاً یک روز خاص..."
-        required
-      >
+      <input id="memoryTitle" type="text" maxlength="150" placeholder="مثلاً یک روز خاص..." required>
 
       <div class="form-grid">
         <div>
@@ -686,24 +624,13 @@ footer {
       </select>
 
       <label for="memoryContent">متن خاطره</label>
-      <textarea
-        id="memoryContent"
-        maxlength="20000"
-        placeholder="چی شد؟ چه حسی داشتی؟ چه چیزی رو می‌خوای برای همیشه یادت بمونه؟"
-      ></textarea>
+      <textarea id="memoryContent" maxlength="20000" placeholder="چی شد؟ چه حسی داشتی؟ چه چیزی رو می‌خوای برای همیشه یادت بمونه؟"></textarea>
 
       <label for="memoryFile">فایل خاطره (اختیاری)</label>
-      <input
-        id="memoryFile"
-        type="file"
-        accept="image/*,audio/*,video/*"
-      >
+      <input id="memoryFile" type="file" accept="image/*,audio/*,video/*">
       <p class="small">حداکثر حجم فایل: ۲۵ مگابایت</p>
 
-      <button class="btn pink" id="saveMemoryBtn" type="submit">
-        ❤️ ذخیره در آرشیو
-      </button>
-
+      <button class="btn pink" id="saveMemoryBtn" type="submit">❤️ ذخیره در آرشیو</button>
       <div id="formStatus" class="status" aria-live="polite"></div>
     </form>
   </div>
@@ -744,7 +671,6 @@ footer {
 <script>
 "use strict";
 
-/* تنظیمات اتصال موجود */
 const SUPABASE_URL = "https://iojkhxsfreudphjkzame.supabase.co";
 const SUPABASE_KEY = "sb_publishable_pkcG9Jkce4HxKQMN9WDe1w_5PPKUWKd";
 const BUCKET = "memories";
@@ -763,12 +689,6 @@ const typeNames = {
   video: "ویدئو"
 };
 
-const monthNames = [
-  "", "ژانویه", "فوریه", "مارس", "آوریل",
-  "مه", "ژوئن", "ژوئیه", "اوت",
-  "سپتامبر", "اکتبر", "نوامبر", "دسامبر"
-];
-
 function setStatus(element, message, type = "") {
   element.textContent = message;
   element.className = "status" + (type ? " " + type : "");
@@ -784,31 +704,28 @@ function escapeHTML(value) {
   })[char]);
 }
 
-function safeDate(value) {
-  if (!value) return null;
-  const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? null : date;
-}
-
 function dateValue(memory) {
   return memory.memory_date || memory.created_at || "";
 }
 
+/* نمایش تاریخ شمسی همراه ساعت و دقیقه */
 function formatDate(value) {
   if (!value) return "بدون تاریخ";
 
-  const date = safeDate(value);
-  if (!date) return value;
+  const date = new Date(value);
 
-  try {
-    return new Intl.DateTimeFormat("fa-IR", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    }).format(date);
-  } catch {
+  if (Number.isNaN(date.getTime())) {
     return value;
   }
+
+  return new Intl.DateTimeFormat("fa-IR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23"
+  }).format(date);
 }
 
 function creatorName(value) {
@@ -819,14 +736,15 @@ function creatorName(value) {
 
 async function api(path, options = {}) {
   const headers = new Headers(options.headers || {});
-  headers.set("apikey", SUPABASE_KEY);
 
-  if (options.body && !(options.body instanceof FormData)) {
-    headers.set("Content-Type", "application/json");
-  }
+  headers.set("apikey", SUPABASE_KEY);
 
   if (!headers.has("Authorization")) {
     headers.set("Authorization", "Bearer " + SUPABASE_KEY);
+  }
+
+  if (options.body && !(options.body instanceof FormData)) {
+    headers.set("Content-Type", "application/json");
   }
 
   const response = await fetch(SUPABASE_URL + path, {
@@ -847,6 +765,7 @@ async function api(path, options = {}) {
 
 async function uploadFile(file) {
   const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+
   const path =
     Date.now() + "_" +
     Math.random().toString(36).slice(2, 9) +
@@ -899,7 +818,7 @@ async function getFileUrl(path) {
   return SUPABASE_URL + "/storage/v1" + response.signedURL;
 }
 
-/* دریافت همهٔ خاطرات در دسته‌های ۱۰۰۰تایی */
+/* دریافت خاطرات در صفحه‌های ۱۰۰۰تایی */
 async function fetchAllMemories() {
   const pageSize = 1000;
   let offset = 0;
@@ -969,14 +888,8 @@ function getFilteredMemories() {
 
     const date = dateValue(memory);
 
-    if (year && (!date || date.slice(0, 4) !== year)) {
-      return false;
-    }
-
-    if (month && (!date || date.slice(5, 7) !== month)) {
-      return false;
-    }
-
+    if (year && (!date || date.slice(0, 4) !== year)) return false;
+    if (month && (!date || date.slice(5, 7) !== month)) return false;
     if (type && memory.media_type !== type) return false;
     if (creator && memory.created_by !== creator) return false;
 
@@ -1020,14 +933,21 @@ function mediaHTML(memory, url) {
 
 async function createMemoryCard(memory) {
   const article = document.createElement("article");
+
   article.className = "memory-card";
-  article.id = "memory-" + memory.id;
   article.dataset.memoryId = memory.id;
 
   const title = escapeHTML(memory.title || "خاطرهٔ بدون عنوان");
   const content = escapeHTML(memory.content || "");
   const type = typeNames[memory.media_type] || "خاطره";
-  const date = escapeHTML(formatDate(dateValue(memory)));
+
+  /*
+    نکتهٔ اصلی:
+    تاریخ و ساعت واقعی ثبت از created_at گرفته می‌شود.
+    اگر created_at موجود نبود، memory_date نمایش داده می‌شود.
+  */
+  const displayDate = memory.created_at || memory.memory_date || "";
+  const date = escapeHTML(formatDate(displayDate));
   const creator = escapeHTML(creatorName(memory.created_by));
 
   article.innerHTML =
@@ -1059,10 +979,10 @@ async function createMemoryCard(memory) {
 
 async function renderMemories() {
   const container = $("memoriesList");
-  const count = $("resultCount");
 
   filteredMemories = getFilteredMemories();
-  count.textContent =
+
+  $("resultCount").textContent =
     filteredMemories.length + " خاطره از " +
     allMemories.length + " خاطرهٔ دریافت‌شده";
 
@@ -1074,6 +994,7 @@ async function renderMemories() {
     empty.textContent = allMemories.length
       ? "خاطره‌ای با این مشخصات پیدا نشد. فیلترها رو تغییر بده. 💜"
       : "هنوز خاطره‌ای ثبت نشده یا خاطرات بارگذاری نشده‌اند.";
+
     container.appendChild(empty);
     return;
   }
@@ -1082,20 +1003,15 @@ async function renderMemories() {
 
   for (const memory of filteredMemories) {
     const card = await createMemoryCard(memory);
+
+    if (String(memory.id) === String(activeRandomId)) {
+      card.style.borderColor = "var(--pink)";
+    }
+
     fragment.appendChild(card);
   }
 
   container.appendChild(fragment);
-
-  if (activeRandomId) {
-    const target = document.querySelector(
-      '[data-memory-id="' + CSS.escape(activeRandomId) + '"]'
-    );
-
-    if (target) {
-      target.style.borderColor = "var(--pink)";
-    }
-  }
 }
 
 async function loadMemories() {
@@ -1107,25 +1023,18 @@ async function loadMemories() {
 
   try {
     allMemories = await fetchAllMemories();
+
     updateYearOptions();
     await renderMemories();
 
-    setStatus(
-      status,
-      "خاطرات با موفقیت بارگذاری شدند. ❤️",
-      "success"
-    );
+    setStatus(status, "خاطرات با موفقیت بارگذاری شدند. ❤️", "success");
   } catch (error) {
     console.error(error);
 
     container.innerHTML =
       '<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';
 
-    setStatus(
-      status,
-      "خطا در بارگذاری: " + error.message,
-      "error"
-    );
+    setStatus(status, "خطا در بارگذاری: " + error.message, "error");
   }
 }
 
@@ -1134,6 +1043,7 @@ let renderTimer;
 
 function scheduleRender() {
   clearTimeout(renderTimer);
+
   renderTimer = setTimeout(() => {
     activeRandomId = null;
     $("randomResult").style.display = "none";
@@ -1178,13 +1088,15 @@ $("randomMemoryBtn").addEventListener("click", async () => {
 
   if (!list.length) {
     resultBox.style.display = "block";
-    resultBox.textContent = "خاطره‌ای برای انتخاب وجود نداره. اول خاطره‌ای ثبت کن یا فیلترها رو تغییر بده. 💜";
+    resultBox.textContent =
+      "خاطره‌ای برای انتخاب وجود نداره. فیلترها رو تغییر بده. 💜";
     return;
   }
 
   const memory = list[Math.floor(Math.random() * list.length)];
 
   activeRandomId = memory.id;
+
   await renderMemories();
 
   resultBox.style.display = "block";
@@ -1198,7 +1110,7 @@ $("randomMemoryBtn").addEventListener("click", async () => {
 
   const date = document.createElement("p");
   date.className = "small";
-  date.textContent = formatDate(dateValue(memory));
+  date.textContent = formatDate(memory.created_at || memory.memory_date);
 
   const button = document.createElement("button");
   button.className = "btn";
@@ -1206,9 +1118,8 @@ $("randomMemoryBtn").addEventListener("click", async () => {
   button.textContent = "رفتن به این خاطره";
 
   button.addEventListener("click", () => {
-    const target = document.querySelector(
-      '[data-memory-id="' + CSS.escape(memory.id) + '"]'
-    );
+    const target = [...document.querySelectorAll(".memory-card")]
+      .find(card => String(card.dataset.memoryId) === String(memory.id));
 
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -1217,7 +1128,6 @@ $("randomMemoryBtn").addEventListener("click", async () => {
   });
 
   resultBox.append(heading, title, date, button);
-
   resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
 });
 
@@ -1228,15 +1138,14 @@ $("mediaType").addEventListener("change", () => {
   const file = $("memoryFile");
   const type = $("mediaType").value;
 
-  if (type === "text") {
-    file.value = "";
-    file.accept = "image/*,audio/*,video/*";
-  } else if (type === "image") {
+  if (type === "image") {
     file.accept = "image/*";
   } else if (type === "audio") {
     file.accept = "audio/*";
   } else if (type === "video") {
     file.accept = "video/*";
+  } else {
+    file.accept = "image/*,audio/*,video/*";
   }
 });
 
@@ -1268,11 +1177,6 @@ $("memoryForm").addEventListener("submit", async event => {
     return;
   }
 
-  if (mediaType === "text" && file) {
-    setStatus(status, "برای خاطرهٔ متنی، نوع خاطره رو به عکس، ویس یا ویدئو تغییر بده.", "error");
-    return;
-  }
-
   if (mediaType !== "text" && !file && !content) {
     setStatus(status, "متن خاطره رو بنویس یا یک فایل انتخاب کن.", "error");
     return;
@@ -1281,12 +1185,11 @@ $("memoryForm").addEventListener("submit", async event => {
   button.disabled = true;
   button.textContent = "در حال ذخیره...";
 
-  let uploadedPath = null;
-
   try {
+    let uploadedPath = null;
+
     if (file) {
       setStatus(status, "در حال بارگذاری فایل...");
-
       uploadedPath = await uploadFile(file);
     }
 
@@ -1333,11 +1236,7 @@ $("memoryForm").addEventListener("submit", async event => {
   } catch (error) {
     console.error(error);
 
-    setStatus(
-      status,
-      "ذخیره انجام نشد: " + error.message,
-      "error"
-    );
+    setStatus(status, "ذخیره انجام نشد: " + error.message, "error");
   } finally {
     button.disabled = false;
     button.textContent = "❤️ ذخیره در آرشیو";
@@ -1359,6 +1258,7 @@ function closeLightbox() {
 function attachZoomEvents(root = document) {
   root.querySelectorAll(".zoomable").forEach(img => {
     if (img.dataset.zoomReady) return;
+
     img.dataset.zoomReady = "true";
 
     img.addEventListener("click", () => {
@@ -1370,7 +1270,9 @@ function attachZoomEvents(root = document) {
 $("lightboxClose").addEventListener("click", closeLightbox);
 
 $("lightbox").addEventListener("click", event => {
-  if (event.target === $("lightbox")) closeLightbox();
+  if (event.target === $("lightbox")) {
+    closeLightbox();
+  }
 });
 
 document.addEventListener("keydown", event => {
@@ -1379,18 +1281,19 @@ document.addEventListener("keydown", event => {
 
 attachZoomEvents();
 
-/* باز و بسته کردن نامه */
+/* نامه */
 $("letterToggle").addEventListener("click", () => {
   const letter = $("letterContent");
   const isOpen = letter.style.display === "block";
 
   letter.style.display = isOpen ? "none" : "block";
+
   $("letterToggle").textContent = isOpen
     ? "بازکردن نامه ❤️"
     : "بستن نامه 💌";
 });
 
-/* شروع */
+/* شروع سایت */
 loadMemories();
 </script>
 
