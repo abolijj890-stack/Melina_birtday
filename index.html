@@ -20,7 +20,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -34,19 +33,9 @@ body {
   line-height: 1.9;
 }
 
-button, input, textarea, select {
-  font: inherit;
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
 button { cursor: pointer; }
 
 .stars {
@@ -152,7 +141,6 @@ h2 {
 }
 
 h3 { color: #f7c7ff; }
-
 p { overflow-wrap: anywhere; }
 
 .muted {
@@ -177,7 +165,6 @@ p { overflow-wrap: anywhere; }
 }
 
 .btn:hover { transform: translateY(-2px); }
-
 .btn.secondary { background: rgba(255,255,255,.08); }
 
 .btn.pink {
@@ -185,6 +172,29 @@ p { overflow-wrap: anywhere; }
 }
 
 .btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* ظاهر دکمه حذف خاطره */
+.memory-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.btn.delete {
+  background: rgba(255,70,100,.12);
+  border: 1px solid rgba(255,120,145,.35);
+  color: #ffb2c0;
+}
+
+.btn.delete:hover {
+  background: rgba(255,70,100,.25);
+}
+
+.btn.delete:disabled {
   opacity: .5;
   cursor: not-allowed;
 }
@@ -337,7 +347,6 @@ label {
 }
 
 .timeline-item:last-child { padding-bottom: 0; }
-
 .timeline-item strong { color: #ffc5e6; }
 
 .letter {
@@ -413,27 +422,6 @@ footer {
   .gallery img { height: 155px; }
   .card { padding: 15px; }
   nav a { padding: 4px 7px; font-size: 11px; }
-}
-.memory-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
-
-.btn.delete {
-  background: rgba(255, 70, 100, .12);
-  border: 1px solid rgba(255, 120, 145, .35);
-  color: #ffb2c0;
-}
-
-.btn.delete:hover {
-  background: rgba(255, 70, 100, .25);
-}
-
-.btn.delete:disabled {
-  opacity: .5;
-  cursor: not-allowed;
 }
 </style>
 </head>
@@ -729,7 +717,6 @@ function dateValue(memory) {
   return memory.memory_date || memory.created_at || "";
 }
 
-/* نمایش تاریخ شمسی همراه ساعت و دقیقه */
 function formatDate(value) {
   if (!value) return "بدون تاریخ";
 
@@ -839,7 +826,6 @@ async function getFileUrl(path) {
   return SUPABASE_URL + "/storage/v1" + response.signedURL;
 }
 
-/* دریافت خاطرات در صفحه‌های ۱۰۰۰تایی */
 async function fetchAllMemories() {
   const pageSize = 1000;
   let offset = 0;
@@ -952,6 +938,90 @@ function mediaHTML(memory, url) {
   return "";
 }
 
+/* حذف خاطره با تأیید */
+async function deleteMemory(memory) {
+  const title = memory.title || "خاطرهٔ بدون عنوان";
+
+  const confirmed = confirm(
+    "مطمئنی می‌خوای این خاطره رو برای همیشه پاک کنی؟\n\n" +
+    title +
+    "\n\nاین کار قابل برگشت نیست."
+  );
+
+  if (!confirmed) return;
+
+  const card = [...document.querySelectorAll(".memory-card")]
+    .find(item => String(item.dataset.memoryId) === String(memory.id));
+
+  const deleteButton = card?.querySelector(".delete");
+
+  if (deleteButton) {
+    deleteButton.disabled = true;
+    deleteButton.textContent = "در حال حذف...";
+  }
+
+  setStatus($("loadStatus"), "در حال حذف خاطره...");
+
+  try {
+    /* حذف رکورد خاطره از دیتابیس */
+    await api(
+      "/rest/v1/memories?id=eq." + encodeURIComponent(memory.id),
+      {
+        method: "DELETE",
+        headers: {
+          "Prefer": "return=minimal"
+        }
+      }
+    );
+
+    /* تلاش برای حذف فایل مربوط به خاطره از Storage */
+    if (memory.file_path) {
+      try {
+        await api("/storage/v1/object/" + BUCKET, {
+          method: "DELETE",
+          body: JSON.stringify({
+            prefixes: [memory.file_path]
+          })
+        });
+      } catch (storageError) {
+        console.error("خطا در حذف فایل رسانه‌ای:", storageError);
+      }
+    }
+
+    allMemories = allMemories.filter(
+      item => String(item.id) !== String(memory.id)
+    );
+
+    if (String(activeRandomId) === String(memory.id)) {
+      activeRandomId = null;
+      $("randomResult").style.display = "none";
+    }
+
+    updateYearOptions();
+    await renderMemories();
+
+    setStatus(
+      $("loadStatus"),
+      "خاطره با موفقیت حذف شد. 🗑️",
+      "success"
+    );
+
+  } catch (error) {
+    console.error(error);
+
+    setStatus(
+      $("loadStatus"),
+      "حذف انجام نشد: " + error.message,
+      "error"
+    );
+
+    if (deleteButton) {
+      deleteButton.disabled = false;
+      deleteButton.textContent = "🗑️ حذف خاطره";
+    }
+  }
+}
+
 async function createMemoryCard(memory) {
   const article = document.createElement("article");
 
@@ -962,11 +1032,6 @@ async function createMemoryCard(memory) {
   const content = escapeHTML(memory.content || "");
   const type = typeNames[memory.media_type] || "خاطره";
 
-  /*
-    نکتهٔ اصلی:
-    تاریخ و ساعت واقعی ثبت از created_at گرفته می‌شود.
-    اگر created_at موجود نبود، memory_date نمایش داده می‌شود.
-  */
   const displayDate = memory.created_at || memory.memory_date || "";
   const date = escapeHTML(formatDate(displayDate));
   const creator = escapeHTML(creatorName(memory.created_by));
@@ -979,7 +1044,16 @@ async function createMemoryCard(memory) {
       '<span>✍️ ' + creator + '</span>' +
     '</div>' +
     (content ? '<div class="memory-content">' + content + '</div>' : '') +
-    '<div class="media-slot"></div>';
+    '<div class="media-slot"></div>' +
+    '<div class="memory-actions">' +
+      '<button class="btn delete" type="button">🗑️ حذف خاطره</button>' +
+    '</div>';
+
+  const deleteButton = article.querySelector(".delete");
+
+  deleteButton.addEventListener("click", () => {
+    deleteMemory(memory);
+  });
 
   if (memory.file_path) {
     const slot = article.querySelector(".media-slot");
