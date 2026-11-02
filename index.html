@@ -141,6 +141,12 @@ label{display:block;margin-top:13px;color:#f2dffb;font-size:13px}
 .status.success{color:var(--green)}
 audio,video{width:100%;margin-top:10px;border-radius:12px}
 footer{text-align:center;padding:30px 12px 45px;color:var(--muted);font-size:12px}
+.admin-stat{
+  background:rgba(255,131,200,.07);
+  border:1px solid var(--border);
+  border-radius:17px;padding:16px;margin:12px 0
+}
+.admin-stat strong{font-size:25px;color:var(--green)}
 @media(max-width:520px){
   .form-grid,.filters{grid-template-columns:1fr}
   .gallery img{height:155px}
@@ -155,10 +161,15 @@ footer{text-align:center;padding:30px 12px 45px;color:var(--muted);font-size:12p
 
 <header>
 <nav>
-<a href="#home">خانه</a><a href="#featured">عکس ما</a>
-<a href="#gallery">گالری</a><a href="#voice">صدا</a>
-<a href="#timeline">قصهٔ ما</a><a href="#timeMachine">ماشین زمان</a>
-<a href="#archive">ثبت خاطره</a><a href="#letter">نامه</a>
+<a href="#home">خانه</a>
+<a href="#featured">عکس ما</a>
+<a href="#gallery">گالری</a>
+<a href="#voice">صدا</a>
+<a href="#timeline">قصهٔ ما</a>
+<a href="#timeMachine">ماشین زمان</a>
+<a href="#archive">ثبت خاطره</a>
+<a href="#letter">نامه</a>
+<a href="#admin">مدیریت 🔐</a>
 </nav>
 </header>
 
@@ -293,6 +304,45 @@ footer{text-align:center;padding:30px 12px 45px;color:var(--muted);font-size:12p
 </div>
 </div>
 </section>
+
+<!-- پنل مدیریت -->
+<section id="admin">
+<div class="card">
+<h2>پنل مدیریت خصوصی 🔐</h2>
+<p class="muted">ورود به این بخش فقط با حساب مدیر امکان‌پذیر است.</p>
+
+<div id="adminLogin">
+<label for="adminEmail">ایمیل حساب Supabase</label>
+<input id="adminEmail" type="email" autocomplete="username" placeholder="ایمیل حساب">
+
+<label for="adminPassword">رمز عبور</label>
+<input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور">
+
+<button class="btn pink" id="adminLoginBtn" type="button">ورود به پنل</button>
+<div id="adminLoginStatus" class="status" aria-live="polite"></div>
+</div>
+
+<div id="adminDashboard" style="display:none">
+<div class="admin-stat">
+<p class="muted">مجموع بازدیدهای ثبت‌شده</p>
+<strong id="totalVisits">۰</strong>
+</div>
+
+<h3>آمار ماهانه 📊</h3>
+<div id="monthlyVisitsList" class="memory-list">
+<div class="empty">در انتظار دریافت آمار...</div>
+</div>
+
+<div id="adminStatus" class="status" aria-live="polite"></div>
+
+<div class="memory-actions">
+<button class="btn" id="refreshStatsBtn" type="button">🔄 به‌روزرسانی آمار</button>
+<button class="btn delete" id="adminLogoutBtn" type="button">خروج از حساب</button>
+</div>
+</div>
+</div>
+</section>
+
 </main>
 
 <footer>
@@ -317,6 +367,7 @@ const $ = id => document.getElementById(id);
 let allMemories = [];
 let filteredMemories = [];
 let activeRandomId = null;
+let adminAccessToken = null;
 
 const typeNames = {text:"نوشته",image:"عکس",audio:"ویس",video:"ویدئو"};
 
@@ -324,12 +375,15 @@ function setStatus(element,message,type=""){
   element.textContent=message;
   element.className="status"+(type?" "+type:"");
 }
+
 function escapeHTML(value){
   return String(value??"").replace(/[&<>"']/g,char=>({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
   })[char]);
 }
+
 function dateValue(memory){return memory.memory_date||memory.created_at||""}
+
 function formatDate(value){
   if(!value)return "بدون تاریخ";
   const date=new Date(value);
@@ -339,6 +393,7 @@ function formatDate(value){
     hour:"2-digit",minute:"2-digit",hourCycle:"h23"
   }).format(date);
 }
+
 function creatorName(value){
   if(value==="Melina")return "ملینا";
   if(value==="Abolfazl")return "ابوالفضل";
@@ -357,7 +412,7 @@ async function api(path,options={}){
   return text?JSON.parse(text):null;
 }
 
-/* شمارنده خودکار بازدید ماهانه */
+/* ثبت بازدید ماهانه */
 async function recordMonthlyVisit(){
   try{
     await api("/rest/v1/rpc/record_monthly_visit",{
@@ -369,6 +424,7 @@ async function recordMonthlyVisit(){
   }
 }
 
+/* بارگذاری فایل */
 async function uploadFile(file){
   const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
   const path=Date.now()+"_"+Math.random().toString(36).slice(2,9)+"_"+safeName;
@@ -392,6 +448,7 @@ async function getFileUrl(path){
   return response.signedURL.startsWith("http")?response.signedURL:SUPABASE_URL+"/storage/v1"+response.signedURL;
 }
 
+/* دریافت خاطرات */
 async function fetchAllMemories(){
   const pageSize=1000;
   let offset=0,result=[];
@@ -420,6 +477,7 @@ function getFilteredMemories(){
   const year=$("filterYear").value,month=$("filterMonth").value;
   const type=$("filterType").value,creator=$("filterCreator").value;
   const sort=$("sortOrder").value;
+
   const list=allMemories.filter(memory=>{
     const combined=(String(memory.title||"")+" "+String(memory.content||"")).toLocaleLowerCase();
     if(search&&!combined.includes(search))return false;
@@ -430,6 +488,7 @@ function getFilteredMemories(){
     if(creator&&memory.created_by!==creator)return false;
     return true;
   });
+
   list.sort((a,b)=>{
     const da=dateValue(a)||"",db=dateValue(b)||"";
     return sort==="oldest"?da.localeCompare(db):db.localeCompare(da);
@@ -445,13 +504,16 @@ function mediaHTML(memory,url){
   return "";
 }
 
+/* حذف خاطره */
 async function deleteMemory(memory){
   const title=memory.title||"خاطرهٔ بدون عنوان";
   if(!confirm("مطمئنی می‌خوای این خاطره رو برای همیشه پاک کنی؟\n\n"+title+"\n\nاین کار قابل برگشت نیست."))return;
+
   const card=[...document.querySelectorAll(".memory-card")].find(item=>String(item.dataset.memoryId)===String(memory.id));
   const deleteButton=card?.querySelector(".delete");
   if(deleteButton){deleteButton.disabled=true;deleteButton.textContent="در حال حذف..."}
   setStatus($("loadStatus"),"در حال حذف خاطره...");
+
   try{
     const response=await fetch(SUPABASE_URL+"/rest/v1/memories?id=eq."+encodeURIComponent(memory.id)+"&select=id",{
       method:"DELETE",headers:{
@@ -459,11 +521,14 @@ async function deleteMemory(memory){
         "Prefer":"return=representation"
       }
     });
+
     const responseText=await response.text();
     if(!response.ok)throw new Error(responseText||"Supabase اجازه حذف این خاطره را نداد.");
+
     let deletedRows=[];
     try{deletedRows=responseText?JSON.parse(responseText):[]}catch{deletedRows=[]}
     if(!Array.isArray(deletedRows)||deletedRows.length===0)throw new Error("هیچ ردیفی از دیتابیس حذف نشد. مجوز DELETE را بررسی کن.");
+
     if(memory.file_path){
       try{
         const storageResponse=await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET,{
@@ -475,10 +540,12 @@ async function deleteMemory(memory){
         if(!storageResponse.ok)console.error("فایل رسانه‌ای حذف نشد:",await storageResponse.text());
       }catch(storageError){console.error("خطا در حذف فایل رسانه‌ای:",storageError)}
     }
+
     allMemories=allMemories.filter(item=>String(item.id)!==String(memory.id));
     if(String(activeRandomId)===String(memory.id)){activeRandomId=null;$("randomResult").style.display="none"}
     updateYearOptions();await renderMemories();
     setStatus($("loadStatus"),"خاطره با موفقیت از دیتابیس حذف شد. 🗑️","success");
+
   }catch(error){
     console.error("خطای حذف خاطره:",error);
     setStatus($("loadStatus"),"حذف انجام نشد: "+error.message,"error");
@@ -488,20 +555,31 @@ async function deleteMemory(memory){
 
 async function createMemoryCard(memory){
   const article=document.createElement("article");
-  article.className="memory-card";article.dataset.memoryId=memory.id;
+  article.className="memory-card";
+  article.dataset.memoryId=memory.id;
+
   const title=escapeHTML(memory.title||"خاطرهٔ بدون عنوان");
   const content=escapeHTML(memory.content||"");
   const type=typeNames[memory.media_type]||"خاطره";
   const date=escapeHTML(formatDate(memory.created_at||memory.memory_date||""));
   const creator=escapeHTML(creatorName(memory.created_by));
+
   article.innerHTML='<h3>'+title+'</h3><div class="memory-meta"><span class="badge">'+escapeHTML(type)+'</span><span>📅 '+date+'</span><span>✍️ '+creator+'</span></div>'+
     (content?'<div class="memory-content">'+content+'</div>':'')+
     '<div class="media-slot"></div><div class="memory-actions"><button class="btn delete" type="button">🗑️ حذف خاطره</button></div>';
+
   article.querySelector(".delete").addEventListener("click",()=>deleteMemory(memory));
+
   if(memory.file_path){
     const slot=article.querySelector(".media-slot");
-    try{const url=await getFileUrl(memory.file_path);slot.innerHTML=mediaHTML(memory,url);attachZoomEvents(slot)}
-    catch(error){slot.innerHTML='<p class="small">نمایش فایل ممکن نیست. ممکن است دسترسی فایل محدود شده باشد.</p>';console.error(error)}
+    try{
+      const url=await getFileUrl(memory.file_path);
+      slot.innerHTML=mediaHTML(memory,url);
+      attachZoomEvents(slot);
+    }catch(error){
+      slot.innerHTML='<p class="small">نمایش فایل ممکن نیست. ممکن است دسترسی فایل محدود شده باشد.</p>';
+      console.error(error);
+    }
   }
   return article;
 }
@@ -511,11 +589,15 @@ async function renderMemories(){
   filteredMemories=getFilteredMemories();
   $("resultCount").textContent=filteredMemories.length+" خاطره از "+allMemories.length+" خاطرهٔ دریافت‌شده";
   container.replaceChildren();
+
   if(filteredMemories.length===0){
-    const empty=document.createElement("div");empty.className="empty";
+    const empty=document.createElement("div");
+    empty.className="empty";
     empty.textContent=allMemories.length?"خاطره‌ای با این مشخصات پیدا نشد. فیلترها رو تغییر بده. 💜":"هنوز خاطره‌ای ثبت نشده یا خاطرات بارگذاری نشده‌اند.";
-    container.appendChild(empty);return;
+    container.appendChild(empty);
+    return;
   }
+
   const fragment=document.createDocumentFragment();
   for(const memory of filteredMemories){
     const card=await createMemoryCard(memory);
@@ -529,90 +611,179 @@ async function loadMemories(){
   const status=$("loadStatus"),container=$("memoriesList");
   container.innerHTML='<div class="empty">در حال دریافت خاطرات... 💜</div>';
   setStatus(status,"در حال اتصال به آرشیو...");
+
   try{
     allMemories=await fetchAllMemories();
-    updateYearOptions();await renderMemories();
+    updateYearOptions();
+    await renderMemories();
     setStatus(status,"خاطرات با موفقیت بارگذاری شدند. ❤️","success");
   }catch(error){
-    console.error(error);container.innerHTML='<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';
+    console.error(error);
+    container.innerHTML='<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';
     setStatus(status,"خطا در بارگذاری: "+error.message,"error");
   }
 }
 
 /* فیلترها */
 let renderTimer;
+
 function scheduleRender(){
   clearTimeout(renderTimer);
   renderTimer=setTimeout(()=>{
-    activeRandomId=null;$("randomResult").style.display="none";renderMemories();
+    activeRandomId=null;
+    $("randomResult").style.display="none";
+    renderMemories();
   },150);
 }
+
 ["searchMemory","filterYear","filterMonth","filterType","filterCreator","sortOrder"].forEach(id=>{
   $(id).addEventListener(id==="searchMemory"?"input":"change",scheduleRender);
 });
+
 $("resetFiltersBtn").addEventListener("click",()=>{
-  $("searchMemory").value="";$("filterYear").value="";$("filterMonth").value="";
-  $("filterType").value="";$("filterCreator").value="";$("sortOrder").value="newest";
-  activeRandomId=null;$("randomResult").style.display="none";renderMemories();
+  $("searchMemory").value="";
+  $("filterYear").value="";
+  $("filterMonth").value="";
+  $("filterType").value="";
+  $("filterCreator").value="";
+  $("sortOrder").value="newest";
+  activeRandomId=null;
+  $("randomResult").style.display="none";
+  renderMemories();
 });
+
 $("reloadMemoriesBtn").addEventListener("click",loadMemories);
 
 /* خاطره تصادفی */
 $("randomMemoryBtn").addEventListener("click",async()=>{
   const resultBox=$("randomResult"),list=getFilteredMemories();
-  if(!list.length){resultBox.style.display="block";resultBox.textContent="خاطره‌ای برای انتخاب وجود نداره. فیلترها رو تغییر بده. 💜";return}
+
+  if(!list.length){
+    resultBox.style.display="block";
+    resultBox.textContent="خاطره‌ای برای انتخاب وجود نداره. فیلترها رو تغییر بده. 💜";
+    return;
+  }
+
   const memory=list[Math.floor(Math.random()*list.length)];
-  activeRandomId=memory.id;await renderMemories();
-  resultBox.style.display="block";resultBox.replaceChildren();
-  const heading=document.createElement("strong");heading.textContent="✨ خاطرهٔ انتخاب‌شده";
-  const title=document.createElement("p");title.textContent=memory.title||"خاطرهٔ بدون عنوان";
-  const date=document.createElement("p");date.className="small";date.textContent=formatDate(memory.created_at||memory.memory_date);
-  const button=document.createElement("button");button.className="btn";button.type="button";button.textContent="رفتن به این خاطره";
+  activeRandomId=memory.id;
+  await renderMemories();
+
+  resultBox.style.display="block";
+  resultBox.replaceChildren();
+
+  const heading=document.createElement("strong");
+  heading.textContent="✨ خاطرهٔ انتخاب‌شده";
+
+  const title=document.createElement("p");
+  title.textContent=memory.title||"خاطرهٔ بدون عنوان";
+
+  const date=document.createElement("p");
+  date.className="small";
+  date.textContent=formatDate(memory.created_at||memory.memory_date);
+
+  const button=document.createElement("button");
+  button.className="btn";
+  button.type="button";
+  button.textContent="رفتن به این خاطره";
+
   button.addEventListener("click",()=>{
     const target=[...document.querySelectorAll(".memory-card")].find(card=>String(card.dataset.memoryId)===String(memory.id));
-    if(target){target.scrollIntoView({behavior:"smooth",block:"center"});target.style.borderColor="var(--pink)"}
+    if(target){
+      target.scrollIntoView({behavior:"smooth",block:"center"});
+      target.style.borderColor="var(--pink)";
+    }
   });
+
   resultBox.append(heading,title,date,button);
   resultBox.scrollIntoView({behavior:"smooth",block:"nearest"});
 });
 
 /* ثبت خاطره */
 $("memoryDate").value=new Date().toISOString().slice(0,10);
+
 $("mediaType").addEventListener("change",()=>{
   const file=$("memoryFile"),type=$("mediaType").value;
   file.accept=type==="image"?"image/*":type==="audio"?"audio/*":type==="video"?"video/*":"image/*,audio/*,video/*";
 });
+
 $("memoryForm").addEventListener("submit",async event=>{
   event.preventDefault();
+
   const button=$("saveMemoryBtn"),status=$("formStatus");
-  const title=$("memoryTitle").value.trim(),content=$("memoryContent").value.trim();
-  const memoryDate=$("memoryDate").value||null,createdBy=$("createdBy").value;
-  const mediaType=$("mediaType").value,file=$("memoryFile").files[0];
+  const title=$("memoryTitle").value.trim();
+  const content=$("memoryContent").value.trim();
+  const memoryDate=$("memoryDate").value||null;
+  const createdBy=$("createdBy").value;
+  const mediaType=$("mediaType").value;
+  const file=$("memoryFile").files[0];
+
   if(!title){setStatus(status,"اول عنوان خاطره رو وارد کن.","error");return}
   if(file&&file.size>MAX_FILE_SIZE){setStatus(status,"حجم فایل باید کمتر از ۲۵ مگابایت باشه.","error");return}
   if(file&&file.type&&!file.type.startsWith(mediaType+"/")){setStatus(status,"نوع فایل با نوع خاطره هماهنگ نیست.","error");return}
   if(mediaType!=="text"&&!file&&!content){setStatus(status,"متن خاطره رو بنویس یا یک فایل انتخاب کن.","error");return}
-  button.disabled=true;button.textContent="در حال ذخیره...";
+
+  button.disabled=true;
+  button.textContent="در حال ذخیره...";
+
   try{
     let uploadedPath=null;
-    if(file){setStatus(status,"در حال بارگذاری فایل...");uploadedPath=await uploadFile(file)}
+    if(file){
+      setStatus(status,"در حال بارگذاری فایل...");
+      uploadedPath=await uploadFile(file);
+    }
+
     setStatus(status,"در حال ثبت خاطره...");
-    const record={title,content,media_type:mediaType,file_path:uploadedPath,created_by:createdBy,memory_date:memoryDate};
-    await api("/rest/v1/memories",{method:"POST",headers:{"Prefer":"return=minimal"},body:JSON.stringify(record)});
+
+    const record={
+      title,content,media_type:mediaType,
+      file_path:uploadedPath,created_by:createdBy,memory_date:memoryDate
+    };
+
+    await api("/rest/v1/memories",{
+      method:"POST",
+      headers:{"Prefer":"return=minimal"},
+      body:JSON.stringify(record)
+    });
+
     setStatus(status,"خاطره با موفقیت ذخیره شد! ❤️","success");
-    $("memoryTitle").value="";$("memoryContent").value="";$("memoryFile").value="";
+
+    $("memoryTitle").value="";
+    $("memoryContent").value="";
+    $("memoryFile").value="";
     $("memoryDate").value=new Date().toISOString().slice(0,10);
-    $("mediaType").value="text";$("memoryFile").accept="image/*,audio/*,video/*";
-    $("searchMemory").value="";$("filterYear").value="";$("filterMonth").value="";
-    $("filterType").value="";$("filterCreator").value="";activeRandomId=null;
-    await loadMemories();$("timeMachine").scrollIntoView({behavior:"smooth"});
-  }catch(error){console.error(error);setStatus(status,"ذخیره انجام نشد: "+error.message,"error")}
-  finally{button.disabled=false;button.textContent="❤️ ذخیره در آرشیو"}
+    $("mediaType").value="text";
+    $("memoryFile").accept="image/*,audio/*,video/*";
+    $("searchMemory").value="";
+    $("filterYear").value="";
+    $("filterMonth").value="";
+    $("filterType").value="";
+    $("filterCreator").value="";
+    activeRandomId=null;
+
+    await loadMemories();
+    $("timeMachine").scrollIntoView({behavior:"smooth"});
+
+  }catch(error){
+    console.error(error);
+    setStatus(status,"ذخیره انجام نشد: "+error.message,"error");
+  }finally{
+    button.disabled=false;
+    button.textContent="❤️ ذخیره در آرشیو";
+  }
 });
 
 /* بزرگ‌نمایی تصاویر */
-function openLightbox(src,alt){$("lightboxImage").src=src;$("lightboxImage").alt=alt||"تصویر خاطره";$("lightbox").style.display="flex"}
-function closeLightbox(){$("lightbox").style.display="none";$("lightboxImage").src=""}
+function openLightbox(src,alt){
+  $("lightboxImage").src=src;
+  $("lightboxImage").alt=alt||"تصویر خاطره";
+  $("lightbox").style.display="flex";
+}
+
+function closeLightbox(){
+  $("lightbox").style.display="none";
+  $("lightboxImage").src="";
+}
+
 function attachZoomEvents(root=document){
   root.querySelectorAll(".zoomable").forEach(img=>{
     if(img.dataset.zoomReady)return;
@@ -620,21 +791,164 @@ function attachZoomEvents(root=document){
     img.addEventListener("click",()=>openLightbox(img.src,img.alt));
   });
 }
+
 $("lightboxClose").addEventListener("click",closeLightbox);
-$("lightbox").addEventListener("click",event=>{if(event.target===$("lightbox"))closeLightbox()});
-document.addEventListener("keydown",event=>{if(event.key==="Escape")closeLightbox()});
+
+$("lightbox").addEventListener("click",event=>{
+  if(event.target===$("lightbox"))closeLightbox();
+});
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape")closeLightbox();
+});
+
 attachZoomEvents();
 
 /* نامه */
 $("letterToggle").addEventListener("click",()=>{
-  const letter=$("letterContent"),isOpen=letter.style.display==="block";
+  const letter=$("letterContent");
+  const isOpen=letter.style.display==="block";
   letter.style.display=isOpen?"none":"block";
   $("letterToggle").textContent=isOpen?"بازکردن نامه ❤️":"بستن نامه 💌";
 });
 
+/* ورود مدیر */
+async function adminLogin(){
+  const email=$("adminEmail").value.trim();
+  const password=$("adminPassword").value;
+  const button=$("adminLoginBtn");
+
+  if(!email||!password){
+    setStatus($("adminLoginStatus"),"ایمیل و رمز عبور را وارد کن.","error");
+    return;
+  }
+
+  button.disabled=true;
+  button.textContent="در حال ورود...";
+
+  try{
+    const response=await fetch(
+      SUPABASE_URL+"/auth/v1/token?grant_type=password",
+      {
+        method:"POST",
+        headers:{
+          "apikey":SUPABASE_KEY,
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({email,password})
+      }
+    );
+
+    const data=await response.json();
+
+    if(!response.ok||!data.access_token){
+      throw new Error(data.msg||data.message||data.error_description||"ورود ناموفق بود.");
+    }
+
+    adminAccessToken=data.access_token;
+
+    $("adminLogin").style.display="none";
+    $("adminDashboard").style.display="block";
+    $("adminPassword").value="";
+
+    await loadMonthlyStats();
+
+  }catch(error){
+    adminAccessToken=null;
+    setStatus($("adminLoginStatus"),"خطا در ورود: "+error.message,"error");
+  }finally{
+    button.disabled=false;
+    button.textContent="ورود به پنل";
+  }
+}
+
+/* دریافت آمار فقط با توکن حساب مدیر */
+async function loadMonthlyStats(){
+  if(!adminAccessToken){
+    setStatus($("adminStatus"),"ابتدا وارد حساب مدیر شو.","error");
+    return;
+  }
+
+  const container=$("monthlyVisitsList");
+  container.innerHTML='<div class="empty">در حال دریافت آمار...</div>';
+
+  try{
+    const response=await fetch(
+      SUPABASE_URL+"/rest/v1/site_monthly_visits?select=month,visits&order=month.desc",
+      {
+        headers:{
+          "apikey":SUPABASE_KEY,
+          "Authorization":"Bearer "+adminAccessToken
+        }
+      }
+    );
+
+    const data=await response.json();
+
+    if(!response.ok){
+      throw new Error(data.message||data.hint||data.details||"دریافت آمار ناموفق بود.");
+    }
+
+    if(!Array.isArray(data)){
+      throw new Error("اطلاعات دریافتی معتبر نیست.");
+    }
+
+    const total=data.reduce(
+      (sum,item)=>sum+Number(item.visits||0),0
+    );
+
+    $("totalVisits").textContent=total.toLocaleString("fa-IR");
+    container.replaceChildren();
+
+    if(data.length===0){
+      container.innerHTML='<div class="empty">هنوز آماری ثبت نشده است.</div>';
+    }else{
+      data.forEach(item=>{
+        const card=document.createElement("div");
+        card.className="memory-card";
+
+        const month=document.createElement("h3");
+        month.textContent=item.month;
+
+        const count=document.createElement("p");
+        count.textContent="تعداد بازدید: "+Number(item.visits).toLocaleString("fa-IR");
+
+        card.append(month,count);
+        container.appendChild(card);
+      });
+    }
+
+    setStatus($("adminStatus"),"آمار با موفقیت دریافت شد. ❤️","success");
+
+  }catch(error){
+    console.error(error);
+    container.innerHTML='<div class="empty">دریافت آمار ناموفق بود.</div>';
+    setStatus($("adminStatus"),"خطا در دریافت آمار: "+error.message,"error");
+  }
+}
+
+/* خروج مدیر */
+function adminLogout(){
+  adminAccessToken=null;
+
+  $("adminDashboard").style.display="none";
+  $("adminLogin").style.display="block";
+  $("adminEmail").value="";
+  $("adminPassword").value="";
+  $("totalVisits").textContent="۰";
+  $("monthlyVisitsList").replaceChildren();
+
+  setStatus($("adminLoginStatus"),"از حساب خارج شدی.","success");
+}
+
+$("adminLoginBtn").addEventListener("click",adminLogin);
+$("adminLogoutBtn").addEventListener("click",adminLogout);
+$("refreshStatsBtn").addEventListener("click",loadMonthlyStats);
+
 /* شروع سایت */
 recordMonthlyVisit();
 loadMemories();
+
 </script>
 </body>
 </html>
