@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -6,948 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#10091f">
 <title>کل‌زندگی‌من ❤️</title>
-
 <style>
-:root {
-  --bg:#10091f;
-  --card:rgba(255,255,255,.075);
-  --border:rgba(255,255,255,.13);
-  --pink:#ff83c8;
-  --purple:#b69aff;
-  --text:#fff5ff;
-  --muted:#c8b9d8;
-  --green:#9fffc8;
-  --red:#ff9eae;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--text);
-  background:radial-gradient(ellipse at top,#382052 0%,transparent 45%),
-  radial-gradient(ellipse at bottom,#24143b 0%,transparent 50%),var(--bg);
-  line-height:1.9
-}
-button,input,textarea,select{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer}
-.stars{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background-image:
-  radial-gradient(2px 2px at 20% 30%,#fff 50%,transparent 100%),
-  radial-gradient(1px 1px at 80% 20%,#fff 50%,transparent 100%),
-  radial-gradient(2px 2px at 60% 70%,#ffb8e1 50%,transparent 100%),
-  radial-gradient(1px 1px at 30% 80%,#fff 50%,transparent 100%),
-  radial-gradient(1px 1px at 90% 60%,#d7c2ff 50%,transparent 100%);
-  background-size:190px 190px,250px 250px,300px 300px,220px 220px,270px 270px;
-  opacity:.6
-}
-header{
-  padding:18px 12px;position:sticky;top:0;z-index:10;
-  background:rgba(16,9,31,.85);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border)
-}
-nav{
-  max-width:1050px;margin:auto;display:flex;gap:8px;
-  justify-content:center;flex-wrap:wrap
-}
-nav a{padding:5px 10px;font-size:12px;color:var(--muted);border-radius:20px}
-nav a:hover{color:white;background:rgba(255,131,200,.15)}
-main{width:min(100% - 26px,900px);margin:auto}
-section{padding:30px 0;scroll-margin-top:85px}
-.hero{text-align:center;padding-top:55px;padding-bottom:40px}
-.hero h1{
-  font-size:clamp(27px,7vw,43px);line-height:1.6;margin:12px 0;
-  background:linear-gradient(90deg,#ffb8df,#c4a8ff,#fff);
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.hero p{color:var(--muted)}
-.hero-heart{font-size:48px;animation:heartbeat 1.8s infinite}
-@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-.card{
-  background:var(--card);border:1px solid var(--border);border-radius:23px;
-  padding:20px;margin-bottom:18px;backdrop-filter:blur(12px);
-  box-shadow:0 10px 35px rgba(0,0,0,.12)
-}
-h2{font-size:23px;color:#ffd1eb;margin-top:0}
-h3{color:#f7c7ff}
-p{overflow-wrap:anywhere}
-.muted{color:var(--muted);font-size:13px}
-.small{font-size:12px;color:var(--muted)}
-.btn{
-  border:1px solid rgba(255,255,255,.15);border-radius:13px;
-  padding:10px 15px;color:white;background:linear-gradient(135deg,#8c5cc8,#d65d9e);
-  display:inline-block;text-align:center;transition:transform .2s,opacity .2s
-}
-.btn:hover{transform:translateY(-2px)}
-.btn.secondary{background:rgba(255,255,255,.08)}
-.btn.pink{background:linear-gradient(135deg,#e45ca8,#9d68e7)}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.memory-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.btn.delete{background:rgba(255,70,100,.12);border:1px solid rgba(255,120,145,.35);color:#ffb2c0}
-.btn.delete:hover{background:rgba(255,70,100,.25)}
-img{max-width:100%}
-.featured-image{
-  display:block;width:100%;max-height:510px;object-fit:cover;
-  border-radius:18px;border:1px solid var(--border)
-}
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.gallery img{
-  width:100%;height:200px;object-fit:cover;border-radius:15px;
-  cursor:pointer;border:1px solid var(--border);transition:.2s
-}
-.gallery img:hover{transform:scale(1.015)}
-input,textarea,select{
-  width:100%;padding:12px;margin-top:6px;border-radius:12px;
-  color:white;background:rgba(13,7,25,.8);border:1px solid var(--border);outline:none
-}
-input:focus,textarea:focus,select:focus{border-color:var(--pink)}
-select option{background:#211433;color:white}
-textarea{min-height:115px;resize:vertical}
-label{display:block;margin-top:13px;color:#f2dffb;font-size:13px}
-.form-grid,.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.memory-list{display:grid;gap:14px;margin-top:18px}
-.memory-card{
-  padding:17px;border-radius:18px;background:rgba(255,255,255,.055);
-  border:1px solid var(--border);overflow-wrap:anywhere;scroll-margin-top:90px
-}
-.memory-card h3{margin:0 0 5px}
-.memory-meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px;margin:7px 0}
-.badge{display:inline-block;font-size:11px;border-radius:20px;padding:2px 9px;background:rgba(191,145,255,.14);border:1px solid var(--border)}
-.memory-content{white-space:pre-wrap;overflow-wrap:anywhere}
-.memory-media{width:100%;max-height:430px;object-fit:contain;margin-top:10px;border-radius:14px;background:rgba(0,0,0,.2)}
-.filter-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
-.result-line{color:var(--muted);font-size:13px;margin-top:12px}
-.empty{text-align:center;color:var(--muted);padding:25px 10px}
-.timeline-item{border-right:2px solid #bd83f1;padding:0 15px 20px 0;margin-right:7px}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-item strong{color:#ffc5e6}
-.letter{
-  display:none;padding:20px;border-radius:18px;background:rgba(255,131,200,.08);
-  border:1px solid rgba(255,131,200,.2);white-space:pre-wrap
-}
-#lightbox{
-  position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.92);
-  display:none;justify-content:center;align-items:center;padding:15px
-}
-#lightbox img{max-width:100%;max-height:85vh;object-fit:contain;border-radius:12px}
-#lightboxClose{position:absolute;top:12px;left:15px;font-size:30px;background:none;color:white;border:0}
-#randomResult{
-  display:none;margin-top:15px;border:1px solid rgba(255,131,200,.3);
-  background:rgba(255,131,200,.07);padding:15px;border-radius:16px
-}
-.status{margin-top:12px;font-size:13px;overflow-wrap:anywhere}
-.status.error{color:var(--red)}
-.status.success{color:var(--green)}
-audio,video{width:100%;margin-top:10px;border-radius:12px}
-footer{text-align:center;padding:30px 12px 45px;color:var(--muted);font-size:12px}
-.admin-stat{
-  background:rgba(255,131,200,.07);
-  border:1px solid var(--border);
-  border-radius:17px;padding:16px;margin:12px 0
-}
-.admin-stat strong{font-size:25px;color:var(--green)}
-@media(max-width:520px){
-  .form-grid,.filters{grid-template-columns:1fr}
-  .gallery img{height:155px}
-  .card{padding:15px}
-  nav a{padding:4px 7px;font-size:11px}
-}
+:root{--bg:#10091f;--card:rgba(255,255,255,.075);--border:rgba(255,255,255,.13);--pink:#ff83c8;--purple:#b69aff;--text:#fff5ff;--muted:#c8b9d8;--green:#9fffc8;--red:#ff9eae}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--text);background:radial-gradient(ellipse at top,#382052 0%,transparent 45%),radial-gradient(ellipse at bottom,#24143b 0%,transparent 50%),var(--bg);line-height:1.9}
+button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{cursor:pointer}
+.stars{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(2px 2px at 20% 30%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 80% 20%,#fff 50%,transparent 100%),radial-gradient(2px 2px at 60% 70%,#ffb8e1 50%,transparent 100%),radial-gradient(1px 1px at 30% 80%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 90% 60%,#d7c2ff 50%,transparent 100%);background-size:190px 190px,250px 250px,300px 300px,220px 220px,270px 270px;opacity:.6}
+header{padding:14px 10px;position:sticky;top:0;z-index:10;background:rgba(16,9,31,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+nav{max-width:1100px;margin:auto;display:flex;gap:7px;justify-content:center;flex-wrap:wrap}nav a{padding:5px 9px;font-size:12px;color:var(--muted);border-radius:20px}nav a:hover{color:white;background:rgba(255,131,200,.15)}
+main{width:min(100% - 26px,930px);margin:auto}section{padding:28px 0;scroll-margin-top:85px}.hero{text-align:center;padding-top:50px;padding-bottom:35px}.hero h1{font-size:clamp(27px,7vw,43px);line-height:1.6;margin:12px 0;background:linear-gradient(90deg,#ffb8df,#c4a8ff,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted)}.hero-heart{font-size:48px;animation:heartbeat 1.8s infinite}@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:23px;padding:20px;margin-bottom:18px;backdrop-filter:blur(12px);box-shadow:0 10px 35px rgba(0,0,0,.12)}h2{font-size:23px;color:#ffd1eb;margin-top:0}h3{color:#f7c7ff}p{overflow-wrap:anywhere}.muted,.small{color:var(--muted);font-size:13px}.small{font-size:12px}
+.btn{border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:9px 14px;color:white;background:linear-gradient(135deg,#8c5cc8,#d65d9e);display:inline-block;text-align:center;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:rgba(255,255,255,.08)}.btn.pink{background:linear-gradient(135deg,#e45ca8,#9d68e7)}.btn:disabled{opacity:.5;cursor:not-allowed}.btn.delete{background:rgba(255,70,100,.12);border:1px solid rgba(255,120,145,.35);color:#ffb2c0}
+img{max-width:100%}.featured-image{display:block;width:100%;max-height:510px;object-fit:cover;border-radius:18px;border:1px solid var(--border)}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gallery img{width:100%;height:200px;object-fit:cover;border-radius:15px;cursor:pointer;border:1px solid var(--border);transition:.2s}.gallery img:hover{transform:scale(1.015)}
+input,textarea,select{width:100%;padding:11px;margin-top:6px;border-radius:12px;color:white;background:rgba(13,7,25,.8);border:1px solid var(--border);outline:none}input:focus,textarea:focus,select:focus{border-color:var(--pink)}select option{background:#211433;color:white}textarea{min-height:115px;resize:vertical}label{display:block;margin-top:13px;color:#f2dffb;font-size:13px}
+.form-grid,.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.memory-list{display:grid;gap:14px;margin-top:18px}.memory-card{padding:17px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid var(--border);overflow-wrap:anywhere;scroll-margin-top:90px}.memory-card h3{margin:0 0 5px}.memory-meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px;margin:7px 0}.badge{display:inline-block;font-size:11px;border-radius:20px;padding:2px 9px;background:rgba(191,145,255,.14);border:1px solid var(--border)}.memory-content{white-space:pre-wrap;overflow-wrap:anywhere}.memory-media{width:100%;max-height:430px;object-fit:contain;margin-top:10px;border-radius:14px;background:rgba(0,0,0,.2)}.memory-actions,.filter-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.result-line{color:var(--muted);font-size:13px;margin-top:12px}.empty{text-align:center;color:var(--muted);padding:25px 10px}.timeline-item{border-right:2px solid #bd83f1;padding:0 15px 20px 0;margin-right:7px}.timeline-item:last-child{padding-bottom:0}.timeline-item strong{color:#ffc5e6}
+.letter{display:none;padding:20px;border-radius:18px;background:rgba(255,131,200,.08);border:1px solid rgba(255,131,200,.2);white-space:pre-wrap}
+#lightbox{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.92);display:none;justify-content:center;align-items:center;padding:15px}#lightbox img{max-width:100%;max-height:85vh;object-fit:contain;border-radius:12px}#lightboxClose{position:absolute;top:12px;left:15px;font-size:30px;background:none;color:white;border:0}
+#randomResult{display:none;margin-top:15px;border:1px solid rgba(255,131,200,.3);background:rgba(255,131,200,.07);padding:15px;border-radius:16px}.status{margin-top:12px;font-size:13px;overflow-wrap:anywhere}.status.error{color:var(--red)}.status.success{color:var(--green)}audio,video{width:100%;margin-top:10px;border-radius:12px}footer{text-align:center;padding:30px 12px 45px;color:var(--muted);font-size:12px}.admin-stat{background:rgba(255,131,200,.07);border:1px solid var(--border);border-radius:17px;padding:16px;margin:12px 0}.admin-stat strong{font-size:25px;color:var(--green)}
+/* دنیای خاطرات */
+.world-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.world-tile{min-height:116px;text-align:center;padding:16px 10px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.055);color:var(--text)}.world-tile b{display:block;font-size:25px}.world-tile span{font-size:13px;color:var(--muted)}.world-panel{display:none;margin-top:16px;padding:17px;border:1px solid rgba(255,131,200,.24);border-radius:18px;background:rgba(255,131,200,.055)}.world-panel.active{display:block}.stars-field{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}.star-memory{border:1px solid rgba(255,255,255,.15);background:rgba(190,145,255,.12);border-radius:14px;color:white;padding:10px 4px;min-height:78px}.star-memory i{display:block;font-style:normal;font-size:23px}.book-page{min-height:180px;padding:22px;border-radius:15px;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,131,200,.07));border:1px solid var(--border);white-space:pre-wrap}.book-controls{display:flex;justify-content:space-between;gap:10px;margin-top:12px}.bubble-area{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:12px}.bubble{width:82px;height:82px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:radial-gradient(circle at 30% 25%,#ffc7e7,rgba(169,120,225,.4) 60%,rgba(80,45,120,.6));color:#fff;box-shadow:0 5px 25px #0003}.garden{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}.flower{padding:12px 5px;border-radius:15px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:white}.flower strong{display:block;font-size:30px}.capsule{border:1px dashed rgba(255,190,225,.5);padding:15px;border-radius:16px;margin-top:10px}.calendar-list{display:grid;gap:9px;margin-top:12px}.calendar-item{padding:11px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--border)}.puzzle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;max-width:310px;margin:12px auto}.puzzle-piece{height:105px;overflow:hidden;border:1px solid var(--border);border-radius:8px;background-size:200% 200%;background-repeat:no-repeat}.theme-light{--bg:#f7eefa;--card:rgba(255,255,255,.72);--border:rgba(90,50,110,.18);--text:#34223f;--muted:#705d7c;background:linear-gradient(140deg,#fbe4f3,#e8ddff,#fff)}.theme-light header{background:rgba(250,240,255,.9)}.theme-light input,.theme-light textarea,.theme-light select{background:#fff;color:#382747}.theme-light .world-tile,.theme-light .star-memory,.theme-light .flower,.theme-light .bubble{color:#382747}.theme-light .btn{color:white}
+footer p{margin:4px}
+@media(max-width:520px){.form-grid,.filters,.world-grid{grid-template-columns:1fr 1fr}.gallery img{height:155px}.card{padding:15px}nav a{padding:4px 7px;font-size:11px}.stars-field{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
-
 <body>
 <div class="stars"></div>
-
-<header>
-<nav>
-<a href="#home">خانه</a>
-<a href="#featured">عکس ما</a>
-<a href="#gallery">گالری</a>
-<a href="#voice">صدا</a>
-<a href="#timeline">قصهٔ ما</a>
-<a href="#timeMachine">ماشین زمان</a>
-<a href="#archive">ثبت خاطره</a>
-<a href="#letter">نامه</a>
-<a href="#admin">مدیریت 🔐</a>
-</nav>
-</header>
-
+<header><nav>
+<a href="#home">خانه</a><a href="#featured">قاب خاطره</a><a href="#gallery">گالری</a><a href="#voice">صدا</a><a href="#timeline">قصه</a><a href="#timeMachine">ماشین زمان</a><a href="#world">دنیای خاطرات ✨</a><a href="#archive">ثبت خاطره</a><a href="#letter">نامه</a><a href="#admin">مدیریت 🔐</a>
+</nav></header>
 <main>
-<section class="hero" id="home">
-<div class="hero-heart">❤️</div>
-<h1>آرشیو خاطرات ما</h1>
-<p>بعضی لحظه‌ها می‌گذرن، اما ارزششون هیچ‌وقت کم نمی‌شه.</p>
-<p class="muted">اینجا گوشه‌ای از خاطرات، صداها و لحظه‌های ماست.</p>
-<a class="btn pink" href="#timeMachine">برگردیم به خاطراتمون ✨</a>
-</section>
-
-<section id="featured">
-<div class="card">
-<h2>یک قاب از خاطرات ❤️</h2>
-<img class="featured-image zoomable" src="IMG_20250612_000548_702.jpg" alt="یکی از خاطرات ما" loading="lazy">
-<p class="muted">هر عکس می‌تونه دروازه‌ای به یک روز فراموش‌نشدنی باشه.</p>
+<section class="hero" id="home"><div class="hero-heart">❤️</div><h1>آرشیو خاطرات ما</h1><p>بعضی لحظه‌ها می‌گذرن، اما ارزششون هیچ‌وقت کم نمی‌شه.</p><p class="muted">اینجا گوشه‌ای از خاطرات، صداها و لحظه‌های ماست.</p><a class="btn pink" href="#timeMachine">برگردیم به خاطراتمون ✨</a></section>
+<section id="featured"><div class="card"><h2>یک قاب از خاطرات ❤️</h2><img class="featured-image zoomable" src="IMG_20250612_000548_702.jpg" alt="یکی از خاطرات ما" loading="lazy"><p class="muted">هر عکس می‌تونه دروازه‌ای به یک روز فراموش‌نشدنی باشه.</p></div></section>
+<section id="gallery"><div class="card"><h2>گالری خاطرات 📸</h2><p class="muted">روی هر عکس بزن تا بزرگ‌تر ببینیش.</p><div class="gallery">
+<img class="zoomable" src="IMG_20250612_000548_702.jpg" alt="خاطره ۱" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg" alt="خاطره ۲" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg" alt="خاطره ۳" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg" alt="خاطره ۴" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg" alt="خاطره ۵" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg" alt="خاطره ۶" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg" alt="خاطره ۷" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg" alt="خاطره ۸" loading="lazy"><img class="zoomable" src="eye_love.jpg" alt="چشم‌ها" loading="lazy">
+</div></div></section>
+<section id="voice"><div class="card"><h2>اتاق صدا 🎧</h2><p>بعضی خاطره‌ها رو نمی‌شه فقط خوند؛ باید شنید.</p><audio controls preload="metadata"><source src="4_5965547555092699255.mp3" type="audio/mpeg">مرورگرت از پخش این فایل پشتیبانی نمی‌کنه.</audio><p class="muted">ویس خاطره‌انگیز ما</p></div></section>
+<section id="timeline"><div class="card"><h2>قصهٔ ما 🕰️</h2><div class="timeline-item"><strong>شروع خاطرات</strong><p class="muted">روزی که داستان ما شروع شد و لحظه‌های تازه شکل گرفتن.</p></div><div class="timeline-item"><strong>روزهای پر از پیام</strong><p class="muted">پیام‌ها، شوخی‌ها، حرف‌های طولانی و خاطرات کوچیک.</p></div><div class="timeline-item"><strong>لحظه‌های ماندگار</strong><p class="muted">روزهایی که حتی گذشت زمان هم نتونسته از ارزششون کم کنه.</p></div><p class="small">خاطرات ثبت‌شده در آرشیو، در ماشین زمان هم نمایش داده می‌شن.</p></div></section>
+<section id="timeMachine"><div class="card"><h2>ماشین زمان خاطرات ⏳</h2><p class="muted">تاریخ انتخاب کن، خاطره جست‌وجو کن یا یک خاطرهٔ تصادفی ببین.</p>
+<label for="searchMemory">جست‌وجو در عنوان و متن خاطرات</label><input id="searchMemory" type="search" placeholder="مثلاً یک جمله یا اسم خاطره..." autocomplete="off">
+<div class="filters"><div><label for="filterYear">سال</label><select id="filterYear"><option value="">همهٔ سال‌ها</option></select></div><div><label for="filterMonth">ماه میلادی</label><select id="filterMonth"><option value="">همهٔ ماه‌ها</option><option value="01">ژانویه</option><option value="02">فوریه</option><option value="03">مارس</option><option value="04">آوریل</option><option value="05">مه</option><option value="06">ژوئن</option><option value="07">ژوئیه</option><option value="08">اوت</option><option value="09">سپتامبر</option><option value="10">اکتبر</option><option value="11">نوامبر</option><option value="12">دسامبر</option></select></div><div><label for="filterType">نوع خاطره</label><select id="filterType"><option value="">همهٔ خاطرات</option><option value="text">نوشته‌ها</option><option value="image">عکس‌ها</option><option value="audio">ویس‌ها</option><option value="video">ویدئوها</option></select></div><div><label for="filterCreator">ثبت‌کننده</label><select id="filterCreator"><option value="">همه</option><option value="Abolfazl">ابوالفضل</option><option value="Melina">ملینا</option></select></div><div><label for="sortOrder">ترتیب نمایش</label><select id="sortOrder"><option value="newest">جدیدترین اول</option><option value="oldest">قدیمی‌ترین اول</option></select></div></div>
+<div class="filter-actions"><button class="btn" id="randomMemoryBtn" type="button">🎲 یه خاطره انتخاب کن</button><button class="btn secondary" id="resetFiltersBtn" type="button">پاک‌کردن فیلترها</button><button class="btn secondary" id="reloadMemoriesBtn" type="button">🔄 بارگذاری دوباره</button></div><div id="randomResult"></div><div class="result-line" id="resultCount">در انتظار بارگذاری خاطرات...</div><div class="memory-list" id="memoriesList"><div class="empty">در حال بارگذاری خاطرات... 💜</div></div><div class="status" id="loadStatus" aria-live="polite"></div></div></section>
+<section id="world"><div class="card"><h2>دنیای خاطرات 🌌</h2><p class="muted">هر گوشه از این دنیا، راهی برای مرور لحظه‌های ثبت‌شده‌ست.</p>
+<div class="world-grid">
+<button class="world-tile" data-panel="sky"><b>🌠</b><span>آسمان خاطرات</span></button><button class="world-tile" data-panel="book"><b>📖</b><span>دفتر ورق‌زدنی</span></button><button class="world-tile" data-panel="radio"><b>🎧</b><span>رادیوی خاطرات</span></button><button class="world-tile" data-panel="calendar"><b>📅</b><span>تقویم خاطرات</span></button><button class="world-tile" data-panel="letters"><b>💌</b><span>صندوق نوشته‌ها</span></button><button class="world-tile" data-panel="garden"><b>🌷</b><span>باغ خاطرات</span></button><button class="world-tile" data-panel="bubbles"><b>🫧</b><span>حباب‌های خاطره</span></button><button class="world-tile" data-panel="puzzle"><b>🧩</b><span>پازل قاب اصلی</span></button><button class="world-tile" data-panel="capsule"><b>🔐</b><span>کپسول زمان</span></button><button class="world-tile" data-panel="theme"><b>🌙</b><span>حالت شب و روز</span></button><button class="world-tile" data-panel="time"><b>🕰️</b><span>سفر به یک تاریخ</span></button><button class="world-tile" data-panel="random"><b>🎲</b><span>خاطرهٔ شانسی</span></button>
 </div>
-</section>
-
-<section id="gallery">
-<div class="card">
-<h2>گالری خاطرات 📸</h2>
-<p class="muted">روی هر عکس بزن تا بزرگ‌تر ببینیش.</p>
-<div class="gallery">
-<img class="zoomable" src="IMG_20250612_000548_702.jpg" alt="خاطره ۱" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg" alt="خاطره ۲" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg" alt="خاطره ۳" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg" alt="خاطره ۴" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg" alt="خاطره ۵" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg" alt="خاطره ۶" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg" alt="خاطره ۷" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg" alt="خاطره ۸" loading="lazy">
-<img class="zoomable" src="eye_love.jpg" alt="چشم‌ها" loading="lazy">
-</div>
-</div>
-</section>
-
-<section id="voice">
-<div class="card">
-<h2>اتاق صدا 🎧</h2>
-<p>بعضی خاطره‌ها رو نمی‌شه فقط خوند؛ باید شنید.</p>
-<audio controls preload="metadata">
-<source src="4_5965547555092699255.mp3" type="audio/mpeg">
-مرورگرت از پخش این فایل پشتیبانی نمی‌کنه.
-</audio>
-<p class="muted">ویس خاطره‌انگیز ما</p>
-</div>
-</section>
-
-<section id="timeline">
-<div class="card">
-<h2>قصهٔ ما 🕰️</h2>
-<div class="timeline-item"><strong>شروع خاطرات</strong><p class="muted">روزی که داستان ما شروع شد و لحظه‌های تازه شکل گرفتن.</p></div>
-<div class="timeline-item"><strong>روزهای پر از پیام</strong><p class="muted">پیام‌ها، شوخی‌ها، حرف‌های طولانی و خاطرات کوچیک.</p></div>
-<div class="timeline-item"><strong>لحظه‌های ماندگار</strong><p class="muted">روزهایی که حتی گذشت زمان هم نتونسته از ارزششون کم کنه.</p></div>
-<p class="small">خاطرات ثبت‌شده در آرشیو، در ماشین زمان هم نمایش داده می‌شن.</p>
-</div>
-</section>
-
-<section id="timeMachine">
-<div class="card">
-<h2>ماشین زمان خاطرات ⏳</h2>
-<p class="muted">تاریخ انتخاب کن، خاطره جست‌وجو کن یا یک خاطرهٔ تصادفی ببین.</p>
-<label for="searchMemory">جست‌وجو در عنوان و متن خاطرات</label>
-<input id="searchMemory" type="search" placeholder="مثلاً یک جمله یا اسم خاطره..." autocomplete="off">
-<div class="filters">
-<div><label for="filterYear">سال</label><select id="filterYear"><option value="">همهٔ سال‌ها</option></select></div>
-<div><label for="filterMonth">ماه میلادی</label><select id="filterMonth">
-<option value="">همهٔ ماه‌ها</option><option value="01">ژانویه</option><option value="02">فوریه</option><option value="03">مارس</option><option value="04">آوریل</option><option value="05">مه</option><option value="06">ژوئن</option><option value="07">ژوئیه</option><option value="08">اوت</option><option value="09">سپتامبر</option><option value="10">اکتبر</option><option value="11">نوامبر</option><option value="12">دسامبر</option>
-</select></div>
-<div><label for="filterType">نوع خاطره</label><select id="filterType">
-<option value="">همهٔ خاطرات</option><option value="text">نوشته‌ها</option><option value="image">عکس‌ها</option><option value="audio">ویس‌ها</option><option value="video">ویدئوها</option>
-</select></div>
-<div><label for="filterCreator">ثبت‌کننده</label><select id="filterCreator">
-<option value="">همه</option><option value="Abolfazl">ابوالفضل</option><option value="Melina">ملینا</option>
-</select></div>
-<div><label for="sortOrder">ترتیب نمایش</label><select id="sortOrder">
-<option value="newest">جدیدترین اول</option><option value="oldest">قدیمی‌ترین اول</option>
-</select></div>
-</div>
-<div class="filter-actions">
-<button class="btn" id="randomMemoryBtn" type="button">🎲 یه خاطره انتخاب کن</button>
-<button class="btn secondary" id="resetFiltersBtn" type="button">پاک‌کردن فیلترها</button>
-<button class="btn secondary" id="reloadMemoriesBtn" type="button">🔄 بارگذاری دوباره</button>
-</div>
-<div id="randomResult"></div>
-<div class="result-line" id="resultCount">در انتظار بارگذاری خاطرات...</div>
-<div class="memory-list" id="memoriesList"><div class="empty">در حال بارگذاری خاطرات... 💜</div></div>
-<div class="status" id="loadStatus" aria-live="polite"></div>
-</div>
-</section>
-
-<section id="archive">
-<div class="card">
-<h2>ثبت یک خاطرهٔ تازه ✍️</h2>
-<p class="muted">هرچیزی که دوست داری در آرشیو بمونه، اینجا ثبت کن.</p>
-<form id="memoryForm">
-<label for="memoryTitle">عنوان خاطره</label>
-<input id="memoryTitle" type="text" maxlength="150" placeholder="مثلاً یک روز خاص..." required>
-<div class="form-grid">
-<div><label for="memoryDate">تاریخ خاطره</label><input id="memoryDate" type="date"></div>
-<div><label for="createdBy">ثبت‌کننده</label><select id="createdBy"><option value="Abolfazl">ابوالفضل</option><option value="Melina">ملینا</option></select></div>
-</div>
-<label for="mediaType">نوع خاطره</label>
-<select id="mediaType"><option value="text">نوشته</option><option value="image">عکس</option><option value="audio">ویس یا صدا</option><option value="video">ویدئو</option></select>
-<label for="memoryContent">متن خاطره</label>
-<textarea id="memoryContent" maxlength="20000" placeholder="چی شد؟ چه حسی داشتی؟ چه چیزی رو می‌خوای برای همیشه یادت بمونه؟"></textarea>
-<label for="memoryFile">فایل خاطره (اختیاری)</label>
-<input id="memoryFile" type="file" accept="image/*,audio/*,video/*">
-<p class="small">حداکثر حجم فایل: ۲۵ مگابایت</p>
-<button class="btn pink" id="saveMemoryBtn" type="submit">❤️ ذخیره در آرشیو</button>
-<div id="formStatus" class="status" aria-live="polite"></div>
-</form>
-</div>
-</section>
-
-<section id="letter">
-<div class="card">
-<h2>نامه‌ای برای یک روز دیگر 💌</h2>
-<p class="muted">گاهی خوبه حرف‌هایی رو نگه داریم تا بعداً دوباره بخونیمشون.</p>
-<button class="btn" id="letterToggle" type="button">بازکردن نامه ❤️</button>
-<div class="letter" id="letterContent" style="margin-top:15px">
-نمیدونم قراره چی بشه
+<div class="world-panel" id="panel-sky"><h3>آسمان خاطرات ✨</h3><p class="small">روی هر ستاره بزن تا یکی از خاطرات آرشیو باز بشه.</p><div class="stars-field" id="starField"></div></div>
+<div class="world-panel" id="panel-book"><h3>دفتر خاطرات 📖</h3><div class="book-page" id="bookPage">خاطره‌ها در حال آماده‌شدن...</div><div class="book-controls"><button class="btn secondary" id="bookPrev">قبلی</button><span class="small" id="bookCount"></span><button class="btn" id="bookNext">بعدی</button></div></div>
+<div class="world-panel" id="panel-radio"><h3>رادیوی خاطرات 🎶</h3><p class="small">ویس‌ها و صداهایی که در آرشیو ثبت کردی اینجا جمع می‌شن.</p><div id="radioList" class="memory-list"></div></div>
+<div class="world-panel" id="panel-calendar"><h3>تقویم خاطرات 📅</h3><label for="calendarDate">یک تاریخ انتخاب کن</label><input type="date" id="calendarDate"><div id="calendarResults" class="calendar-list"></div></div>
+<div class="world-panel" id="panel-letters"><h3>صندوق نوشته‌ها 💌</h3><p class="small">نامه و خاطرات متنی ذخیره‌شده در آرشیو.</p><div id="letterBoxList" class="memory-list"></div></div>
+<div class="world-panel" id="panel-garden"><h3>باغ خاطرات 🌷</h3><p class="small">هر گل نمایندهٔ یکی از خاطرات ثبت‌شده‌ست.</p><div class="garden" id="gardenGrid"></div></div>
+<div class="world-panel" id="panel-bubbles"><h3>حباب‌های خاطره 🫧</h3><p class="small">هر حباب رو لمس کن تا یک خاطره نمایان بشه.</p><div class="bubble-area" id="bubbleArea"></div><div id="bubbleResult" class="calendar-item" style="display:none"></div></div>
+<div class="world-panel" id="panel-puzzle"><h3>پازل قاب خاطره 🧩</h3><p class="small">تکه‌ها رو به ترتیب درست لمس کن تا تصویر قاب اصلی کامل بشه.</p><div class="puzzle-grid" id="puzzleGrid"></div><div id="puzzleStatus" class="small"></div><button class="btn secondary" id="puzzleReset">شروع دوباره</button></div>
+<div class="world-panel" id="panel-capsule"><h3>کپسول زمان 🔐</h3><p class="small">یک نوشته برای آینده ثبت کن. این کپسول فقط روی همین مرورگر ذخیره می‌شه.</p><label for="capsuleText">پیام آینده</label><textarea id="capsuleText" maxlength="3000" placeholder="دوست داری در آینده چه چیزی بخونی؟"></textarea><label for="capsuleDate">تاریخ بازشدن</label><input id="capsuleDate" type="date"><button class="btn pink" id="saveCapsule">مهروموم کپسول</button><div id="capsuleStatus" class="status"></div><div id="capsuleList" class="calendar-list"></div></div>
+<div class="world-panel" id="panel-theme"><h3>حالت شب و روز 🌙</h3><p class="small">ظاهر آرشیو رو مطابق حال‌وهوات تغییر بده.</p><button class="btn" id="themeToggle">تغییر حالت نمایش</button></div>
+<div class="world-panel" id="panel-time"><h3>سفر به یک تاریخ 🕰️</h3><label for="timeTravelDate">تاریخ موردنظر</label><input type="date" id="timeTravelDate"><button class="btn" id="travelBtn">پیداکردن خاطرات این روز</button><div id="timeTravelResults" class="calendar-list"></div></div>
+<div class="world-panel" id="panel-random"><h3>یک اتفاق شانسی 🎲</h3><p class="small">یک خاطرهٔ تصادفی از کل آرشیو انتخاب کن.</p><button class="btn pink" id="worldRandomBtn">انتخاب خاطره</button><div id="worldRandomResult" class="calendar-item" style="display:none"></div></div>
+</div></section>
+<section id="archive"><div class="card"><h2>ثبت یک خاطرهٔ تازه ✍️</h2><p class="muted">هرچیزی که دوست داری در آرشیو بمونه، اینجا ثبت کن.</p><form id="memoryForm">
+<label for="memoryTitle">عنوان خاطره</label><input id="memoryTitle" type="text" maxlength="150" placeholder="مثلاً یک روز خاص..." required>
+<div class="form-grid"><div><label for="memoryDate">تاریخ خاطره</label><input id="memoryDate" type="date"></div><div><label for="createdBy">ثبت‌کننده</label><select id="createdBy"><option value="Abolfazl">ابوالفضل</option><option value="Melina">ملینا</option></select></div></div>
+<label for="mediaType">نوع خاطره</label><select id="mediaType"><option value="text">نوشته</option><option value="image">عکس</option><option value="audio">ویس یا صدا</option><option value="video">ویدئو</option></select>
+<label for="memoryContent">متن خاطره</label><textarea id="memoryContent" maxlength="20000" placeholder="چی شد؟ چه چیزی رو می‌خوای برای همیشه یادت بمونه؟"></textarea>
+<label for="memoryFile">فایل خاطره (اختیاری)</label><input id="memoryFile" type="file" accept="image/*,audio/*,video/*"><p class="small">حداکثر حجم فایل: ۲۵ مگابایت</p>
+<button class="btn pink" id="saveMemoryBtn" type="submit">❤️ ذخیره در آرشیو</button><div id="formStatus" class="status" aria-live="polite"></div>
+</form></div></section>
+<section id="letter"><div class="card"><h2>نامه‌ای برای یک روز دیگر 💌</h2><p class="muted">گاهی خوبه حرف‌هایی رو نگه داریم تا بعداً دوباره بخونیمشون.</p><button class="btn" id="letterToggle" type="button">بازکردن نامه ❤️</button><div class="letter" id="letterContent" style="margin-top:15px">نمیدونم قراره چی بشه
 نمیدونم قراره چی سر آینده بیاد
 ولی میتونم این تضمین رو بهت بدم که
 هیچوقت جز تو کسی دیگه رو توی قلبم
 راه نمیدم حتی اگر سهم من نشدی
          حتی
-.اگر کنار یکی دیگه دیدمت
-</div>
-</div>
-</section>
-
-<!-- پنل مدیریت -->
-<section id="admin">
-<div class="card">
-<h2>پنل مدیریت خصوصی 🔐</h2>
-<p class="muted">ورود به این بخش فقط با حساب مدیر امکان‌پذیر است.</p>
-
-<div id="adminLogin">
-<label for="adminEmail">ایمیل حساب Supabase</label>
-<input id="adminEmail" type="email" autocomplete="username" placeholder="ایمیل حساب">
-
-<label for="adminPassword">رمز عبور</label>
-<input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور">
-
-<button class="btn pink" id="adminLoginBtn" type="button">ورود به پنل</button>
-<div id="adminLoginStatus" class="status" aria-live="polite"></div>
-</div>
-
-<div id="adminDashboard" style="display:none">
-<div class="admin-stat">
-<p class="muted">مجموع بازدیدهای ثبت‌شده</p>
-<strong id="totalVisits">۰</strong>
-</div>
-
-<h3>آمار ماهانه 📊</h3>
-<div id="monthlyVisitsList" class="memory-list">
-<div class="empty">در انتظار دریافت آمار...</div>
-</div>
-
-<div id="adminStatus" class="status" aria-live="polite"></div>
-
-<div class="memory-actions">
-<button class="btn" id="refreshStatsBtn" type="button">🔄 به‌روزرسانی آمار</button>
-<button class="btn delete" id="adminLogoutBtn" type="button">خروج از حساب</button>
-</div>
-</div>
-</div>
-</section>
-
+.اگر کنار یکی دیگه دیدمت</div></div></section>
+<section id="admin"><div class="card"><h2>پنل مدیریت خصوصی 🔐</h2><p class="muted">ورود به این بخش فقط با حساب مدیر امکان‌پذیر است.</p>
+<div id="adminLogin"><label for="adminEmail">ایمیل حساب Supabase</label><input id="adminEmail" type="email" autocomplete="username" placeholder="ایمیل حساب"><label for="adminPassword">رمز عبور</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور"><button class="btn pink" id="adminLoginBtn" type="button">ورود به پنل</button><div id="adminLoginStatus" class="status" aria-live="polite"></div></div>
+<div id="adminDashboard" style="display:none"><div class="admin-stat"><p class="muted">مجموع بازدیدهای ثبت‌شده</p><strong id="totalVisits">۰</strong></div><h3>آمار ماهانه 📊</h3><div id="monthlyVisitsList" class="memory-list"><div class="empty">در انتظار دریافت آمار...</div></div><div id="adminStatus" class="status" aria-live="polite"></div><div class="memory-actions"><button class="btn" id="refreshStatsBtn" type="button">🔄 به‌روزرسانی آمار</button><button class="btn delete" id="adminLogoutBtn" type="button">خروج از حساب</button></div></div>
+</div></section>
 </main>
-
-<footer>
-<p>ساخته‌شده برای نگه‌داشتن خاطراتی که ارزش مرورکردن دارن ❤️</p>
-<p>هر خاطره، یک تکه از زمان.</p>
-</footer>
-
-<div id="lightbox" role="dialog" aria-label="نمایش تصویر بزرگ">
-<button id="lightboxClose" type="button" aria-label="بستن">×</button>
-<img id="lightboxImage" src="" alt="تصویر بزرگ‌شده">
-</div>
-
+<footer><p>ساخته‌شده برای نگه‌داشتن خاطراتی که ارزش مرورکردن دارن ❤️</p><p>هر خاطره، یک تکه از زمان.</p></footer>
+<div id="lightbox" role="dialog" aria-label="نمایش تصویر بزرگ"><button id="lightboxClose" type="button" aria-label="بستن">×</button><img id="lightboxImage" src="" alt="تصویر بزرگ‌شده"></div>
 <script>
 "use strict";
-
-const SUPABASE_URL = "https://iojkhxsfreudphjkzame.supabase.co";
-const SUPABASE_KEY = "sb_publishable_pkcG9Jkce4HxKQMN9WDe1w_5PPKUWKd";
-const BUCKET = "memories";
-const MAX_FILE_SIZE = 25 * 1024 * 1024;
-
-const $ = id => document.getElementById(id);
-let allMemories = [];
-let filteredMemories = [];
-let activeRandomId = null;
-let adminAccessToken = null;
-
-const typeNames = {text:"نوشته",image:"عکس",audio:"ویس",video:"ویدئو"};
-
-function setStatus(element,message,type=""){
-  element.textContent=message;
-  element.className="status"+(type?" "+type:"");
-}
-
-function escapeHTML(value){
-  return String(value??"").replace(/[&<>"']/g,char=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  })[char]);
-}
-
-function dateValue(memory){return memory.memory_date||memory.created_at||""}
-
-function formatDate(value){
-  if(!value)return "بدون تاریخ";
-  const date=new Date(value);
-  if(Number.isNaN(date.getTime()))return value;
-  return new Intl.DateTimeFormat("fa-IR",{
-    year:"numeric",month:"long",day:"numeric",
-    hour:"2-digit",minute:"2-digit",hourCycle:"h23"
-  }).format(date);
-}
-
-function creatorName(value){
-  if(value==="Melina")return "ملینا";
-  if(value==="Abolfazl")return "ابوالفضل";
-  return value||"نامشخص";
-}
-
-async function api(path,options={}){
-  const headers=new Headers(options.headers||{});
-  headers.set("apikey",SUPABASE_KEY);
-  if(!headers.has("Authorization"))headers.set("Authorization","Bearer "+SUPABASE_KEY);
-  if(options.body&&!(options.body instanceof FormData))headers.set("Content-Type","application/json");
-  const response=await fetch(SUPABASE_URL+path,{...options,headers});
-  if(!response.ok)throw new Error((await response.text())||"خطا در ارتباط با سرور");
-  if(response.status===204)return null;
-  const text=await response.text();
-  return text?JSON.parse(text):null;
-}
-
-/* ثبت بازدید ماهانه */
-async function recordMonthlyVisit(){
-  try{
-    await api("/rest/v1/rpc/record_monthly_visit",{
-      method:"POST",
-      body:JSON.stringify({})
-    });
-  }catch(error){
-    console.error("خطا در ثبت بازدید ماهانه:",error);
-  }
-}
-
-/* بارگذاری فایل */
-async function uploadFile(file){
-  const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
-  const path=Date.now()+"_"+Math.random().toString(36).slice(2,9)+"_"+safeName;
-  const response=await fetch(
-    SUPABASE_URL+"/storage/v1/object/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),
-    {method:"POST",headers:{
-      "apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,
-      "Content-Type":file.type||"application/octet-stream","x-upsert":"false"
-    },body:file}
-  );
-  if(!response.ok)throw new Error("بارگذاری فایل انجام نشد: "+await response.text());
-  return path;
-}
-
-async function getFileUrl(path){
-  if(!path)return "";
-  const response=await api("/storage/v1/object/sign/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{
-    method:"POST",body:JSON.stringify({expiresIn:3600})
-  });
-  if(!response||!response.signedURL)throw new Error("لینک فایل ساخته نشد.");
-  return response.signedURL.startsWith("http")?response.signedURL:SUPABASE_URL+"/storage/v1"+response.signedURL;
-}
-
-/* دریافت خاطرات */
-async function fetchAllMemories(){
-  const pageSize=1000;
-  let offset=0,result=[];
-  while(true){
-    const query="/rest/v1/memories?select=id,title,content,media_type,file_path,created_by,memory_date,created_at&order=created_at.desc&limit="+pageSize+"&offset="+offset;
-    const batch=await api(query);
-    if(!Array.isArray(batch))throw new Error("پاسخ سرور برای خاطرات معتبر نیست.");
-    result=result.concat(batch);
-    if(batch.length<pageSize)break;
-    offset+=pageSize;
-  }
-  return result;
-}
-
-function updateYearOptions(){
-  const select=$("filterYear"),current=select.value;
-  const years=[...new Set(allMemories.map(memory=>{
-    const value=dateValue(memory);return value?value.slice(0,4):"";
-  }).filter(year=>/^\d{4}$/.test(year)))].sort((a,b)=>b.localeCompare(a));
-  select.innerHTML='<option value="">همهٔ سال‌ها</option>'+years.map(year=>'<option value="'+escapeHTML(year)+'">'+escapeHTML(year)+'</option>').join("");
-  if(years.includes(current))select.value=current;
-}
-
-function getFilteredMemories(){
-  const search=$("searchMemory").value.trim().toLocaleLowerCase();
-  const year=$("filterYear").value,month=$("filterMonth").value;
-  const type=$("filterType").value,creator=$("filterCreator").value;
-  const sort=$("sortOrder").value;
-
-  const list=allMemories.filter(memory=>{
-    const combined=(String(memory.title||"")+" "+String(memory.content||"")).toLocaleLowerCase();
-    if(search&&!combined.includes(search))return false;
-    const date=dateValue(memory);
-    if(year&&(!date||date.slice(0,4)!==year))return false;
-    if(month&&(!date||date.slice(5,7)!==month))return false;
-    if(type&&memory.media_type!==type)return false;
-    if(creator&&memory.created_by!==creator)return false;
-    return true;
-  });
-
-  list.sort((a,b)=>{
-    const da=dateValue(a)||"",db=dateValue(b)||"";
-    return sort==="oldest"?da.localeCompare(db):db.localeCompare(da);
-  });
-  return list;
-}
-
-function mediaHTML(memory,url){
-  if(!url)return "";
-  if(memory.media_type==="image")return '<img class="memory-media zoomable" src="'+escapeHTML(url)+'" alt="تصویر خاطره" loading="lazy">';
-  if(memory.media_type==="audio")return '<audio controls preload="none" src="'+escapeHTML(url)+'">مرورگر شما از پخش صدا پشتیبانی نمی‌کند.</audio>';
-  if(memory.media_type==="video")return '<video controls preload="none" src="'+escapeHTML(url)+'">مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.</video>';
-  return "";
-}
-
-/* حذف خاطره */
-async function deleteMemory(memory){
-  const title=memory.title||"خاطرهٔ بدون عنوان";
-  if(!confirm("مطمئنی می‌خوای این خاطره رو برای همیشه پاک کنی؟\n\n"+title+"\n\nاین کار قابل برگشت نیست."))return;
-
-  const card=[...document.querySelectorAll(".memory-card")].find(item=>String(item.dataset.memoryId)===String(memory.id));
-  const deleteButton=card?.querySelector(".delete");
-  if(deleteButton){deleteButton.disabled=true;deleteButton.textContent="در حال حذف..."}
-  setStatus($("loadStatus"),"در حال حذف خاطره...");
-
-  try{
-    const response=await fetch(SUPABASE_URL+"/rest/v1/memories?id=eq."+encodeURIComponent(memory.id)+"&select=id",{
-      method:"DELETE",headers:{
-        "apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,
-        "Prefer":"return=representation"
-      }
-    });
-
-    const responseText=await response.text();
-    if(!response.ok)throw new Error(responseText||"Supabase اجازه حذف این خاطره را نداد.");
-
-    let deletedRows=[];
-    try{deletedRows=responseText?JSON.parse(responseText):[]}catch{deletedRows=[]}
-    if(!Array.isArray(deletedRows)||deletedRows.length===0)throw new Error("هیچ ردیفی از دیتابیس حذف نشد. مجوز DELETE را بررسی کن.");
-
-    if(memory.file_path){
-      try{
-        const storageResponse=await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET,{
-          method:"DELETE",headers:{
-            "apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,
-            "Content-Type":"application/json"
-          },body:JSON.stringify({prefixes:[memory.file_path]})
-        });
-        if(!storageResponse.ok)console.error("فایل رسانه‌ای حذف نشد:",await storageResponse.text());
-      }catch(storageError){console.error("خطا در حذف فایل رسانه‌ای:",storageError)}
-    }
-
-    allMemories=allMemories.filter(item=>String(item.id)!==String(memory.id));
-    if(String(activeRandomId)===String(memory.id)){activeRandomId=null;$("randomResult").style.display="none"}
-    updateYearOptions();await renderMemories();
-    setStatus($("loadStatus"),"خاطره با موفقیت از دیتابیس حذف شد. 🗑️","success");
-
-  }catch(error){
-    console.error("خطای حذف خاطره:",error);
-    setStatus($("loadStatus"),"حذف انجام نشد: "+error.message,"error");
-    if(deleteButton){deleteButton.disabled=false;deleteButton.textContent="🗑️ حذف خاطره"}
-  }
-}
-
-async function createMemoryCard(memory){
-  const article=document.createElement("article");
-  article.className="memory-card";
-  article.dataset.memoryId=memory.id;
-
-  const title=escapeHTML(memory.title||"خاطرهٔ بدون عنوان");
-  const content=escapeHTML(memory.content||"");
-  const type=typeNames[memory.media_type]||"خاطره";
-  const date=escapeHTML(formatDate(memory.created_at||memory.memory_date||""));
-  const creator=escapeHTML(creatorName(memory.created_by));
-
-  article.innerHTML='<h3>'+title+'</h3><div class="memory-meta"><span class="badge">'+escapeHTML(type)+'</span><span>📅 '+date+'</span><span>✍️ '+creator+'</span></div>'+
-    (content?'<div class="memory-content">'+content+'</div>':'')+
-    '<div class="media-slot"></div><div class="memory-actions"><button class="btn delete" type="button">🗑️ حذف خاطره</button></div>';
-
-  article.querySelector(".delete").addEventListener("click",()=>deleteMemory(memory));
-
-  if(memory.file_path){
-    const slot=article.querySelector(".media-slot");
-    try{
-      const url=await getFileUrl(memory.file_path);
-      slot.innerHTML=mediaHTML(memory,url);
-      attachZoomEvents(slot);
-    }catch(error){
-      slot.innerHTML='<p class="small">نمایش فایل ممکن نیست. ممکن است دسترسی فایل محدود شده باشد.</p>';
-      console.error(error);
-    }
-  }
-  return article;
-}
-
-async function renderMemories(){
-  const container=$("memoriesList");
-  filteredMemories=getFilteredMemories();
-  $("resultCount").textContent=filteredMemories.length+" خاطره از "+allMemories.length+" خاطرهٔ دریافت‌شده";
-  container.replaceChildren();
-
-  if(filteredMemories.length===0){
-    const empty=document.createElement("div");
-    empty.className="empty";
-    empty.textContent=allMemories.length?"خاطره‌ای با این مشخصات پیدا نشد. فیلترها رو تغییر بده. 💜":"هنوز خاطره‌ای ثبت نشده یا خاطرات بارگذاری نشده‌اند.";
-    container.appendChild(empty);
-    return;
-  }
-
-  const fragment=document.createDocumentFragment();
-  for(const memory of filteredMemories){
-    const card=await createMemoryCard(memory);
-    if(String(memory.id)===String(activeRandomId))card.style.borderColor="var(--pink)";
-    fragment.appendChild(card);
-  }
-  container.appendChild(fragment);
-}
-
-async function loadMemories(){
-  const status=$("loadStatus"),container=$("memoriesList");
-  container.innerHTML='<div class="empty">در حال دریافت خاطرات... 💜</div>';
-  setStatus(status,"در حال اتصال به آرشیو...");
-
-  try{
-    allMemories=await fetchAllMemories();
-    updateYearOptions();
-    await renderMemories();
-    setStatus(status,"خاطرات با موفقیت بارگذاری شدند. ❤️","success");
-  }catch(error){
-    console.error(error);
-    container.innerHTML='<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';
-    setStatus(status,"خطا در بارگذاری: "+error.message,"error");
-  }
-}
-
-/* فیلترها */
-let renderTimer;
-
-function scheduleRender(){
-  clearTimeout(renderTimer);
-  renderTimer=setTimeout(()=>{
-    activeRandomId=null;
-    $("randomResult").style.display="none";
-    renderMemories();
-  },150);
-}
-
-["searchMemory","filterYear","filterMonth","filterType","filterCreator","sortOrder"].forEach(id=>{
-  $(id).addEventListener(id==="searchMemory"?"input":"change",scheduleRender);
-});
-
-$("resetFiltersBtn").addEventListener("click",()=>{
-  $("searchMemory").value="";
-  $("filterYear").value="";
-  $("filterMonth").value="";
-  $("filterType").value="";
-  $("filterCreator").value="";
-  $("sortOrder").value="newest";
-  activeRandomId=null;
-  $("randomResult").style.display="none";
-  renderMemories();
-});
-
+const SUPABASE_URL="https://iojkhxsfreudphjkzame.supabase.co";
+const SUPABASE_KEY="sb_publishable_pkcG9Jkce4HxKQMN9WDe1w_5PPKUWKd";
+const BUCKET="memories",MAX_FILE_SIZE=25*1024*1024;
+const $=id=>document.getElementById(id);
+let allMemories=[],filteredMemories=[],activeRandomId=null,adminAccessToken=null,bookIndex=0;
+const typeNames={text:"نوشته",image:"عکس",audio:"ویس",video:"ویدئو"};
+function setStatus(el,msg,type=""){el.textContent=msg;el.className="status"+(type?" "+type:"")}
+function escapeHTML(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function dateValue(m){return m.memory_date||m.created_at||""}
+function formatDate(v){if(!v)return"بدون تاریخ";const d=new Date(v);if(Number.isNaN(d.getTime()))return v;return new Intl.DateTimeFormat("fa-IR",{year:"numeric",month:"long",day:"numeric",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).format(d)}
+function creatorName(v){return v==="Melina"?"ملینا":v==="Abolfazl"?"ابوالفضل":v||"نامشخص"}
+async function api(path,options={}){const headers=new Headers(options.headers||{});headers.set("apikey",SUPABASE_KEY);if(!headers.has("Authorization"))headers.set("Authorization","Bearer "+SUPABASE_KEY);if(options.body&&!(options.body instanceof FormData))headers.set("Content-Type","application/json");const r=await fetch(SUPABASE_URL+path,{...options,headers});if(!r.ok)throw new Error((await r.text())||"خطا در ارتباط با سرور");if(r.status===204)return null;const t=await r.text();return t?JSON.parse(t):null}
+async function recordMonthlyVisit(){try{await api("/rest/v1/rpc/record_monthly_visit",{method:"POST",body:JSON.stringify({})})}catch(e){console.error("ثبت بازدید:",e)}}
+async function uploadFile(file){const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_"),path=Date.now()+"_"+Math.random().toString(36).slice(2,9)+"_"+safe;const r=await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{method:"POST",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":file.type||"application/octet-stream","x-upsert":"false"},body:file});if(!r.ok)throw new Error("بارگذاری فایل انجام نشد: "+await r.text());return path}
+async function getFileUrl(path){if(!path)return"";const r=await api("/storage/v1/object/sign/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{method:"POST",body:JSON.stringify({expiresIn:3600})});if(!r?.signedURL)throw new Error("لینک فایل ساخته نشد.");return r.signedURL.startsWith("http")?r.signedURL:SUPABASE_URL+"/storage/v1"+r.signedURL}
+async function fetchAllMemories(){let offset=0,result=[];while(true){const batch=await api("/rest/v1/memories?select=id,title,content,media_type,file_path,created_by,memory_date,created_at&order=created_at.desc&limit=1000&offset="+offset);if(!Array.isArray(batch))throw new Error("پاسخ سرور معتبر نیست.");result=result.concat(batch);if(batch.length<1000)break;offset+=1000}return result}
+function updateYearOptions(){const s=$("filterYear"),old=s.value,years=[...new Set(allMemories.map(m=>{const v=dateValue(m);return v?v.slice(0,4):""}).filter(y=>/^\d{4}$/.test(y)))].sort((a,b)=>b.localeCompare(a));s.innerHTML='<option value="">همهٔ سال‌ها</option>'+years.map(y=>'<option value="'+escapeHTML(y)+'">'+escapeHTML(y)+'</option>').join("");if(years.includes(old))s.value=old}
+function getFilteredMemories(){const q=$("searchMemory").value.trim().toLocaleLowerCase(),y=$("filterYear").value,m=$("filterMonth").value,t=$("filterType").value,c=$("filterCreator").value,sort=$("sortOrder").value;const list=allMemories.filter(x=>{const text=(String(x.title||"")+" "+String(x.content||"")).toLocaleLowerCase(),d=dateValue(x);return(!q||text.includes(q))&&(!y||(d&&d.slice(0,4)===y))&&(!m||(d&&d.slice(5,7)===m))&&(!t||x.media_type===t)&&(!c||x.created_by===c)});list.sort((a,b)=>sort==="oldest"?(dateValue(a)||"").localeCompare(dateValue(b)||""):(dateValue(b)||"").localeCompare(dateValue(a)||""));return list}
+function mediaHTML(m,url){if(!url)return"";if(m.media_type==="image")return'<img class="memory-media zoomable" src="'+escapeHTML(url)+'" alt="تصویر خاطره" loading="lazy">';if(m.media_type==="audio")return'<audio controls preload="none" src="'+escapeHTML(url)+'"></audio>';if(m.media_type==="video")return'<video controls preload="none" src="'+escapeHTML(url)+'"></video>';return""}
+async function deleteMemory(m){if(!adminAccessToken){alert("برای حذف خاطره ابتدا وارد پنل مدیریت شو.");return}if(!confirm("این خاطره برای همیشه حذف شود؟\n"+(m.title||"بدون عنوان")))return;try{const r=await fetch(SUPABASE_URL+"/rest/v1/memories?id=eq."+encodeURIComponent(m.id),{method:"DELETE",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+adminAccessToken,"Prefer":"return=representation"}});const t=await r.text();if(!r.ok)throw new Error(t||"حذف انجام نشد.");let rows=[];try{rows=t?JSON.parse(t):[]}catch{}if(!rows.length)throw new Error("هیچ ردیفی حذف نشد؛ مجوز DELETE را بررسی کن.");if(m.file_path){try{await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET,{method:"DELETE",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+adminAccessToken,"Content-Type":"application/json"},body:JSON.stringify({prefixes:[m.file_path]})})}catch(e){console.warn(e)}}allMemories=allMemories.filter(x=>String(x.id)!==String(m.id));updateYearOptions();await renderMemories();renderWorld();setStatus($("loadStatus"),"خاطره حذف شد.","success")}catch(e){setStatus($("loadStatus"),"خطا در حذف: "+e.message,"error")}}
+async function createMemoryCard(m){const a=document.createElement("article");a.className="memory-card";a.dataset.memoryId=m.id;a.innerHTML='<h3>'+escapeHTML(m.title||"خاطرهٔ بدون عنوان")+'</h3><div class="memory-meta"><span class="badge">'+escapeHTML(typeNames[m.media_type]||"خاطره")+'</span><span>📅 '+escapeHTML(formatDate(m.created_at||m.memory_date||""))+'</span><span>✍️ '+escapeHTML(creatorName(m.created_by))+'</span></div>'+(m.content?'<div class="memory-content">'+escapeHTML(m.content)+'</div>':'')+'<div class="media-slot"></div>'+(adminAccessToken?'<div class="memory-actions"><button class="btn delete" type="button">🗑️ حذف خاطره</button></div>':'');if(adminAccessToken)a.querySelector(".delete").addEventListener("click",()=>deleteMemory(m));if(m.file_path){try{const u=await getFileUrl(m.file_path);a.querySelector(".media-slot").innerHTML=mediaHTML(m,u);attachZoomEvents(a)}catch(e){a.querySelector(".media-slot").textContent="نمایش فایل ممکن نیست."}}return a}
+async function renderMemories(){const c=$("memoriesList");filteredMemories=getFilteredMemories();$("resultCount").textContent=filteredMemories.length+" خاطره از "+allMemories.length+" خاطرهٔ دریافت‌شده";c.replaceChildren();if(!filteredMemories.length){const d=document.createElement("div");d.className="empty";d.textContent=allMemories.length?"خاطره‌ای با این مشخصات پیدا نشد. 💜":"هنوز خاطره‌ای ثبت نشده یا بارگذاری نشده.";c.append(d);return}const f=document.createDocumentFragment();for(const m of filteredMemories){const card=await createMemoryCard(m);if(String(m.id)===String(activeRandomId))card.style.borderColor="var(--pink)";f.append(card)}c.append(f)}
+async function loadMemories(){const s=$("loadStatus");$("memoriesList").innerHTML='<div class="empty">در حال دریافت خاطرات... 💜</div>';setStatus(s,"در حال اتصال به آرشیو...");try{allMemories=await fetchAllMemories();updateYearOptions();await renderMemories();renderWorld();setStatus(s,"خاطرات با موفقیت بارگذاری شدند. ❤️","success")}catch(e){console.error(e);$("memoriesList").innerHTML='<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';setStatus(s,"خطا در بارگذاری: "+e.message,"error")}}
+let renderTimer;function scheduleRender(){clearTimeout(renderTimer);renderTimer=setTimeout(()=>{activeRandomId=null;$("randomResult").style.display="none";renderMemories()},150)}
+["searchMemory","filterYear","filterMonth","filterType","filterCreator","sortOrder"].forEach(id=>$(id).addEventListener(id==="searchMemory"?"input":"change",scheduleRender));
+$("resetFiltersBtn").addEventListener("click",()=>{["searchMemory","filterYear","filterMonth","filterType","filterCreator"].forEach(id=>$(id).value="");$("sortOrder").value="newest";activeRandomId=null;$("randomResult").style.display="none";renderMemories()});
 $("reloadMemoriesBtn").addEventListener("click",loadMemories);
-
-/* خاطره تصادفی */
-$("randomMemoryBtn").addEventListener("click",async()=>{
-  const resultBox=$("randomResult"),list=getFilteredMemories();
-
-  if(!list.length){
-    resultBox.style.display="block";
-    resultBox.textContent="خاطره‌ای برای انتخاب وجود نداره. فیلترها رو تغییر بده. 💜";
-    return;
-  }
-
-  const memory=list[Math.floor(Math.random()*list.length)];
-  activeRandomId=memory.id;
-  await renderMemories();
-
-  resultBox.style.display="block";
-  resultBox.replaceChildren();
-
-  const heading=document.createElement("strong");
-  heading.textContent="✨ خاطرهٔ انتخاب‌شده";
-
-  const title=document.createElement("p");
-  title.textContent=memory.title||"خاطرهٔ بدون عنوان";
-
-  const date=document.createElement("p");
-  date.className="small";
-  date.textContent=formatDate(memory.created_at||memory.memory_date);
-
-  const button=document.createElement("button");
-  button.className="btn";
-  button.type="button";
-  button.textContent="رفتن به این خاطره";
-
-  button.addEventListener("click",()=>{
-    const target=[...document.querySelectorAll(".memory-card")].find(card=>String(card.dataset.memoryId)===String(memory.id));
-    if(target){
-      target.scrollIntoView({behavior:"smooth",block:"center"});
-      target.style.borderColor="var(--pink)";
-    }
-  });
-
-  resultBox.append(heading,title,date,button);
-  resultBox.scrollIntoView({behavior:"smooth",block:"nearest"});
-});
-
-/* ثبت خاطره */
+function pickRandom(){const list=getFilteredMemories();if(!list.length)return null;return list[Math.floor(Math.random()*list.length)]}
+$("randomMemoryBtn").addEventListener("click",async()=>{const m=pickRandom(),box=$("randomResult");if(!m){box.style.display="block";box.textContent="خاطره‌ای برای انتخاب وجود نداره.";return}activeRandomId=m.id;await renderMemories();box.style.display="block";box.innerHTML='<strong>✨ خاطرهٔ انتخاب‌شده</strong><p>'+escapeHTML(m.title)+'</p><p class="small">'+escapeHTML(formatDate(dateValue(m)))+'</p><button class="btn" type="button">رفتن به خاطره</button>';box.querySelector("button").onclick=()=>document.querySelector('[data-memory-id="'+CSS.escape(String(m.id))+'"]')?.scrollIntoView({behavior:"smooth",block:"center"})});
 $("memoryDate").value=new Date().toISOString().slice(0,10);
-
-$("mediaType").addEventListener("change",()=>{
-  const file=$("memoryFile"),type=$("mediaType").value;
-  file.accept=type==="image"?"image/*":type==="audio"?"audio/*":type==="video"?"video/*":"image/*,audio/*,video/*";
-});
-
-$("memoryForm").addEventListener("submit",async event=>{
-  event.preventDefault();
-
-  const button=$("saveMemoryBtn"),status=$("formStatus");
-  const title=$("memoryTitle").value.trim();
-  const content=$("memoryContent").value.trim();
-  const memoryDate=$("memoryDate").value||null;
-  const createdBy=$("createdBy").value;
-  const mediaType=$("mediaType").value;
-  const file=$("memoryFile").files[0];
-
-  if(!title){setStatus(status,"اول عنوان خاطره رو وارد کن.","error");return}
-  if(file&&file.size>MAX_FILE_SIZE){setStatus(status,"حجم فایل باید کمتر از ۲۵ مگابایت باشه.","error");return}
-  if(file&&file.type&&!file.type.startsWith(mediaType+"/")){setStatus(status,"نوع فایل با نوع خاطره هماهنگ نیست.","error");return}
-  if(mediaType!=="text"&&!file&&!content){setStatus(status,"متن خاطره رو بنویس یا یک فایل انتخاب کن.","error");return}
-
-  button.disabled=true;
-  button.textContent="در حال ذخیره...";
-
-  try{
-    let uploadedPath=null;
-    if(file){
-      setStatus(status,"در حال بارگذاری فایل...");
-      uploadedPath=await uploadFile(file);
-    }
-
-    setStatus(status,"در حال ثبت خاطره...");
-
-    const record={
-      title,content,media_type:mediaType,
-      file_path:uploadedPath,created_by:createdBy,memory_date:memoryDate
-    };
-
-    await api("/rest/v1/memories",{
-      method:"POST",
-      headers:{"Prefer":"return=minimal"},
-      body:JSON.stringify(record)
-    });
-
-    setStatus(status,"خاطره با موفقیت ذخیره شد! ❤️","success");
-
-    $("memoryTitle").value="";
-    $("memoryContent").value="";
-    $("memoryFile").value="";
-    $("memoryDate").value=new Date().toISOString().slice(0,10);
-    $("mediaType").value="text";
-    $("memoryFile").accept="image/*,audio/*,video/*";
-    $("searchMemory").value="";
-    $("filterYear").value="";
-    $("filterMonth").value="";
-    $("filterType").value="";
-    $("filterCreator").value="";
-    activeRandomId=null;
-
-    await loadMemories();
-    $("timeMachine").scrollIntoView({behavior:"smooth"});
-
-  }catch(error){
-    console.error(error);
-    setStatus(status,"ذخیره انجام نشد: "+error.message,"error");
-  }finally{
-    button.disabled=false;
-    button.textContent="❤️ ذخیره در آرشیو";
-  }
-});
-
-/* بزرگ‌نمایی تصاویر */
-function openLightbox(src,alt){
-  $("lightboxImage").src=src;
-  $("lightboxImage").alt=alt||"تصویر خاطره";
-  $("lightbox").style.display="flex";
+$("mediaType").addEventListener("change",()=>{$("memoryFile").accept=$("mediaType").value==="image"?"image/*":$("mediaType").value==="audio"?"audio/*":$("mediaType").value==="video"?"video/*":"image/*,audio/*,video/*"});
+$("memoryForm").addEventListener("submit",async e=>{e.preventDefault();const b=$("saveMemoryBtn"),s=$("formStatus"),title=$("memoryTitle").value.trim(),content=$("memoryContent").value.trim(),date=$("memoryDate").value||null,creator=$("createdBy").value,type=$("mediaType").value,file=$("memoryFile").files[0];if(!title){setStatus(s,"عنوان خاطره رو وارد کن.","error");return}if(file&&file.size>MAX_FILE_SIZE){setStatus(s,"حجم فایل باید کمتر از ۲۵ مگابایت باشه.","error");return}if(file&&file.type&&!file.type.startsWith(type+"/")){setStatus(s,"نوع فایل با نوع خاطره هماهنگ نیست.","error");return}if(type!=="text"&&!file&&!content){setStatus(s,"متن یا فایل خاطره رو اضافه کن.","error");return}b.disabled=true;b.textContent="در حال ذخیره...";try{let path=null;if(file){setStatus(s,"در حال بارگذاری فایل...");path=await uploadFile(file)}setStatus(s,"در حال ثبت خاطره...");await api("/rest/v1/memories",{method:"POST",headers:{"Prefer":"return=minimal"},body:JSON.stringify({title,content,media_type:type,file_path:path,created_by:creator,memory_date:date})});setStatus(s,"خاطره با موفقیت ذخیره شد! ❤️","success");$("memoryForm").reset();$("memoryDate").value=new Date().toISOString().slice(0,10);$("memoryFile").accept="image/*,audio/*,video/*";await loadMemories();$("timeMachine").scrollIntoView({behavior:"smooth"})}catch(err){setStatus(s,"ذخیره انجام نشد: "+err.message,"error")}finally{b.disabled=false;b.textContent="❤️ ذخیره در آرشیو"}});
+function openLightbox(src,alt){$("lightboxImage").src=src;$("lightboxImage").alt=alt||"تصویر خاطره";$("lightbox").style.display="flex"}function closeLightbox(){$("lightbox").style.display="none";$("lightboxImage").src=""}
+function attachZoomEvents(root=document){root.querySelectorAll(".zoomable").forEach(img=>{if(img.dataset.zoomReady)return;img.dataset.zoomReady="true";img.addEventListener("click",()=>openLightbox(img.src,img.alt))})}
+$("lightboxClose").addEventListener("click",closeLightbox);$("lightbox").addEventListener("click",e=>{if(e.target===$("lightbox"))closeLightbox()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});attachZoomEvents();
+$("letterToggle").addEventListener("click",()=>{const l=$("letterContent"),open=l.style.display==="block";l.style.display=open?"none":"block";$("letterToggle").textContent=open?"بازکردن نامه ❤️":"بستن نامه 💌"});
+/* پنل مدیر */
+async function adminLogin(){const email=$("adminEmail").value.trim(),password=$("adminPassword").value,b=$("adminLoginBtn");if(!email||!password){setStatus($("adminLoginStatus"),"ایمیل و رمز عبور را وارد کن.","error");return}b.disabled=true;b.textContent="در حال ورود...";try{const r=await fetch(SUPABASE_URL+"/auth/v1/token?grant_type=password",{method:"POST",headers:{"apikey":SUPABASE_KEY,"Content-Type":"application/json"},body:JSON.stringify({email,password})}),d=await r.json();if(!r.ok||!d.access_token)throw new Error(d.msg||d.message||d.error_description||"ورود ناموفق بود.");adminAccessToken=d.access_token;$("adminLogin").style.display="none";$("adminDashboard").style.display="block";$("adminPassword").value="";await loadMonthlyStats();await renderMemories()}catch(e){adminAccessToken=null;setStatus($("adminLoginStatus"),"خطا در ورود: "+e.message,"error")}finally{b.disabled=false;b.textContent="ورود به پنل"}}
+async function loadMonthlyStats(){if(!adminAccessToken){setStatus($("adminStatus"),"ابتدا وارد حساب مدیر شو.","error");return}const c=$("monthlyVisitsList");c.innerHTML='<div class="empty">در حال دریافت آمار...</div>';try{const r=await fetch(SUPABASE_URL+"/rest/v1/site_monthly_visits?select=month,visits&order=month.desc",{headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+adminAccessToken}}),d=await r.json();if(!r.ok||!Array.isArray(d))throw new Error(d.message||d.hint||"دریافت آمار ناموفق بود.");$("totalVisits").textContent=d.reduce((s,x)=>s+Number(x.visits||0),0).toLocaleString("fa-IR");c.replaceChildren();if(!d.length)c.innerHTML='<div class="empty">هنوز آماری ثبت نشده است.</div>';d.forEach(x=>{const el=document.createElement("div");el.className="memory-card";const h=document.createElement("h3");h.textContent=x.month;const p=document.createElement("p");p.textContent="تعداد بازدید: "+Number(x.visits).toLocaleString("fa-IR");el.append(h,p);c.append(el)});setStatus($("adminStatus"),"آمار با موفقیت دریافت شد. ❤️","success")}catch(e){c.innerHTML='<div class="empty">دریافت آمار ناموفق بود.</div>';setStatus($("adminStatus"),"خطا: "+e.message,"error")}}
+function adminLogout(){adminAccessToken=null;$("adminDashboard").style.display="none";$("adminLogin").style.display="block";$("adminEmail").value="";$("adminPassword").value="";$("totalVisits").textContent="۰";$("monthlyVisitsList").replaceChildren();setStatus($("adminLoginStatus"),"از حساب خارج شدی.","success");renderMemories()}
+$("adminLoginBtn").addEventListener("click",adminLogin);$("adminLogoutBtn").addEventListener("click",adminLogout);$("refreshStatsBtn").addEventListener("click",loadMonthlyStats);
+/* ابزارهای دنیای خاطرات */
+function showPanel(name){document.querySelectorAll(".world-panel").forEach(p=>p.classList.remove("active"));$("panel-"+name).classList.add("active")}
+document.querySelectorAll(".world-tile").forEach(b=>b.addEventListener("click",()=>{showPanel(b.dataset.panel);if(b.dataset.panel==="puzzle")drawPuzzle();if(b.dataset.panel==="capsule")renderCapsules()}));
+function shortDate(m){const d=dateValue(m);return d?d.slice(0,10):"بدون تاریخ"}
+function showMemoryInBox(target,m){target.style.display="block";target.replaceChildren();const h=document.createElement("strong");h.textContent=m.title||"خاطره";const p=document.createElement("p");p.textContent=m.content||"برای این خاطره متنی ثبت نشده.";const meta=document.createElement("div");meta.className="small";meta.textContent=formatDate(dateValue(m))+" • "+creatorName(m.created_by);target.append(h,p,meta)}
+function renderWorld(){
+ const memories=allMemories.slice();
+ const sky=$("starField");if(sky){sky.replaceChildren();memories.slice(0,24).forEach((m,i)=>{const b=document.createElement("button");b.className="star-memory";b.innerHTML="<i>✦</i>"+escapeHTML((m.title||"خاطره").slice(0,18));b.onclick=()=>{showMemoryInBox($("bubbleResult"),m);$("bubbleResult").scrollIntoView({behavior:"smooth",block:"nearest"})};sky.append(b)});if(!memories.length)sky.textContent="هنوز ستاره‌ای ثبت نشده."}
+ const page=$("bookPage");if(page){if(!memories.length){page.textContent="هنوز خاطره‌ای در دفتر نیست.";$("bookCount").textContent="۰ از ۰"}else{bookIndex=Math.min(bookIndex,memories.length-1);const m=memories[bookIndex];page.textContent=(m.title||"خاطره")+"\n\n"+(m.content||"این خاطره بدون متن ثبت شده.")+"\n\n"+formatDate(dateValue(m));$("bookCount").textContent=(bookIndex+1)+" از "+memories.length}}
+ const radio=$("radioList");if(radio){radio.replaceChildren();const aud=memories.filter(m=>m.media_type==="audio"&&m.file_path);if(!aud.length)radio.innerHTML='<div class="empty">هنوز فایل صوتی در آرشیو ثبت نشده.</div>';aud.forEach(async m=>{const box=document.createElement("div");box.className="memory-card";box.innerHTML="<strong>"+escapeHTML(m.title)+"</strong><p class='small'>"+escapeHTML(formatDate(dateValue(m)))+"</p><p class='small'>در حال آماده‌سازی پخش‌کننده...</p>";radio.append(box);try{const u=await getFileUrl(m.file_path);const a=document.createElement("audio");a.controls=true;a.preload="none";a.src=u;box.lastElementChild.replaceWith(a)}catch(e){box.lastElementChild.textContent="فایل در دسترس نیست."}})}
+ const cal=$("calendarResults");if(cal){cal.replaceChildren();const date=$("calendarDate").value;const found=memories.filter(m=>date&&shortDate(m)===date);if(!date)cal.textContent="تاریخ رو انتخاب کن تا خاطرات همون روز نمایش داده بشن.";else if(!found.length)cal.textContent="برای این تاریخ خاطره‌ای پیدا نشد.";else found.forEach(m=>{const d=document.createElement("div");d.className="calendar-item";d.textContent=m.title+" — "+creatorName(m.created_by);cal.append(d)})}
+ const letters=$("letterBoxList");if(letters){letters.replaceChildren();const texts=memories.filter(m=>m.media_type==="text"||m.content);if(!texts.length)letters.textContent="هنوز نوشته‌ای ثبت نشده.";texts.slice(0,30).forEach(m=>{const d=document.createElement("div");d.className="memory-card";d.innerHTML="<strong>"+escapeHTML(m.title)+"</strong><p>"+escapeHTML(m.content||"")+"</p><span class='small'>"+escapeHTML(formatDate(dateValue(m)))+"</span>";letters.append(d)})}
+ const garden=$("gardenGrid");if(garden){garden.replaceChildren();const icons=["🌷","🌸","🌻","🌼","🌺","🪻"];memories.slice(0,30).forEach((m,i)=>{const b=document.createElement("button");b.className="flower";b.innerHTML="<strong>"+icons[i%icons.length]+"</strong>"+escapeHTML((m.title||"خاطره").slice(0,14));b.onclick=()=>showMemoryInBox($("bubbleResult"),m);garden.append(b)});if(!memories.length)garden.textContent="باغ هنوز منتظر اولین خاطره‌ست."}
+ const bubbles=$("bubbleArea");if(bubbles){bubbles.replaceChildren();memories.slice(0,12).forEach((m,i)=>{const b=document.createElement("button");b.className="bubble";b.textContent=["✦","❤","☾","❀"][i%4];b.title=m.title;b.onclick=()=>showMemoryInBox($("bubbleResult"),m);bubbles.append(b)});if(!memories.length)bubbles.textContent="حبابی برای نمایش وجود نداره."}
 }
-
-function closeLightbox(){
-  $("lightbox").style.display="none";
-  $("lightboxImage").src="";
-}
-
-function attachZoomEvents(root=document){
-  root.querySelectorAll(".zoomable").forEach(img=>{
-    if(img.dataset.zoomReady)return;
-    img.dataset.zoomReady="true";
-    img.addEventListener("click",()=>openLightbox(img.src,img.alt));
-  });
-}
-
-$("lightboxClose").addEventListener("click",closeLightbox);
-
-$("lightbox").addEventListener("click",event=>{
-  if(event.target===$("lightbox"))closeLightbox();
-});
-
-document.addEventListener("keydown",event=>{
-  if(event.key==="Escape")closeLightbox();
-});
-
-attachZoomEvents();
-
-/* نامه */
-$("letterToggle").addEventListener("click",()=>{
-  const letter=$("letterContent");
-  const isOpen=letter.style.display==="block";
-  letter.style.display=isOpen?"none":"block";
-  $("letterToggle").textContent=isOpen?"بازکردن نامه ❤️":"بستن نامه 💌";
-});
-
-/* ورود مدیر */
-async function adminLogin(){
-  const email=$("adminEmail").value.trim();
-  const password=$("adminPassword").value;
-  const button=$("adminLoginBtn");
-
-  if(!email||!password){
-    setStatus($("adminLoginStatus"),"ایمیل و رمز عبور را وارد کن.","error");
-    return;
-  }
-
-  button.disabled=true;
-  button.textContent="در حال ورود...";
-
-  try{
-    const response=await fetch(
-      SUPABASE_URL+"/auth/v1/token?grant_type=password",
-      {
-        method:"POST",
-        headers:{
-          "apikey":SUPABASE_KEY,
-          "Content-Type":"application/json"
-        },
-        body:JSON.stringify({email,password})
-      }
-    );
-
-    const data=await response.json();
-
-    if(!response.ok||!data.access_token){
-      throw new Error(data.msg||data.message||data.error_description||"ورود ناموفق بود.");
-    }
-
-    adminAccessToken=data.access_token;
-
-    $("adminLogin").style.display="none";
-    $("adminDashboard").style.display="block";
-    $("adminPassword").value="";
-
-    await loadMonthlyStats();
-
-  }catch(error){
-    adminAccessToken=null;
-    setStatus($("adminLoginStatus"),"خطا در ورود: "+error.message,"error");
-  }finally{
-    button.disabled=false;
-    button.textContent="ورود به پنل";
-  }
-}
-
-/* دریافت آمار فقط با توکن حساب مدیر */
-async function loadMonthlyStats(){
-  if(!adminAccessToken){
-    setStatus($("adminStatus"),"ابتدا وارد حساب مدیر شو.","error");
-    return;
-  }
-
-  const container=$("monthlyVisitsList");
-  container.innerHTML='<div class="empty">در حال دریافت آمار...</div>';
-
-  try{
-    const response=await fetch(
-      SUPABASE_URL+"/rest/v1/site_monthly_visits?select=month,visits&order=month.desc",
-      {
-        headers:{
-          "apikey":SUPABASE_KEY,
-          "Authorization":"Bearer "+adminAccessToken
-        }
-      }
-    );
-
-    const data=await response.json();
-
-    if(!response.ok){
-      throw new Error(data.message||data.hint||data.details||"دریافت آمار ناموفق بود.");
-    }
-
-    if(!Array.isArray(data)){
-      throw new Error("اطلاعات دریافتی معتبر نیست.");
-    }
-
-    const total=data.reduce(
-      (sum,item)=>sum+Number(item.visits||0),0
-    );
-
-    $("totalVisits").textContent=total.toLocaleString("fa-IR");
-    container.replaceChildren();
-
-    if(data.length===0){
-      container.innerHTML='<div class="empty">هنوز آماری ثبت نشده است.</div>';
-    }else{
-      data.forEach(item=>{
-        const card=document.createElement("div");
-        card.className="memory-card";
-
-        const month=document.createElement("h3");
-        month.textContent=item.month;
-
-        const count=document.createElement("p");
-        count.textContent="تعداد بازدید: "+Number(item.visits).toLocaleString("fa-IR");
-
-        card.append(month,count);
-        container.appendChild(card);
-      });
-    }
-
-    setStatus($("adminStatus"),"آمار با موفقیت دریافت شد. ❤️","success");
-
-  }catch(error){
-    console.error(error);
-    container.innerHTML='<div class="empty">دریافت آمار ناموفق بود.</div>';
-    setStatus($("adminStatus"),"خطا در دریافت آمار: "+error.message,"error");
-  }
-}
-
-/* خروج مدیر */
-function adminLogout(){
-  adminAccessToken=null;
-
-  $("adminDashboard").style.display="none";
-  $("adminLogin").style.display="block";
-  $("adminEmail").value="";
-  $("adminPassword").value="";
-  $("totalVisits").textContent="۰";
-  $("monthlyVisitsList").replaceChildren();
-
-  setStatus($("adminLoginStatus"),"از حساب خارج شدی.","success");
-}
-
-$("adminLoginBtn").addEventListener("click",adminLogin);
-$("adminLogoutBtn").addEventListener("click",adminLogout);
-$("refreshStatsBtn").addEventListener("click",loadMonthlyStats);
-
-/* شروع سایت */
-recordMonthlyVisit();
-loadMemories();
-
+$("bookPrev").onclick=()=>{bookIndex=Math.max(0,bookIndex-1);renderWorld()};$("bookNext").onclick=()=>{bookIndex=Math.min(Math.max(0,allMemories.length-1),bookIndex+1);renderWorld()};
+$("calendarDate").addEventListener("change",renderWorld);
+$("travelBtn").onclick=()=>{const date=$("timeTravelDate").value,box=$("timeTravelResults");box.replaceChildren();if(!date){box.textContent="اول تاریخ رو انتخاب کن.";return}const found=allMemories.filter(m=>shortDate(m)===date);if(!found.length){box.textContent="در این تاریخ خاطره‌ای ثبت نشده.";return}found.forEach(m=>{const d=document.createElement("div");d.className="calendar-item";d.textContent=m.title+" — "+(m.content||"");box.append(d)})};
+$("worldRandomBtn").onclick=()=>{const m=allMemories.length?allMemories[Math.floor(Math.random()*allMemories.length)]:null;if(m)showMemoryInBox($("worldRandomResult"),m);else{$("worldRandomResult").style.display="block";$("worldRandomResult").textContent="هنوز خاطره‌ای ثبت نشده."}};
+$("themeToggle").onclick=()=>{document.body.classList.toggle("theme-light");localStorage.setItem("memoryTheme",document.body.classList.contains("theme-light")?"light":"dark")};
+if(localStorage.getItem("memoryTheme")==="light")document.body.classList.add("theme-light");
+/* پازل چهارقسمتی از تصویر اصلی؛ ترتیب با لمس تکه‌ها */
+let puzzleOrder=[0,1,2,3],puzzleChosen=[];
+function drawPuzzle(){const grid=$("puzzleGrid");grid.replaceChildren();puzzleOrder.forEach((piece,index)=>{const el=document.createElement("button");el.className="puzzle-piece";el.style.backgroundImage='url("IMG_20250612_000548_702.jpg")';el.style.backgroundPosition=["0% 0%","100% 0%","0% 100%","100% 100%"][piece];el.title="تکه "+(piece+1);el.onclick=()=>{if(puzzleChosen.includes(piece))return;puzzleChosen.push(piece);el.style.opacity=".4";$("puzzleStatus").textContent="تکه‌های انتخاب‌شده: "+puzzleChosen.length+"/4";if(puzzleChosen.length===4){$("puzzleStatus").textContent=puzzleChosen.every((v,i)=>v===i)?"آفرین! ترتیب تکه‌ها درست بود. ❤️":"ترتیب کامل نبود؛ دوباره امتحان کن."}};grid.append(el)})}
+$("puzzleReset").onclick=()=>{puzzleChosen=[];puzzleOrder=[0,1,2,3].sort(()=>Math.random()-.5);$("puzzleStatus").textContent="";drawPuzzle()};drawPuzzle();
+/* کپسول زمان محلی مرورگر */
+function getCapsules(){try{return JSON.parse(localStorage.getItem("memoryCapsules")||"[]")}catch{return[]}}
+function renderCapsules(){const box=$("capsuleList");box.replaceChildren();const today=new Date().toISOString().slice(0,10);getCapsules().forEach((c,i)=>{const d=document.createElement("div");d.className="capsule";const h=document.createElement("strong");h.textContent="کپسول "+(i+1)+" • بازشدن در "+c.date;d.append(h);if(c.date<=today){const p=document.createElement("p");p.textContent=c.text;d.append(p);const tag=document.createElement("span");tag.className="small";tag.textContent="این کپسول آمادهٔ بازشدنه.";d.append(tag)}else{const p=document.createElement("p");p.className="small";p.textContent="این نوشته تا تاریخ انتخاب‌شده مهروموم می‌مونه.";d.append(p)}box.append(d)})}
+$("saveCapsule").onclick=()=>{const text=$("capsuleText").value.trim(),date=$("capsuleDate").value,today=new Date().toISOString().slice(0,10);if(!text||!date){setStatus($("capsuleStatus"),"متن و تاریخ رو وارد کن.","error");return}if(date<today){setStatus($("capsuleStatus"),"تاریخ باید امروز یا بعد از امروز باشه.","error");return}const list=getCapsules();list.push({text,date});localStorage.setItem("memoryCapsules",JSON.stringify(list));$("capsuleText").value="";$("capsuleDate").value="";setStatus($("capsuleStatus"),"کپسول در همین مرورگر ذخیره شد. ❤️","success");renderCapsules()};
+recordMonthlyVisit();loadMemories();
 </script>
 </body>
 </html>
