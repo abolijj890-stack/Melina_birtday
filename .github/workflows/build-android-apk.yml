@@ -1,3 +1,4 @@
+
 name: Build Android APK
 
 on:
@@ -5,6 +6,7 @@ on:
   push:
     paths:
       - 'kol-zendegi-man-android-project.zip'
+      - 'kol-zendegi-man-icon-pack.zip'
       - '.github/workflows/build-android-apk.yml'
 
 jobs:
@@ -26,16 +28,69 @@ jobs:
           mkdir -p android-app
           cp -a "$PROJECT_DIR"/. android-app/
 
-      - name: Set up Java
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Gradle
+      - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+
+      - name: Install image tools
+        run: python -m pip install Pillow
+
+      - name: Install custom app icon
+        run: |
+          unzip -q kol-zendegi-man-icon-pack.zip -d /tmp/icon-pack
+
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          from pathlib import Path
+
+          files = list(Path("/tmp/icon-pack").rglob("*.png"))
+          if not files:
+              raise SystemExit("No PNG icon found in icon pack")
+
+          source = max(files, key=lambda p: p.stat().st_size)
+          print("Using icon:", source)
+
+          image = Image.open(source).convert("RGBA")
+          sizes = {
+              "mipmap-mdpi": 48,
+              "mipmap-hdpi": 72,
+              "mipmap-xhdpi": 96,
+              "mipmap-xxhdpi": 144,
+              "mipmap-xxxhdpi": 192,
+          }
+
+          res = Path("android-app/app/src/main/res")
+          for folder, size in sizes.items():
+              target = res / folder
+              target.mkdir(parents=True, exist_ok=True)
+
+              icon = ImageOps.fit(
+                  image,
+                  (size, size),
+                  method=Image.Resampling.LANCZOS
+              )
+              icon.save(target / "ic_launcher.png")
+              icon.save(target / "ic_launcher_round.png")
+
+          # Remove adaptive XML icons so Android uses the new PNG icons.
+          for folder in [
+              res / "mipmap-anydpi-v26",
+              res / "mipmap-anydpi",
+          ]:
+              for name in ["ic_launcher.xml", "ic_launcher_round.xml"]:
+                  file = folder / name
+                  if file.exists():
+                      file.unlink()
+
+          print("Custom launcher icons installed.")
+          PY
 
       - name: Build APK
         run: gradle -p android-app assembleDebug
@@ -43,5 +98,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: kol-zendegi-man-debug-apk
+          name: kol-zendegi-man-new-apk
           path: android-app/app/build/outputs/apk/debug/app-debug.apk
