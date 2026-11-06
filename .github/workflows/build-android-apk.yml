@@ -52,12 +52,16 @@ jobs:
 
           files = list(Path("/tmp/icon-pack").rglob("*.png"))
           if not files:
-              raise SystemExit("No PNG icon found in icon pack")
+              raise SystemExit("No PNG icon found")
 
-          source = max(files, key=lambda p: p.stat().st_size)
+          source = max(
+              files,
+              key=lambda p: Image.open(p).width * Image.open(p).height
+          )
+
           print("Using icon:", source)
-
           image = Image.open(source).convert("RGBA")
+
           sizes = {
               "mipmap-mdpi": 48,
               "mipmap-hdpi": 72,
@@ -67,6 +71,7 @@ jobs:
           }
 
           res = Path("android-app/app/src/main/res")
+
           for folder, size in sizes.items():
               target = res / folder
               target.mkdir(parents=True, exist_ok=True)
@@ -76,10 +81,10 @@ jobs:
                   (size, size),
                   method=Image.Resampling.LANCZOS
               )
+
               icon.save(target / "ic_launcher.png")
               icon.save(target / "ic_launcher_round.png")
 
-          # Remove adaptive XML icons so Android uses the new PNG icons.
           for folder in [
               res / "mipmap-anydpi-v26",
               res / "mipmap-anydpi",
@@ -89,7 +94,44 @@ jobs:
                   if file.exists():
                       file.unlink()
 
-          print("Custom launcher icons installed.")
+          print("Icons generated successfully.")
+          PY
+
+      - name: Connect icon to Android manifest
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          manifest = Path("android-app/app/src/main/AndroidManifest.xml")
+
+          if not manifest.exists():
+              raise SystemExit("AndroidManifest.xml not found")
+
+          ET.register_namespace(
+              "android",
+              "http://schemas.android.com/apk/res/android"
+          )
+
+          tree = ET.parse(manifest)
+          root = tree.getroot()
+
+          app = root.find("application")
+          if app is None:
+              raise SystemExit("Application tag not found")
+
+          ns = "{http://schemas.android.com/apk/res/android}"
+
+          app.set(ns + "icon", "@mipmap/ic_launcher")
+          app.set(ns + "roundIcon", "@mipmap/ic_launcher_round")
+
+          tree.write(
+              manifest,
+              encoding="utf-8",
+              xml_declaration=True
+          )
+
+          print("Manifest connected to custom icons.")
           PY
 
       - name: Build APK
@@ -98,5 +140,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: kol-zendegi-man-new-apk
+          name: kol-zendegi-man-final-apk
           path: android-app/app/build/outputs/apk/debug/app-debug.apk
