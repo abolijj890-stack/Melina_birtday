@@ -5,200 +5,117 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#10091f">
 <title>کل‌زندگی‌من ❤️</title>
-
 <style>
 :root{--bg:#10091f;--card:rgba(255,255,255,.075);--border:rgba(255,255,255,.13);--pink:#ff83c8;--purple:#b69aff;--text:#fff5ff;--muted:#c8b9d8;--green:#9fffc8;--red:#ff9eae}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--text);background:radial-gradient(ellipse at top,#382052 0%,transparent 45%),radial-gradient(ellipse at bottom,#24143b 0%,transparent 50%),var(--bg);line-height:1.9}
-button,input,textarea,select{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer}
+button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{cursor:pointer}
 .stars{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(2px 2px at 20% 30%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 80% 20%,#fff 50%,transparent 100%),radial-gradient(2px 2px at 60% 70%,#ffb8e1 50%,transparent 100%),radial-gradient(1px 1px at 30% 80%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 90% 60%,#d7c2ff 50%,transparent 100%);background-size:190px 190px,250px 250px,300px 300px,220px 220px,270px 270px;opacity:.6}
 header{padding:14px 10px;position:sticky;top:0;z-index:10;background:rgba(16,9,31,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 nav{max-width:1100px;margin:auto;display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
-nav a{padding:5px 9px;font-size:12px;color:var(--muted);border-radius:20px}
-nav a:hover{color:white;background:rgba(255,131,200,.15)}
-main{width:min(100% - 26px,930px);margin:auto}
-section{padding:28px 0;scroll-margin-top:85px}
-.hero{text-align:center;padding-top:50px;padding-bottom:35px}
-.hero h1{font-size:clamp(27px,7vw,43px);line-height:1.6;margin:12px 0;background:linear-gradient(90deg,#ffb8df,#c4a8ff,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:var(--muted)}
-.hero-heart{font-size:48px;animation:heartbeat 1.8s infinite}
-@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+nav a{padding:5px 9px;font-size:12px;color:var(--muted);border-radius:20px}nav a:hover{color:white;background:rgba(255,131,200,.15)}
+main{width:min(100% - 26px,930px);margin:auto}section{padding:28px 0;scroll-margin-top:85px}
+.hero{text-align:center;padding-top:50px;padding-bottom:35px}.hero h1{font-size:clamp(27px,7vw,43px);line-height:1.6;margin:12px 0;background:linear-gradient(90deg,#ffb8df,#c4a8ff,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted)}.hero-heart{font-size:48px;animation:heartbeat 1.8s infinite}@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:23px;padding:20px;margin-bottom:18px;backdrop-filter:blur(12px);box-shadow:0 10px 35px rgba(0,0,0,.12)}
-h2{font-size:23px;color:#ffd1eb;margin-top:0}
-h3{color:#f7c7ff}
-p{overflow-wrap:anywhere}
-.muted,.small{color:var(--muted);font-size:13px}
-.small{font-size:12px}
-.btn{border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:9px 14px;color:white;background:linear-gradient(135deg,#8c5cc8,#d65d9e);display:inline-block;text-align:center;transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.secondary{background:rgba(255,255,255,.08)}
-.btn.pink{background:linear-gradient(135deg,#e45ca8,#9d68e7)}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.btn.delete{background:rgba(255,70,100,.12);border:1px solid rgba(255,120,145,.35);color:#ffb2c0}
-img{max-width:100%}
-.featured-image{display:block;width:100%;max-height:510px;object-fit:cover;border-radius:18px;border:1px solid var(--border)}
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.gallery img{width:100%;height:200px;object-fit:cover;border-radius:15px;cursor:pointer;border:1px solid var(--border);transition:.2s}
-.gallery img:hover{transform:scale(1.015)}
-input,textarea,select{width:100%;padding:11px;margin-top:6px;border-radius:12px;color:white;background:rgba(13,7,25,.8);border:1px solid var(--border);outline:none}
-input:focus,textarea:focus,select:focus{border-color:var(--pink)}
-select option{background:#211433;color:white}
-textarea{min-height:115px;resize:vertical}
-label{display:block;margin-top:13px;color:#f2dffb;font-size:13px}
-.form-grid,.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.memory-list{display:grid;gap:14px;margin-top:18px}
-.memory-card{padding:17px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid var(--border);overflow-wrap:anywhere;scroll-margin-top:90px}
-.memory-card h3{margin:0 0 5px}
-.memory-meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px;margin:7px 0}
-.badge{display:inline-block;font-size:11px;border-radius:20px;padding:2px 9px;background:rgba(191,145,255,.14);border:1px solid var(--border)}
-.memory-content{white-space:pre-wrap;overflow-wrap:anywhere}
-.memory-media{width:100%;max-height:430px;object-fit:contain;margin-top:10px;border-radius:14px;background:rgba(0,0,0,.2)}
-.memory-actions,.filter-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.result-line{color:var(--muted);font-size:13px;margin-top:12px}
-.empty{text-align:center;color:var(--muted);padding:25px 10px}
-.timeline-item{border-right:2px solid #bd83f1;padding:0 15px 20px 0;margin-right:7px}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-item strong{color:#ffc5e6}
+h2{font-size:23px;color:#ffd1eb;margin-top:0}h3{color:#f7c7ff}p{overflow-wrap:anywhere}.muted,.small{color:var(--muted);font-size:13px}.small{font-size:12px}
+.btn{border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:9px 14px;color:white;background:linear-gradient(135deg,#8c5cc8,#d65d9e);display:inline-block;text-align:center;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:rgba(255,255,255,.08)}.btn.pink{background:linear-gradient(135deg,#e45ca8,#9d68e7)}.btn:disabled{opacity:.5;cursor:not-allowed}.btn.delete{background:rgba(255,70,100,.12);border:1px solid rgba(255,120,145,.35);color:#ffb2c0}
+img{max-width:100%}.featured-image{display:block;width:100%;max-height:510px;object-fit:cover;border-radius:18px;border:1px solid var(--border)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gallery img{width:100%;height:200px;object-fit:cover;border-radius:15px;cursor:pointer;border:1px solid var(--border);transition:.2s}.gallery img:hover{transform:scale(1.015)}
+input,textarea,select{width:100%;padding:11px;margin-top:6px;border-radius:12px;color:white;background:rgba(13,7,25,.8);border:1px solid var(--border);outline:none}input:focus,textarea:focus,select:focus{border-color:var(--pink)}select option{background:#211433;color:white}textarea{min-height:115px;resize:vertical}
+label{display:block;margin-top:13px;color:#f2dffb;font-size:13px}.form-grid,.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.memory-list{display:grid;gap:14px;margin-top:18px}.memory-card{padding:17px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid var(--border);overflow-wrap:anywhere;scroll-margin-top:90px}.memory-card h3{margin:0 0 5px}
+.memory-meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px;margin:7px 0}.badge{display:inline-block;font-size:11px;border-radius:20px;padding:2px 9px;background:rgba(191,145,255,.14);border:1px solid var(--border)}
+.memory-content{white-space:pre-wrap;overflow-wrap:anywhere}.memory-media{width:100%;max-height:430px;object-fit:contain;margin-top:10px;border-radius:14px;background:rgba(0,0,0,.2)}
+.memory-actions,.filter-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.result-line{color:var(--muted);font-size:13px;margin-top:12px}.empty{text-align:center;color:var(--muted);padding:25px 10px}
+.timeline-item{border-right:2px solid #bd83f1;padding:0 15px 20px 0;margin-right:7px}.timeline-item:last-child{padding-bottom:0}.timeline-item strong{color:#ffc5e6}
 .letter{display:none;padding:20px;border-radius:18px;background:rgba(255,131,200,.08);border:1px solid rgba(255,131,200,.2);white-space:pre-wrap}
-#lightbox{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.92);display:none;justify-content:center;align-items:center;padding:15px}
-#lightbox img{max-width:100%;max-height:85vh;object-fit:contain;border-radius:12px}
-#lightboxClose{position:absolute;top:12px;left:15px;font-size:30px;background:none;color:white;border:0}
+#lightbox{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.92);display:none;justify-content:center;align-items:center;padding:15px}#lightbox img{max-width:100%;max-height:85vh;object-fit:contain;border-radius:12px}#lightboxClose{position:absolute;top:12px;left:15px;font-size:30px;background:none;color:white;border:0}
 #randomResult{display:none;margin-top:15px;border:1px solid rgba(255,131,200,.3);background:rgba(255,131,200,.07);padding:15px;border-radius:16px}
-.status{margin-top:12px;font-size:13px;overflow-wrap:anywhere}
-.status.error{color:var(--red)}
-.status.success{color:var(--green)}
-audio,video{width:100%;margin-top:10px;border-radius:12px}
-footer{text-align:center;padding:30px 12px 45px;color:var(--muted);font-size:12px}
-.admin-stat{background:rgba(255,131,200,.07);border:1px solid var(--border);border-radius:17px;padding:16px;margin:12px 0}
-.admin-stat strong{font-size:25px;color:var(--green)}
-
-/* دانلود اپلیکیشن */
+.status{margin-top:12px;font-size:13px;overflow-wrap:anywhere}.status.error{color:var(--red)}.status.success{color:var(--green)}audio,video{width:100%;margin-top:10px;border-radius:12px}
+footer{text-align:center;padding:30px 12px 45px;color:var(--muted);font-size:12px}.admin-stat{background:rgba(255,131,200,.07);border:1px solid var(--border);border-radius:17px;padding:16px;margin:12px 0}.admin-stat strong{font-size:25px;color:var(--green)}
 .app-download{margin:25px auto 0;max-width:420px;padding:20px;border:1px solid rgba(255,131,200,.35);border-radius:22px;background:linear-gradient(135deg,rgba(182,154,255,.13),rgba(255,131,200,.12));box-shadow:0 10px 35px rgba(0,0,0,.18)}
-.app-download h3{margin:5px 0;color:#ffd1eb}
-.app-download p{font-size:12px;color:var(--muted);margin:5px 0 14px}
-.app-download .btn{display:block;width:100%;padding:12px;font-weight:bold;border-radius:15px}
-.app-download .version{display:block;margin-top:9px;font-size:11px;color:var(--muted)}
-
-/* دنیای خاطرات */
-.world-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-.world-tile{min-height:116px;text-align:center;padding:16px 10px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.055);color:var(--text)}
-.world-tile b{display:block;font-size:25px}
-.world-tile span{font-size:13px;color:var(--muted)}
-.world-panel{display:none;margin-top:16px;padding:17px;border:1px solid rgba(255,131,200,.24);border-radius:18px;background:rgba(255,131,200,.055)}
-.world-panel.active{display:block}
-.stars-field{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}
-.star-memory{border:1px solid rgba(255,255,255,.15);background:rgba(190,145,255,.12);border-radius:14px;color:white;padding:10px 4px;min-height:78px}
-.star-memory i{display:block;font-style:normal;font-size:23px}
-.book-page{min-height:180px;padding:22px;border-radius:15px;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,131,200,.07));border:1px solid var(--border);white-space:pre-wrap}
-.book-controls{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
-.bubble-area{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:12px}
-.bubble{width:82px;height:82px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:radial-gradient(circle at 30% 25%,#ffc7e7,rgba(169,120,225,.4) 60%,rgba(80,45,120,.6));color:#fff;box-shadow:0 5px 25px #0003}
-.garden{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
-.flower{padding:12px 5px;border-radius:15px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:white}
-.flower strong{display:block;font-size:30px}
-.capsule{border:1px dashed rgba(255,190,225,.5);padding:15px;border-radius:16px;margin-top:10px}
-.calendar-list{display:grid;gap:9px;margin-top:12px}
-.calendar-item{padding:11px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--border)}
-.puzzle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;max-width:310px;margin:12px auto}
-.puzzle-piece{height:105px;overflow:hidden;border:1px solid var(--border);border-radius:8px;background-size:200% 200%;background-repeat:no-repeat}
-.theme-light{--bg:#f7eefa;--card:rgba(255,255,255,.72);--border:rgba(90,50,110,.18);--text:#34223f;--muted:#705d7c;background:linear-gradient(140deg,#fbe4f3,#e8ddff,#fff)}
-.theme-light header{background:rgba(250,240,255,.9)}
-.theme-light input,.theme-light textarea,.theme-light select{background:#fff;color:#382747}
-.theme-light .world-tile,.theme-light .star-memory,.theme-light .flower,.theme-light .bubble{color:#382747}
-.theme-light .btn{color:white}
+.app-download h3{margin:5px 0;color:#ffd1eb}.app-download p{font-size:12px;color:var(--muted);margin:5px 0 14px}.app-download .btn{display:block;width:100%;padding:12px;font-weight:bold;border-radius:15px}.app-download .version{display:block;margin-top:9px;font-size:11px;color:var(--muted)}
+.world-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.world-tile{min-height:116px;text-align:center;padding:16px 10px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.055);color:var(--text)}.world-tile b{display:block;font-size:25px}.world-tile span{font-size:13px;color:var(--muted)}
+.world-panel{display:none;margin-top:16px;padding:17px;border:1px solid rgba(255,131,200,.24);border-radius:18px;background:rgba(255,131,200,.055)}.world-panel.active{display:block}
+.stars-field{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}.star-memory{border:1px solid rgba(255,255,255,.15);background:rgba(190,145,255,.12);border-radius:14px;color:white;padding:10px 4px;min-height:78px}.star-memory i{display:block;font-style:normal;font-size:23px}
+.book-page{min-height:180px;padding:22px;border-radius:15px;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,131,200,.07));border:1px solid var(--border);white-space:pre-wrap}.book-controls{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+.bubble-area{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:12px}.bubble{width:82px;height:82px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:radial-gradient(circle at 30% 25%,#ffc7e7,rgba(169,120,225,.4) 60%,rgba(80,45,120,.6));color:#fff;box-shadow:0 5px 25px #0003}
+.garden{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}.flower{padding:12px 5px;border-radius:15px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:white}.flower strong{display:block;font-size:30px}
+.capsule{border:1px dashed rgba(255,190,225,.5);padding:15px;border-radius:16px;margin-top:10px}.calendar-list{display:grid;gap:9px;margin-top:12px}.calendar-item{padding:11px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--border)}
+.puzzle-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;max-width:310px;margin:12px auto}.puzzle-piece{height:105px;overflow:hidden;border:1px solid var(--border);border-radius:8px;background-size:200% 200%;background-repeat:no-repeat}
+.theme-light{--bg:#f7eefa;--card:rgba(255,255,255,.72);--border:rgba(90,50,110,.18);--text:#34223f;--muted:#705d7c;background:linear-gradient(140deg,#fbe4f3,#e8ddff,#fff)}.theme-light header{background:rgba(250,240,255,.9)}.theme-light input,.theme-light textarea,.theme-light select{background:#fff;color:#382747}.theme-light .world-tile,.theme-light .star-memory,.theme-light .flower,.theme-light .bubble{color:#382747}.theme-light .btn{color:white}
 footer p{margin:4px}
-@media(max-width:520px){.form-grid,.filters,.world-grid{grid-template-columns:1fr 1fr}.gallery img{height:155px}.card{padding:15px}nav a{padding:4px 7px;font-size:11px}.stars-field{grid-template-columns:repeat(3,1fr)}}
-
-/* موسیقی مشترک */
-.music-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.music-playlist{border:1px solid var(--border);background:rgba(255,255,255,.045);border-radius:18px;padding:15px;min-width:0}
-.music-track{padding:13px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.045);margin-top:10px;overflow-wrap:anywhere}
-.music-track-head{display:flex;justify-content:space-between;gap:8px;align-items:center}
-.music-track audio{width:100%}
-.music-form{display:grid;gap:8px}
-.music-form input[type=file]{padding:8px}
-.music-note{font-size:12px;color:var(--muted)}
-@media(max-width:520px){.music-grid{grid-template-columns:1fr}}
+.music-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.music-playlist{border:1px solid var(--border);background:rgba(255,255,255,.045);border-radius:18px;padding:15px;min-width:0}.music-track{padding:13px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.045);margin-top:10px;overflow-wrap:anywhere}.music-track-head{display:flex;justify-content:space-between;gap:8px;align-items:center}.music-track audio{width:100%}.music-form{display:grid;gap:8px}.music-form input[type=file]{padding:8px}.music-note{font-size:12px;color:var(--muted)}
+/* صندوق هدیه‌ها */
+.wallet-intro{text-align:center;padding:18px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(255,131,200,.13),rgba(182,154,255,.13));border:1px solid rgba(255,180,220,.22);margin-bottom:18px}
+.wallet-gift-icon{font-size:48px;animation:heartbeat 1.8s infinite}.wallet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.wallet-card{padding:17px;border-radius:19px;background:linear-gradient(145deg,rgba(255,131,200,.10),rgba(182,154,255,.08));border:1px solid rgba(255,190,225,.2);min-width:0}
+.wallet-card h3{margin:5px 0;color:#ffd1eb}.wallet-emoji{font-size:32px}.wallet-balance{font-size:23px;font-weight:bold;color:var(--green);overflow-wrap:anywhere}
+.wallet-progress{height:10px;border-radius:20px;background:rgba(255,255,255,.12);overflow:hidden;margin:12px 0 6px}.wallet-progress span{display:block;height:100%;width:0;border-radius:20px;background:linear-gradient(90deg,#ff83c8,#b69aff);transition:width .6s}
+.wallet-history{margin-top:12px;padding-top:10px;border-top:1px solid var(--border)}.wallet-history-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;overflow-wrap:anywhere}
+.wallet-admin-box{margin-top:20px;padding:16px;border:1px solid rgba(255,131,200,.3);border-radius:18px;background:rgba(255,131,200,.055)}.wallet-admin-box h3{margin-top:0}
+.wallet-admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.wallet-admin-grid .full{grid-column:1/-1}.wallet-empty{text-align:center;padding:22px 8px;color:var(--muted)}.wallet-amount-note{font-size:11px;color:var(--muted)}
+@media(max-width:520px){.form-grid,.filters,.world-grid{grid-template-columns:1fr 1fr}.gallery img{height:155px}.card{padding:15px}nav a{padding:4px 7px;font-size:11px}.stars-field{grid-template-columns:repeat(3,1fr)}.music-grid{grid-template-columns:1fr}.wallet-grid{grid-template-columns:1fr}.wallet-admin-grid{grid-template-columns:1fr}.wallet-admin-grid .full{grid-column:auto}}
 </style>
 </head>
-
 <body>
 <div class="stars"></div>
-
 <header><nav>
-<a href="#home">خانه</a><a href="#featured">قاب خاطره</a><a href="#gallery">گالری</a><a href="#voice">صدا</a><a href="#timeline">قصه</a><a href="#timeMachine">ماشین زمان</a><a href="#world">دنیای خاطرات ✨</a><a href="#archive">ثبت خاطره</a><a href="#music">موسیقی 🎵</a><a href="#letter">نامه</a><a href="#admin">مدیریت 🔐</a>
+<a href="#home">خانه</a><a href="#giftWallet">صندوق هدیه 🎁</a><a href="#featured">قاب خاطره</a><a href="#gallery">گالری</a><a href="#voice">صدا</a><a href="#timeline">قصه</a><a href="#timeMachine">ماشین زمان</a><a href="#world">دنیای خاطرات ✨</a><a href="#archive">ثبت خاطره</a><a href="#music">موسیقی 🎵</a><a href="#letter">نامه</a><a href="#admin">مدیریت 🔐</a>
 </nav></header>
-
 <main>
-
 <section class="hero" id="home">
-<div class="hero-heart">❤️</div>
-<h1>آرشیو خاطرات ما</h1>
-<p>بعضی لحظه‌ها می‌گذرن، اما ارزششون هیچ‌وقت کم نمی‌شه.</p>
-<p class="muted">اینجا گوشه‌ای از خاطرات، صداها و لحظه‌های ماست.</p>
+<div class="hero-heart">❤️</div><h1>آرشیو خاطرات ما</h1>
+<p>بعضی لحظه‌ها می‌گذرن، اما ارزششون هیچ‌وقت کم نمی‌شه.</p><p class="muted">اینجا گوشه‌ای از خاطرات، صداها و لحظه‌های ماست.</p>
 <a class="btn pink" href="#timeMachine">برگردیم به خاطراتمون ✨</a>
-
-<div class="app-download">
-<h3>اپلیکیشن کل زندگی من ❤️</h3>
-<p>آرشیو خاطرات، حالا در قالب یک اپلیکیشن اندرویدی!</p>
-<a class="btn pink" id="appDownloadBtn" href="https://github.com/abolijj890-stack/Melina_birtday/releases/download/v1.0.0/app-debug.apk">
-📲 دانلود اپلیکیشن
-</a>
-<span class="version">نسخه 1.0.0 | مخصوص اندروید</span>
-</div>
+<div class="app-download"><h3>اپلیکیشن کل زندگی من ❤️</h3><p>آرشیو خاطرات، حالا در قالب یک اپلیکیشن اندرویدی!</p><a class="btn pink" id="appDownloadBtn" href="https://github.com/abolijj890-stack/Melina_birtday/releases/download/v1.0.0/app-debug.apk">📲 دانلود اپلیکیشن</a><span class="version">نسخه 1.0.0 | مخصوص اندروید</span></div>
 </section>
 
+<!-- صندوق هدیه‌ها: اولین بخش بعد از Hero -->
+<section id="giftWallet"><div class="card">
+<div class="wallet-intro"><div class="wallet-gift-icon">🎁</div><h2>صندوق هدیه‌های ما</h2><p class="muted">چهار صندوق کوچک برای مناسبت‌های قشنگ و هدیه‌های دوست‌داشتنی 💜</p></div>
+<div id="walletStatus" class="status" aria-live="polite">در حال آماده‌سازی صندوق‌ها...</div>
+<div id="walletGrid" class="wallet-grid"><div class="wallet-empty">در حال دریافت اطلاعات صندوق‌ها...</div></div>
+<div class="wallet-admin-box" id="walletAdminBox" style="display:none">
+<h3>🔐 مدیریت صندوق هدیه‌ها</h3><p class="small">تغییرات این قسمت فقط با مجوز مدیر در سرور ثبت می‌شوند.</p>
+<label for="walletFundSelect">انتخاب صندوق</label><select id="walletFundSelect"></select>
+<div class="wallet-admin-grid">
+<div><label for="walletTransactionType">نوع تراکنش</label><select id="walletTransactionType"><option value="deposit">شارژ صندوق</option><option value="withdrawal">برداشت از صندوق</option></select></div>
+<div><label for="walletAmount">مبلغ (تومان)</label><input id="walletAmount" type="number" min="1" step="1" placeholder="مثلاً ۵۰۰۰۰"></div>
+<div class="full"><label for="walletTransactionNote">یادداشت تراکنش</label><input id="walletTransactionNote" maxlength="300" placeholder="مثلاً پس‌انداز این ماه"></div>
+<div class="full"><button class="btn pink" id="walletTransactionBtn" type="button">ثبت تراکنش</button></div>
+</div>
+<hr style="border-color:var(--border);margin:20px 0">
+<h3>⚙️ تنظیمات صندوق</h3>
+<label for="walletTarget">هدف صندوق (تومان)</label><input id="walletTarget" type="number" min="0" step="1">
+<label for="walletDueDate">تاریخ هدف</label><input id="walletDueDate" type="date">
+<label for="walletNote">یادداشت صندوق</label><textarea id="walletNote" maxlength="1000" placeholder="یادداشت مربوط به این مناسبت..."></textarea>
+<button class="btn pink" id="walletUpdateBtn" type="button">ذخیره تنظیمات صندوق</button>
+<div id="walletAdminStatus" class="status" aria-live="polite"></div>
+</div>
+<p class="small" style="margin-top:16px">موجودی‌ها و تاریخچه تراکنش‌ها از پایگاه داده دریافت می‌شوند.</p>
+</div></section>
+
 <section id="featured"><div class="card"><h2>یک قاب از خاطرات ❤️</h2><img class="featured-image zoomable" src="IMG_20250612_000548_702.jpg" alt="یکی از خاطرات ما" loading="lazy"><p class="muted">هر عکس می‌تونه دروازه‌ای به یک روز فراموش‌نشدنی باشه.</p></div></section>
-
 <section id="gallery"><div class="card"><h2>گالری خاطرات 📸</h2><p class="muted">روی هر عکس بزن تا بزرگ‌تر ببینیش.</p><div class="gallery">
-<img class="zoomable" src="IMG_20250612_000548_702.jpg" alt="خاطره ۱" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg" alt="خاطره ۲" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg" alt="خاطره ۳" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg" alt="خاطره ۴" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg" alt="خاطره ۵" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg" alt="خاطره ۶" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg" alt="خاطره ۷" loading="lazy">
-<img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg" alt="خاطره ۸" loading="lazy">
-<img class="zoomable" src="eye_love.jpg" alt="چشم‌ها" loading="lazy">
+<img class="zoomable" src="IMG_20250612_000548_702.jpg" alt="خاطره ۱" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۵۲۸-۲۳۱۷۰۶_Telegram.jpg" alt="خاطره ۲" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۱-۰۳۲۴۵۳_Instagram.jpg" alt="خاطره ۳" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۶۱۷-۱۸۴۵۲۹_Telegram.jpg" alt="خاطره ۴" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۰.jpg" alt="خاطره ۵" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۳۵.jpg" alt="خاطره ۶" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۲.jpg" alt="خاطره ۷" loading="lazy"><img class="zoomable" src="Screenshot_۲۰۲۵۰۷۱۷-۲۱۳۲۴۹.jpg" alt="خاطره ۸" loading="lazy"><img class="zoomable" src="eye_love.jpg" alt="چشم‌ها" loading="lazy">
 </div></div></section>
-
 <section id="voice"><div class="card"><h2>اتاق صدا 🎧</h2><p>بعضی خاطره‌ها رو نمی‌شه فقط خوند؛ باید شنید.</p><audio controls preload="metadata"><source src="4_5965547555092699255.mp3" type="audio/mpeg">مرورگرت از پخش این فایل پشتیبانی نمی‌کنه.</audio><p class="muted">ویس خاطره‌انگیز ما</p></div></section>
-
 <section id="timeline"><div class="card"><h2>قصهٔ ما 🕰️</h2><div class="timeline-item"><strong>شروع خاطرات</strong><p class="muted">روزی که داستان ما شروع شد و لحظه‌های تازه شکل گرفتن.</p></div><div class="timeline-item"><strong>روزهای پر از پیام</strong><p class="muted">پیام‌ها، شوخی‌ها، حرف‌های طولانی و خاطرات کوچیک.</p></div><div class="timeline-item"><strong>لحظه‌های ماندگار</strong><p class="muted">روزهایی که حتی گذشت زمان هم نتونسته از ارزششون کم کنه.</p></div><p class="small">خاطرات ثبت‌شده در آرشیو، در ماشین زمان هم نمایش داده می‌شن.</p></div></section>
 
 <section id="timeMachine"><div class="card"><h2>ماشین زمان خاطرات ⏳</h2><p class="muted">تاریخ انتخاب کن، خاطره جست‌وجو کن یا یک خاطرهٔ تصادفی ببین.</p>
 <label for="searchMemory">جست‌وجو در عنوان و متن خاطرات</label><input id="searchMemory" type="search" placeholder="مثلاً یک جمله یا اسم خاطره..." autocomplete="off">
-<div class="filters">
-<div><label for="filterYear">سال</label><select id="filterYear"><option value="">همهٔ سال‌ها</option></select></div>
-<div><label for="filterMonth">ماه میلادی</label><select id="filterMonth"><option value="">همهٔ ماه‌ها</option><option value="01">ژانویه</option><option value="02">فوریه</option><option value="03">مارس</option><option value="04">آوریل</option><option value="05">مه</option><option value="06">ژوئن</option><option value="07">ژوئیه</option><option value="08">اوت</option><option value="09">سپتامبر</option><option value="10">اکتبر</option><option value="11">نوامبر</option><option value="12">دسامبر</option></select></div>
-<div><label for="filterType">نوع خاطره</label><select id="filterType"><option value="">همهٔ خاطرات</option><option value="text">نوشته‌ها</option><option value="image">عکس‌ها</option><option value="audio">ویس‌ها</option><option value="video">ویدئوها</option></select></div>
-<div><label for="filterCreator">ثبت‌کننده</label><select id="filterCreator"><option value="">همه</option><option value="Abolfazl">ابوالفضل</option><option value="Melina">ملینا</option></select></div>
-<div><label for="sortOrder">ترتیب نمایش</label><select id="sortOrder"><option value="newest">جدیدترین اول</option><option value="oldest">قدیمی‌ترین اول</option></select></div>
-</div>
+<div class="filters"><div><label for="filterYear">سال</label><select id="filterYear"><option value="">همهٔ سال‌ها</option></select></div><div><label for="filterMonth">ماه میلادی</label><select id="filterMonth"><option value="">همهٔ ماه‌ها</option><option value="01">ژانویه</option><option value="02">فوریه</option><option value="03">مارس</option><option value="04">آوریل</option><option value="05">مه</option><option value="06">ژوئن</option><option value="07">ژوئیه</option><option value="08">اوت</option><option value="09">سپتامبر</option><option value="10">اکتبر</option><option value="11">نوامبر</option><option value="12">دسامبر</option></select></div>
+<div><label for="filterType">نوع خاطره</label><select id="filterType"><option value="">همهٔ خاطرات</option><option value="text">نوشته‌ها</option><option value="image">عکس‌ها</option><option value="audio">ویس‌ها</option><option value="video">ویدئوها</option></select></div><div><label for="filterCreator">ثبت‌کننده</label><select id="filterCreator"><option value="">همه</option><option value="Abolfazl">ابوالفضل</option><option value="Melina">ملینا</option></select></div><div><label for="sortOrder">ترتیب نمایش</label><select id="sortOrder"><option value="newest">جدیدترین اول</option><option value="oldest">قدیمی‌ترین اول</option></select></div></div>
 <div class="filter-actions"><button class="btn" id="randomMemoryBtn" type="button">🎲 یه خاطره انتخاب کن</button><button class="btn secondary" id="resetFiltersBtn" type="button">پاک‌کردن فیلترها</button><button class="btn secondary" id="reloadMemoriesBtn" type="button">🔄 بارگذاری دوباره</button></div>
 <div id="randomResult"></div><div class="result-line" id="resultCount">در انتظار بارگذاری خاطرات...</div><div class="memory-list" id="memoriesList"><div class="empty">در حال بارگذاری خاطرات... 💜</div></div><div class="status" id="loadStatus" aria-live="polite"></div>
 </div></section>
 
 <section id="world"><div class="card"><h2>دنیای خاطرات 🌌</h2><p class="muted">هر گوشه از این دنیا، راهی برای مرور لحظه‌های ثبت‌شده‌ست.</p>
 <div class="world-grid">
-<button class="world-tile" data-panel="sky"><b>🌠</b><span>آسمان خاطرات</span></button>
-<button class="world-tile" data-panel="book"><b>📖</b><span>دفتر ورق‌زدنی</span></button>
-<button class="world-tile" data-panel="radio"><b>🎧</b><span>رادیوی خاطرات</span></button>
-<button class="world-tile" data-panel="calendar"><b>📅</b><span>تقویم خاطرات</span></button>
-<button class="world-tile" data-panel="letters"><b>💌</b><span>صندوق نوشته‌ها</span></button>
-<button class="world-tile" data-panel="garden"><b>🌷</b><span>باغ خاطرات</span></button>
-<button class="world-tile" data-panel="bubbles"><b>🫧</b><span>حباب‌های خاطره</span></button>
-<button class="world-tile" data-panel="puzzle"><b>🧩</b><span>پازل قاب اصلی</span></button>
-<button class="world-tile" data-panel="capsule"><b>🔐</b><span>کپسول زمان</span></button>
-<button class="world-tile" data-panel="theme"><b>🌙</b><span>حالت شب و روز</span></button>
-<button class="world-tile" data-panel="time"><b>🕰️</b><span>سفر به یک تاریخ</span></button>
-<button class="world-tile" data-panel="random"><b>🎲</b><span>خاطرهٔ شانسی</span></button>
+<button class="world-tile" data-panel="sky"><b>🌠</b><span>آسمان خاطرات</span></button><button class="world-tile" data-panel="book"><b>📖</b><span>دفتر ورق‌زدنی</span></button><button class="world-tile" data-panel="radio"><b>🎧</b><span>رادیوی خاطرات</span></button><button class="world-tile" data-panel="calendar"><b>📅</b><span>تقویم خاطرات</span></button><button class="world-tile" data-panel="letters"><b>💌</b><span>صندوق نوشته‌ها</span></button><button class="world-tile" data-panel="garden"><b>🌷</b><span>باغ خاطرات</span></button><button class="world-tile" data-panel="bubbles"><b>🫧</b><span>حباب‌های خاطره</span></button><button class="world-tile" data-panel="puzzle"><b>🧩</b><span>پازل قاب اصلی</span></button><button class="world-tile" data-panel="capsule"><b>🔐</b><span>کپسول زمان</span></button><button class="world-tile" data-panel="theme"><b>🌙</b><span>حالت شب و روز</span></button><button class="world-tile" data-panel="time"><b>🕰️</b><span>سفر به یک تاریخ</span></button><button class="world-tile" data-panel="random"><b>🎲</b><span>خاطرهٔ شانسی</span></button>
 </div>
-
 <div class="world-panel" id="panel-sky"><h3>آسمان خاطرات ✨</h3><p class="small">روی هر ستاره بزن تا یکی از خاطرات آرشیو باز بشه.</p><div class="stars-field" id="starField"></div></div>
 <div class="world-panel" id="panel-book"><h3>دفتر خاطرات 📖</h3><div class="book-page" id="bookPage">خاطره‌ها در حال آماده‌شدن...</div><div class="book-controls"><button class="btn secondary" id="bookPrev">قبلی</button><span class="small" id="bookCount"></span><button class="btn" id="bookNext">بعدی</button></div></div>
 <div class="world-panel" id="panel-radio"><h3>رادیوی خاطرات 🎶</h3><p class="small">ویس‌ها و صداهایی که در آرشیو ثبت کردی اینجا جمع می‌شن.</p><div id="radioList" class="memory-list"></div></div>
@@ -226,8 +143,7 @@ footer p{margin:4px}
 <div class="music-grid">
 <div class="music-playlist"><h3>🎧 پلی‌لیست ملینا</h3><form class="music-form" id="musicFormMelina" data-playlist="Melina"><label>نام آهنگ</label><input name="title" maxlength="150" required placeholder="نام آهنگ"><label>خواننده (اختیاری)</label><input name="artist" maxlength="120" placeholder="نام خواننده"><label>بارگذاری فایل صوتی</label><input name="file" type="file" accept="audio/*"><label>یا لینک مستقیم فایل صوتی</label><input name="url" type="url" placeholder="https://..."><button class="btn pink" type="submit">افزودن به پلی‌لیست ملینا</button><div class="status" aria-live="polite"></div></form><div id="musicMelina" class="memory-list"><div class="empty">در حال دریافت آهنگ‌ها...</div></div></div>
 <div class="music-playlist"><h3>🎶 پلی‌لیست ابوالفضل</h3><form class="music-form" id="musicFormAbolfazl" data-playlist="Abolfazl"><label>نام آهنگ</label><input name="title" maxlength="150" required placeholder="نام آهنگ"><label>خواننده (اختیاری)</label><input name="artist" maxlength="120" placeholder="نام خواننده"><label>بارگذاری فایل صوتی</label><input name="file" type="file" accept="audio/*"><label>یا لینک مستقیم فایل صوتی</label><input name="url" type="url" placeholder="https://..."><button class="btn pink" type="submit">افزودن به پلی‌لیست ابوالفضل</button><div class="status" aria-live="polite"></div></form><div id="musicAbolfazl" class="memory-list"><div class="empty">در حال دریافت آهنگ‌ها...</div></div></div>
-</div>
-<div class="filter-actions"><button class="btn secondary" id="reloadMusicBtn" type="button">🔄 تازه‌سازی آهنگ‌ها</button><button class="btn secondary" id="musicSearchBtn" type="button">🔎 جست‌وجوی آهنگ در یوتیوب</button></div>
+</div><div class="filter-actions"><button class="btn secondary" id="reloadMusicBtn" type="button">🔄 تازه‌سازی آهنگ‌ها</button><button class="btn secondary" id="musicSearchBtn" type="button">🔎 جست‌وجوی آهنگ در یوتیوب</button></div>
 <p class="music-note">توجه: چون افزودن و حذف بدون رمز فعال است، هر بازدیدکنندهٔ سایت می‌تواند آهنگ‌های هر دو پلی‌لیست را اضافه یا حذف کند.</p><div id="musicStatus" class="status" aria-live="polite"></div>
 </div></section>
 
@@ -241,55 +157,29 @@ footer p{margin:4px}
 
 <section id="admin"><div class="card"><h2>پنل مدیریت خصوصی 🔐</h2><p class="muted">ورود به این بخش فقط با حساب مدیر امکان‌پذیر است.</p>
 <div id="adminLogin"><label for="adminEmail">ایمیل حساب Supabase</label><input id="adminEmail" type="email" autocomplete="username" placeholder="ایمیل حساب"><label for="adminPassword">رمز عبور</label><input id="adminPassword" type="password" autocomplete="current-password" placeholder="رمز عبور"><button class="btn pink" id="adminLoginBtn" type="button">ورود به پنل</button><div id="adminLoginStatus" class="status" aria-live="polite"></div></div>
-
 <div id="adminDashboard" style="display:none">
 <div class="admin-stat"><p class="muted">مجموع بازدیدهای ثبت‌شده</p><strong id="totalVisits">۰</strong></div>
-
-<!-- آمار دانلود اپلیکیشن -->
-<div class="admin-stat">
-<p class="muted">تعداد کلیک روی دانلود اپلیکیشن 📲</p>
-<strong id="totalAppDownloads">۰</strong>
-<p class="small" id="downloadStatsStatus">آمار هنوز دریافت نشده است.</p>
-</div>
-
-<h3>آمار ماهانه 📊</h3>
-<div id="monthlyVisitsList" class="memory-list"><div class="empty">در انتظار دریافت آمار...</div></div>
-<div id="adminStatus" class="status" aria-live="polite"></div>
-<div class="memory-actions">
-<button class="btn" id="refreshStatsBtn" type="button">🔄 به‌روزرسانی آمار</button>
-<button class="btn delete" id="adminLogoutBtn" type="button">خروج از حساب</button>
-</div>
-</div>
-</div></section>
-
+<div class="admin-stat"><p class="muted">تعداد کلیک روی دانلود اپلیکیشن 📲</p><strong id="totalAppDownloads">۰</strong><p class="small" id="downloadStatsStatus">آمار هنوز دریافت نشده است.</p></div>
+<h3>آمار ماهانه 📊</h3><div id="monthlyVisitsList" class="memory-list"><div class="empty">در انتظار دریافت آمار...</div></div><div id="adminStatus" class="status" aria-live="polite"></div>
+<div class="memory-actions"><button class="btn" id="refreshStatsBtn" type="button">🔄 به‌روزرسانی آمار</button><button class="btn delete" id="adminLogoutBtn" type="button">خروج از حساب</button></div>
+</div></div></section>
 </main>
-
 <footer><p>ساخته‌شده برای نگه‌داشتن خاطراتی که ارزش مرورکردن دارن ❤️</p><p>هر خاطره، یک تکه از زمان.</p></footer>
-
 <div id="lightbox" role="dialog" aria-label="نمایش تصویر بزرگ"><button id="lightboxClose" type="button" aria-label="بستن">×</button><img id="lightboxImage" src="" alt="تصویر بزرگ‌شده"></div>
 
 <script>
 "use strict";
-
 const SUPABASE_URL="https://iojkhxsfreudphjkzame.supabase.co";
 const SUPABASE_KEY="sb_publishable_pkcG9Jkce4HxKQMN9WDe1w_5PPKUWKd";
 const BUCKET="memories",MAX_FILE_SIZE=25*1024*1024;
 const $=id=>document.getElementById(id);
-
 let allMemories=[],filteredMemories=[],activeRandomId=null,adminAccessToken=null,bookIndex=0;
-
 const typeNames={text:"نوشته",image:"عکس",audio:"ویس",video:"ویدئو"};
-
 function setStatus(el,msg,type=""){el.textContent=msg;el.className="status"+(type?" "+type:"")}
-
 function escapeHTML(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-
 function dateValue(m){return m.memory_date||m.created_at||""}
-
 function formatDate(v){if(!v)return"بدون تاریخ";const d=new Date(v);if(Number.isNaN(d.getTime()))return v;return new Intl.DateTimeFormat("fa-IR",{year:"numeric",month:"long",day:"numeric",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).format(d)}
-
 function creatorName(v){return v==="Melina"?"ملینا":v==="Abolfazl"?"ابوالفضل":v||"نامشخص"}
-
 async function api(path,options={}){
  const headers=new Headers(options.headers||{});
  headers.set("apikey",SUPABASE_KEY);
@@ -298,846 +188,327 @@ async function api(path,options={}){
  const r=await fetch(SUPABASE_URL+path,{...options,headers});
  if(!r.ok)throw new Error((await r.text())||"خطا در ارتباط با سرور");
  if(r.status===204)return null;
- const t=await r.text();
- return t?JSON.parse(t):null;
+ const t=await r.text();return t?JSON.parse(t):null;
 }
 
 /* ثبت کلیک دانلود */
-async function recordAppDownloadClick(){
- try{
-  await api("/rest/v1/rpc/record_app_download_click",{
-   method:"POST",
-   body:JSON.stringify({})
-  });
-  return true;
- }catch(error){
-  console.error("ثبت کلیک دانلود ناموفق بود:",error);
-  return false;
- }
-}
-
+async function recordAppDownloadClick(){try{await api("/rest/v1/rpc/record_app_download_click",{method:"POST",body:JSON.stringify({})});return true}catch(error){console.error("ثبت کلیک دانلود ناموفق بود:",error);return false}}
 $("appDownloadBtn").addEventListener("click",async function(e){
- e.preventDefault();
-
- if(this.dataset.busy==="true")return;
-
- this.dataset.busy="true";
- const button=this;
- const downloadUrl=button.href;
- const originalText=button.textContent;
-
- button.textContent="در حال آماده‌سازی دانلود...";
- button.style.opacity=".7";
-
- await recordAppDownloadClick();
-
- window.location.assign(downloadUrl);
+ e.preventDefault();if(this.dataset.busy==="true")return;this.dataset.busy="true";
+ const button=this,downloadUrl=button.href;button.textContent="در حال آماده‌سازی دانلود...";button.style.opacity=".7";
+ await recordAppDownloadClick();window.location.assign(downloadUrl);
 });
 
 /* پلی‌لیست‌های مشترک */
 const MUSIC_BUCKET="music",MUSIC_MAX=20*1024*1024;
-
 function musicPublicUrl(path){return SUPABASE_URL+"/storage/v1/object/public/"+MUSIC_BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/")}
-
 async function loadMusic(){
- for(const playlist of ["Melina","Abolfazl"]){
-  const box=$(playlist==="Melina"?"musicMelina":"musicAbolfazl");
-  box.innerHTML='<div class="empty">در حال دریافت آهنگ‌ها...</div>';
- }
+ for(const playlist of ["Melina","Abolfazl"]){const box=$(playlist==="Melina"?"musicMelina":"musicAbolfazl");box.innerHTML='<div class="empty">در حال دریافت آهنگ‌ها...</div>'}
  try{
   const rows=await api("/rest/v1/music_tracks?select=id,playlist,title,artist,source_type,file_path,audio_url,created_at&order=created_at.desc");
   for(const playlist of ["Melina","Abolfazl"]){
-   const box=$(playlist==="Melina"?"musicMelina":"musicAbolfazl");
-   box.replaceChildren();
+   const box=$(playlist==="Melina"?"musicMelina":"musicAbolfazl");box.replaceChildren();
    const list=rows.filter(x=>x.playlist===playlist);
-   if(!list.length){
-    box.innerHTML='<div class="empty">هنوز آهنگی اضافه نشده. 🎵</div>';
-    continue;
-   }
+   if(!list.length){box.innerHTML='<div class="empty">هنوز آهنگی اضافه نشده. 🎵</div>';continue}
    list.forEach(track=>{
-    const card=document.createElement("div");
-    card.className="music-track";
-    const head=document.createElement("div");
-    head.className="music-track-head";
-    const title=document.createElement("strong");
-    title.textContent=track.title||"بدون عنوان";
-    const del=document.createElement("button");
-    del.type="button";
-    del.className="btn delete";
-    del.textContent="🗑️ حذف";
-    del.addEventListener("click",()=>deleteMusic(track));
-    head.append(title,del);
-    card.append(head);
-    if(track.artist){
-     const artist=document.createElement("p");
-     artist.className="small";
-     artist.textContent=track.artist;
-     card.append(artist);
-    }
-    const audio=document.createElement("audio");
-    audio.controls=true;
-    audio.preload="none";
-    audio.src=track.source_type==="upload"?musicPublicUrl(track.file_path):track.audio_url;
-    audio.onerror=()=>{audio.insertAdjacentText("afterend"," این لینک قابل پخش نیست؛ لینک مستقیم فایل صوتی لازم است.")};
-    card.append(audio);
-    box.append(card);
+    const card=document.createElement("div");card.className="music-track";
+    const head=document.createElement("div");head.className="music-track-head";
+    const title=document.createElement("strong");title.textContent=track.title||"بدون عنوان";
+    const del=document.createElement("button");del.type="button";del.className="btn delete";del.textContent="🗑️ حذف";del.addEventListener("click",()=>deleteMusic(track));
+    head.append(title,del);card.append(head);
+    if(track.artist){const artist=document.createElement("p");artist.className="small";artist.textContent=track.artist;card.append(artist)}
+    const audio=document.createElement("audio");audio.controls=true;audio.preload="none";audio.src=track.source_type==="upload"?musicPublicUrl(track.file_path):track.audio_url;
+    audio.onerror=()=>{audio.insertAdjacentText("afterend"," این لینک قابل پخش نیست؛ لینک مستقیم فایل صوتی لازم است.")};card.append(audio);box.append(card);
    });
   }
- }catch(e){
-  $("musicStatus").textContent="خطا در دریافت آهنگ‌ها: "+e.message;
-  $("musicMelina").innerHTML='<div class="empty">بارگذاری ناموفق بود.</div>';
-  $("musicAbolfazl").innerHTML='<div class="empty">بارگذاری ناموفق بود.</div>';
- }
+ }catch(e){$("musicStatus").textContent="خطا در دریافت آهنگ‌ها: "+e.message;$("musicMelina").innerHTML='<div class="empty">بارگذاری ناموفق بود.</div>';$("musicAbolfazl").innerHTML='<div class="empty">بارگذاری ناموفق بود.</div>'}
 }
-
 async function addMusic(form){
- const status=form.querySelector(".status");
- const playlist=form.dataset.playlist;
- const title=form.elements.title.value.trim();
- const artist=form.elements.artist.value.trim();
- const file=form.elements.file.files[0];
- const url=form.elements.url.value.trim();
-
+ const status=form.querySelector(".status"),playlist=form.dataset.playlist,title=form.elements.title.value.trim(),artist=form.elements.artist.value.trim(),file=form.elements.file.files[0],url=form.elements.url.value.trim();
  try{
   if(!title)throw new Error("نام آهنگ رو وارد کن.");
   if((file?1:0)+(url?1:0)!==1)throw new Error("یا فایل صوتی انتخاب کن یا لینک مستقیم وارد کن؛ فقط یکی.");
   let row;
-
   if(file){
    if(!file.type.startsWith("audio/"))throw new Error("فایل انتخابی صوتی نیست.");
    if(file.size>MUSIC_MAX)throw new Error("حجم فایل باید حداکثر ۲۰ مگابایت باشه.");
-   const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
-   const path=Date.now()+"_"+Math.random().toString(36).slice(2,10)+"_"+safe;
-   const up=await fetch(SUPABASE_URL+"/storage/v1/object/"+MUSIC_BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{
-    method:"POST",
-    headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":file.type,"x-upsert":"false"},
-    body:file
-   });
+   const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_"),path=Date.now()+"_"+Math.random().toString(36).slice(2,10)+"_"+safe;
+   const up=await fetch(SUPABASE_URL+"/storage/v1/object/"+MUSIC_BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{method:"POST",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":file.type,"x-upsert":"false"},body:file});
    if(!up.ok)throw new Error("بارگذاری فایل ناموفق بود: "+await up.text());
    row={playlist,title,artist:artist||null,source_type:"upload",file_path:path,audio_url:null};
   }else{
-   let parsed;
-   try{parsed=new URL(url)}catch{throw new Error("لینک معتبر نیست.")}
+   let parsed;try{parsed=new URL(url)}catch{throw new Error("لینک معتبر نیست.")}
    if(parsed.protocol!=="https:")throw new Error("لینک باید با https شروع بشه.");
    row={playlist,title,artist:artist||null,source_type:"link",file_path:null,audio_url:parsed.href};
   }
-
   await api("/rest/v1/music_tracks",{method:"POST",headers:{Prefer:"return=minimal"},body:JSON.stringify(row)});
-  form.reset();
-  setStatus(status,"آهنگ اضافه شد. ❤️","success");
-  await loadMusic();
- }catch(e){
-  setStatus(status,"خطا: "+e.message,"error");
- }
+  form.reset();setStatus(status,"آهنگ اضافه شد. ❤️","success");await loadMusic();
+ }catch(e){setStatus(status,"خطا: "+e.message,"error")}
 }
-
 async function deleteMusic(track){
  if(!confirm("این آهنگ از پلی‌لیست حذف شود؟\n"+track.title))return;
  try{
   await api("/rest/v1/music_tracks?id=eq."+encodeURIComponent(track.id),{method:"DELETE"});
   if(track.source_type==="upload"&&track.file_path){
-   const r=await fetch(SUPABASE_URL+"/storage/v1/object/"+MUSIC_BUCKET,{
-    method:"DELETE",
-    headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":"application/json"},
-    body:JSON.stringify({prefixes:[track.file_path]})
-   });
+   const r=await fetch(SUPABASE_URL+"/storage/v1/object/"+MUSIC_BUCKET,{method:"DELETE",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":"application/json"},body:JSON.stringify({prefixes:[track.file_path]})});
    if(!r.ok)console.warn("حذف فایل آهنگ ناموفق بود",await r.text());
   }
   await loadMusic();
- }catch(e){
-  $("musicStatus").textContent="حذف ناموفق بود: "+e.message;
- }
+ }catch(e){$("musicStatus").textContent="حذف ناموفق بود: "+e.message}
 }
-
 $("musicFormMelina").addEventListener("submit",e=>{e.preventDefault();addMusic(e.currentTarget)});
 $("musicFormAbolfazl").addEventListener("submit",e=>{e.preventDefault();addMusic(e.currentTarget)});
 $("reloadMusicBtn").addEventListener("click",loadMusic);
-$("musicSearchBtn").addEventListener("click",()=>{
- const q=prompt("نام آهنگ یا خواننده رو بنویس:");
- if(q&&q.trim())window.open("https://www.youtube.com/results?search_query="+encodeURIComponent(q.trim()),"_blank","noopener");
-});
+$("musicSearchBtn").addEventListener("click",()=>{const q=prompt("نام آهنگ یا خواننده رو بنویس:");if(q&&q.trim())window.open("https://www.youtube.com/results?search_query="+encodeURIComponent(q.trim()),"_blank","noopener")});
 
-async function recordMonthlyVisit(){
- try{
-  await api("/rest/v1/rpc/record_monthly_visit",{method:"POST",body:JSON.stringify({})});
- }catch(e){
-  console.error("ثبت بازدید:",e);
- }
-}
-
+async function recordMonthlyVisit(){try{await api("/rest/v1/rpc/record_monthly_visit",{method:"POST",body:JSON.stringify({})})}catch(e){console.error("ثبت بازدید:",e)}}
 async function uploadFile(file){
- const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
- const path=Date.now()+"_"+Math.random().toString(36).slice(2,9)+"_"+safe;
- const r=await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{
-  method:"POST",
-  headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":file.type||"application/octet-stream","x-upsert":"false"},
-  body:file
- });
- if(!r.ok)throw new Error("بارگذاری فایل انجام نشد: "+await r.text());
- return path;
+ const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_"),path=Date.now()+"_"+Math.random().toString(36).slice(2,9)+"_"+safe;
+ const r=await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{method:"POST",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":file.type||"application/octet-stream","x-upsert":"false"},body:file});
+ if(!r.ok)throw new Error("بارگذاری فایل انجام نشد: "+await r.text());return path;
 }
-
 async function getFileUrl(path){
- if(!path)return"";
- const r=await api("/storage/v1/object/sign/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{method:"POST",body:JSON.stringify({expiresIn:3600})});
- if(!r?.signedURL)throw new Error("لینک فایل ساخته نشد.");
- return r.signedURL.startsWith("http")?r.signedURL:SUPABASE_URL+"/storage/v1"+r.signedURL;
+ if(!path)return"";const r=await api("/storage/v1/object/sign/"+BUCKET+"/"+path.split("/").map(encodeURIComponent).join("/"),{method:"POST",body:JSON.stringify({expiresIn:3600})});
+ if(!r?.signedURL)throw new Error("لینک فایل ساخته نشد.");return r.signedURL.startsWith("http")?r.signedURL:SUPABASE_URL+"/storage/v1"+r.signedURL;
 }
-
 async function fetchAllMemories(){
- let offset=0,result=[];
- while(true){
+ let offset=0,result=[];while(true){
   const batch=await api("/rest/v1/memories?select=id,title,content,media_type,file_path,created_by,memory_date,created_at&order=created_at.desc&limit=1000&offset="+offset);
-  if(!Array.isArray(batch))throw new Error("پاسخ سرور معتبر نیست.");
-  result=result.concat(batch);
-  if(batch.length<1000)break;
-  offset+=1000;
- }
- return result;
+  if(!Array.isArray(batch))throw new Error("پاسخ سرور معتبر نیست.");result=result.concat(batch);if(batch.length<1000)break;offset+=1000;
+ }return result;
 }
-
 function updateYearOptions(){
- const s=$("filterYear"),old=s.value;
- const years=[...new Set(allMemories.map(m=>{
-  const v=dateValue(m);
-  return v?v.slice(0,4):"";
- }).filter(y=>/^\d{4}$/.test(y)))].sort((a,b)=>b.localeCompare(a));
- s.innerHTML='<option value="">همهٔ سال‌ها</option>'+years.map(y=>'<option value="'+escapeHTML(y)+'">'+escapeHTML(y)+'</option>').join("");
- if(years.includes(old))s.value=old;
+ const s=$("filterYear"),old=s.value,years=[...new Set(allMemories.map(m=>{const v=dateValue(m);return v?v.slice(0,4):""}).filter(y=>/^\d{4}$/.test(y)))].sort((a,b)=>b.localeCompare(a));
+ s.innerHTML='<option value="">همهٔ سال‌ها</option>'+years.map(y=>'<option value="'+escapeHTML(y)+'">'+escapeHTML(y)+'</option>').join("");if(years.includes(old))s.value=old;
 }
-
 function getFilteredMemories(){
- const q=$("searchMemory").value.trim().toLocaleLowerCase();
- const y=$("filterYear").value,m=$("filterMonth").value,t=$("filterType").value,c=$("filterCreator").value,sort=$("sortOrder").value;
- const list=allMemories.filter(x=>{
-  const text=(String(x.title||"")+" "+String(x.content||"")).toLocaleLowerCase(),d=dateValue(x);
-  return(!q||text.includes(q))&&(!y||(d&&d.slice(0,4)===y))&&(!m||(d&&d.slice(5,7)===m))&&(!t||x.media_type===t)&&(!c||x.created_by===c);
- });
- list.sort((a,b)=>sort==="oldest"?(dateValue(a)||"").localeCompare(dateValue(b)||""):(dateValue(b)||"").localeCompare(dateValue(a)||""));
- return list;
+ const q=$("searchMemory").value.trim().toLocaleLowerCase(),y=$("filterYear").value,m=$("filterMonth").value,t=$("filterType").value,c=$("filterCreator").value,sort=$("sortOrder").value;
+ const list=allMemories.filter(x=>{const text=(String(x.title||"")+" "+String(x.content||"")).toLocaleLowerCase(),d=dateValue(x);return(!q||text.includes(q))&&(!y||(d&&d.slice(0,4)===y))&&(!m||(d&&d.slice(5,7)===m))&&(!t||x.media_type===t)&&(!c||x.created_by===c)});
+ list.sort((a,b)=>sort==="oldest"?(dateValue(a)||"").localeCompare(dateValue(b)||""):(dateValue(b)||"").localeCompare(dateValue(a)||""));return list;
 }
-
 function mediaHTML(m,url){
- if(!url)return"";
- if(m.media_type==="image")return'<img class="memory-media zoomable" src="'+escapeHTML(url)+'" alt="تصویر خاطره" loading="lazy">';
- if(m.media_type==="audio")return'<audio controls preload="none" src="'+escapeHTML(url)+'"></audio>';
- if(m.media_type==="video")return'<video controls preload="none" src="'+escapeHTML(url)+'"></video>';
- return"";
+ if(!url)return"";if(m.media_type==="image")return'<img class="memory-media zoomable" src="'+escapeHTML(url)+'" alt="تصویر خاطره" loading="lazy">';
+ if(m.media_type==="audio")return'<audio controls preload="none" src="'+escapeHTML(url)+'"></audio>';if(m.media_type==="video")return'<video controls preload="none" src="'+escapeHTML(url)+'"></video>';return"";
 }
-
 async function deleteMemory(m){
  if(!confirm("این خاطره برای همیشه حذف شود؟\n"+(m.title||"بدون عنوان")))return;
  try{
-  const r=await fetch(SUPABASE_URL+"/rest/v1/memories?id=eq."+encodeURIComponent(m.id),{
-   method:"DELETE",
-   headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Prefer":"return=representation"}
-  });
-  const t=await r.text();
-  if(!r.ok)throw new Error(t||"حذف انجام نشد.");
-  let rows=[];
-  try{rows=t?JSON.parse(t):[]}catch{}
-  if(!rows.length)throw new Error("هیچ ردیفی حذف نشد؛ سیاست عمومی DELETE را در Supabase بررسی کن.");
-  if(m.file_path){
-   try{
-    const sr=await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET,{
-     method:"DELETE",
-     headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":"application/json"},
-     body:JSON.stringify({prefixes:[m.file_path]})
-    });
-    if(!sr.ok)console.warn("حذف فایل خاطره ناموفق بود",await sr.text());
-   }catch(e){console.warn(e)}
-  }
-  allMemories=allMemories.filter(x=>String(x.id)!==String(m.id));
-  updateYearOptions();
-  await renderMemories();
-  renderWorld();
-  setStatus($("loadStatus"),"خاطره حذف شد.","success");
- }catch(e){
-  setStatus($("loadStatus"),"خطا در حذف: "+e.message,"error");
- }
+  const r=await fetch(SUPABASE_URL+"/rest/v1/memories?id=eq."+encodeURIComponent(m.id),{method:"DELETE",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Prefer":"return=representation"}});
+  const t=await r.text();if(!r.ok)throw new Error(t||"حذف انجام نشد.");let rows=[];try{rows=t?JSON.parse(t):[]}catch{}if(!rows.length)throw new Error("هیچ ردیفی حذف نشد؛ سیاست عمومی DELETE را در Supabase بررسی کن.");
+  if(m.file_path){try{const sr=await fetch(SUPABASE_URL+"/storage/v1/object/"+BUCKET,{method:"DELETE",headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+SUPABASE_KEY,"Content-Type":"application/json"},body:JSON.stringify({prefixes:[m.file_path]})});if(!sr.ok)console.warn("حذف فایل خاطره ناموفق بود",await sr.text())}catch(e){console.warn(e)}}
+  allMemories=allMemories.filter(x=>String(x.id)!==String(m.id));updateYearOptions();await renderMemories();renderWorld();setStatus($("loadStatus"),"خاطره حذف شد.","success");
+ }catch(e){setStatus($("loadStatus"),"خطا در حذف: "+e.message,"error")}
 }
-
 async function createMemoryCard(m){
- const a=document.createElement("article");
- a.className="memory-card";
- a.dataset.memoryId=m.id;
+ const a=document.createElement("article");a.className="memory-card";a.dataset.memoryId=m.id;
  a.innerHTML='<h3>'+escapeHTML(m.title||"خاطرهٔ بدون عنوان")+'</h3><div class="memory-meta"><span class="badge">'+escapeHTML(typeNames[m.media_type]||"خاطره")+'</span><span>📅 '+escapeHTML(formatDate(m.created_at||m.memory_date||""))+'</span><span>✍️ '+escapeHTML(creatorName(m.created_by))+'</span></div>'+(m.content?'<div class="memory-content">'+escapeHTML(m.content)+'</div>':'')+'<div class="media-slot"></div><div class="memory-actions"><button class="btn delete" type="button">🗑️ حذف خاطره</button></div>';
  a.querySelector(".delete").addEventListener("click",()=>deleteMemory(m));
- if(m.file_path){
-  try{
-   const u=await getFileUrl(m.file_path);
-   a.querySelector(".media-slot").innerHTML=mediaHTML(m,u);
-   attachZoomEvents(a);
-  }catch(e){
-   a.querySelector(".media-slot").textContent="نمایش فایل ممکن نیست.";
-  }
- }
+ if(m.file_path){try{const u=await getFileUrl(m.file_path);a.querySelector(".media-slot").innerHTML=mediaHTML(m,u);attachZoomEvents(a)}catch(e){a.querySelector(".media-slot").textContent="نمایش فایل ممکن نیست."}}
  return a;
 }
-
 async function renderMemories(){
- const c=$("memoriesList");
- filteredMemories=getFilteredMemories();
- $("resultCount").textContent=filteredMemories.length+" خاطره از "+allMemories.length+" خاطرهٔ دریافت‌شده";
- c.replaceChildren();
- if(!filteredMemories.length){
-  const d=document.createElement("div");
-  d.className="empty";
-  d.textContent=allMemories.length?"خاطره‌ای با این مشخصات پیدا نشد. 💜":"هنوز خاطره‌ای ثبت نشده یا بارگذاری نشده.";
-  c.append(d);
-  return;
- }
- const f=document.createDocumentFragment();
- for(const m of filteredMemories){
-  const card=await createMemoryCard(m);
-  if(String(m.id)===String(activeRandomId))card.style.borderColor="var(--pink)";
-  f.append(card);
- }
- c.append(f);
+ const c=$("memoriesList");filteredMemories=getFilteredMemories();$("resultCount").textContent=filteredMemories.length+" خاطره از "+allMemories.length+" خاطرهٔ دریافت‌شده";c.replaceChildren();
+ if(!filteredMemories.length){const d=document.createElement("div");d.className="empty";d.textContent=allMemories.length?"خاطره‌ای با این مشخصات پیدا نشد. 💜":"هنوز خاطره‌ای ثبت نشده یا بارگذاری نشده.";c.append(d);return}
+ const f=document.createDocumentFragment();for(const m of filteredMemories){const card=await createMemoryCard(m);if(String(m.id)===String(activeRandomId))card.style.borderColor="var(--pink)";f.append(card)}c.append(f);
 }
-
 async function loadMemories(){
- const s=$("loadStatus");
- $("memoriesList").innerHTML='<div class="empty">در حال دریافت خاطرات... 💜</div>';
- setStatus(s,"در حال اتصال به آرشیو...");
- try{
-  allMemories=await fetchAllMemories();
-  updateYearOptions();
-  await renderMemories();
-  renderWorld();
-  setStatus(s,"خاطرات با موفقیت بارگذاری شدند. ❤️","success");
- }catch(e){
-  console.error(e);
-  $("memoriesList").innerHTML='<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';
-  setStatus(s,"خطا در بارگذاری: "+e.message,"error");
- }
+ const s=$("loadStatus");$("memoriesList").innerHTML='<div class="empty">در حال دریافت خاطرات... 💜</div>';setStatus(s,"در حال اتصال به آرشیو...");
+ try{allMemories=await fetchAllMemories();updateYearOptions();await renderMemories();renderWorld();setStatus(s,"خاطرات با موفقیت بارگذاری شدند. ❤️","success")}
+ catch(e){console.error(e);$("memoriesList").innerHTML='<div class="empty">بارگذاری خاطرات ناموفق بود.</div>';setStatus(s,"خطا در بارگذاری: "+e.message,"error")}
 }
-
-let renderTimer;
-function scheduleRender(){
- clearTimeout(renderTimer);
- renderTimer=setTimeout(()=>{
-  activeRandomId=null;
-  $("randomResult").style.display="none";
-  renderMemories();
- },150);
-}
-
+let renderTimer;function scheduleRender(){clearTimeout(renderTimer);renderTimer=setTimeout(()=>{activeRandomId=null;$("randomResult").style.display="none";renderMemories()},150)}
 ["searchMemory","filterYear","filterMonth","filterType","filterCreator","sortOrder"].forEach(id=>$(id).addEventListener(id==="searchMemory"?"input":"change",scheduleRender));
-
-$("resetFiltersBtn").addEventListener("click",()=>{
- ["searchMemory","filterYear","filterMonth","filterType","filterCreator"].forEach(id=>$(id).value="");
- $("sortOrder").value="newest";
- activeRandomId=null;
- $("randomResult").style.display="none";
- renderMemories();
-});
-
+$("resetFiltersBtn").addEventListener("click",()=>{["searchMemory","filterYear","filterMonth","filterType","filterCreator"].forEach(id=>$(id).value="");$("sortOrder").value="newest";activeRandomId=null;$("randomResult").style.display="none";renderMemories()});
 $("reloadMemoriesBtn").addEventListener("click",loadMemories);
-
-function pickRandom(){
- const list=getFilteredMemories();
- if(!list.length)return null;
- return list[Math.floor(Math.random()*list.length)];
-}
-
+function pickRandom(){const list=getFilteredMemories();if(!list.length)return null;return list[Math.floor(Math.random()*list.length)]}
 $("randomMemoryBtn").addEventListener("click",async()=>{
- const m=pickRandom(),box=$("randomResult");
- if(!m){
-  box.style.display="block";
-  box.textContent="خاطره‌ای برای انتخاب وجود نداره.";
-  return;
- }
- activeRandomId=m.id;
- await renderMemories();
- box.style.display="block";
- box.innerHTML='<strong>✨ خاطرهٔ انتخاب‌شده</strong><p>'+escapeHTML(m.title)+'</p><p class="small">'+escapeHTML(formatDate(dateValue(m)))+'</p><button class="btn" type="button">رفتن به خاطره</button>';
+ const m=pickRandom(),box=$("randomResult");if(!m){box.style.display="block";box.textContent="خاطره‌ای برای انتخاب وجود نداره.";return}
+ activeRandomId=m.id;await renderMemories();box.style.display="block";box.innerHTML='<strong>✨ خاطرهٔ انتخاب‌شده</strong><p>'+escapeHTML(m.title)+'</p><p class="small">'+escapeHTML(formatDate(dateValue(m)))+'</p><button class="btn" type="button">رفتن به خاطره</button>';
  box.querySelector("button").onclick=()=>document.querySelector('[data-memory-id="'+CSS.escape(String(m.id))+'"]')?.scrollIntoView({behavior:"smooth",block:"center"});
 });
-
 $("memoryDate").value=new Date().toISOString().slice(0,10);
-
-$("mediaType").addEventListener("change",()=>{
- $("memoryFile").accept=$("mediaType").value==="image"?"image/*":$("mediaType").value==="audio"?"audio/*":$("mediaType").value==="video"?"video/*":"image/*,audio/*,video/*";
-});
-
+$("mediaType").addEventListener("change",()=>{$("memoryFile").accept=$("mediaType").value==="image"?"image/*":$("mediaType").value==="audio"?"audio/*":$("mediaType").value==="video"?"video/*":"image/*,audio/*,video/*"});
 $("memoryForm").addEventListener("submit",async e=>{
- e.preventDefault();
- const b=$("saveMemoryBtn"),s=$("formStatus");
- const title=$("memoryTitle").value.trim(),content=$("memoryContent").value.trim(),date=$("memoryDate").value||null,creator=$("createdBy").value,type=$("mediaType").value,file=$("memoryFile").files[0];
-
- if(!title){setStatus(s,"عنوان خاطره رو وارد کن.","error");return}
- if(file&&file.size>MAX_FILE_SIZE){setStatus(s,"حجم فایل باید کمتر از ۲۵ مگابایت باشه.","error");return}
- if(file&&file.type&&!file.type.startsWith(type+"/")){setStatus(s,"نوع فایل با نوع خاطره هماهنگ نیست.","error");return}
- if(type!=="text"&&!file&&!content){setStatus(s,"متن یا فایل خاطره رو اضافه کن.","error");return}
-
- b.disabled=true;
- b.textContent="در حال ذخیره...";
-
+ e.preventDefault();const b=$("saveMemoryBtn"),s=$("formStatus"),title=$("memoryTitle").value.trim(),content=$("memoryContent").value.trim(),date=$("memoryDate").value||null,creator=$("createdBy").value,type=$("mediaType").value,file=$("memoryFile").files[0];
+ if(!title){setStatus(s,"عنوان خاطره رو وارد کن.","error");return}if(file&&file.size>MAX_FILE_SIZE){setStatus(s,"حجم فایل باید کمتر از ۲۵ مگابایت باشه.","error");return}
+ if(file&&file.type&&!file.type.startsWith(type+"/")){setStatus(s,"نوع فایل با نوع خاطره هماهنگ نیست.","error");return}if(type!=="text"&&!file&&!content){setStatus(s,"متن یا فایل خاطره رو اضافه کن.","error");return}
+ b.disabled=true;b.textContent="در حال ذخیره...";
  try{
-  let path=null;
-  if(file){
-   setStatus(s,"در حال بارگذاری فایل...");
-   path=await uploadFile(file);
-  }
-  setStatus(s,"در حال ثبت خاطره...");
-  await api("/rest/v1/memories",{
-   method:"POST",
-   headers:{"Prefer":"return=minimal"},
-   body:JSON.stringify({title,content,media_type:type,file_path:path,created_by:creator,memory_date:date})
-  });
-  setStatus(s,"خاطره با موفقیت ذخیره شد! ❤️","success");
-  $("memoryForm").reset();
-  $("memoryDate").value=new Date().toISOString().slice(0,10);
-  $("memoryFile").accept="image/*,audio/*,video/*";
-  await loadMemories();
-  $("timeMachine").scrollIntoView({behavior:"smooth"});
- }catch(err){
-  setStatus(s,"ذخیره انجام نشد: "+err.message,"error");
- }finally{
-  b.disabled=false;
-  b.textContent="❤️ ذخیره در آرشیو";
- }
+  let path=null;if(file){setStatus(s,"در حال بارگذاری فایل...");path=await uploadFile(file)}
+  setStatus(s,"در حال ثبت خاطره...");await api("/rest/v1/memories",{method:"POST",headers:{"Prefer":"return=minimal"},body:JSON.stringify({title,content,media_type:type,file_path:path,created_by:creator,memory_date:date})});
+  setStatus(s,"خاطره با موفقیت ذخیره شد! ❤️","success");$("memoryForm").reset();$("memoryDate").value=new Date().toISOString().slice(0,10);$("memoryFile").accept="image/*,audio/*,video/*";await loadMemories();$("timeMachine").scrollIntoView({behavior:"smooth"});
+ }catch(err){setStatus(s,"ذخیره انجام نشد: "+err.message,"error")}finally{b.disabled=false;b.textContent="❤️ ذخیره در آرشیو"}
 });
-
-function openLightbox(src,alt){
- $("lightboxImage").src=src;
- $("lightboxImage").alt=alt||"تصویر خاطره";
- $("lightbox").style.display="flex";
-}
-
-function closeLightbox(){
- $("lightbox").style.display="none";
- $("lightboxImage").src="";
-}
-
-function attachZoomEvents(root=document){
- root.querySelectorAll(".zoomable").forEach(img=>{
-  if(img.dataset.zoomReady)return;
-  img.dataset.zoomReady="true";
-  img.addEventListener("click",()=>openLightbox(img.src,img.alt));
- });
-}
-
-$("lightboxClose").addEventListener("click",closeLightbox);
-$("lightbox").addEventListener("click",e=>{if(e.target===$("lightbox"))closeLightbox()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});
-attachZoomEvents();
-
-$("letterToggle").addEventListener("click",()=>{
- const l=$("letterContent"),open=l.style.display==="block";
- l.style.display=open?"none":"block";
- $("letterToggle").textContent=open?"بازکردن نامه ❤️":"بستن نامه 💌";
-});
+function openLightbox(src,alt){$("lightboxImage").src=src;$("lightboxImage").alt=alt||"تصویر خاطره";$("lightbox").style.display="flex"}
+function closeLightbox(){$("lightbox").style.display="none";$("lightboxImage").src=""}
+function attachZoomEvents(root=document){root.querySelectorAll(".zoomable").forEach(img=>{if(img.dataset.zoomReady)return;img.dataset.zoomReady="true";img.addEventListener("click",()=>openLightbox(img.src,img.alt))})}
+$("lightboxClose").addEventListener("click",closeLightbox);$("lightbox").addEventListener("click",e=>{if(e.target===$("lightbox"))closeLightbox()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});attachZoomEvents();
+$("letterToggle").addEventListener("click",()=>{const l=$("letterContent"),open=l.style.display==="block";l.style.display=open?"none":"block";$("letterToggle").textContent=open?"بازکردن نامه ❤️":"بستن نامه 💌"});
 
 /* پنل مدیر */
 async function adminLogin(){
- const email=$("adminEmail").value.trim(),password=$("adminPassword").value,b=$("adminLoginBtn");
- if(!email||!password){
-  setStatus($("adminLoginStatus"),"ایمیل و رمز عبور را وارد کن.","error");
-  return;
- }
- b.disabled=true;
- b.textContent="در حال ورود...";
-
+ const email=$("adminEmail").value.trim(),password=$("adminPassword").value,b=$("adminLoginBtn");if(!email||!password){setStatus($("adminLoginStatus"),"ایمیل و رمز عبور را وارد کن.","error");return}
+ b.disabled=true;b.textContent="در حال ورود...";
  try{
-  const r=await fetch(SUPABASE_URL+"/auth/v1/token?grant_type=password",{
-   method:"POST",
-   headers:{"apikey":SUPABASE_KEY,"Content-Type":"application/json"},
-   body:JSON.stringify({email,password})
-  });
-  const d=await r.json();
-  if(!r.ok||!d.access_token)throw new Error(d.msg||d.message||d.error_description||"ورود ناموفق بود.");
-
-  adminAccessToken=d.access_token;
-  $("adminLogin").style.display="none";
-  $("adminDashboard").style.display="block";
-  $("adminPassword").value="";
-
-  await loadMonthlyStats();
-  await loadAppDownloadStats();
-  await renderMemories();
-
- }catch(e){
-  adminAccessToken=null;
-  setStatus($("adminLoginStatus"),"خطا در ورود: "+e.message,"error");
- }finally{
-  b.disabled=false;
-  b.textContent="ورود به پنل";
- }
+  const r=await fetch(SUPABASE_URL+"/auth/v1/token?grant_type=password",{method:"POST",headers:{"apikey":SUPABASE_KEY,"Content-Type":"application/json"},body:JSON.stringify({email,password})});
+  const d=await r.json();if(!r.ok||!d.access_token)throw new Error(d.msg||d.message||d.error_description||"ورود ناموفق بود.");
+  adminAccessToken=d.access_token;$("adminLogin").style.display="none";$("adminDashboard").style.display="block";$("adminPassword").value="";
+  await loadMonthlyStats();await loadAppDownloadStats();await renderMemories();await verifyWalletAdmin();
+ }catch(e){adminAccessToken=null;showWalletAdmin();setStatus($("adminLoginStatus"),"خطا در ورود: "+e.message,"error")}
+ finally{b.disabled=false;b.textContent="ورود به پنل"}
 }
-
 async function loadMonthlyStats(){
- if(!adminAccessToken){
-  setStatus($("adminStatus"),"ابتدا وارد حساب مدیر شو.","error");
-  return;
- }
-
- const c=$("monthlyVisitsList");
- c.innerHTML='<div class="empty">در حال دریافت آمار...</div>';
-
+ if(!adminAccessToken){setStatus($("adminStatus"),"ابتدا وارد حساب مدیر شو.","error");return}
+ const c=$("monthlyVisitsList");c.innerHTML='<div class="empty">در حال دریافت آمار...</div>';
  try{
-  const r=await fetch(SUPABASE_URL+"/rest/v1/site_monthly_visits?select=month,visits&order=month.desc",{
-   headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+adminAccessToken}
-  });
-  const d=await r.json();
-
-  if(!r.ok||!Array.isArray(d))throw new Error(d.message||d.hint||"دریافت آمار ناموفق بود.");
-
-  $("totalVisits").textContent=d.reduce((s,x)=>s+Number(x.visits||0),0).toLocaleString("fa-IR");
-  c.replaceChildren();
-
-  if(!d.length)c.innerHTML='<div class="empty">هنوز آماری ثبت نشده است.</div>';
-
-  d.forEach(x=>{
-   const el=document.createElement("div");
-   el.className="memory-card";
-   const h=document.createElement("h3");
-   h.textContent=x.month;
-   const p=document.createElement("p");
-   p.textContent="تعداد بازدید: "+Number(x.visits).toLocaleString("fa-IR");
-   el.append(h,p);
-   c.append(el);
-  });
-
+  const r=await fetch(SUPABASE_URL+"/rest/v1/site_monthly_visits?select=month,visits&order=month.desc",{headers:{"apikey":SUPABASE_KEY,"Authorization":"Bearer "+adminAccessToken}});
+  const d=await r.json();if(!r.ok||!Array.isArray(d))throw new Error(d.message||d.hint||"دریافت آمار ناموفق بود.");
+  $("totalVisits").textContent=d.reduce((s,x)=>s+Number(x.visits||0),0).toLocaleString("fa-IR");c.replaceChildren();if(!d.length)c.innerHTML='<div class="empty">هنوز آماری ثبت نشده است.</div>';
+  d.forEach(x=>{const el=document.createElement("div");el.className="memory-card";const h=document.createElement("h3");h.textContent=x.month;const p=document.createElement("p");p.textContent="تعداد بازدید: "+Number(x.visits).toLocaleString("fa-IR");el.append(h,p);c.append(el)});
   setStatus($("adminStatus"),"آمار با موفقیت دریافت شد. ❤️","success");
-
- }catch(e){
-  c.innerHTML='<div class="empty">دریافت آمار ناموفق بود.</div>';
-  setStatus($("adminStatus"),"خطا: "+e.message,"error");
- }
+ }catch(e){c.innerHTML='<div class="empty">دریافت آمار ناموفق بود.</div>';setStatus($("adminStatus"),"خطا: "+e.message,"error")}
 }
-
-/* دریافت تعداد کلیک‌های دانلود */
 async function loadAppDownloadStats(){
- if(!adminAccessToken)return;
-
- const box=$("totalAppDownloads");
- const status=$("downloadStatsStatus");
-
- try{
-  const rows=await api(
-   "/rest/v1/app_download_stats?select=clicks&id=eq.true",
-   {
-    headers:{
-     Authorization:"Bearer "+adminAccessToken
-    }
-   }
-  );
-
-  const count=Number(rows?.[0]?.clicks||0);
-  box.textContent=count.toLocaleString("fa-IR");
-  status.textContent="آمار با موفقیت دریافت شد. ❤️";
-
- }catch(e){
-  status.textContent="دریافت آمار ناموفق بود.";
-  console.error("Download stats:",e);
- }
+ if(!adminAccessToken)return;const box=$("totalAppDownloads"),status=$("downloadStatsStatus");
+ try{const rows=await api("/rest/v1/app_download_stats?select=clicks&id=eq.true",{headers:{Authorization:"Bearer "+adminAccessToken}});box.textContent=Number(rows?.[0]?.clicks||0).toLocaleString("fa-IR");status.textContent="آمار با موفقیت دریافت شد. ❤️"}
+ catch(e){status.textContent="دریافت آمار ناموفق بود.";console.error("Download stats:",e)}
 }
-
 function adminLogout(){
- adminAccessToken=null;
- $("adminDashboard").style.display="none";
- $("adminLogin").style.display="block";
- $("adminEmail").value="";
- $("adminPassword").value="";
- $("totalVisits").textContent="۰";
- $("totalAppDownloads").textContent="۰";
- $("downloadStatsStatus").textContent="آمار هنوز دریافت نشده است.";
- $("monthlyVisitsList").replaceChildren();
- setStatus($("adminLoginStatus"),"از حساب خارج شدی.","success");
- renderMemories();
+ adminAccessToken=null;$("adminDashboard").style.display="none";$("adminLogin").style.display="block";$("adminEmail").value="";$("adminPassword").value="";
+ $("totalVisits").textContent="۰";$("totalAppDownloads").textContent="۰";$("downloadStatsStatus").textContent="آمار هنوز دریافت نشده است.";$("monthlyVisitsList").replaceChildren();
+ showWalletAdmin();setStatus($("adminLoginStatus"),"از حساب خارج شدی.","success");renderMemories();
 }
-
-$("adminLoginBtn").addEventListener("click",adminLogin);
-$("adminLogoutBtn").addEventListener("click",adminLogout);
-
-$("refreshStatsBtn").addEventListener("click",async()=>{
- await loadMonthlyStats();
- await loadAppDownloadStats();
-});
+$("adminLoginBtn").addEventListener("click",adminLogin);$("adminLogoutBtn").addEventListener("click",adminLogout);
+$("refreshStatsBtn").addEventListener("click",async()=>{await loadMonthlyStats();await loadAppDownloadStats()});
 
 /* ابزارهای دنیای خاطرات */
-function showPanel(name){
- document.querySelectorAll(".world-panel").forEach(p=>p.classList.remove("active"));
- $("panel-"+name).classList.add("active");
-}
-
-document.querySelectorAll(".world-tile").forEach(b=>b.addEventListener("click",()=>{
- showPanel(b.dataset.panel);
- if(b.dataset.panel==="puzzle")drawPuzzle();
- if(b.dataset.panel==="capsule")renderCapsules();
-}));
-
-function shortDate(m){
- const d=dateValue(m);
- return d?d.slice(0,10):"بدون تاریخ";
-}
-
-function showMemoryInBox(target,m){
- target.style.display="block";
- target.replaceChildren();
- const h=document.createElement("strong");
- h.textContent=m.title||"خاطره";
- const p=document.createElement("p");
- p.textContent=m.content||"برای این خاطره متنی ثبت نشده.";
- const meta=document.createElement("div");
- meta.className="small";
- meta.textContent=formatDate(dateValue(m))+" • "+creatorName(m.created_by);
- target.append(h,p,meta);
-}
-
+function showPanel(name){document.querySelectorAll(".world-panel").forEach(p=>p.classList.remove("active"));$("panel-"+name).classList.add("active")}
+document.querySelectorAll(".world-tile").forEach(b=>b.addEventListener("click",()=>{showPanel(b.dataset.panel);if(b.dataset.panel==="puzzle")drawPuzzle();if(b.dataset.panel==="capsule")renderCapsules()}));
+function shortDate(m){const d=dateValue(m);return d?d.slice(0,10):"بدون تاریخ"}
+function showMemoryInBox(target,m){target.style.display="block";target.replaceChildren();const h=document.createElement("strong");h.textContent=m.title||"خاطره";const p=document.createElement("p");p.textContent=m.content||"برای این خاطره متنی ثبت نشده.";const meta=document.createElement("div");meta.className="small";meta.textContent=formatDate(dateValue(m))+" • "+creatorName(m.created_by);target.append(h,p,meta)}
 function renderWorld(){
- const memories=allMemories.slice();
- const sky=$("starField");
-
- if(sky){
-  sky.replaceChildren();
-  memories.slice(0,24).forEach((m,i)=>{
-   const b=document.createElement("button");
-   b.className="star-memory";
-   b.innerHTML="<i>✦</i>"+escapeHTML((m.title||"خاطره").slice(0,18));
-   b.onclick=()=>{
-    showMemoryInBox($("bubbleResult"),m);
-    $("bubbleResult").scrollIntoView({behavior:"smooth",block:"nearest"});
-   };
-   sky.append(b);
-  });
-  if(!memories.length)sky.textContent="هنوز ستاره‌ای ثبت نشده.";
- }
-
- const page=$("bookPage");
- if(page){
-  if(!memories.length){
-   page.textContent="هنوز خاطره‌ای در دفتر نیست.";
-   $("bookCount").textContent="۰ از ۰";
-  }else{
-   bookIndex=Math.min(bookIndex,memories.length-1);
-   const m=memories[bookIndex];
-   page.textContent=(m.title||"خاطره")+"\n\n"+(m.content||"این خاطره بدون متن ثبت شده.")+"\n\n"+formatDate(dateValue(m));
-   $("bookCount").textContent=(bookIndex+1)+" از "+memories.length;
-  }
- }
-
- const radio=$("radioList");
- if(radio){
-  radio.replaceChildren();
-  const aud=memories.filter(m=>m.media_type==="audio"&&m.file_path);
-  if(!aud.length)radio.innerHTML='<div class="empty">هنوز فایل صوتی در آرشیو ثبت نشده.</div>';
-  aud.forEach(async m=>{
-   const box=document.createElement("div");
-   box.className="memory-card";
-   box.innerHTML="<strong>"+escapeHTML(m.title)+"</strong><p class='small'>"+escapeHTML(formatDate(dateValue(m)))+"</p><p class='small'>در حال آماده‌سازی پخش‌کننده...</p>";
-   radio.append(box);
-   try{
-    const u=await getFileUrl(m.file_path);
-    const a=document.createElement("audio");
-    a.controls=true;
-    a.preload="none";
-    a.src=u;
-    box.lastElementChild.replaceWith(a);
-   }catch(e){
-    box.lastElementChild.textContent="فایل در دسترس نیست.";
-   }
-  });
- }
-
- const cal=$("calendarResults");
- if(cal){
-  cal.replaceChildren();
-  const date=$("calendarDate").value;
-  const found=memories.filter(m=>date&&shortDate(m)===date);
-  if(!date)cal.textContent="تاریخ رو انتخاب کن تا خاطرات همون روز نمایش داده بشن.";
-  else if(!found.length)cal.textContent="برای این تاریخ خاطره‌ای پیدا نشد.";
-  else found.forEach(m=>{
-   const d=document.createElement("div");
-   d.className="calendar-item";
-   d.textContent=m.title+" — "+creatorName(m.created_by);
-   cal.append(d);
-  });
- }
-
- const letters=$("letterBoxList");
- if(letters){
-  letters.replaceChildren();
-  const texts=memories.filter(m=>m.media_type==="text"||m.content);
-  if(!texts.length)letters.textContent="هنوز نوشته‌ای ثبت نشده.";
-  texts.slice(0,30).forEach(m=>{
-   const d=document.createElement("div");
-   d.className="memory-card";
-   d.innerHTML="<strong>"+escapeHTML(m.title)+"</strong><p>"+escapeHTML(m.content||"")+"</p><span class='small'>"+escapeHTML(formatDate(dateValue(m)))+"</span>";
-   letters.append(d);
-  });
- }
-
- const garden=$("gardenGrid");
- if(garden){
-  garden.replaceChildren();
-  const icons=["🌷","🌸","🌻","🌼","🌺","🪻"];
-  memories.slice(0,30).forEach((m,i)=>{
-   const b=document.createElement("button");
-   b.className="flower";
-   b.innerHTML="<strong>"+icons[i%icons.length]+"</strong>"+escapeHTML((m.title||"خاطره").slice(0,14));
-   b.onclick=()=>showMemoryInBox($("bubbleResult"),m);
-   garden.append(b);
-  });
-  if(!memories.length)garden.textContent="باغ هنوز منتظر اولین خاطره‌ست.";
- }
-
- const bubbles=$("bubbleArea");
- if(bubbles){
-  bubbles.replaceChildren();
-  memories.slice(0,12).forEach((m,i)=>{
-   const b=document.createElement("button");
-   b.className="bubble";
-   b.textContent=["✦","❤","☾","❀"][i%4];
-   b.title=m.title;
-   b.onclick=()=>showMemoryInBox($("bubbleResult"),m);
-   bubbles.append(b);
-  });
-  if(!memories.length)bubbles.textContent="حبابی برای نمایش وجود نداره.";
- }
+ const memories=allMemories.slice(),sky=$("starField");
+ if(sky){sky.replaceChildren();memories.slice(0,24).forEach((m,i)=>{const b=document.createElement("button");b.className="star-memory";b.innerHTML="<i>✦</i>"+escapeHTML((m.title||"خاطره").slice(0,18));b.onclick=()=>{showMemoryInBox($("bubbleResult"),m);$("bubbleResult").scrollIntoView({behavior:"smooth",block:"nearest"})};sky.append(b)});if(!memories.length)sky.textContent="هنوز ستاره‌ای ثبت نشده."}
+ const page=$("bookPage");if(page){if(!memories.length){page.textContent="هنوز خاطره‌ای در دفتر نیست.";$("bookCount").textContent="۰ از ۰"}else{bookIndex=Math.min(bookIndex,memories.length-1);const m=memories[bookIndex];page.textContent=(m.title||"خاطره")+"\n\n"+(m.content||"این خاطره بدون متن ثبت شده.")+"\n\n"+formatDate(dateValue(m));$("bookCount").textContent=(bookIndex+1)+" از "+memories.length}}
+ const radio=$("radioList");if(radio){radio.replaceChildren();const aud=memories.filter(m=>m.media_type==="audio"&&m.file_path);if(!aud.length)radio.innerHTML='<div class="empty">هنوز فایل صوتی در آرشیو ثبت نشده.</div>';aud.forEach(async m=>{const box=document.createElement("div");box.className="memory-card";box.innerHTML="<strong>"+escapeHTML(m.title)+"</strong><p class='small'>"+escapeHTML(formatDate(dateValue(m)))+"</p><p class='small'>در حال آماده‌سازی پخش‌کننده...</p>";radio.append(box);try{const u=await getFileUrl(m.file_path);const a=document.createElement("audio");a.controls=true;a.preload="none";a.src=u;box.lastElementChild.replaceWith(a)}catch(e){box.lastElementChild.textContent="فایل در دسترس نیست."}})}
+ const cal=$("calendarResults");if(cal){cal.replaceChildren();const date=$("calendarDate").value,found=memories.filter(m=>date&&shortDate(m)===date);if(!date)cal.textContent="تاریخ رو انتخاب کن تا خاطرات همون روز نمایش داده بشن.";else if(!found.length)cal.textContent="برای این تاریخ خاطره‌ای پیدا نشد.";else found.forEach(m=>{const d=document.createElement("div");d.className="calendar-item";d.textContent=m.title+" — "+creatorName(m.created_by);cal.append(d)})}
+ const letters=$("letterBoxList");if(letters){letters.replaceChildren();const texts=memories.filter(m=>m.media_type==="text"||m.content);if(!texts.length)letters.textContent="هنوز نوشته‌ای ثبت نشده.";texts.slice(0,30).forEach(m=>{const d=document.createElement("div");d.className="memory-card";d.innerHTML="<strong>"+escapeHTML(m.title)+"</strong><p>"+escapeHTML(m.content||"")+"</p><span class='small'>"+escapeHTML(formatDate(dateValue(m)))+"</span>";letters.append(d)})}
+ const garden=$("gardenGrid");if(garden){garden.replaceChildren();const icons=["🌷","🌸","🌻","🌼","🌺","🪻"];memories.slice(0,30).forEach((m,i)=>{const b=document.createElement("button");b.className="flower";b.innerHTML="<strong>"+icons[i%icons.length]+"</strong>"+escapeHTML((m.title||"خاطره").slice(0,14));b.onclick=()=>showMemoryInBox($("bubbleResult"),m);garden.append(b)});if(!memories.length)garden.textContent="باغ هنوز منتظر اولین خاطره‌ست."}
+ const bubbles=$("bubbleArea");if(bubbles){bubbles.replaceChildren();memories.slice(0,12).forEach((m,i)=>{const b=document.createElement("button");b.className="bubble";b.textContent=["✦","❤","☾","❀"][i%4];b.title=m.title;b.onclick=()=>showMemoryInBox($("bubbleResult"),m);bubbles.append(b)});if(!memories.length)bubbles.textContent="حبابی برای نمایش وجود نداره."}
 }
-
-$("bookPrev").onclick=()=>{
- bookIndex=Math.max(0,bookIndex-1);
- renderWorld();
-};
-
-$("bookNext").onclick=()=>{
- bookIndex=Math.min(Math.max(0,allMemories.length-1),bookIndex+1);
- renderWorld();
-};
-
-$("calendarDate").addEventListener("change",renderWorld);
-
-$("travelBtn").onclick=()=>{
- const date=$("timeTravelDate").value,box=$("timeTravelResults");
- box.replaceChildren();
- if(!date){box.textContent="اول تاریخ رو انتخاب کن.";return}
- const found=allMemories.filter(m=>shortDate(m)===date);
- if(!found.length){box.textContent="در این تاریخ خاطره‌ای ثبت نشده.";return}
- found.forEach(m=>{
-  const d=document.createElement("div");
-  d.className="calendar-item";
-  d.textContent=m.title+" — "+(m.content||"");
-  box.append(d);
- });
-};
-
-$("worldRandomBtn").onclick=()=>{
- const m=allMemories.length?allMemories[Math.floor(Math.random()*allMemories.length)]:null;
- if(m)showMemoryInBox($("worldRandomResult"),m);
- else{
-  $("worldRandomResult").style.display="block";
-  $("worldRandomResult").textContent="هنوز خاطره‌ای ثبت نشده.";
- }
-};
-
-$("themeToggle").onclick=()=>{
- document.body.classList.toggle("theme-light");
- localStorage.setItem("memoryTheme",document.body.classList.contains("theme-light")?"light":"dark");
-};
-
+$("bookPrev").onclick=()=>{bookIndex=Math.max(0,bookIndex-1);renderWorld()};$("bookNext").onclick=()=>{bookIndex=Math.min(Math.max(0,allMemories.length-1),bookIndex+1);renderWorld()};$("calendarDate").addEventListener("change",renderWorld);
+$("travelBtn").onclick=()=>{const date=$("timeTravelDate").value,box=$("timeTravelResults");box.replaceChildren();if(!date){box.textContent="اول تاریخ رو انتخاب کن.";return}const found=allMemories.filter(m=>shortDate(m)===date);if(!found.length){box.textContent="در این تاریخ خاطره‌ای ثبت نشده.";return}found.forEach(m=>{const d=document.createElement("div");d.className="calendar-item";d.textContent=m.title+" — "+(m.content||"");box.append(d)})};
+$("worldRandomBtn").onclick=()=>{const m=allMemories.length?allMemories[Math.floor(Math.random()*allMemories.length)]:null;if(m)showMemoryInBox($("worldRandomResult"),m);else{$("worldRandomResult").style.display="block";$("worldRandomResult").textContent="هنوز خاطره‌ای ثبت نشده."}};
+$("themeToggle").onclick=()=>{document.body.classList.toggle("theme-light");localStorage.setItem("memoryTheme",document.body.classList.contains("theme-light")?"light":"dark")};
 if(localStorage.getItem("memoryTheme")==="light")document.body.classList.add("theme-light");
 
 /* پازل چهارقسمتی از تصویر اصلی */
 let puzzleOrder=[0,1,2,3],puzzleChosen=[];
-
-function drawPuzzle(){
- const grid=$("puzzleGrid");
- grid.replaceChildren();
- puzzleOrder.forEach((piece,index)=>{
-  const el=document.createElement("button");
-  el.className="puzzle-piece";
-  el.style.backgroundImage='url("IMG_20250612_000548_702.jpg")';
-  el.style.backgroundPosition=["0% 0%","100% 0%","0% 100%","100% 100%"][piece];
-  el.title="تکه "+(piece+1);
-  el.onclick=()=>{
-   if(puzzleChosen.includes(piece))return;
-   puzzleChosen.push(piece);
-   el.style.opacity=".4";
-   $("puzzleStatus").textContent="تکه‌های انتخاب‌شده: "+puzzleChosen.length+"/4";
-   if(puzzleChosen.length===4){
-    $("puzzleStatus").textContent=puzzleChosen.every((v,i)=>v===i)?"آفرین! ترتیب تکه‌ها درست بود. ❤️":"ترتیب کامل نبود؛ دوباره امتحان کن.";
-   }
-  };
-  grid.append(el);
- });
-}
-
-$("puzzleReset").onclick=()=>{
- puzzleChosen=[];
- puzzleOrder=[0,1,2,3].sort(()=>Math.random()-.5);
- $("puzzleStatus").textContent="";
- drawPuzzle();
-};
-
-drawPuzzle();
+function drawPuzzle(){const grid=$("puzzleGrid");grid.replaceChildren();puzzleOrder.forEach((piece,index)=>{const el=document.createElement("button");el.className="puzzle-piece";el.style.backgroundImage='url("IMG_20250612_000548_702.jpg")';el.style.backgroundPosition=["0% 0%","100% 0%","0% 100%","100% 100%"][piece];el.title="تکه "+(piece+1);el.onclick=()=>{if(puzzleChosen.includes(piece))return;puzzleChosen.push(piece);el.style.opacity=".4";$("puzzleStatus").textContent="تکه‌های انتخاب‌شده: "+puzzleChosen.length+"/4";if(puzzleChosen.length===4)$("puzzleStatus").textContent=puzzleChosen.every((v,i)=>v===i)?"آفرین! ترتیب تکه‌ها درست بود. ❤️":"ترتیب کامل نبود؛ دوباره امتحان کن."};grid.append(el)})}
+$("puzzleReset").onclick=()=>{puzzleChosen=[];puzzleOrder=[0,1,2,3].sort(()=>Math.random()-.5);$("puzzleStatus").textContent="";drawPuzzle()};drawPuzzle();
 
 /* کپسول زمان محلی مرورگر */
-function getCapsules(){
- try{return JSON.parse(localStorage.getItem("memoryCapsules")||"[]")}
- catch{return[]}
+function getCapsules(){try{return JSON.parse(localStorage.getItem("memoryCapsules")||"[]")}catch{return[]}}
+function renderCapsules(){const box=$("capsuleList");box.replaceChildren();const today=new Date().toISOString().slice(0,10);getCapsules().forEach((c,i)=>{const d=document.createElement("div");d.className="capsule";const h=document.createElement("strong");h.textContent="کپسول "+(i+1)+" • بازشدن در "+c.date;d.append(h);if(c.date<=today){const p=document.createElement("p");p.textContent=c.text;d.append(p);const tag=document.createElement("span");tag.className="small";tag.textContent="این کپسول آمادهٔ بازشدنه.";d.append(tag)}else{const p=document.createElement("p");p.className="small";p.textContent="این نوشته تا تاریخ انتخاب‌شده مهروموم می‌مونه.";d.append(p)}box.append(d)})}
+$("saveCapsule").onclick=()=>{const text=$("capsuleText").value.trim(),date=$("capsuleDate").value,today=new Date().toISOString().slice(0,10);if(!text||!date){setStatus($("capsuleStatus"),"متن و تاریخ رو وارد کن.","error");return}if(date<today){setStatus($("capsuleStatus"),"تاریخ باید امروز یا بعد از امروز باشه.","error");return}const list=getCapsules();list.push({text,date});localStorage.setItem("memoryCapsules",JSON.stringify(list));$("capsuleText").value="";$("capsuleDate").value="";setStatus($("capsuleStatus"),"کپسول در همین مرورگر ذخیره شد. ❤️","success");renderCapsules()};
+
+/* =====================================
+   صندوق هدیه‌ها - ارتباط با Supabase
+===================================== */
+const walletIcons={birthday:"🎂",anniversary:"💜",womens_day:"🌷",girls_day:"🎁"};
+let walletFunds=[],walletTransactions=[];
+function toman(value){return Number(value||0).toLocaleString("fa-IR")+" تومان"}
+function walletDate(value){if(!value)return"هنوز تعیین نشده";const d=new Date(value+"T00:00:00");return Number.isNaN(d.getTime())?value:new Intl.DateTimeFormat("fa-IR",{year:"numeric",month:"long",day:"numeric"}).format(d)}
+async function loadWallet(){
+ const status=$("walletStatus"),grid=$("walletGrid");
+ try{
+  setStatus(status,"در حال دریافت اطلاعات صندوق‌ها...");
+  const [funds,transactions]=await Promise.all([
+   api("/rest/v1/wallet_funds?select=id,occasion,title,target_amount,balance,due_date,note,sort_order&order=sort_order.asc"),
+   api("/rest/v1/wallet_transactions?select=id,fund_id,transaction_type,amount,note,created_at&order=created_at.desc&limit=100")
+  ]);
+  if(!Array.isArray(funds))throw new Error("اطلاعات صندوق‌ها معتبر نیست.");
+  walletFunds=funds;walletTransactions=Array.isArray(transactions)?transactions:[];
+  renderWallet();setStatus(status,"صندوق‌ها با موفقیت به‌روزرسانی شدند. ❤️","success");
+ }catch(error){console.error("Wallet:",error);setStatus(status,"خطا در دریافت صندوق‌ها: "+error.message,"error");grid.innerHTML='<div class="wallet-empty">دریافت اطلاعات ناموفق بود.</div>'}
 }
-
-function renderCapsules(){
- const box=$("capsuleList");
- box.replaceChildren();
- const today=new Date().toISOString().slice(0,10);
-
- getCapsules().forEach((c,i)=>{
-  const d=document.createElement("div");
-  d.className="capsule";
-  const h=document.createElement("strong");
-  h.textContent="کپسول "+(i+1)+" • بازشدن در "+c.date;
-  d.append(h);
-
-  if(c.date<=today){
-   const p=document.createElement("p");
-   p.textContent=c.text;
-   d.append(p);
-   const tag=document.createElement("span");
-   tag.className="small";
-   tag.textContent="این کپسول آمادهٔ بازشدنه.";
-   d.append(tag);
-  }else{
-   const p=document.createElement("p");
-   p.className="small";
-   p.textContent="این نوشته تا تاریخ انتخاب‌شده مهروموم می‌مونه.";
-   d.append(p);
-  }
-  box.append(d);
+function renderWallet(){
+ const grid=$("walletGrid");grid.replaceChildren();
+ if(!walletFunds.length){grid.innerHTML='<div class="wallet-empty">هنوز صندوقی ثبت نشده است.</div>';return}
+ walletFunds.forEach(fund=>{
+  const balance=Number(fund.balance||0),target=Number(fund.target_amount||0),percent=target>0?Math.min(100,(balance/target)*100):0;
+  const history=walletTransactions.filter(t=>String(t.fund_id)===String(fund.id)).slice(0,5);
+  const card=document.createElement("div");card.className="wallet-card";
+  card.innerHTML=`
+   <div class="wallet-emoji">${walletIcons[fund.occasion]||"🎁"}</div>
+   <h3>${escapeHTML(fund.title)}</h3>
+   <div class="small">موجودی فعلی</div><div class="wallet-balance">${toman(balance)}</div>
+   <div class="wallet-progress"><span style="width:${percent}%"></span></div>
+   <div class="small">${target>0?"هدف: "+toman(target):"هنوز هدفی تعیین نشده"}</div>
+   <div class="small">پیشرفت: ${percent.toLocaleString("fa-IR",{maximumFractionDigits:1})}٪</div>
+   <div class="small">📅 تاریخ هدف: ${walletDate(fund.due_date)}</div>
+   ${fund.note?`<p class="small">${escapeHTML(fund.note)}</p>`:""}
+   <div class="wallet-history"><strong>آخرین تراکنش‌ها</strong>
+   ${history.length?history.map(t=>`<div class="wallet-history-item">
+    <span style="color:${t.transaction_type==="deposit"?"var(--green)":"var(--red)"}">${t.transaction_type==="deposit"?"➕ شارژ":"➖ برداشت"}</span>
+    ${toman(t.amount)}<div class="small">${escapeHTML(t.note||"بدون یادداشت")}</div>
+    <div class="small">${formatDate(t.created_at)}</div></div>`).join(""):'<p class="small">هنوز تراکنشی ثبت نشده است.</p>'}
+   </div>`;
+  grid.append(card);
  });
+ renderWalletAdminSelect();
 }
-
-$("saveCapsule").onclick=()=>{
- const text=$("capsuleText").value.trim();
- const date=$("capsuleDate").value;
- const today=new Date().toISOString().slice(0,10);
-
- if(!text||!date){
-  setStatus($("capsuleStatus"),"متن و تاریخ رو وارد کن.","error");
-  return;
+function renderWalletAdminSelect(){
+ const select=$("walletFundSelect");if(!select)return;const old=select.value;
+ select.innerHTML=walletFunds.map(f=>`<option value="${escapeHTML(f.id)}">${escapeHTML(f.title)}</option>`).join("");
+ if(walletFunds.some(f=>String(f.id)===old))select.value=old;fillWalletSettings();
+}
+function fillWalletSettings(){
+ const id=$("walletFundSelect").value,fund=walletFunds.find(f=>String(f.id)===String(id));if(!fund)return;
+ $("walletTarget").value=fund.target_amount??0;$("walletDueDate").value=fund.due_date||"";$("walletNote").value=fund.note||"";
+}
+$("walletFundSelect").addEventListener("change",fillWalletSettings);
+function showWalletAdmin(){const visible=Boolean(adminAccessToken);$("walletAdminBox").style.display=visible?"block":"none"}
+async function verifyWalletAdmin(){
+ if(!adminAccessToken){showWalletAdmin();return}
+ try{
+  await api("/rest/v1/rpc/wallet_is_admin",{method:"POST",headers:{Authorization:"Bearer "+adminAccessToken},body:JSON.stringify({})});
+  showWalletAdmin();
+ }catch(error){
+  $("walletAdminBox").style.display="none";
+  setStatus($("adminStatus"),"حساب واردشده مجوز مدیریت صندوق را ندارد.","error");
  }
- if(date<today){
-  setStatus($("capsuleStatus"),"تاریخ باید امروز یا بعد از امروز باشه.","error");
-  return;
- }
+}
+$("walletTransactionBtn").addEventListener("click",async()=>{
+ const button=$("walletTransactionBtn"),fundId=$("walletFundSelect").value,type=$("walletTransactionType").value,amount=Number($("walletAmount").value),note=$("walletTransactionNote").value.trim();
+ if(!adminAccessToken){setStatus($("walletAdminStatus"),"ابتدا وارد حساب مدیر شو.","error");return}
+ if(!fundId){setStatus($("walletAdminStatus"),"یک صندوق انتخاب کن.","error");return}
+ if(!Number.isSafeInteger(amount)||amount<=0){setStatus($("walletAdminStatus"),"مبلغ معتبر و بیشتر از صفر وارد کن.","error");return}
+ button.disabled=true;button.textContent="در حال ثبت...";
+ try{
+  await api("/rest/v1/rpc/wallet_transaction",{method:"POST",headers:{Authorization:"Bearer "+adminAccessToken},body:JSON.stringify({p_fund_id:fundId,p_type:type,p_amount:amount,p_note:note})});
+  $("walletAmount").value="";$("walletTransactionNote").value="";setStatus($("walletAdminStatus"),"تراکنش با موفقیت ثبت شد. ❤️","success");await loadWallet();
+ }catch(error){setStatus($("walletAdminStatus"),"ثبت تراکنش ناموفق بود: "+error.message,"error")}
+ finally{button.disabled=false;button.textContent="ثبت تراکنش"}
+});
+$("walletUpdateBtn").addEventListener("click",async()=>{
+ const button=$("walletUpdateBtn"),fundId=$("walletFundSelect").value,target=Number($("walletTarget").value),dueDate=$("walletDueDate").value||null,note=$("walletNote").value.trim();
+ if(!adminAccessToken){setStatus($("walletAdminStatus"),"ابتدا وارد حساب مدیر شو.","error");return}
+ if(!fundId){setStatus($("walletAdminStatus"),"یک صندوق انتخاب کن.","error");return}
+ if(!Number.isSafeInteger(target)||target<0){setStatus($("walletAdminStatus"),"هدف صندوق معتبر نیست.","error");return}
+ button.disabled=true;button.textContent="در حال ذخیره...";
+ try{
+  await api("/rest/v1/rpc/wallet_update_fund",{method:"POST",headers:{Authorization:"Bearer "+adminAccessToken},body:JSON.stringify({p_fund_id:fundId,p_target_amount:target,p_due_date:dueDate,p_note:note})});
+  setStatus($("walletAdminStatus"),"تنظیمات صندوق ذخیره شد. 💜","success");await loadWallet();
+ }catch(error){setStatus($("walletAdminStatus"),"ذخیره تنظیمات ناموفق بود: "+error.message,"error")}
+ finally{button.disabled=false;button.textContent="ذخیره تنظیمات صندوق"}
+});
+loadWallet();
 
- const list=getCapsules();
- list.push({text,date});
- localStorage.setItem("memoryCapsules",JSON.stringify(list));
- $("capsuleText").value="";
- $("capsuleDate").value="";
- setStatus($("capsuleStatus"),"کپسول در همین مرورگر ذخیره شد. ❤️","success");
- renderCapsules();
-};
-
+/* راه‌اندازی اولیه */
 recordMonthlyVisit();
 loadMemories();
 loadMusic();
-
 </script>
 </body>
 </html>
