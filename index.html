@@ -56,13 +56,37 @@ footer p{margin:4px}
 .wallet-history{margin-top:12px;padding-top:10px;border-top:1px solid var(--border)}.wallet-history-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;overflow-wrap:anywhere}
 .wallet-admin-box{margin-top:20px;padding:16px;border:1px solid rgba(255,131,200,.3);border-radius:18px;background:rgba(255,131,200,.055)}.wallet-admin-box h3{margin-top:0}
 .wallet-admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.wallet-admin-grid .full{grid-column:1/-1}.wallet-empty{text-align:center;padding:22px 8px;color:var(--muted)}.wallet-amount-note{font-size:11px;color:var(--muted)}
+
+/* اتاق سورپرایز */
+.surprise-intro{text-align:center;padding:20px 14px;border-radius:20px;background:linear-gradient(135deg,rgba(255,131,200,.14),rgba(182,154,255,.13));border:1px solid rgba(255,190,225,.24);margin-bottom:18px}
+.surprise-intro .big-gift{font-size:54px;display:inline-block;filter:drop-shadow(0 8px 18px #ff83c855);animation:giftFloat 2.6s ease-in-out infinite}
+@keyframes giftFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+.surprise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.surprise-box{position:relative;min-height:158px;padding:17px 12px;border:1px solid rgba(255,190,225,.28);border-radius:20px;background:linear-gradient(145deg,rgba(255,131,200,.13),rgba(182,154,255,.12));color:var(--text);overflow:hidden;transition:transform .25s,border-color .25s,background .25s}
+.surprise-box:hover{transform:translateY(-4px);border-color:rgba(255,190,225,.7)}
+.surprise-box:before{content:"";position:absolute;inset:-60% auto auto -35%;width:100px;height:220px;transform:rotate(35deg);background:rgba(255,255,255,.07);pointer-events:none}
+.surprise-box .gift-art{display:block;font-size:42px;line-height:1.4;filter:drop-shadow(0 5px 10px #0003)}
+.surprise-box strong{display:block;color:#ffd1eb;margin-top:7px}
+.surprise-box small{display:block;color:var(--muted);margin-top:3px}
+.surprise-box.opened{background:rgba(159,255,200,.09);border-color:rgba(159,255,200,.42)}
+.surprise-box.opened .gift-art{animation:giftPop .45s ease}
+@keyframes giftPop{0%{transform:scale(.7) rotate(-12deg)}65%{transform:scale(1.18) rotate(8deg)}100%{transform:scale(1)}}
+.surprise-reveal{display:none;margin-top:16px;padding:20px;border:1px solid rgba(255,131,200,.3);border-radius:18px;background:linear-gradient(145deg,rgba(255,131,200,.1),rgba(182,154,255,.08));animation:revealIn .35s ease}
+.surprise-reveal.show{display:block}
+@keyframes revealIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.surprise-reveal h3{margin-top:0;color:#ffd1eb}
+.surprise-reveal .reveal-message{white-space:pre-wrap;line-height:2}
+.surprise-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.surprise-note{font-size:12px;color:var(--muted);margin-top:12px}
+@media(max-width:420px){.surprise-grid{gap:9px}.surprise-box{min-height:145px;padding:13px 8px}.surprise-box .gift-art{font-size:36px}}
+
 @media(max-width:520px){.form-grid,.filters,.world-grid{grid-template-columns:1fr 1fr}.gallery img{height:155px}.card{padding:15px}nav a{padding:4px 7px;font-size:11px}.stars-field{grid-template-columns:repeat(3,1fr)}.music-grid{grid-template-columns:1fr}.wallet-grid{grid-template-columns:1fr}.wallet-admin-grid{grid-template-columns:1fr}.wallet-admin-grid .full{grid-column:auto}}
 </style>
 </head>
 <body>
 <div class="stars"></div>
 <header><nav>
-<a href="#home">خانه</a><a href="#giftWallet">صندوق هدیه 🎁</a><a href="#featured">قاب خاطره</a><a href="#gallery">گالری</a><a href="#voice">صدا</a><a href="#timeline">قصه</a><a href="#timeMachine">ماشین زمان</a><a href="#world">دنیای خاطرات ✨</a><a href="#archive">ثبت خاطره</a><a href="#music">موسیقی 🎵</a><a href="#letter">نامه</a><a href="#admin">مدیریت 🔐</a>
+<a href="#home">خانه</a><a href="#surpriseRoom">اتاق سورپرایز 🎁</a><a href="#giftWallet">صندوق هدیه 🎁</a><a href="#featured">قاب خاطره</a><a href="#gallery">گالری</a><a href="#voice">صدا</a><a href="#timeline">قصه</a><a href="#timeMachine">ماشین زمان</a><a href="#world">دنیای خاطرات ✨</a><a href="#archive">ثبت خاطره</a><a href="#music">موسیقی 🎵</a><a href="#letter">نامه</a><a href="#admin">مدیریت 🔐</a>
 </nav></header>
 <main>
 <section class="hero" id="home">
@@ -71,6 +95,39 @@ footer p{margin:4px}
 <a class="btn pink" href="#timeMachine">برگردیم به خاطراتمون ✨</a>
 <div class="app-download"><h3>اپلیکیشن کل زندگی من ❤️</h3><p>آرشیو خاطرات، حالا در قالب یک اپلیکیشن اندرویدی!</p><a class="btn pink" id="appDownloadBtn" href="https://github.com/abolijj890-stack/Melina_birtday/releases/download/v1.0.0/app-debug.apk">📲 دانلود اپلیکیشن</a><span class="version">نسخه 1.0.0 | مخصوص اندروید</span></div>
 </section>
+
+
+<section id="surpriseRoom"><div class="card">
+<div class="surprise-intro">
+ <div class="big-gift">🎁</div>
+ <h2>اتاق سورپرایز ✨</h2>
+ <p class="muted">چهار هدیه‌ی کوچیک اینجا منتظرن؛ هرکدوم رو باز کنی، یک گوشه‌ی تازه از این آرشیو رو کشف می‌کنی.</p>
+</div>
+<div class="surprise-grid" id="surpriseGrid">
+ <button class="surprise-box" type="button" data-surprise="letter" aria-controls="surpriseReveal">
+  <span class="gift-art">💌</span><strong>نامه‌ی پنهان</strong><small>یک نوشته‌ی مخصوص</small>
+ </button>
+ <button class="surprise-box" type="button" data-surprise="voice" aria-controls="surpriseReveal">
+  <span class="gift-art">🎧</span><strong>صدای خاطره</strong><small>یک لحظه برای شنیدن</small>
+ </button>
+ <button class="surprise-box" type="button" data-surprise="stars" aria-controls="surpriseReveal">
+  <span class="gift-art">🌌</span><strong>آسمان آرزوها</strong><small>چند جمله برای آینده</small>
+ </button>
+ <button class="surprise-box" type="button" data-surprise="memory" aria-controls="surpriseReveal">
+  <span class="gift-art">🕰️</span><strong>یک یادآوری</strong><small>ارزش لحظه‌های کوچک</small>
+ </button>
+</div>
+<div class="surprise-reveal" id="surpriseReveal" aria-live="polite">
+ <h3 id="surpriseTitle">یک سورپرایز باز شد 💜</h3>
+ <div class="reveal-message" id="surpriseMessage"></div>
+ <div id="surpriseMedia"></div>
+ <div class="surprise-actions">
+  <button class="btn secondary" id="surpriseClose" type="button">بستن هدیه</button>
+  <button class="btn pink" id="surpriseAnother" type="button">یک هدیه‌ی دیگر باز کن 🎁</button>
+ </div>
+</div>
+<p class="surprise-note">هر هدیه رو می‌تونی چند بار باز کنی؛ این بخش چیزی از خاطرات ذخیره‌شده رو تغییر نمی‌ده.</p>
+</div></section>
 
 <!-- صندوق هدیه‌ها: اولین بخش بعد از Hero -->
 <section id="giftWallet"><div class="card">
@@ -504,6 +561,49 @@ $("walletUpdateBtn").addEventListener("click",async()=>{
  finally{button.disabled=false;button.textContent="ذخیره تنظیمات صندوق"}
 });
 loadWallet();
+
+
+/* اتاق سورپرایز */
+const surpriseContent={
+ letter:{
+  title:"نامه‌ی پنهان 💌",
+  message:"بعضی حرف‌ها لازم نیست پرزرق‌وبرق باشن؛ همین که از دل بیان کافیه.\n\nامیدوارم هر بار که این آرشیو رو باز می‌کنی، لبخندی از بین خاطره‌های خوب پیدا کنی. بعضی لحظه‌ها با گذشت زمان قدیمی نمی‌شن؛ فقط عزیزتر می‌شن. ❤️"
+ },
+ voice:{
+  title:"صدای خاطره 🎧",
+  message:"این هدیه با یک صدای آشنا کامل می‌شه. اگر دوست داشتی، پخشش کن:",
+  audio:true
+ },
+ stars:{
+  title:"آسمان آرزوها 🌌",
+  message:"برای روزهایی که هنوز نرسیدن، آرزوهای قشنگی وجود داره؛\nبرای آرامش بیشتر، خبرهای خوب، موفقیت‌های تازه و لحظه‌هایی که ارزش به خاطر سپردن داشته باشن. ✨"
+ },
+ memory:{
+  title:"یک یادآوری کوچک 🕰️",
+  message:"قرار نیست همه‌ی روزها خاص و بی‌نقص باشن. گاهی یک گفت‌وگوی ساده، یک شوخی کوتاه یا یک خاطره‌ی کوچک می‌تونه حال یک روز رو عوض کنه.\n\nقدر لحظه‌های خوب رو بدون؛ همین لحظه‌ها هستن که بعدها به خاطره تبدیل می‌شن. 💜"
+ }
+};
+function openSurprise(name,button){
+ const item=surpriseContent[name];if(!item)return;
+ document.querySelectorAll(".surprise-box").forEach(box=>{box.classList.toggle("opened",box===button);box.setAttribute("aria-pressed",box===button?"true":"false")});
+ $("surpriseTitle").textContent=item.title;
+ $("surpriseMessage").textContent=item.message;
+ const media=$("surpriseMedia");media.replaceChildren();
+ if(item.audio){
+  const audio=document.createElement("audio");audio.controls=true;audio.preload="metadata";
+  const source=document.createElement("source");source.src="4_5965547555092699255.mp3";source.type="audio/mpeg";audio.append(source);
+  media.append(audio);
+ }
+ $("surpriseReveal").classList.add("show");
+ $("surpriseReveal").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+document.querySelectorAll(".surprise-box").forEach(button=>button.addEventListener("click",()=>openSurprise(button.dataset.surprise,button)));
+$("surpriseClose").addEventListener("click",()=>{$("surpriseReveal").classList.remove("show");document.querySelectorAll(".surprise-box").forEach(b=>{b.classList.remove("opened");b.setAttribute("aria-pressed","false")})});
+$("surpriseAnother").addEventListener("click",()=>{
+ const boxes=[...document.querySelectorAll(".surprise-box")],available=boxes.filter(b=>!b.classList.contains("opened"));
+ const next=available[Math.floor(Math.random()*available.length)]||boxes[Math.floor(Math.random()*boxes.length)];
+ if(next)openSurprise(next.dataset.surprise,next);
+});
 
 /* راه‌اندازی اولیه */
 recordMonthlyVisit();
